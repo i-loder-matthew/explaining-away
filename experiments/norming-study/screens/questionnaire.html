@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/functions.js" charset="utf-8"></script>
+    <title>Questionnaire</title>
+  </head>
+  <body>
+    <h1>Personal Questionnaire</h1>
+    <form action="#" onsubmit="return false;">
+      <p>Please select your age:
+        <label><input type="radio" class="age-input" name="age" value="0-20" />0-20 yrs </label>
+        <label><input type="radio" class="age-input" name="age" value="21-40" />21-40 yrs </label>
+        <label><input type="radio" class="age-input" name="age" value="41-60" />41-60 yrs </label>
+        <label><input type="radio" class="age-input" name="age" value="61+" />61+ yrs </label>
+      </p>
+      <p><label for="sex-input">Please select your sex:</label>
+        <select name="sex" id="sex-input">
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="other">other</option>
+        </select>
+      </p>
+    </form>
+  </body>
+</html>
