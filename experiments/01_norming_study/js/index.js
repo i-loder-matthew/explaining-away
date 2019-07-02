@@ -15,76 +15,6 @@ function make_slides(f) {
     }
   });
 
-  slides.single_trial = slide({
-    name: "single_trial",
-    start: function() {
-      $(".err").hide();
-      $(".display_condition").html("You are in " + exp.condition + ".");
-    },
-    button : function() {
-      response = $("#text_response").val();
-      if (response.length == 0) {
-        $(".err").show();
-      } else {
-        exp.data_trials.push({
-          "trial_type" : "single_trial",
-          "response" : response
-        });
-        exp.go(); //make sure this is at the *end*, after you log your data
-      }
-    },
-  });
-
-  slides.one_slider = slide({
-    name : "one_slider",
-
-    /* trial information for this block
-     (the variable 'stim' will change between each of these values,
-      and for each of these, present_handle will be run.) */
-    present : [
-      {subject: "dog", object: "ball"},
-      {subject: "cat", object: "windowsill"},
-      {subject: "bird", object: "shiny object"},
-    ],
-
-    //this gets run only at the beginning of the block
-    present_handle : function(stim) {
-      $(".err").hide();
-
-      this.stim = stim; //I like to store this information in the slide so I can record it later.
-
-
-      $(".prompt").html(stim.subject + "s like " + stim.object + "s.");
-      this.init_sliders();
-      exp.sliderPost = null; //erase current slider value
-    },
-
-    button : function() {
-      if (exp.sliderPost == null) {
-        $(".err").show();
-      } else {
-        this.log_responses();
-
-        /* use _stream.apply(this); if and only if there is
-        "present" data. (and only *after* responses are logged) */
-        _stream.apply(this);
-      }
-    },
-
-    init_sliders : function() {
-      utils.make_slider("#single_slider", function(event, ui) {
-        exp.sliderPost = ui.value;
-      });
-    },
-
-    log_responses : function() {
-      exp.data_trials.push({
-        "trial_type" : "one_slider",
-        "response" : exp.sliderPost
-      });
-    }
-  });
-
   slides.multi_slider = slide({
     name : "multi_slider",
     present : _.shuffle([
@@ -149,109 +79,14 @@ function make_slides(f) {
     },
   });
 
-  slides.vertical_sliders = slide({
-    name : "vertical_sliders",
-    present : _.shuffle([
-      {
-        "bins" : [
-          {
-            "min" : 0,
-            "max" : 10
-          },
-          {
-            "min" : 10,
-            "max" : 20
-          },
-          {
-            "min" : 20,
-            "max" : 30
-          },
-          {
-            "min" : 30,
-            "max" : 40
-          },
-          {
-            "min" : 40,
-            "max" : 50
-          },
-          {
-            "min" : 50,
-            "max" : 60
-          }
-        ],
-        "question": "How tall is tall?"
-      }
-    ]),
-    present_handle : function(stim) {
-      $(".err").hide();
-      this.stim = stim;
-
-      $("#vertical_question").html(stim.question);
-
-      $("#sliders").empty();
-      $("#bin_labels").empty();
-
-      $("#sliders").append('<td> \
-            <div id="slider_endpoint_labels"> \
-              <div class="top">likely</div> \
-              <div class="bottom">unlikely</div>\
-            </div>\
-          </td>')
-      $("#bin_labels").append('<td></td>')
-
-      this.n_sliders = stim.bins.length;
-      for (var i=0; i<stim.bins.length; i++) {
-        $("#sliders").append("<td><div id='vslider" + i + "' class='vertical_slider'>|</div></td>");
-        $("#bin_labels").append("<td class='bin_label'>" + stim.bins[i].min + " - " + stim.bins[i].max + "</td>");
-      }
-
-      this.init_sliders(stim);
-      exp.sliderPost = [];
-    },
-
-    button : function() {
-      if (exp.sliderPost.length < this.n_sliders) {
-        $(".err").show();
-      } else {
-        this.log_responses();
-        _stream.apply(this); //use _stream.apply(this); if and only if there is "present" data.
-      }
-    },
-
-    init_sliders : function(stim) {
-      for (var i=0; i<stim.bins.length; i++) {
-        utils.make_slider("#vslider" + i, this.make_slider_callback(i), "vertical");
-      }
-    },
-    make_slider_callback : function(i) {
-      return function(event, ui) {
-        exp.sliderPost[i] = ui.value;
-      };
-    },
-    log_responses : function() {
-      for (var i=0; i<this.stim.bins.length; i++) {
-        exp.data_trials.push({
-          "trial_type" : "vertical_slider",
-          "question" : this.stim.question,
-          "response" : exp.sliderPost[i],
-          "min" : this.stim.bins[i].min,
-          "max" : this.stim.bins[i].max
-        });
-      }
-    },
-  });
-
   slides.subj_info =  slide({
     name : "subj_info",
     submit : function(e){
       //if (e.preventDefault) e.preventDefault(); // I don't know what this means.
       exp.subj_data = {
         language : $("#language").val(),
-        enjoyment : $("#enjoyment").val(),
+        other_languages : $("#other-language").val(),
         asses : $('input[name="assess"]:checked').val(),
-        age : $("#age").val(),
-        gender : $("#gender").val(),
-        education : $("#education").val(),
         comments : $("#comments").val(),
         problems: $("#problems").val(),
         fairprice: $("#fairprice").val()
@@ -292,7 +127,7 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "instructions", "single_trial", "one_slider", "multi_slider", "vertical_sliders", 'subj_info', 'thanks'];
+  exp.structure=["i0", "instructions", "multi_slider", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
   //make corresponding slides:
