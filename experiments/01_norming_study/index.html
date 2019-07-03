@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Title of This Experiment</title>
+    <title>Linguistic Experiment</title>
 
     <!--JS-->
 
@@ -24,6 +24,7 @@
     <!-- <script src="shared/js/ecosystem.js"></script> -->
 
     <!-- experiment specific helper functions -->
+    <script src="shared/preload.js"></script>
     <!-- <script src="js/local-utils.js"></script> -->
 
     <!--CSS-->
@@ -32,8 +33,8 @@
     <link href="css/local-style.css" rel="stylesheet" type="text/css"/>
 
     <!-- experiment file -->
+    <!-- <script src="js/stims.js"></script> -->
     <script src="js/index.js"></script>
-
 
 <!-- Load consent form
 <script>
@@ -65,15 +66,45 @@ Otherwise, modified to whatever is required for you given your affiliation.
   <button onclick="_s.button()">Continue</button>
 </div>
 
-  <div class="slide" id="multi_slider">
-    <p>Here are a bunch of sliders.</p>
-    <p>How likely do you think it is that someone would say each of the following?</p>
-    <table id="multi_slider_table" class="slider_table">
-      <tr><td></td><td class="left">very unlikely</td><td class="right">very likely</td></tr>
-    </table>
-    <button onclick="_s.button()">Continue</button>
-    <div class="err">Please adjust all the sliders before continuing.</div>
-  </div>
+<div class="slide" id="trial">
+
+  <p class="train-instructions">Consider the following scene:</p>
+
+
+   <div id="scene">
+    <img src="./stim/images/1_window_0_v1.png" id="scene-image" width="600" height="450">
+   </div>
+
+    <div id="prompt">
+      <p>How likely do you think is it that the man will respond with each of the following sentences?</p>
+
+      <p class="err"> Please make sure that the three ratings sum to 100!</p>
+
+      <table>
+        <tr>
+          <td><strong><span class="display_condition" id="sent_1">{}</span></strong></td>
+          <td>
+            <div style="width:275px; padding: 15px; margin: 0 auto; overflow: hidden;"><span id="slider_1" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="slider_1_val" value="0" disabled="disabled"></div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong><span class="display_condition" id="sent_2">{}</span></strong></td>
+          <td>
+            <div style="width:275px; padding: 15px; margin: 0 auto; overflow: hidden;"><span id="slider_2" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="slider_2_val" value="0" disabled="disabled"></div>
+          </td>
+        </tr>
+        <tr>
+          <td><strong><em><span class="sent_other">something else</span></em></strong></td>
+          <td>
+            <div style="width:275px; padding: 15px; margin: 0 auto; overflow: hidden;"><span id="slider_3" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="slider_3_val" value="0" disabled="disabled"></div>
+          </td>
+        </tr>
+      </table>
+
+        </div>
+    <input type="button" onclick="_s.button()" class="button" value="Next">
+
+</div>
 
   <div class="slide" id="subj_info">
     <div class="long_form">
@@ -113,7 +144,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
   </div>
 
   <div id="thanks" class="slide js" >
-    <p  class="big">Thanks for your Time!</p>
+    <p  class="big">Thanks for your time!</p>
   </div>
 
   <div class="progress">

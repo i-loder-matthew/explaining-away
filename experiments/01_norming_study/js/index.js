@@ -1,3 +1,76 @@
+function build_trials(){
+  var trials = [];
+  var percentages = [0, 10, 25, 40, 50, 60, 75, 90, 100];
+  var version = ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10"];
+  // Add probabilities and versions to trials
+  var counter = 1;
+  for (var i = 0; i < percentages.length; i++) {
+    randomVersion = _.sample(version);
+    trials.push({
+      "type": "window-positive"
+      "img_type": "window",
+      "preference": "window",
+      "statement": "I would like a window seat...",
+      "statement-img": ".stim/text/text-1",
+      "valence": "positive",
+      "seat": "a window seat",
+      "percent_middle": percentages[i],
+      "version": randomVersion,
+      "image": "./stim/images/" + counter + "_window_" + percentages[i] + "_" + randomVersion + ".png",
+    });
+    counter++;
+  }
+  for (var i = 0; i < percentages.length; i++) {
+    randomVersion = _.sample(version);
+    trials.push({
+      "type": "window-negative"
+      "img_type": "window",
+      "preference": "not-middle",
+      "statement": "I don't want a middle seat...",
+      "statement-img": ".stim/text/text-3",
+      "valence": "negative",
+      "seat": "a middle seat",
+      "percent_middle": percentages[i],
+      "version": randomVersion,
+      "image": "./stim/images/" + counter + "_window_" + percentages[i] + "_" + randomVersion + ".png"
+    });
+    counter++;
+  }
+  for (var i = 0; i < percentages.length; i++) {
+    randomVersion = _.sample(version);
+    trials.push({
+      "type": "aisle-positive"
+      "img_type": "aisle",
+      "preference": "aisle",
+      "statement": "I would like an aisle seat...",
+      "statement-img": ".stim/text/text-2",
+      "valence": "positive",
+      "seat": "an aisle seat",
+      "percent_middle": percentages[i],
+      "version": randomVersion,
+      "image": "./stim/images/" + counter + "_aisle_" + percentages[i] + "_" + randomVersion + ".png"
+    });
+    counter++;
+  }
+  for (var i = 0; i < percentages.length; i++) {
+    randomVersion = _.sample(version);
+    trials.push({
+      "type": "aisle-negative"
+      "img_type": "aisle",
+      "preference": "not-middle",
+      "statement": "I don't want a middle seat...",
+      "statement-img": ".stim/text/text-3",
+      "valence": "negative",
+      "seat": "a middle seat",
+      "percent_middle": percentages[i],
+      "version": randomVersion,
+      "image": "./stim/images/" + counter + "_aisle_" + percentages[i] + "_" + randomVersion + ".png"
+    });
+    counter++;
+  }
+  return trials;
+}
+
 function make_slides(f) {
   var   slides = {};
 
@@ -15,68 +88,76 @@ function make_slides(f) {
     }
   });
 
-  slides.multi_slider = slide({
-    name : "multi_slider",
-    present : _.shuffle([
-      {"critter":"Wugs", "property":"fur"},
-      {"critter":"Blicks", "property":"fur"}
-    ]),
-    present_handle : function(stim) {
+  slides.trial = slide({
+    name: "trial",
+    present: exp.trials,
+    present_handle: function(stim) {
       $(".err").hide();
-      this.stim = stim; //FRED: allows you to access stim in helpers
+      this.stim = stim;
+      //$(".display_condition").html(stim.prompt);
 
-      this.sentence_types = _.shuffle(["generic", "negation", "always", "sometimes", "usually"]);
-      var sentences = {
-        "generic": stim.critter + " have " + stim.property + ".",
-        "negation": stim.critter + " do not have " + stim.property + ".",
-        "always": stim.critter + " always have " + stim.property + ".",
-        "sometimes": stim.critter + " sometimes have " + stim.property + ".",
-        "usually": stim.critter + " usually have " + stim.property + "."
-      };
+			$("#scene-image").attr("src", stim["image"]);
+			$("#sent_1").text("You'll probably get " + stim["seat"]);
+			$("#sent_2").text("You might get " + stim["seat"]);
 
-      this.n_sliders = this.sentence_types.length;
-      $(".slider_row").remove();
-      for (var i=0; i<this.n_sliders; i++) {
-        var sentence_type = this.sentence_types[i];
-        var sentence = sentences[sentence_type];
-        $("#multi_slider_table").append('<tr class="slider_row"><td class="slider_target" id="sentence' + i + '">' + sentence + '</td><td colspan="2"><div id="slider' + i + '" class="slider">-------[ ]--------</div></td></tr>');
-        utils.match_row_height("#multi_slider_table", ".slider_target");
-      }
 
-      this.init_sliders(this.sentence_types);
-      exp.sliderPost = [];
+			var callback = function () {
+
+				var total = $("#slider_1").slider("option", "value") + $("#slider_2").slider("option", "value") + $("#slider_3").slider("option", "value");
+
+
+				if (total > 1.0) {
+					var other_total = total - $(this).slider("option", "value");
+					$(this).slider("option", "value", 1 - other_total);
+				}
+
+				var perc = Math.round($(this).slider("option", "value") * 100);
+				$("#" + $(this).attr("id") + "_val").val(perc);
+
+			}
+			utils.make_slider("#slider_1", callback);
+			utils.make_slider("#slider_2", callback);
+			utils.make_slider("#slider_3", callback);
+
+			$("#trial").fadeIn(700);
+
+
+    //  $(".response-buttons").attr("disabled", "disabled");
+      //$("#prompt").hide();
+      //$("#audio-player").attr("autoplay", "true");
+
+    },
+    button : function(response) {
+      this.response = response;
+
+			var total = $("#slider_1").slider("option", "value") + $("#slider_2").slider("option", "value") + $("#slider_3").slider("option", "value");
+
+			if (total < .99) {
+	      $(".err").show();
+			} else {
+      	this.log_responses();
+				var t = this;
+				$("#trial").fadeOut(300, function() {
+					window.setTimeout(function() {
+						_stream.apply(t);
+					}, 700);
+				});
+		}
+
     },
 
-    button : function() {
-      if (exp.sliderPost.length < this.n_sliders) {
-        $(".err").show();
-      } else {
-        this.log_responses();
-        _stream.apply(this); //use _stream.apply(this); if and only if there is "present" data.
-      }
-    },
-
-    init_sliders : function(sentence_types) {
-      for (var i=0; i<sentence_types.length; i++) {
-        var sentence_type = sentence_types[i];
-        utils.make_slider("#slider" + i, this.make_slider_callback(i));
-      }
-    },
-    make_slider_callback : function(i) {
-      return function(event, ui) {
-        exp.sliderPost[i] = ui.value;
-      };
-    },
     log_responses : function() {
-      for (var i=0; i<this.sentence_types.length; i++) {
-        var sentence_type = this.sentence_types[i];
-        exp.data_trials.push({
-          "trial_type" : "multi_slider",
-          "sentence_type" : sentence_type,
-          "response" : exp.sliderPost[i]
-        });
-      }
-    },
+      exp.data_trials.push({
+        "type" : this.stim.type,
+        // "reverse_sent_order" : this.stim.reverse_sent_order,
+				"rating1" : $("#slider_1").slider("option", "value"),
+				"rating2" : $("#slider_2").slider("option", "value"),
+				"rating_other" : $("#slider_3").slider("option", "value"),
+				"percent_middle": this.stim.percent_middle,
+				"valence": this.stim.valence,
+        "image": this.stim.image
+      });
+    }
   });
 
   slides.subj_info =  slide({
@@ -115,9 +196,9 @@ function make_slides(f) {
 
 /// init ///
 function init() {
-  exp.trials = [];
+  exp.trials = _.shuffle(build_trials());
   exp.catch_trials = [];
-  exp.condition = _.sample(["condition 1", "condition 2"]); //can randomize between subject conditions here
+  // exp.condition = _.sample(["condition 1", "condition 2"]); //can randomize between subject conditions here
   exp.system = {
       Browser : BrowserDetect.browser,
       OS : BrowserDetect.OS,
@@ -127,13 +208,13 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "instructions", "multi_slider", 'subj_info', 'thanks'];
+  exp.structure=["i0", "instructions", "trial", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
   //make corresponding slides:
   exp.slides = make_slides(exp);
 
-  //exp.nQs = utils.get_exp_length(); //this does not work if there are stacks of stims (but does work for an experiment with this structure)
+  exp.nQs = utils.get_exp_length(); //this does not work if there are stacks of stims (but does work for an experiment with this structure)
                     //relies on structure and slides being defined
 
   $('.slide').hide(); //hide everything
@@ -149,4 +230,11 @@ function init() {
   });
 
   exp.go(); //show first slide
+  imgs = [];
+
+	for (var i = 0; i < exp.trials.length; i++) {
+		imgs.push(exp.trials[i].image);
+	}
+
+	preload(imgs);
 }
