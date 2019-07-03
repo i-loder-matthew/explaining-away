@@ -7,11 +7,11 @@ function build_trials(){
   for (var i = 0; i < percentages.length; i++) {
     randomVersion = _.sample(version);
     trials.push({
-      "type": "window-positive"
+      "type": "window-positive",
       "img_type": "window",
       "preference": "window",
       "statement": "I would like a window seat...",
-      "statement-img": ".stim/text/text-1",
+      "statement-img": "./stim/text/text-1.png",
       "valence": "positive",
       "seat": "a window seat",
       "percent_middle": percentages[i],
@@ -23,11 +23,11 @@ function build_trials(){
   for (var i = 0; i < percentages.length; i++) {
     randomVersion = _.sample(version);
     trials.push({
-      "type": "window-negative"
+      "type": "window-negative",
       "img_type": "window",
       "preference": "not-middle",
       "statement": "I don't want a middle seat...",
-      "statement-img": ".stim/text/text-3",
+      "statement-img": "./stim/text/text-3.png",
       "valence": "negative",
       "seat": "a middle seat",
       "percent_middle": percentages[i],
@@ -39,11 +39,11 @@ function build_trials(){
   for (var i = 0; i < percentages.length; i++) {
     randomVersion = _.sample(version);
     trials.push({
-      "type": "aisle-positive"
+      "type": "aisle-positive",
       "img_type": "aisle",
       "preference": "aisle",
       "statement": "I would like an aisle seat...",
-      "statement-img": ".stim/text/text-2",
+      "statement-img": "./stim/text/text-2.png",
       "valence": "positive",
       "seat": "an aisle seat",
       "percent_middle": percentages[i],
@@ -55,11 +55,11 @@ function build_trials(){
   for (var i = 0; i < percentages.length; i++) {
     randomVersion = _.sample(version);
     trials.push({
-      "type": "aisle-negative"
+      "type": "aisle-negative",
       "img_type": "aisle",
       "preference": "not-middle",
       "statement": "I don't want a middle seat...",
-      "statement-img": ".stim/text/text-3",
+      "statement-img": "./stim/text/text-3.png",
       "valence": "negative",
       "seat": "a middle seat",
       "percent_middle": percentages[i],
@@ -68,6 +68,8 @@ function build_trials(){
     });
     counter++;
   }
+  console.log(trial);
+
   return trials;
 }
 
@@ -97,6 +99,7 @@ function make_slides(f) {
       //$(".display_condition").html(stim.prompt);
 
 			$("#scene-image").attr("src", stim["image"]);
+      $("#scene-text").attr("src", stim["statement-img"])
 			$("#sent_1").text("You'll probably get " + stim["seat"]);
 			$("#sent_2").text("You might get " + stim["seat"]);
 

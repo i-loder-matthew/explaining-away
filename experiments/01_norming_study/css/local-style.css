@@ -1,0 +1,31 @@
+.slider {
+  /* default is width 400 and margin 10 */
+	width: 400;
+	margin: 10px;
+}
+
+#trial {
+	height: 750px
+}
+
+#instructions {
+	height: 400px;
+}
+
+#scene {
+	position: relative;
+	top: 0;
+	left: 0;
+
+}
+#scene-image {
+	object-fit: cover;
+	width: 800;
+	height: 400;
+	object-position: 100% 0;
+}
+#scene-text {
+	position: absolute;
+	top: 50;
+	left: 580;
+}
