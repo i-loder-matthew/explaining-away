@@ -23,7 +23,7 @@ table {
 
     border: 1px solid #04abe3;
     width: 800px;
-    height: 650px;
+    height: 700px;
 
     /*could explicitly set the following, but these are the defaults for me (chrome, linux)*/
     font-size: 20px;
