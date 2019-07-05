@@ -59,7 +59,7 @@ var utils = {
 			min : 0,
 			max : 1,
 			step: 0.01,
-			value : 0.5,
+			value : 0.0,
 			slide : response_callback,
 			change : response_callback,
 			orientation : orientation

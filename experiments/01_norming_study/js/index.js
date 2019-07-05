@@ -1,3 +1,5 @@
+var reverse_sent_order = _.sample([true, false]);
+
 function build_trials(){
   var trials = [];
   var percentages = [0, 10, 25, 40, 50, 60, 75, 90, 100];
@@ -10,10 +12,11 @@ function build_trials(){
       "type": "window-positive",
       "img_type": "window",
       "preference": "window",
+      "reverse_sent_order": reverse_sent_order ? 1 : 0,
       "statement": "I would like a window seat...",
       "statement-img": "./stim/text/text-1.png",
       "valence": "positive",
-      "seat": "a window seat",
+      "seat": reverse_sent_order ? ["You might get a window seat", "You'll probably get a window seat"] : ["You'll probably get a window seat", "You might get a window seat"],
       "percent_middle": percentages[i],
       "version": randomVersion,
       "image": "./stim/images/" + counter + "_window_" + percentages[i] + "_" + randomVersion + ".png",
@@ -26,10 +29,11 @@ function build_trials(){
       "type": "window-negative",
       "img_type": "window",
       "preference": "not-middle",
+      "reverse_sent_order": reverse_sent_order ? 1 : 0,
       "statement": "I don't want a middle seat...",
       "statement-img": "./stim/text/text-3.png",
       "valence": "negative",
-      "seat": "a middle seat",
+      "seat": reverse_sent_order ? ["You might get a middle seat", "You'll probably get a middle seat"] : ["You'll probably get a middle seat", "You might get a middle seat"],
       "percent_middle": percentages[i],
       "version": randomVersion,
       "image": "./stim/images/" + counter + "_window_" + percentages[i] + "_" + randomVersion + ".png"
@@ -42,10 +46,11 @@ function build_trials(){
       "type": "aisle-positive",
       "img_type": "aisle",
       "preference": "aisle",
+      "reverse_sent_order": reverse_sent_order ? 1 : 0,
       "statement": "I would like an aisle seat...",
       "statement-img": "./stim/text/text-2.png",
       "valence": "positive",
-      "seat": "an aisle seat",
+      "seat": reverse_sent_order ? ["You might get an aisle seat", "You'll probably get an aisle seat"] : ["You'll probably get an aisle seat", "You might get an aisle seat"],
       "percent_middle": percentages[i],
       "version": randomVersion,
       "image": "./stim/images/" + counter + "_aisle_" + percentages[i] + "_" + randomVersion + ".png"
@@ -58,10 +63,11 @@ function build_trials(){
       "type": "aisle-negative",
       "img_type": "aisle",
       "preference": "not-middle",
+      "reverse_sent_order": reverse_sent_order ? 1 : 0,
       "statement": "I don't want a middle seat...",
       "statement-img": "./stim/text/text-3.png",
       "valence": "negative",
-      "seat": "a middle seat",
+      "seat": reverse_sent_order ? ["You might get a middle seat", "You'll probably get a middle seat"] : ["You'll probably get a middle seat", "You might get a middle seat"],
       "percent_middle": percentages[i],
       "version": randomVersion,
       "image": "./stim/images/" + counter + "_aisle_" + percentages[i] + "_" + randomVersion + ".png"
@@ -95,14 +101,14 @@ function make_slides(f) {
     present: exp.trials,
     present_handle: function(stim) {
       $(".err").hide();
+
       this.stim = stim;
       //$(".display_condition").html(stim.prompt);
 
 			$("#scene-image").attr("src", stim["image"]);
       $("#scene-text").attr("src", stim["statement-img"])
-			$("#sent_1").text("You'll probably get " + stim["seat"]);
-			$("#sent_2").text("You might get " + stim["seat"]);
-
+			$("#sent_1").text(stim["seat"][0]);
+			$("#sent_2").text(stim["seat"][1]);
 
 			var callback = function () {
 
@@ -150,11 +156,13 @@ function make_slides(f) {
     },
 
     log_responses : function() {
+      var sent1 = this.stim.reverse_sent_order == 1 ? this.stim.seat[1] : this.stim.seat[0];
+      var sent2 = this.stim.reverse_sent_order == 1 ? this.stim.seat[0] : this.stim.seat[1];
       exp.data_trials.push({
         "type" : this.stim.type,
-        // "reverse_sent_order" : this.stim.reverse_sent_order,
-				"rating1" : $("#slider_1").slider("option", "value"),
-				"rating2" : $("#slider_2").slider("option", "value"),
+        "reverse_sent_order" : this.stim.reverse_sent_order,
+				"rating1" : this.stim.reverse_sent_order == 1? $("#slider_2").slider("option", "value") : $("#slider_1").slider("option", "value"),
+				"rating2" : this.stim.reverse_sent_order == 1? $("#slider_1").slider("option", "value") : $("#slider_2").slider("option", "value"),
 				"rating_other" : $("#slider_3").slider("option", "value"),
 				"percent_middle": this.stim.percent_middle,
 				"valence": this.stim.valence,

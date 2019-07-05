@@ -1,7 +1,7 @@
 .slider {
   /* default is width 400 and margin 10 */
 	width: 400;
-	margin: 10px;
+	margin: 5px;
 }
 
 #trial {
@@ -9,7 +9,7 @@
 }
 
 #instructions {
-	height: 400px;
+	height: 500px;
 }
 
 #scene {
@@ -20,12 +20,12 @@
 }
 #scene-image {
 	object-fit: cover;
-	width: 800;
-	height: 400;
+	width: 700;
+	height: 350;
 	object-position: 100% 0;
 }
 #scene-text {
 	position: absolute;
 	top: 50;
-	left: 580;
+	left: 555;
 }
