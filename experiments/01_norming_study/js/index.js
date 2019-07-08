@@ -16,13 +16,14 @@ function build_trials(){
       "statement": "I would like a window seat...",
       "statement-img": "./stim/text/text-1.png",
       "valence": "positive",
-      "seat": reverse_sent_order ? ["You might get a window seat", "You'll probably get a window seat"] : ["You'll probably get a window seat", "You might get a window seat"],
+      "seat": reverse_sent_order ? [["You might get a window seat", "might"], ["You'll probably get a window seat", "probably"]] : [["You'll probably get a window seat", "probably"], ["You might get a window seat", "might"]],
       "percent_middle": percentages[i],
       "version": randomVersion,
       "image": "./stim/images/" + counter + "_window_" + percentages[i] + "_" + randomVersion + ".png",
     });
     counter++;
   }
+  /*
   for (var i = 0; i < percentages.length; i++) {
     randomVersion = _.sample(version);
     trials.push({
@@ -33,7 +34,7 @@ function build_trials(){
       "statement": "I don't want a middle seat...",
       "statement-img": "./stim/text/text-3.png",
       "valence": "negative",
-      "seat": reverse_sent_order ? ["You might get a middle seat", "You'll probably get a middle seat"] : ["You'll probably get a middle seat", "You might get a middle seat"],
+      "seat": reverse_sent_order ? [["You might get a middle seat", "might"], ["You'll probably get a middle seat", "probably"]] : [["You'll probably get a middle seat", "probably"], ["You might get a middle seat", "might"]],
       "percent_middle": percentages[i],
       "version": randomVersion,
       "image": "./stim/images/" + counter + "_window_" + percentages[i] + "_" + randomVersion + ".png"
@@ -50,7 +51,7 @@ function build_trials(){
       "statement": "I would like an aisle seat...",
       "statement-img": "./stim/text/text-2.png",
       "valence": "positive",
-      "seat": reverse_sent_order ? ["You might get an aisle seat", "You'll probably get an aisle seat"] : ["You'll probably get an aisle seat", "You might get an aisle seat"],
+      "seat": reverse_sent_order ? [["You might get an aisle seat", "might"], ["You'll probably get an aisle seat", "probably"]] : [["You'll probably get an aisle seat", "probably"], ["You might get an aisle seat", "might"]],
       "percent_middle": percentages[i],
       "version": randomVersion,
       "image": "./stim/images/" + counter + "_aisle_" + percentages[i] + "_" + randomVersion + ".png"
@@ -67,14 +68,15 @@ function build_trials(){
       "statement": "I don't want a middle seat...",
       "statement-img": "./stim/text/text-3.png",
       "valence": "negative",
-      "seat": reverse_sent_order ? ["You might get a middle seat", "You'll probably get a middle seat"] : ["You'll probably get a middle seat", "You might get a middle seat"],
+      "seat": reverse_sent_order ? [["You might get a middle seat", "might"], ["You'll probably get a middle seat", "probably"]] : [["You'll probably get a middle seat", "probably"], ["You might get a middle seat", "might"]],
       "percent_middle": percentages[i],
       "version": randomVersion,
       "image": "./stim/images/" + counter + "_aisle_" + percentages[i] + "_" + randomVersion + ".png"
     });
     counter++;
   }
-  console.log(trial);
+  */
+  console.log(trials);
 
   return trials;
 }
@@ -91,11 +93,125 @@ function make_slides(f) {
 
   slides.instructions = slide({
     name : "instructions",
+    start: function() {
+      $("#instructions-part2").hide();
+      $("#instructions-part3").hide();
+      $("#confirmation-questions").hide();
+      $("#instruction-text").hide();
+      $(".err").hide();
+      this.step = 1;
+    },
     button : function() {
-      exp.go(); //use exp.go() if and only if there is no "present" data.
+      if (this.step == 1) {
+        $("#instructions-part1").hide();
+				$("#instructions-part2").show();
+        $("#instruction-text").show();
+        this.step = 2;
+      } else if (this.step == 2) {
+        $("#instructions-part2").hide();
+        $("#instructions-part3").show();
+        this.step = 3;
+      } else if (this.step == 3) {
+        $("#instructions-part3").hide();
+        $("#confirmation-questions").show();
+        $("#instruction-scene").hide();
+        $("#review-text").hide();
+        if ($("input[name=bonus]:checked").val() == "no") {
+          $(".err").show();
+          $("#review-text").show();
+          this.step = 3;
+        } else if ($("input[name=bonus]:checked").val() == "yes"){
+          exp.go()
+        }
+      }
     }
   });
 
+  slides.test = slide({
+    name: "test",
+    present: [{
+      "seat": ["This is probably...", "This might be..."],
+      "image": "./stim/images/4_window_40_v1.png",
+      "statement-img": "./stim/text/text-3.png"
+    }],
+    present_handle: function(stim) {
+      $(".err").hide();
+
+      this.stim = stim;
+      //$(".display_condition").html(stim.prompt);
+
+      $("#test-image").attr("src", stim["image"]);
+      $("#test-text").attr("src", stim["statement-img"]);
+      $("#test_sent_1").text(stim["seat"][0]);
+      $("#test_sent_2").text(stim["seat"][1]);
+
+      var test_callback = function () {
+
+        var total = $("#test_slider_1").slider("option", "value") + $("#test_slider_2").slider("option", "value") + $("#test_slider_3").slider("option", "value");
+
+
+        if (total > 1.0) {
+          var other_total = total - $(this).slider("option", "value");
+          $(this).slider("option", "value", 1 - other_total);
+        }
+
+        var perc = Math.round($(this).slider("option", "value") * 100);
+        $("#" + $(this).attr("id") + "_val").val(perc);
+
+      }
+
+      utils.make_slider("#test_slider_1", test_callback);
+      utils.make_slider("#test_slider_2", test_callback);
+      utils.make_slider("#test_slider_3", test_callback);
+
+      $("#test").fadeIn(700);
+
+
+    //  $(".response-buttons").attr("disabled", "disabled");
+      //$("#prompt").hide();
+      //$("#audio-player").attr("autoplay", "true");
+
+    },
+    button: function(response) {
+      this.response = response;
+
+			var total = $("#test_slider_1").slider("option", "value") + $("#test_slider_2").slider("option", "value") + $("#test_slider_3").slider("option", "value");
+
+			if (total < .99) {
+	      $(".err").show();
+			} else {
+      	this.log_responses();
+				var t = this;
+				$("#test").fadeOut(300, function() {
+					window.setTimeout(function() {
+						_stream.apply(t);
+					}, 700);
+				});
+		}
+
+  },
+
+    log_responses : function() {
+      var sent1 = this.stim.seat[0];
+      var sent2 = this.stim.seat[1];
+      exp.data_trials.push({
+        "type" : "test",
+        "rating1" : $("#test_slider_1").slider("option", "value"),
+        "rating2" : $("#test_slider_2").slider("option", "value"),
+        "rating_other" : $("#test_slider_3").slider("option", "value"),
+        "sentence1": sent1,
+        "sentence2": sent2,
+        "image": this.stim.image
+      });
+    }
+  });
+
+  slides.separator = slide({
+    name: "separator",
+    button: function() {
+      exp.go();
+    }
+  });
   slides.trial = slide({
     name: "trial",
     present: exp.trials,
@@ -106,9 +222,9 @@ function make_slides(f) {
       //$(".display_condition").html(stim.prompt);
 
 			$("#scene-image").attr("src", stim["image"]);
-      $("#scene-text").attr("src", stim["statement-img"])
-			$("#sent_1").text(stim["seat"][0]);
-			$("#sent_2").text(stim["seat"][1]);
+      $("#scene-text").attr("src", stim["statement-img"]);
+      $("#sent_1").text(stim["seat"][0][0]);
+			$("#sent_2").text(stim["seat"][1][0]);
 
 			var callback = function () {
 
@@ -124,6 +240,7 @@ function make_slides(f) {
 				$("#" + $(this).attr("id") + "_val").val(perc);
 
 			}
+
 			utils.make_slider("#slider_1", callback);
 			utils.make_slider("#slider_2", callback);
 			utils.make_slider("#slider_3", callback);
@@ -153,7 +270,7 @@ function make_slides(f) {
 				});
 		}
 
-    },
+  },
 
     log_responses : function() {
       var sent1 = this.stim.reverse_sent_order == 1 ? this.stim.seat[1] : this.stim.seat[0];
@@ -164,6 +281,10 @@ function make_slides(f) {
 				"rating1" : this.stim.reverse_sent_order == 1? $("#slider_2").slider("option", "value") : $("#slider_1").slider("option", "value"),
 				"rating2" : this.stim.reverse_sent_order == 1? $("#slider_1").slider("option", "value") : $("#slider_2").slider("option", "value"),
 				"rating_other" : $("#slider_3").slider("option", "value"),
+        "sentence1": sent1[0],
+        "sentence2": sent2[0],
+        "modal1": sent1[1],
+        "modal2": sent2[1],
 				"percent_middle": this.stim.percent_middle,
 				"valence": this.stim.valence,
         "image": this.stim.image
@@ -219,9 +340,10 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "instructions", "trial", 'subj_info', 'thanks'];
+  exp.structure=["i0", "instructions", "test", "separator", "trial", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
+
   //make corresponding slides:
   exp.slides = make_slides(exp);
 

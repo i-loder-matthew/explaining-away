@@ -9,7 +9,7 @@
 }
 
 #instructions {
-	height: 500px;
+	height: 650px;
 }
 
 #scene {
@@ -18,13 +18,50 @@
 	left: 0;
 
 }
+#test-scene {
+	position: relative;
+	top: 0;
+	left: 0;
+}
 #scene-image {
 	object-fit: cover;
 	width: 700;
 	height: 350;
 	object-position: 100% 0;
 }
+
+#instruction-image {
+	object-fit: cover;
+	width: 700;
+	height: 350;
+	object-position: 100% 0;
+}
+#test-image {
+	object-fit: cover;
+	width: 700;
+	height: 350;
+	object-position: 100% 0;
+}
+
+#instruction-scene {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
 #scene-text {
+	position: absolute;
+	top: 50;
+	left: 555;
+}
+
+#instruction-text {
+	position: absolute;
+	top: 50;
+	left: 555;
+}
+
+#test-text {
 	position: absolute;
 	top: 50;
 	left: 555;
