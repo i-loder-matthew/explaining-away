@@ -1,0 +1,242 @@
+---
+title: "Analysis"
+author: "Matthew Loder"
+date: "7/8/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Cleaning scripts:
+```{r packages, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(data.table)
+library(gridExtra)
+library(DescTools)
+library(splines)
+library(stringr)
+source("helpers.R")
+
+
+theme_set(theme_bw())
+
+colscale = scale_color_manual(values=c("#7CB637", "#666666", "#4381C1")) 
+colscale_fill = scale_fill_manual(values=c("#7CB637", "#666666", "#4381C1")) 
+
+remove_quotes = function(d) {
+  
+}
+
+format_data = function(d) {
+  drops <- c("modal1","rating1")
+  d2 = d[ , !(names(d) %in% drops)]
+  setnames(d2, old=c("rating2","modal2"), new=c("rating", "modal"))
+  
+  drops <- c("modal2","rating2")
+  d3 = d[ , !(names(d) %in% drops)]
+  setnames(d3, old=c("rating1","modal1"), new=c("rating", "modal"))
+  
+  drops <- c("modal2", "rating2", "modal1", "rating1")
+  d4 = d[ , !(names(d) %in% drops)]
+  d4$rating = d4$rating_other
+  d4$modal = "other"
+  
+  d = rbind(d2, d3, d4)
+  
+  d$modal = gsub('"', '', d$modal)
+  d$modal = factor(d$modal, levels = c("might", "probably", "other"), ordered = T)
+  
+  d$percent_middle_f = factor(d$percent_middle)
+  
+  d_middle = d %>% filter(.,grepl("negative", type))
+  d_window = d %>% filter(.,grepl("positive", type))
+  
+  d_window_reverse = d_window
+  d_window_reverse$percent_middle = 100-d_window$percent_middle
+  
+  d_comparison = rbind(d_middle, d_window_reverse)
+  d_comparison$percent_middle_f = factor(d_comparison$percent_middle)
+  
+  return(d_comparison)
+}
+
+```
+
+## Load data:
+
+```{r data, echo=FALSE}
+trials = format_data(read.csv("../data/01_norming_study-trials.csv"))
+
+trials[, c("test_order", "first_speaker_type", "confident_speaker")] = str_split(trials$valence, "_", simplify=T)
+
+d = trials
+```
+
+## Exclude random responses
+
+```{r}
+d_overall_means = d %>%
+  group_by(modal, workerid) %>% 
+  summarise(rating_m_overall = mean(rating))
+
+d_indiv_means =  d %>%
+  group_by(modal,percent_middle, workerid) %>% 
+  summarise(rating_m = mean(rating))
+
+d_indiv_merged = merge(d_indiv_means, d_overall_means, by=c("workerid", "modal"))
+
+cors = d_indiv_merged %>%
+  group_by(workerid) %>%
+  summarise(corr = cor(rating_m, rating_m_overall))
+
+exclude = cors %>%
+  filter(corr > 0.75) %>%
+  .$workerid
+
+print(paste("Excluded", length(exclude), "participants based on random responses."))
+
+d = d %>% filter(!(workerid %in% exclude))
+```
+
+## Aggregated results
+
+```{r aggregate_plots, echo=FALSE, fig.width=10, fig.height=8}
+plot_conditions = function(d, plot_title) {
+  d_means = d %>%
+    group_by(workerid, percent_middle, modal, valence) %>%
+    summarise(participant_mean = mean(rating)) %>%
+    group_by(percent_middle, modal, valence) %>%
+    summarise(mu = mean(participant_mean),
+              ci_high = ci.high(participant_mean),
+              ci_low = ci.low(participant_mean))
+
+  p1 = ggplot(d_means, aes(x = percent_middle, y = mu, col=modal)) + 
+    xlab("% middle seats") +
+    ylab("mean ratings") +
+    geom_errorbar(aes(ymin=mu-ci_low, ymax=mu+ci_high), width=.1) +
+    geom_line() +
+    geom_point(size=1) +
+    guides(col=guide_legend(title="Expr.")) +
+    colscale +
+    theme(legend.position="bottom") + 
+    ggtitle(plot_title) +
+    facet_wrap(~valence)
+  
+  p2 = ggplot(d, aes(x=percent_middle_f, y=rating, fill=modal)) + 
+    geom_boxplot() +
+    ggtitle(plot_title) + xlab("percentage") + colscale_fill +   theme(legend.position="bottom")
+  
+  by_participant = ggplot( d %>%
+    group_by(workerid, percent_middle, modal, valence) %>% 
+    summarise(participant_mean = mean(rating)) , 
+      aes(x=percent_middle, y=participant_mean, col=modal, lty=valence)
+        ) + 
+    xlab("% middle seats") +
+    ylab("mean ratings") +
+    geom_line() +
+    geom_point(size=1) +
+    guides(col=guide_legend(title="Expr.")) +
+    colscale +
+    theme(legend.position="bottom") + ggtitle(plot_title) + facet_wrap(~workerid, ncol = 8)
+    return(list("p1" = p1, "p2" = p2, "by_participant" = by_participant))
+}
+
+
+ps1 = plot_conditions(d, "")
+
+plot(ps1$p1)
+```
+## Individual plots
+
+```{r}
+plot(ps1$by_participant)
+```
+
+## AUC Computation
+
+```{r auc_method_1, echo=FALSE}
+
+auc_method1 = function(d) {
+      #estimate linear model
+    model = lm(formula = rating_m ~ ns(percent_middle, df = 4), data = d)
+  
+    pred = data.frame(0:1000)
+    pred$percent_middle = (0:1000)/10
+    pred$rating = predict(model, pred)
+    auc = AUC(x = pred$percent_middle, y=pred$rating)
+    return(auc)
+}
+
+auc_for_participants = function(d, method) {
+  
+  aucs = d %>% 
+    group_by(workerid)
+    
+    
+  aucs$auc_might = 0
+  aucs$auc_probably = 0
+  
+  
+i = 1
+
+  for (wid in unique(d$workerid)) {
+    d.might_ratings = d %>% 
+      filter (workerid == wid) %>%
+      filter (modal == "might") %>%
+      group_by(workerid, percent_middle) %>%
+      summarise(rating_m = mean(rating))
+    
+    aucs$auc_might[i] = method(d.might_ratings)
+    
+    d.probably_ratings = d %>% 
+      filter (workerid == wid) %>%
+      filter (modal == "probably") %>%
+      group_by(workerid, percent_middle) %>%
+      summarise(rating_m = mean(rating))
+    
+    aucs$auc_probably[i] = method(d.probably_ratings)
+    i = i + 1
+  }
+  
+  aucs$auc_diff = aucs$auc_might - aucs$auc_probably
+  
+  return(aucs)
+}
+
+aucs.positive = d %>% filter(valence == "positive") %>% auc_for_participants(., method=auc_method1)
+
+aucs.negative = d %>% filter(valence == "negative") %>% auc_for_participants(., method=auc_method1)
+
+aucs.positive$cond = "Positive valence"
+
+aucs.negative$cond = "Negative valence"
+
+aucs.all = rbind(aucs.positive, aucs.negative)
+
+aucs.all = aucs.all %>% 
+  group_by(., cond) %>% 
+  summarise(., auc_diff_m = mean(auc_diff), 
+               ci_high = ci.high(auc_diff), 
+               ci_low = ci.low(auc_diff))
+
+ggplot(aucs.all, aes(x=0, y=auc_diff_m, color=cond)) +
+    geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
+    geom_point() +
+    xlab("") +
+    ylab("AUC difference (might ratings - probably ratings)") +
+    theme(axis.ticks=element_blank(), axis.text.x=element_blank(),
+          panel.grid.minor=element_blank(), 
+          plot.background=element_blank()) +
+    xlim(-.2, .2) 
+```
+
+```{r t_test_method1, echo=FALSE}
+
+print(t.test(aucs.positive$auc_diff, aucs.negative$auc_diff, var.equal=TRUE))
+
+```
+

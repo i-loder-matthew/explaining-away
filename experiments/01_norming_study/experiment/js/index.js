@@ -89,6 +89,10 @@ function make_slides(f) {
      }
   });
 
+  slides.auth = slide({
+    "name": "auth"
+  });
+
   slides.instructions = slide({
     name : "instructions",
     start: function() {
@@ -343,7 +347,7 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "instructions", "test", "separator", "trial", 'subj_info', 'thanks'];
+  exp.structure=["i0", "auth", "instructions", "test", "separator", "trial", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
 
@@ -380,4 +384,24 @@ function init() {
 	}
 
 	preload(imgs);
+
+}
+
+  function completedCaptcha(resp) {
+     $.ajax({
+    type: "POST",
+    url: "https://stanford.edu/~sebschu/cgi-bin/verify.php",
+    data : {"captcha" : resp},
+    success: function(data) {
+      if (data != "failure") {
+        exp[data]();
+      } else {
+        $(".loading").hide()
+        $(".captcha_error").show();
+      }
+      },
+    error: function() {
+      console.log("Error: form not sent");
+      },
+    });
 }

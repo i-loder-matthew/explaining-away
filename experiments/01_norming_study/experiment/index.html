@@ -11,6 +11,7 @@
     <script src="shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
     <script src="shared/js/underscore-min.js"></script>
     <script src="shared/js/uniqueturker.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- if you want to draw stuff: -->
     <!-- <script src="shared/js/raphael-min.js"></script> -->
 
@@ -73,6 +74,17 @@ $(function(){
       <br><br>
       If you agree to participate, please proceed to the study tasks.</p>
   </div>
+
+  <div class="slide" id="auth">
+	    <p>&nbsp;</p>
+			<div style="margin: 0 auto; width: 305px">
+	      <div class="g-recaptcha" data-callback="completedCaptcha" data-sitekey="6LcJQXQUAAAAACd2kKRHTxSnC_rz3TJREaRI47zO"></div>
+			</div>
+	    <div class="loading" style="display:none"><p>Loading HIT...</p></div>
+	    <div class="captcha_error" style="display:none">
+				<p style="color:#f00;">ERROR: You must pass the reCaptcha authentication before proceeding.</p>
+			</div>
+	  </div>
 
 <!--Consent form used in Stanford linguistics department and is good for ling245.
 Otherwise, modified to whatever is required for you given your affiliation.
