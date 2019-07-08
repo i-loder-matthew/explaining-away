@@ -107,16 +107,17 @@ function make_slides(f) {
         this.step = 2;
       } else if (this.step == 2) {
         $("#instructions-part2").hide();
-        $("#confirmation-questions").show();
         $(".err").hide();
         $("#instruction-scene").hide();
         $("#review-text").hide();
+        $("#confirmation-questions").show();
         if ($("input[name=bonus]:checked").val() == "no") {
           $(".err").show();
           $("#review-text").show();
-          this.step = 2;
+          this.step = 3;
         } else if ($("input[name=bonus]:checked").val() == "yes"){
           this.step = 3;
+          this.button();
         }
       } else if (this.step == 3) {
         $("#instructions-part3").show();
