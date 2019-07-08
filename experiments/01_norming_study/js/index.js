@@ -23,7 +23,6 @@ function build_trials(){
     });
     counter++;
   }
-  /*
   for (var i = 0; i < percentages.length; i++) {
     randomVersion = _.sample(version);
     trials.push({
@@ -75,7 +74,6 @@ function build_trials(){
     });
     counter++;
   }
-  */
   console.log(trials);
 
   return trials;
