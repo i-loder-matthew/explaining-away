@@ -114,7 +114,7 @@ function make_slides(f) {
           $(".err").show();
           $("#review-text").show();
           this.step = 2;
-        } else {
+        } else if ($("input[name=bonus]:checked").val() == "yes"){
           this.step = 3;
         }
       } else if (this.step == 3) {
