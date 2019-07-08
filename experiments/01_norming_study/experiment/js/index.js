@@ -108,6 +108,7 @@ function make_slides(f) {
       } else if (this.step == 2) {
         $("#instructions-part2").hide();
         $("#confirmation-questions").show();
+        $(".err").hide();
         $("#instruction-scene").hide();
         $("#review-text").hide();
         if ($("input[name=bonus]:checked").val() == "no") {
