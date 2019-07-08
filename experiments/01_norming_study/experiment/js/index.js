@@ -107,20 +107,23 @@ function make_slides(f) {
         this.step = 2;
       } else if (this.step == 2) {
         $("#instructions-part2").hide();
-        $("#instructions-part3").show();
-        this.step = 3;
-      } else if (this.step == 3) {
-        $("#instructions-part3").hide();
         $("#confirmation-questions").show();
         $("#instruction-scene").hide();
         $("#review-text").hide();
         if ($("input[name=bonus]:checked").val() == "no") {
           $(".err").show();
           $("#review-text").show();
+          this.step = 2;
+        } else {
           this.step = 3;
-        } else if ($("input[name=bonus]:checked").val() == "yes"){
-          exp.go()
         }
+      } else if (this.step == 3) {
+        $("#instructions-part3").show();
+        $("#instruction-scene").show();
+        $("#confirmation-questions").hide();
+        this.step = 4;
+      } else {
+        exp.go();
       }
     }
   });
@@ -128,7 +131,7 @@ function make_slides(f) {
   slides.test = slide({
     name: "test",
     present: [{
-      "seat": ["This is probably...", "This might be..."],
+      "seat": ["You'll probably get a window seat", "You might get a window seat"],
       "image": "./stim/images/4_window_40_v1.png",
       "statement-img": "./stim/text/text-3.png"
     }],
@@ -359,6 +362,13 @@ function init() {
       exp.go();
     }
   });
+
+  $(document).ready(function(){
+   var ut_id = "explainingaway00";
+   if (UTWorkerLimitReached(ut_id)) {
+     $(".slide").hide();
+     $("body").html("You have already completed the maximum number of HITs allowed by this requester. Please click 'Return HIT' to avoid any impact on your approval rating.");
+}});
 
   exp.go(); //show first slide
   imgs = [];

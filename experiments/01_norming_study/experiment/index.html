@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+
     <title>Linguistic Experiment</title>
 
     <!--JS-->
@@ -10,6 +10,7 @@
     <script src="shared/js/jquery-1.11.1.min.js"></script>
     <script src="shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
     <script src="shared/js/underscore-min.js"></script>
+    <script src="shared/js/uniqueturker.js"></script>
     <!-- if you want to draw stuff: -->
     <!-- <script src="shared/js/raphael-min.js"></script> -->
 
@@ -54,8 +55,23 @@ $(function(){
 
     <p id="cocolab">Interactive Language Processing Lab at Stanford</p>
     <p id="instruct-text">In the following experiment, you'll see a series of visual cues and be asked to answer some questions about them. The HIT should take ~8 minutes. Please pay attention, and answer carefully. Thank you!</p>
-    <i><small><small><strong><br>LEGAL INFORMATION</strong>:<br><br>We invite you to participate in a research study on language production and comprehension.<br>Your experimenter will ask you to do a linguistic task such as reading sentences or words, naming pictures or describing scenes, making up sentences of your own, or participating in a simple language game.<br><br>You will be paid for your participation at the posted rate.<br><br>There are no risks or benefits of any kind involved in this study.<br><br>If you have read this form and have decided to participate in this experiment, please understand your participation is voluntary and you have the right to withdraw your consent or discontinue participation at any time without penalty or loss of benefits to which you are otherwise entitled. You have the right to refuse to do particular tasks. Your individual privacy will be maintained in all published and written data resulting from the study.<br>You may print this form for your records.<br><br>CONTACT INFORMATION:<br>If you have any questions, concerns or complaints about this research study, its procedures, risks and benefits, you should contact the Protocol Director Penelope Eckert at<br>(650)-725-1564<br><br>If you are not satisfied with how this study is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a participant, please contact the Stanford Institutional Review Board (IRB) to speak to someone independent of the research team at (650)-723-2480 or toll free at 1-866-680-2906. You can also write to the Stanford IRB, Stanford University, 3000 El Camino Real, Five Palo Alto Square, 4th Floor, Palo Alto, CA 94306 USA.<br><br>If you agree to participate, please proceed to the study tasks.<br><br></small></small></i>
-    <button id="start_button" type="button">Start Experiment</button>
+    <p id="legal">
+    <strong>LEGAL INFORMATION:</strong><br>
+       We invite you to participate in a research study on language production and comprehension. Your experimenter will ask you to do a linguistic task such as reading sentences or words, naming pictures or describing scenes, making up sentences of your own, or participating in a simple language game.
+      <br><br>There are no risks or benefits of any kind involved in this study.
+      <br><br>
+      You will be paid for your participation at the posted rate.
+      <br><br>
+      If you have read this form and have decided to participate in this experiment, please
+      understand your participation is voluntary and you have the right to withdraw your consent or discontinue participation at any time without penalty or loss of benefits to which you are otherwise entitled. You have the right to refuse to do particular tasks. Your individual privacy will be maintained in all published and written data resulting from the study.   You may print this form for your records.
+      <br><br>
+      <strong>CONTACT INFORMATION:</strong><br>
+      If you have any questions, concerns or complaints about this research study, its procedures, risks and benefits, you should contact the Protocol Director Meghan Sumner (650) 723-4284.
+      <br><br>
+      If you are not satisfied with how this study is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a participant, please contact the Stanford Institutional Review Board (IRB) to speak to someone independent of the research team at (650)-723-2480 or toll free at 1-866-680-2906. You can also write to the Stanford IRB, Stanford University, 3000 El Camino Real, Five Palo Alto Square, 4th Floor, Palo Alto, CA 94306 USA.
+      <br><br>
+      If you agree to participate, please proceed to the study tasks.</p>
+    <button id="start_button" type="button">Continue</button>
   </div>
 
 <!--Consent form used in Stanford linguistics department and is good for ling245.
@@ -73,15 +89,15 @@ Otherwise, modified to whatever is required for you given your affiliation.
   </div>
   <div id="instructions-part2">
 
-    <p>This airline provides customers with two options: either they can pay $50 for a seat assignment or they get a seat assigned at random. Every time a customer pays for a seat reservation, the attendant gets a small bonus.
+    <p>This airline provides customers with two options: <strong>either they can pay $50 for a seat assignment or they get a seat assigned at random. Every time a customer pays for a seat reservation, the attendant gets a small bonus.</strong>
     <br></br>
-    The following scenes depict the customer asking the attendant about their possible seat assignment, to determine the likelihood of getting their preferred seat without paying for an assignment.</p>
+    The following scenes show the customer asking the attendant about their possible seat assignment, to determine how likely it is that they'll get their preferred seat without paying.</p>
 
 
     <input type="button" onclick="_s.button()" class="button" value="Continue">
   </div>
   <div id="instructions-part3">
-    <p>After looking carefully at the image, rate how likely you think it is that the attendant would respond with each of the sentences below. If you think that both options are unlikely, you can answer with a third option, "Something else." To rate the sentences, you will need to distribute the sliders so that they add up to 100 points. If you move the sliders so that the ranking totals above 100, then the slider will be pulled back to its original place. </p>
+    <p>After looking carefully at the image, rate how likely you think it is that the attendant would respond with one of two possible sentences. If you think that both options are unlikely, you can answer with a third option, "Something else." To rate the sentences, you will need to distribute sliders so that they add up to 100 points. If you move the sliders so that the ranking totals above 100, then the slider will be pulled back to its original place. Let's look at an example! </p>
 
     <input type="button" onclick="_s.button()" class="button" value="Continue">
   </div>
@@ -93,10 +109,10 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <p>Please answer the following question to make sure that you have understood the instructions:</p>
     <div id="confirmation1">
       <p><em>Does the airline attendant recieve a bonus if a customer pays for a seat reservation?</em></p>
-      <label><input type="radio" name="bonus" value="yes"/>Yes.</label>
+      <label><input type="radio" name="bonus" value="yes"/>Yes</label>
       <br></br>
-      <label><input type="radio" name="bonus" value="no"/>No.</label>
-      <p class="err"> The answer should be yes. Please review the instructions below and then continue: </p>
+      <label><input type="radio" name="bonus" value="no"/>No</label>
+      <p class="err"> The answer should be yes. Please review the instructions below, modify your response, and then continue: </p>
       <br></br>
       <div id="review-text">
         <p>This airline provides customers with two options: either they can pay $50 for a seat assignment or they get a seat assigned at random. Every time a customer pays for a seat reservation, the attendant gets a small bonus.
@@ -112,7 +128,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
 
 <div class="slide" id="test">
 
-  <p class="train-instructions">Consider the follwing trial item. Please adjust the sliders below so that they add up to 100 </p>
+    <p class="train-instructions">The following is a trial item. Please adjust the sliders below so that they add up to 100, and then hit continue to begin the experiment.</p>
    <div id="test-scene">
     <img src="./stim/images/1_window_0_v1.png" id="test-image">
     <img src="./stim/text/text-3.png" id="test-text" width="125" height="75">
@@ -163,7 +179,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
    </div>
 
   <div id="prompt">
-    <p>How likely do you think is it that the attendant will respond with each of the following sentences?</p>
+    <p>How likely do you think it is that the attendant will respond with each of the following sentences?</p>
 
     <p class="err"> Please make sure that the three ratings sum to 100!</p>
 
