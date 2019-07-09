@@ -4,7 +4,7 @@ Each participant sees a pair of speakers, a customer and an airline attendant, a
 
 ## Participants
 
-MTurk participants with US IP addresses and >95% approval. In total we collect data from ~80 particpants.
+MTurk participants with US IP addresses and >95% approval. In total we collect data from 80 particpants.
 
 ## Exclusion Criteria
 
