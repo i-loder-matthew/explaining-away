@@ -20,7 +20,7 @@ https://i-loder-matthew.github.io/explaining-away/experiments/01_norming_study/e
 
 ## Predictions
 
-We predict that the difference in AUC between the might ratings and the probably ratings will be significantly higher when the speakers are providing ratings for a negative context than when they are providing ratings for a positive context.  
+We predict that the difference in AUC between the might ratings and the probably ratings will be significantly higher when the speakers are providing ratings for a positive context than when they are providing ratings for a negative context.  
 
 ## Analysis
 
