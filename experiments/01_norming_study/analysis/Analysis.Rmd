@@ -174,12 +174,8 @@ auc_method1 = function(d) {
 auc_for_participants = function(d, method) {
   
   aucs = d %>% 
-    group_by(workerid)
-    
-    
-  aucs$auc_might = 0
-  aucs$auc_probably = 0
-  
+    group_by(workerid) %>%
+    summarize(auc_might = 0, auc_probably = 0)
   
 i = 1
 
