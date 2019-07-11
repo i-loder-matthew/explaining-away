@@ -274,6 +274,7 @@ function make_slides(f) {
         language : $("#language").val(),
         other_languages : $("#other-language").val(),
         asses : $('input[name="assess"]:checked').val(),
+        age: $('input[name="age"]:checked').val(),
         comments : $("#comments").val(),
         problems: $("#problems").val(),
         fairprice: $("#fairprice").val()
