@@ -16,8 +16,9 @@
 	color: red;
 }
 
-#tryagain {
+.feedback {
 	color: red;
+	font-style: oblique;
 }
 .scene-class {
 	position: relative;
