@@ -123,8 +123,8 @@ plot_conditions = function(d, plot_title) {
     guides(col=guide_legend(title="Expr.")) +
     colscale +
     theme(legend.position="bottom") + 
-    ggtitle(plot_title) +
-    facet_wrap(~valence)
+    ggtitle(plot_title)  +
+    facet_wrap(~valence) 
   
   p2 = ggplot(d, aes(x=percent_middle_f, y=rating, fill=modal)) + 
     geom_boxplot() +
@@ -152,8 +152,9 @@ plot(ps1$p1)
 ```
 ## Individual plots
 
-```{r}
+```{r by_participant_plots, fig.width=10, fig.height=20}
 plot(ps1$by_participant)
+
 ```
 
 ## AUC Computation
