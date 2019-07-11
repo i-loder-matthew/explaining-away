@@ -18,7 +18,7 @@
 
 .feedback {
 	color: red;
-	font-style: oblique;
+	font-weight: bold;
 }
 .scene-class {
 	position: relative;
