@@ -32,4 +32,4 @@ See analysis/analysis.Rmd for the exact analysis procedures.
 
 ## Pilot
 
-Prior to this study we conducted a pilot with 20 total participants, or 10 participants in each condition. Based on the performance in the pilot, which led to significant results, we have decided to go aheead with the actual experiment. 
+Prior to this study we conducted a pilot with 20 total participants, or 10 participants in each condition. Based on the performance in the pilot, which led to significant results, we have decided to go ahead with the actual experiment. 
