@@ -100,7 +100,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
 
   <div id="audio_test_1">
     <audio controls id="test-audio">
-      <source src="./stim/audio/test.mp3" id="test-source" type="audio/mp3">
+      <source src="./stim/audio/test.m4a" id="test-source" type="audio/mp3">
     </audio>
     <!-- <a href="#" onclick="$('#test-audio').trigger('play');return false;">Replay video</a> -->
 
@@ -123,7 +123,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <p>
       <label><input type="radio" name="audioquestion" value="aisle">I'd like an aisle seat.</label>
     </p>
-    <input type="button" onclick="_s.button()" class="button" value="Continue" id="audio_test-button">
+    <input type="button" onclick="_s.button()" class="button" value="Continue" id="audio_test-button" disabled>
   </div>
   <div id="audio_test_2">
     <p>You've chosen the wrong response, likely because your audio isn't working. Unfortunately, you will not be able to complete the HIT without sound, so please return this HIT.</p>
@@ -155,8 +155,6 @@ Otherwise, modified to whatever is required for you given your affiliation.
    <audio controls id="exposure-audio">
      <source src="" id="exposure-source" type="audio/mp3">
    </audio>
-
-   <a href="#" onclick="$('#exp-video').trigger('play');return false;">Replay video</a>
 
    <input type="button" onclick="_s.button()" class="button" value="Continue" id="exp-button">
 </div>

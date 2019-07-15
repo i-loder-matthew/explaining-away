@@ -322,7 +322,7 @@ function make_slides(f) {
 			}, 400);
 
 			$("input[name=audioquestion]").click(function() {
-				$("audio_test-button").attr("disabled", null);
+				$("#audio_test-button").attr("disabled", null);
 			})
 		},
     button: function() {
@@ -354,7 +354,7 @@ function make_slides(f) {
 
       $("#exposure-image").attr("src", stim["image"]);
       $("#exposure-text").attr("src", stim["request"]);
-      $("#exposure-audio").attr("src", stim["audio"]);
+      $("#exposure-source").attr("src", stim["audio"]);
 
       $("#exp-button").attr("disabled", "disabled");
 
