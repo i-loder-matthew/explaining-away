@@ -80,12 +80,20 @@ function make_slides(f) {
   });
 
   slides.instructions2 = slide({
-    name: "instructions1",
+    name: "instructions2",
     start: function() {
       $(".err").hide();
+      $("#instructions2-2").hide();
+      this.step = 1;
     },
     button: function() {
-      exp.go();
+      if (this.step == 1) {
+        $("#instructions2-1").hide();
+        $("#instructions2-2").show();
+        this.step = 2;
+      } else {
+        exp.go();
+      }
     }
   });
 
@@ -101,11 +109,16 @@ function make_slides(f) {
 
       this.stim = stim;
 
-      //$("#exp-button").attr("disabled", "disabled");
+      $("#exp-button").attr("disabled", "disabled");
       //$("#exposure-source").attr("src", stim[audio]);
       $("#exposure-text").attr("src", stim["request"]);
       $("#exposure-image").attr("src", stim["image"]);
       $("#exposure-audio").trigger("load");
+      $("#left-check1").attr("src", stim["check1"]);
+      $("#right-check2").attr("src", stim["check2"]);
+
+      this.stim.catch_trial = this.stim["catch_trial"];
+
 
       $("#exp_trial").fadeIn(700, function() {
 				window.setTimeout(function(){
@@ -114,16 +127,45 @@ function make_slides(f) {
 			});
     },
     button: function(response) {
-      var t = this;
-      exp.data_exp_trials.push(this.stim);
+      this.response = response;
+      if (this.stim.catch_trial == 1 && this.step == 0) {
+        $("#exp_trial-content").hide();
+        $("#exp_trial-catch").show();
+        this.step = 1;
+      } else {
+        var catch_trial_correct = -1;
+        var order = this.stim["order"];
+
+        if (this.stim.catch_trial == 1) {
+
+          if (order == 0) {
+            if (this.response){
+              catch_trial_correct = 1;
+            } else if (!this.response){
+              catch_trial_correct = 0;
+            }
+          } else if (order == 1) {
+            if (!this.response){
+              catch_trial_correct = 1;
+            } else if (this.response){
+              catch_trial_correct = 0;
+            }
+          }
+        }
+
+        this.stim.catch_trial_answer_correct =  catch_trial_correct;
+
+        var t = this;
+        exp.data_exp_trials.push(this.stim);
 				$("#exp_trial").fadeOut(300, function() {
 					window.setTimeout(function() {
 						_stream.apply(t);
 					}, 700);
 				});
+      }
     }
 
-	  });
+  });
 
   slides.instructions1 = slide({
     name : "instructions1",
@@ -133,14 +175,18 @@ function make_slides(f) {
       $("#instructions1-4").hide();
       $("#instruction-scene").hide();
       $(".err").hide();
-      this.step = 1;
+      if (CONDITION == 1 || CONDITION == 3) {
+        this.step = 2;
+      } else {
+        this.step = 3;
+      }
     },
     button : function() {
       if (this.step == 1) {
         $("#instructions1-1").hide();
 				$("#instructions1-2").show();
-        this.step = 2;
       } else if (this.step == 2) {
+        $("#instructions1-1").hide();
         $("#instructions1-2").hide();
         $("#instructions1-3").show();
         $("#instruction-scene").show();
@@ -270,6 +316,7 @@ function make_slides(f) {
     start : function() {
       exp.data= {
           "trials" : exp.data_trials,
+          "exp_trials": exp.data_exp_trials,
           "catch_trials" : exp.catch_trials,
           "system" : exp.system,
           "condition" : exp.condition,
@@ -298,7 +345,7 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "audio_test", "instructions1", "exp_trial", "separator", "instructions2", "trial", 'subj_info', 'thanks'];
+  exp.structure=["i0", "audio_test", "instructions1", "exp_trial", "instructions2", "trial", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
   exp.data_exp_trials = [];
@@ -334,6 +381,11 @@ function init() {
 	for (var i = 0; i < exp.trials.length; i++) {
 		imgs.push(exp.trials[i].image);
 	}
+
+  $("#exposure-audio").bind("ended", function() {
+		$("#exp-button").attr("disabled", null);
+
+	});
 
 	preload(imgs);
 

@@ -12,6 +12,16 @@
 	height: 650px;
 }
 
+.attention-image {
+	object-fit: cover;
+	width: 188;
+	height: 408;
+	object-position: 100% 100%;
+}
+
+.attention-container {
+
+}
 .err {
 	color: red;
 }
