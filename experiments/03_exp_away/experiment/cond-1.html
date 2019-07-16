@@ -8,7 +8,7 @@
 
     <script type="text/javascript">
 
-      var CONDITION = 1; // Confident Optimist
+      var CONDITION = 2; // Confident Optimist
 		</script>
 
     <!-- external general utilities -->
@@ -41,7 +41,7 @@
     <link href="css/local-style.css" rel="stylesheet" type="text/css"/>
 
     <!-- experiment file -->
-    <!-- <script src="js/stims.js"></script> -->
+    <script src="js/stims.js"></script>
     <script src="js/index.js"></script>
 
 <!-- Load consent form
@@ -123,8 +123,8 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <p>
       <label><input type="radio" name="audioquestion" value="aisle">I'd like an aisle seat.</label>
     </p>
-    <input type="button" onclick="_s.button()" class="button" value="Continue" id="audio_test-button" disabled>
   </div>
+  <input type="button" onclick="_s.button()" class="button" value="Continue" id="audio_test-button">
   <div id="audio_test_2">
     <p>You've chosen the wrong response, likely because your audio isn't working. Unfortunately, you will not be able to complete the HIT without sound, so please return this HIT.</p>
 
@@ -132,40 +132,8 @@ Otherwise, modified to whatever is required for you given your affiliation.
   </div>
 </div>
 
-<div class="slide" id="instructions1">
-  <h3>Instructions (Part 1)</h3>
-
-  <div id="instructions1-1">
-
-    <p>On the following pages, you will see a series of scenes with a customer and an airline representative, along with a map of the seats that only the representative can see:
-    </p>
-
-    <input type="button" onclick="_s.button()" class="button" value="Continue">
-  </div>
-
-</div>
-
-<div class="slide" id="exposures">
-  <p class="train-instructions">Consider the following scene:</p>
-   <div class="scene-class" id="exposure-scene">
-    <img src="./stim/images/prob_0_1.png" class="image" id="exposure-image">
-    <img src="./stim/conditions/mug-happy.png" class="mug">
-    <img src="./stim/text/text-1.png" class="text" id="exposure-text" width="125" height="75">
-   </div>
-   <audio controls id="exposure-audio">
-     <source src="" id="exposure-source" type="audio/mp3">
-   </audio>
-
-   <input type="button" onclick="_s.button()" class="button" value="Continue" id="exp-button">
-</div>
-
-<div class="slide" id="separator">
-  <p> A week later, on a normal day...</p>
-  <input type="button" onclick="_s.button()" class="button" value="Continue">
-</div>
-
 <div class="slide" id="instructions2">
-  <h3>Instructions Part 2</h3>
+  <h3>Instructions (Part 1)</h3>
 
   <div id="instructions2-1">
 
@@ -175,14 +143,55 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <input type="button" onclick="_s.button()" class="button" value="Continue">
   </div>
 
-  <div id="instructions2-2">
+</div>
+
+<div class="slide" id="exp_trial">
+  <div id="exp_trial-content">
+    <p class="train-instructions">Consider the following scene:</p>
+     <div class="scene-class" id="exposure-scene">
+      <img src="./stim/images/prob_0_1.png" class="image" id="exposure-image">
+      <img src="./stim/conditions/mug-happy.png" class="mug">
+      <img src="./stim/text/text-1.png" class="text" id="exposure-text" width="125" height="75">
+     </div>
+     <audio controls id="exposure-audio">
+       <source src="./stim/audio/test.m4a" id="exposure-source" type="audio/mp3">
+     </audio>
+
+     <input type="button" onclick="_s.button()" class="button" value="Continue" id="exp-button">
+ </div>
+
+ <div id="exp_trial-catch">
+   <p> Please select which seat map you saw in the previous slide:</p>
+
+   <label><input type="radio" name="attention_check" val="1">Number 1</label>
+   <label><input type="radio" name="attention_check" val="2">Number 2</label>
+ </div>
+</div>
+
+<div class="slide" id="separator">
+  <p> A week later, on a normal day...</p>
+  <input type="button" onclick="_s.button()" class="button" value="Continue">
+</div>
+
+<div class="slide" id="instructions1">
+  <h3>Instructions Part 2</h3>
+
+  <div id="instructions1-1">
+
+    <p>On the following pages, you will see a series of scenes with a customer and an airline representative, along with a map of the seats that only the representative can see:
+    </p>
+
+    <input type="button" onclick="_s.button()" class="button" value="Continue">
+  </div>
+
+  <div id="instructions1-2">
     <p>Here is the airline representative. Today she is having a particularly great day, and is feeling <strong>optimistic and helpful.</strong></p>
     <img src="./stim/conditions/happy.png" alt="Happy flight attendant" id="mood-image" width="275px" height="300px">
     <br></br>
     <input type="button" onclick="_s.button()" class="button" value="Continue">
   </div>
 
-  <div id="instructions2-3">
+  <div id="instructions1-3">
 
     <p>This airline provides customers with two options: <strong>either they can pay $50 for a seat assignment or they get a seat assigned at random.</strong>
     <br></br>
@@ -192,7 +201,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <input type="button" onclick="_s.button()" class="button" value="Continue">
   </div>
 
-  <div id="instructions2-4">
+  <div id="instructions1-4">
     <p>After looking carefully at the seat map, rate how likely you think it is that the representative would respond with one of two possible sentences. If you think both options are unlikely, you can respond with a third option, “something else”.
     <br></br>
     To rate the sentences you will need to distribute the sliders so that they add up to 100 points. If you move the sliders so that the ranking totals above 100, then the slider will be pulled back to its original place. Let's look at an example! </p>

@@ -5,6 +5,7 @@ function build_trials(){
   var percentages = [0, 10, 25, 40, 50, 60, 75, 90, 100];
   var version = [1, 2, 3, 4, 5];
   var cond = CONDITION;
+  var check = [0, 0, 0, 0, 1];
   // Add probabilities and versions to trials
   for (var j = 0; j < 2; j++) {
     for (var i = 0; i < percentages.length; i++) {
@@ -41,264 +42,6 @@ function build_trials(){
   return trials;
 }
 
-function build_exposures() {
-  var exposures = [];
-  var version = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  var cond = CONDITION;
-
-  if (cond == 1) {
-    randomVersion = _.sample(version);
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "optimist",
-        "modal": "probably",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "happy-probably.mp3",
-        "text": "You'll probably get a window seat",
-        "image": ".stim/images/exposures_60_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "optimist",
-        "modal": "probably",
-        "seat": "aisle",
-        "request": "./stim/text/text-2.png",
-        "audio": "happy-probably.mp3",
-        "text": "You'll probably get a aisle seat",
-        "image": ".stim/images/exposures_40_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "optimist",
-        "modal": "might",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "happy-might.mp3",
-        "text": "You might get a window seat",
-        "image": ".stim/images/exposures_25_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "optimist",
-        "modal": "might",
-        "seat": "aisle",
-        "request": "./stim/text/text-2.png",
-        "audio": "happy-might.mp3",
-        "text": "You might get an aisle seat",
-        "image": ".stim/images/exposures_75_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "optimist",
-        "modal": "bare",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "happy-bare.mp3",
-        "text": "You'll a window seat",
-        "image": ".stim/images/prob_100_1.png"
-      });
-    }
-
-  } else if (cond == 2) {
-    randomVersion = _.sample(version);
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "probably",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "control-probably.mp3",
-        "text": "You'll probably get a window seat",
-        "image": ".stim/images/exposures_60_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "probably",
-        "seat": "aisle",
-        "request": "./stim/text/text-2.png",
-        "audio": "control-probably.mp3",
-        "text": "You'll probably get a aisle seat",
-        "image": ".stim/images/exposures_40_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "might",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "control-might.mp3",
-        "text": "You might get a window seat",
-        "image": ".stim/images/exposures_25_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "might",
-        "seat": "aisle",
-        "request": "./stim/text/text-2.png",
-        "audio": "control-might.mp3",
-        "text": "You might get an aisle seat",
-        "image": ".stim/images/exposures_75_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "bare",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "control-bare.mp3",
-        "text": "You'll a window seat",
-        "image": ".stim/images/prob_100_1.png"
-      });
-    }
-  } else if (cond == 3) {
-    randomVersion = _.sample(version);
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "pessimist",
-        "modal": "probably",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "angry-probably.mp3",
-        "text": "You'll probably get a window seat",
-        "image": ".stim/images/exposures_90_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "pessimist",
-        "modal": "probably",
-        "seat": "aisle",
-        "request": "./stim/text/text-2.png",
-        "audio": "angry-probably.mp3",
-        "text": "You'll probably get a aisle seat",
-        "image": ".stim/images/exposures_10_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "pessimist",
-        "modal": "might",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "angry-might.mp3",
-        "text": "You might get a window seat",
-        "image": ".stim/images/exposures_60_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "pessimist",
-        "modal": "might",
-        "seat": "aisle",
-        "request": "./stim/text/text-2.png",
-        "audio": "angry-might.mp3",
-        "text": "You might get an aisle seat",
-        "image": ".stim/images/exposures_40_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "pessimist",
-        "modal": "bare",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "angry-bare.mp3",
-        "text": "You'll a window seat",
-        "image": ".stim/images/prob_100_1.png"
-      });
-    }
-  } else if (cond == 4) {
-    randomVersion = _.sample(version);
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "probably",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "control-probably.mp3",
-        "text": "You'll probably get a window seat",
-        "image": ".stim/images/exposures_90_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "probably",
-        "seat": "aisle",
-        "request": "./stim/text/text-2.png",
-        "audio": "control-probably.mp3",
-        "text": "You'll probably get a aisle seat",
-        "image": ".stim/images/exposures_10_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "might",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "control-might.mp3",
-        "text": "You might get a window seat",
-        "image": ".stim/images/exposures_60_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "might",
-        "seat": "aisle",
-        "request": "./stim/text/text-2.png",
-        "audio": "control-might.mp3",
-        "text": "You might get an aisle seat",
-        "image": ".stim/images/exposures_40_" + randomVersion + ".png"
-      });
-    }
-    for (let i = 0; i < 5; i ++) {
-      exposures.push({
-        "condtion": cond,
-        "mood": "control",
-        "modal": "bare",
-        "seat": "window",
-        "request": "./stim/text/text-1.png",
-        "audio": "control-bare.mp3",
-        "text": "You'll a window seat",
-        "image": ".stim/images/prob_100_1.png"
-      });
-    }
-  }
-
-}
-
 function make_slides(f) {
   var   slides = {};
 
@@ -317,6 +60,7 @@ function make_slides(f) {
     name: "audio_test",
     start: function() {
 			$("#audio_test_2").hide();
+      $("#audio_test-button").attr("disabled", "disabled");
 			window.setTimeout(function() {
 				$("#test-audio").trigger("play");
 			}, 400);
@@ -326,7 +70,7 @@ function make_slides(f) {
 			})
 		},
     button: function() {
-      if (("input[name=audioquestion]:checked").val() !== "middle") {
+      if ($("input[name=audioquestion]:checked").val() != "middle") {
         $("#audio_test_1").hide();
         $("#audio_test_2").show();
       } else {
@@ -335,7 +79,7 @@ function make_slides(f) {
     }
   });
 
-  slides.instructions1 = slide({
+  slides.instructions2 = slide({
     name: "instructions1",
     start: function() {
       $(".err").hide();
@@ -345,54 +89,65 @@ function make_slides(f) {
     }
   });
 
-  slides.exposures = slide({
-    name: "exposures",
+  slides.exp_trial = slide({
+    name: "exp_trial",
     present: exp.exposures,
     present_handle: function(stim) {
-      $(".err").hide();
+
+			this.step = 0;
+
+			$("#exp_trial-catch").hide();
+			$("#exp_trial-content").show();
+
       this.stim = stim;
 
-      $("#exposure-image").attr("src", stim["image"]);
+      //$("#exp-button").attr("disabled", "disabled");
+      //$("#exposure-source").attr("src", stim[audio]);
       $("#exposure-text").attr("src", stim["request"]);
-      $("#exposure-source").attr("src", stim["audio"]);
-
-      $("#exp-button").attr("disabled", "disabled");
+      $("#exposure-image").attr("src", stim["image"]);
+      $("#exposure-audio").trigger("load");
 
       $("#exp_trial").fadeIn(700, function() {
 				window.setTimeout(function(){
-					$("#exp-video").trigger("play");
+					$("#exposure-audio").trigger("play");
 				}, 400);
 			});
-
     },
-    button: function() {
-
+    button: function(response) {
+      var t = this;
+      exp.data_exp_trials.push(this.stim);
+				$("#exp_trial").fadeOut(300, function() {
+					window.setTimeout(function() {
+						_stream.apply(t);
+					}, 700);
+				});
     }
-  });
 
-  slides.instructions2 = slide({
-    name : "instructions2",
+	  });
+
+  slides.instructions1 = slide({
+    name : "instructions1",
     start: function() {
-      $("#instructions-part2").hide();
-      $("#instructions-part3").hide();
-      $("#instructions-part4").hide();
+      $("#instructions1-2").hide();
+      $("#instructions1-3").hide();
+      $("#instructions1-4").hide();
       $("#instruction-scene").hide();
       $(".err").hide();
       this.step = 1;
     },
     button : function() {
       if (this.step == 1) {
-        $("#instructions-part1").hide();
-				$("#instructions-part2").show();
+        $("#instructions1-1").hide();
+				$("#instructions1-2").show();
         this.step = 2;
       } else if (this.step == 2) {
-        $("#instructions-part2").hide();
-        $("#instructions-part3").show();
+        $("#instructions1-2").hide();
+        $("#instructions1-3").show();
         $("#instruction-scene").show();
         this.step = 3;
       } else if (this.step == 3) {
-        $("#instructions-part3").hide();
-        $("#instructions-part4").show();
+        $("#instructions1-3").hide();
+        $("#instructions1-4").show();
         this.step = 4;
       } else if (this.step = 4) {
         exp.go();
@@ -543,9 +298,10 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "audio_test", "instructions1", "exposures", "separator", "instructions2", "trial", 'subj_info', 'thanks'];
+  exp.structure=["i0", "audio_test", "instructions1", "exp_trial", "separator", "instructions2", "trial", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
+  exp.data_exp_trials = [];
 
   //make corresponding slides:
   exp.slides = make_slides(exp);
