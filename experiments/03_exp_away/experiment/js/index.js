@@ -19,7 +19,7 @@ function build_trials(){
         "reverse_sent_order": reverse_sent_order ? 1 : 0,
         "statement": "I would like a window seat...",
         "statement-img": "./stim/text/text-1.png",
-        "seat": reverse_sent_order ? [["You might get a window seat", "might"], ["You'll probably get a window seat", "probably"]] : [["You'll probably get a window seat", "probably"], ["You might get a window seat", "might"]],
+        "seat": reverse_sent_order ? [["You might get one.", "might"], ["You'll probably get one.", "probably"]] : [["You'll probably get one.", "probably"], ["You might get one.", "might"]],
         "percent_window": percentages[i],
         "version": randomVersion,
         "image": "./stim/images/" + "prob_" + percentages[i] + "_" + randomVersion + ".png",
@@ -34,7 +34,7 @@ function build_trials(){
         "reverse_sent_order": reverse_sent_order ? 1 : 0,
         "statement": "I would like an aisle seat...",
         "statement-img": "./stim/text/text-2.png",
-        "seat": reverse_sent_order ? [["You might get an aisle seat", "might"], ["You'll probably get an aisle seat", "probably"]] : [["You'll probably get an aisle seat", "probably"], ["You might get an aisle seat", "might"]],
+        "seat": reverse_sent_order ? [["You might get one.", "might"], ["You'll probably get one.", "probably"]] : [["You'll probably get one.", "probably"], ["You might get one.", "might"]],
         "percent_window": percentages[i],
         "version": randomVersion,
         "image": "./stim/images/" + "prob_" + percentages[i] + "_" + randomVersion + ".png"
