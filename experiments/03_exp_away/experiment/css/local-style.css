@@ -19,9 +19,6 @@
 	object-position: 100% 100%;
 }
 
-.attention-container {
-
-}
 .err {
 	color: red;
 }
@@ -51,6 +48,13 @@
 	left: 90;
 }
 
+.cover {
+	height:200;
+	width: 216;
+	position: absolute;
+	top: 20;
+	left: 55;
+}
 .mug {
 	position: absolute;
 	top: 275;
