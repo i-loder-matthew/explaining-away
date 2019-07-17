@@ -55,7 +55,7 @@ function build_exposures() {
       "modal": "might",
       "seat": "window",
       "request": "./stim/text/text-1.png",
-      "audio": CONDITION == 1 ? "./stim/audio/happy_might1_s" + speaker + ".mp3" : CONDITION == 3 ? "./stim/audio/angry_might1_s" + speaker + ".mp3" : "./stim/audio/control_might1" + speaker + ".mp3",
+      "audio": CONDITION == 1 ? "./stim/audio/happy_might1_s" + speaker + ".mp3" : CONDITION == 3 ? "./stim/audio/angry_might1_s" + speaker + ".mp3" : "./stim/audio/control_might1_s" + speaker + ".mp3",
       "text": "You might get a window seat",
       "catch_trial": check[i],
       "image": image,
