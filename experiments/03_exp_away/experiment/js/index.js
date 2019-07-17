@@ -177,11 +177,7 @@ function make_slides(f) {
       $("#instructions1-4").hide();
       $("#instruction-scene").hide();
       $(".err").hide();
-      if (CONDITION == 1 || CONDITION == 3) {
-        this.step = 1;
-      } else {
-        this.step = 2;
-      }
+      this.step = 1;
     },
     button : function() {
       if (this.step == 1) {
