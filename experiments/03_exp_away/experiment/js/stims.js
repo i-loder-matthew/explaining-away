@@ -4,6 +4,7 @@ function build_exposures() {
   var cond = CONDITION;
   var check = [1, 0, 0, 0, 1];
   var order = [0, 1];
+  var speaker = random_speaker;
 
   randomVersion = _.shuffle(version);
   for (let i = 0; i < 5; i ++) {
@@ -16,7 +17,7 @@ function build_exposures() {
       "modal": "probably",
       "seat": "window",
       "request": "./stim/text/text-1.png",
-      "audio": CONDITION == 1 ? "happy-probably1.mp3" : CONDITION == 3 ? "angry-probably1.mp3" : "control-probably1.mp3",
+      "audio": CONDITION == 1 ? "./stim/audio/happy_probably1_s" + speaker+ ".mp3" : CONDITION == 3 ? "./stim/audio/angry_probably1_s" + speaker + ".mp3" : "./stim/audio/control_probably1_s" + speaker + ".mp3",
       "text": "You'll probably get a window seat",
       "catch_trial": check[i],
       "image": image,
@@ -35,7 +36,7 @@ function build_exposures() {
       "modal": "probably",
       "seat": "aisle",
       "request": "./stim/text/text-2.png",
-      "audio": CONDITION == 1 ? "happy-probably2.mp3" : CONDITION == 3 ? "angry-probably2.mp3" : "control-probably2.mp3",
+      "audio": CONDITION == 1 ? "./stim/audio/happy_probably2_s" + speaker + ".mp3" : CONDITION == 3 ? "./stim/audio/angry_probably2_s" + speaker + ".mp3" : "./stim/audio/control_probably2_s" + speaker + ".mp3",
       "text": "You'll probably get a aisle seat",
       "catch_trial": check[i],
       "image": image,
@@ -54,7 +55,7 @@ function build_exposures() {
       "modal": "might",
       "seat": "window",
       "request": "./stim/text/text-1.png",
-      "audio": CONDITION == 1 ? "happy-might1.mp3" : CONDITION == 3 ? "angry-might1.mp3" : "control-might1.mp3",
+      "audio": CONDITION == 1 ? "./stim/audio/happy_might1_s" + speaker + ".mp3" : CONDITION == 3 ? "./stim/audio/angry_might1_s" + speaker + ".mp3" : "./stim/audio/control_might1" + speaker + ".mp3",
       "text": "You might get a window seat",
       "catch_trial": check[i],
       "image": image,
@@ -73,7 +74,7 @@ function build_exposures() {
       "modal": "might",
       "seat": "aisle",
       "request": "./stim/text/text-2.png",
-      "audio": CONDITION == 1 ? "happy-might2.mp3" : CONDITION == 3 ? "angry-might2.mp3" : "control-might2.mp3",
+      "audio": CONDITION == 1 ? "./stim/audio/happy_might2_s" + speaker + ".mp3" : CONDITION == 3 ? "./stim/audio/angry_might2_s" + speaker + ".mp3" : "./stim/audio/control_might2_s" + speaker + ".mp3",
       "text": "You might get an aisle seat",
       "catch_trial": check[i],
       "image": image,
@@ -92,7 +93,7 @@ function build_exposures() {
       "modal": "bare",
       "seat": "window",
       "request": "./stim/text/text-1.png",
-      "audio": CONDITION == 1 ? "happy-bare.mp3" : CONDITION == 3 ? "angry-bare.mp3" : "control-bare.mp3",
+      "audio": CONDITION == 1 ? "./stim/audio/happy_bare_s" + speaker + ".mp3" : CONDITION == 3 ? "./stim/audio/angry_bare_s" + speaker + ".mp3" : "./stim/audio/control_bare_s" + speaker + ".mp3",
       "text": "You'll a window seat",
       "catch_trial": check[i],
       "image": image,

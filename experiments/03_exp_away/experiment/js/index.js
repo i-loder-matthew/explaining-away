@@ -1,5 +1,7 @@
 var reverse_sent_order = _.sample([true, false]);
 
+var random_speaker = _.sample([1, 2])
+
 function build_trials(){
   var trials = [];
   var percentages = [0, 10, 25, 40, 50, 60, 75, 90, 100];
@@ -110,7 +112,7 @@ function make_slides(f) {
       this.stim = stim;
 
       $("#exp-button").attr("disabled", "disabled");
-      //$("#exposure-source").attr("src", stim[audio]);
+      $("#exposure-source").attr("src", stim["audio"]);
       $("#exposure-text").attr("src", stim["request"]);
       $("#exposure-image").attr("src", stim["image"]);
       $("#exposure-audio").trigger("load");
@@ -176,15 +178,16 @@ function make_slides(f) {
       $("#instruction-scene").hide();
       $(".err").hide();
       if (CONDITION == 1 || CONDITION == 3) {
-        this.step = 2;
+        this.step = 1;
       } else {
-        this.step = 3;
+        this.step = 2;
       }
     },
     button : function() {
       if (this.step == 1) {
         $("#instructions1-1").hide();
 				$("#instructions1-2").show();
+        this.step = 2;
       } else if (this.step == 2) {
         $("#instructions1-1").hide();
         $("#instructions1-2").hide();
