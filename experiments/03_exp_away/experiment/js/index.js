@@ -125,7 +125,7 @@ function make_slides(f) {
       $("#exp_trial").fadeIn(700, function() {
 				window.setTimeout(function(){
 					$("#exposure-audio").trigger("play");
-				}, 400);
+				}, 1000);
 			});
     },
     button: function(response) {
@@ -384,6 +384,10 @@ function init() {
 	for (var i = 0; i < exp.trials.length; i++) {
 		imgs.push(exp.trials[i].image);
 	}
+
+  for (var i = 0; i < exp.exposures.length; i ++) {
+    imgs.push(exp.exposures[i].image);
+  }
 
   $("#exposure-audio").bind("ended", function() {
 		$("#exp-button").attr("disabled", null);
