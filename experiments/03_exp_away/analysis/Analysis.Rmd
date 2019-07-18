@@ -81,6 +81,9 @@ trials_cond3 = format_data(read.csv("../data/03_exp_away_cond3-trials.csv"))
 trials_cond4 = format_data(read.csv("../data/03_exp_away_cond4-trials.csv"))
 
 catch_trials1 = format_catch_trials(read.csv("../data/03_exp_away_cond1-exp_trials.csv"))
+catch_trials2 = format_catch_trials(read.csv("../data/03_exp_away_cond2-exp_trials.csv"))
+catch_trials3 = format_catch_trials(read.csv("../data/03_exp_away_cond3-exp_trials.csv"))
+catch_trials4 = format_catch_trials(read.csv("../data/03_exp_away_cond4-exp_trials.csv"))
 
 d1 = trials_cond1
 d2 = trials_cond2
@@ -99,7 +102,7 @@ d4$Answer.condition = "cautious"
 exclude_catch = function(catch, d) {
   d_response = catch %>% 
     group_by(workerid) %>%
-    summarise(correct_m = mean(catch_trial_anwswer_correct))
+    summarise(correct_m = sum(catch_trial_answer_correct))
   
   exclude = d_response %>%
     filter(correct_m < 7.0) %>%
@@ -109,6 +112,12 @@ exclude_catch = function(catch, d) {
   
   d = d %>% filter(!(workerid %in% exclude))
 }
+
+d1 = exclude_catch(catch_trials1, d1)
+d2 = exclude_catch(catch_trials2, d2)
+d3 = exclude_catch(catch_trials3, d3)
+d4 = exclude_catch(catch_trials4, d4)
+
 
 ```
 
