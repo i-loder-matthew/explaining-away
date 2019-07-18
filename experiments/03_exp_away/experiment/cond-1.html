@@ -143,6 +143,27 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <input type="button" onclick="_s.button()" class="button" value="Continue">
   </div>
   <div id="instructions2-2">
+    <p> Please rate what you think the mood of the flight attendant is: </p>
+    <table>
+      <tr>
+        <td></td>
+        <td><p style="text-align: center;"><strong>Normal</strong></p></td>
+        <td></td>
+      <tr>
+        <td><strong>Angry and pessimistic</strong></td>
+        <td>
+          <div style="width: 400px; padding: 15px; margin: 0 auto; overflow: hidden;">
+            <span id="mood-slider2" style="display:block; width:370px; float:left; margin: 0 20px;"></label>
+          </div>
+        </td>
+        <td><strong>Happy and Optimistic</strong></td>
+      </tr>
+    </table>
+    <input type="button" onclick="_s.button()" class="button" value="Continue">
+    <br></br>
+    <img src="./stim/conditions/control.png" alt="Normal flight attendant" id="mood-image" width="275px" height="300px">
+  </div>
+  <div id="instructions2-3">
     <p>After looking carefully at the seat map, rate how likely you think it is that the representative would respond with one of two possible sentences. If you think both options are unlikely, you can respond with a third option, “something else”.
     <br></br>
     To rate the sentences you will need to distribute the sliders so that they add up to 100 points. If you move the sliders so that the ranking totals above 100, then the slider will be pulled back to its original place. Let's start the next part! </p>
@@ -162,9 +183,9 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <p class="train-instructions">Consider the following scene:</p>
      <div class="scene-class" id="exposure-scene">
       <img src="./stim/images/prob_0_1.png" class="image" id="exposure-image">
-      <img src="./stim/images/cover.png" class="cover">
+      <!-- <img src="./stim/images/cover.png" class="cover"> -->
       <img src="./stim/conditions/mug-happy.png" class="mug">
-      <!-- <img src="./stim/text/text-1.png" class="text" id="exposure-text" width="125" height="75"> -->
+      <img src="./stim/text/text-1.png" class="text" id="exposure-text" width="125" height="75">
      </div>
      <br></br>
      <div>
@@ -213,6 +234,31 @@ Otherwise, modified to whatever is required for you given your affiliation.
 
   <div id="instructions1-3">
 
+    <p> Please rate what you think the mood of the flight attendant is: </p>
+
+    <table>
+      <tr>
+        <td></td>
+        <td><p style="text-align: center;"><strong>Normal</strong></p></td>
+        <td></td>
+      <tr>
+        <td><strong>Angry and pessimistic</strong></td>
+        <td>
+          <div style="width: 400px; padding: 15px; margin: 0 auto; overflow: hidden;">
+            <span id="mood-slider1" style="display:block; width:370px; float:left; margin: 0 20px;"></label>
+          </div>
+        </td>
+        <td><strong>Happy and Optimistic</strong></td>
+      </tr>
+    </table>
+
+    <input type="button" onclick="_s.button()" class="button" value="Continue">
+    <br></br>
+    <img src="./stim/conditions/happy.png" alt="Happy flight attendant" id="mood-image" width="275px" height="300px">
+  </div>
+
+  <div id="instructions1-4">
+
     <p>This airline provides customers with two options: <strong>either they can pay $50 for a seat assignment or they get a seat assigned at random.</strong>
     <br></br>
     The following scenes show the customer asking the representative about their possible seat assignment, to determine how likely it is that they'll get their preferred seat without paying.</p>
@@ -221,7 +267,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <input type="button" onclick="_s.button()" class="button" value="Continue">
   </div>
 
-  <div id="instructions1-4">
+  <div id="instructions1-5">
     <p>On the following pages, please listen to the flight attendant respond to a customer’s request.</p>
 
     <input type="button" onclick="_s.button()" class="button" value="Continue">

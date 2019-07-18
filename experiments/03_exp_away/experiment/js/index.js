@@ -86,13 +86,23 @@ function make_slides(f) {
     start: function() {
       $(".err").hide();
       $("#instructions2-2").hide();
+      $("#instructions2-3").hide();
       this.step = 1;
     },
-    button: function() {
+    button: function(response) {
       if (this.step == 1) {
         $("#instructions2-1").hide();
         $("#instructions2-2").show();
+        utils.make_slider("#mood-slider2")
         this.step = 2;
+      } else if (this.step == 2) {
+        $("#instructions2-2").hide();
+        $("#instructions2-3").show();
+        exp.data_trials.push({
+          "type": "mood2",
+          "mood_rating": $("#mood-slider2").slider("option", "value")
+        });
+        this.step = 3;
       } else {
         exp.go();
       }
@@ -175,26 +185,35 @@ function make_slides(f) {
       $("#instructions1-2").hide();
       $("#instructions1-3").hide();
       $("#instructions1-4").hide();
+      $("#instructions1-5").hide();
       $("#instruction-scene").hide();
       $(".err").hide();
       this.step = 1;
     },
-    button : function() {
+    button : function(response) {
       if (this.step == 1) {
         $("#instructions1-1").hide();
 				$("#instructions1-2").show();
         this.step = 2;
       } else if (this.step == 2) {
-        $("#instructions1-1").hide();
         $("#instructions1-2").hide();
         $("#instructions1-3").show();
-        $("#instruction-scene").show();
+        utils.make_slider("#mood-slider1");
         this.step = 3;
       } else if (this.step == 3) {
         $("#instructions1-3").hide();
         $("#instructions1-4").show();
+        $("#instruction-scene").show();
+        exp.data_trials.push({
+          "type": "mood1",
+          "mood_rating": $("#mood-slider1").slider("option", "value")
+        });
         this.step = 4;
-      } else if (this.step = 4) {
+      } else if (this.step == 4) {
+        $("#instructions1-4").hide();
+        $("#instructions1-5").show();
+        this.step = 5;
+      } else if (this.step == 5){
         exp.go();
       }
     }
