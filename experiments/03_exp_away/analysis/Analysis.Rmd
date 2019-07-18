@@ -64,69 +64,85 @@ format_data = function(d) {
   return(d_comparison)
 }
 
+format_catch_trials = function(d) {
+  d_catch = d %>% filter(.,(catch_trial == 1))
+  
+  return(d_catch)
+}
+
 ```
 
 ## Load data:
 
 ```{r data, echo=FALSE}
-trials_cond1 = format_data(read.csv("../data/02_norming_cond1-trials.csv"))
-trials_cond2 = format_data(read.csv("../data/02_norming_cond2-trials.csv"))
+trials_cond1 = format_data(read.csv("../data/03_exp_away_cond1-trials.csv"))
+trials_cond2 = format_data(read.csv("../data/03_exp_away_cond2-trials.csv"))
+trials_cond3 = format_data(read.csv("../data/03_exp_away_cond3-trials.csv"))
+trials_cond4 = format_data(read.csv("../data/03_exp_away_cond4-trials.csv"))
+
+catch_trials1 = format_catch_trials(read.csv("../data/03_exp_away_cond1-exp_trials.csv"))
 
 d1 = trials_cond1
 d2 = trials_cond2
+d3 = trials_cond3
+d4 = trials_cond4
 
 # combine data: 
 d1$Answer.condition = "optimist"
-d2$Answer.condition = "pessimist"
+d2$Answer.condition = "confident"
+d3$Answer.condition = "pessimist"
+d4$Answer.condition = "cautious"
+```
+
+## Exclude failed catch trials
+```{r}
+exclude_catch = function(catch, d) {
+  d_response = catch %>% 
+    group_by(workerid) %>%
+    summarise(correct_m = mean(catch_trial_anwswer_correct))
+  
+  exclude = d_response %>%
+    filter(correct_m < 7.0) %>%
+    .$workerid
+  
+  print(paste("Exclude", length(exclude), "participants based on catch trial responses."))
+  
+  d = d %>% filter(!(workerid %in% exclude))
+}
+
 ```
 
 ## Exclude random responses
+
 ```{r}
-d_overall_means = d1 %>%
+exclude_random = function(d) {
+  d_overall_means = d %>%
   group_by(modal, workerid) %>% 
   summarise(rating_m_overall = mean(rating))
 
-d_indiv_means =  d1 %>%
-  group_by(modal,percent_window, workerid) %>% 
-  summarise(rating_m = mean(rating))
+  d_indiv_means =  d %>%
+    group_by(modal,percent_window, workerid) %>% 
+    summarise(rating_m = mean(rating))
+  
+  d_indiv_merged = merge(d_indiv_means, d_overall_means, by=c("workerid", "modal"))
+  
+  cors = d_indiv_merged %>%
+    group_by(workerid) %>%
+    summarise(corr = cor(rating_m, rating_m_overall))
+  
+  exclude = cors %>%
+    filter(corr > 0.75) %>%
+    .$workerid
+  
+  print(paste("Excluded", length(exclude), "participants based on random responses."))
+  
+  d = d %>% filter(!(workerid %in% exclude))
+}
 
-d_indiv_merged = merge(d_indiv_means, d_overall_means, by=c("workerid", "modal"))
-
-cors = d_indiv_merged %>%
-  group_by(workerid) %>%
-  summarise(corr = cor(rating_m, rating_m_overall))
-
-exclude = cors %>%
-  filter(corr > 0.75) %>%
-  .$workerid
-
-print(paste("Excluded", length(exclude), "participants based on random responses."))
-
-d1 = d1 %>% filter(!(workerid %in% exclude))
-```
-
-```{r}
-d_overall_means = d2 %>%
-  group_by(modal, workerid) %>% 
-  summarise(rating_m_overall = mean(rating))
-
-d_indiv_means =  d2 %>%
-  group_by(modal,percent_window, workerid) %>% 
-  summarise(rating_m = mean(rating))
-
-d_indiv_merged = merge(d_indiv_means, d_overall_means, by=c("workerid", "modal"))
-
-cors = d_indiv_merged %>%
-  group_by(workerid) %>%
-  summarise(corr = cor(rating_m, rating_m_overall))
-
-exclude = cors %>%
-  filter(corr > 0.75) %>%
-  .$workerid
-
-print(paste("Excluded", length(exclude), "participants based on random responses."))
-
-d2 = d2 %>% filter(!(workerid %in% exclude))
+d1 = exclude_random(d1)
+d2 = exclude_random(d2)
+d3 = exclude_random(d3)
+d4 = exclude_random(d4)
 ```
 
 ## Aggregated results
@@ -171,18 +187,72 @@ plot_conditions = function(d, plot_title) {
     return(list("p1" = p1, "p2" = p2, "by_participant" = by_participant))
 }
 
+plot_2conditions = function(d1, d2, plot_title) {
+  
+  d2$workerid = d2$workerid + max(d1$workerid) + 1
+  
+  d = rbind(d1,d2)
+  d$condition = factor(d$condition)
+  
+  d_means = d %>%
+    group_by(workerid, percent_window, modal, condition) %>%
+    summarise(participant_mean = mean(rating)) %>%
+    group_by(percent_window, modal, condition) %>%
+    summarise(mu = mean(participant_mean),
+              ci_high = ci.high(participant_mean),
+              ci_low = ci.low(participant_mean))
 
-ps1 = plot_conditions(d1, "")
-ps2 = plot_conditions(d2, "")
+  p1 = ggplot(d_means, aes(x = percent_window, y = mu, col=modal, lty=condition)) + 
+    xlab("% preferred seating") +
+    ylab("mean ratings") +
+    geom_errorbar(aes(ymin=mu-ci_low, ymax=mu+ci_high), width=.1) +
+    geom_line() +
+    geom_point(size=1) +
+    guides(col=guide_legend(title="Expr.")) +
+    colscale +
+    theme(legend.position="bottom") + 
+    ggtitle(plot_title) 
+  
+  p2 = ggplot(d, aes(x=percent_window_f, y=rating, fill=modal)) + 
+    geom_boxplot() +
+    ggtitle(plot_title) + xlab("percentage") + colscale_fill +   theme(legend.position="bottom")
+  
+  by_participant = ggplot( d %>%
+    group_by(workerid, percent_window, modal) %>% 
+    summarise(participant_mean = mean(rating)) , 
+      aes(x=percent_window, y=participant_mean, col=modal)
+        ) + 
+    xlab("% preferred seat") +
+    ylab("mean ratings") +
+    geom_line() +
+    geom_point(size=1) +
+    guides(col=guide_legend(title="Expr.")) +
+    colscale +
+    theme(legend.position="bottom") + ggtitle(plot_title) + facet_wrap(~workerid, ncol = 8)
+    return(list("p1" = p1, "p2" = p2, "by_participant" = by_participant))
+}
+
+ps1 = plot_conditions(d1, "Optimist")
+ps2 = plot_conditions(d2, "Confident")
+ps3 = plot_conditions(d3, "Pessimist")
+ps4 = plot_conditions(d4, "Cautious")
 
 plot(ps1$p1)
 plot(ps2$p1)
+plot(ps3$p1)
+plot(ps4$p1)
+
+ps24 = plot_2conditions(d2,d4, "Confident-cautious")
+plot(ps24$p1)
+
 ```
 ## Individual plots
 
 ```{r by_participant_plots}
 plot(ps1$by_participant)
 plot(ps2$by_participant)
+plot(ps3$by_participant)
+plot(ps4$by_participant)
 ```
 
 ## AUC Computation
@@ -234,21 +304,65 @@ i = 1
 
 aucs.optimist = d1 %>% auc_for_participants(., method=auc_method1)
 
-aucs.pessimist = d2 %>% auc_for_participants(., method=auc_method1)
+aucs.confident = d2 %>% auc_for_participants(., method=auc_method1)
+
+aucs.pessimist = d3 %>% auc_for_participants(., method=auc_method1)
+
+aucs.cautious = d4 %>% auc_for_participants(., method=auc_method1)
 
 aucs.optimist$cond = "Optimistic condition"
 
+aucs.confident$cond = "Confident condition"
+
 aucs.pessimist$cond = "Pessimistic condition"
 
-aucs.all = rbind(aucs.optimist, aucs.pessimist)
+aucs.cautious$cond = "Cautious condition"
 
-aucs.all = aucs.all %>% 
+aucs.all1 = rbind(aucs.optimist, aucs.confident)
+
+aucs.all2 = rbind(aucs.pessimist, aucs.cautious)
+
+aucs.all3 = rbind(aucs.optimist, aucs.confident, aucs.pessimist, aucs.cautious)
+
+aucs.all1 = aucs.all1 %>% 
   group_by(., cond) %>% 
   summarise(., auc_diff_m = mean(auc_diff), 
                ci_high = ci.high(auc_diff), 
                ci_low = ci.low(auc_diff))
 
-ggplot(aucs.all, aes(x=0, y=auc_diff_m, color=cond)) +
+ggplot(aucs.all1, aes(x=0, y=auc_diff_m, color=cond)) +
+    geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
+    geom_point() +
+    xlab("") +
+    ylab("AUC difference (might ratings - probably ratings)") +
+    theme(axis.ticks=element_blank(), axis.text.x=element_blank(),
+          panel.grid.minor=element_blank(), 
+          plot.background=element_blank()) +
+    xlim(-.2, .2) 
+
+aucs.all2 = aucs.all2 %>% 
+  group_by(., cond) %>% 
+  summarise(., auc_diff_m = mean(auc_diff), 
+               ci_high = ci.high(auc_diff), 
+               ci_low = ci.low(auc_diff))
+
+ggplot(aucs.all2, aes(x=0, y=auc_diff_m, color=cond)) +
+    geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
+    geom_point() +
+    xlab("") +
+    ylab("AUC difference (might ratings - probably ratings)") +
+    theme(axis.ticks=element_blank(), axis.text.x=element_blank(),
+          panel.grid.minor=element_blank(), 
+          plot.background=element_blank()) +
+    xlim(-.2, .2) 
+
+aucs.all3 = aucs.all3 %>% 
+  group_by(., cond) %>% 
+  summarise(., auc_diff_m = mean(auc_diff), 
+               ci_high = ci.high(auc_diff), 
+               ci_low = ci.low(auc_diff))
+
+ggplot(aucs.all3, aes(x=0, y=auc_diff_m, color=cond)) +
     geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
     geom_point() +
     xlab("") +
@@ -259,6 +373,7 @@ ggplot(aucs.all, aes(x=0, y=auc_diff_m, color=cond)) +
     xlim(-.2, .2) 
 ```
 
+So, we're seeing what we expected for the confident speaker, with the AUC > in the optimistic condition than in the confident condition (indicating explaining away), but we're not seeing the same (with just one speaker) for the pessimistic/cautious condition, where we would expect flipped results, with the pessimistic condition having a lower AUC than the cautious condition (with adaptation). To sum up, we expect the order to be, from greater to lower difference, "cautious", "pessimistic", "optimistic", and "confident".
 ```{r t_test_method1, echo=FALSE}
 
 print(t.test(aucs.optimist$auc_diff, aucs.pessimist$auc_diff, var.equal=TRUE))
