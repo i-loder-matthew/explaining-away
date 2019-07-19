@@ -22,7 +22,7 @@ function build_trials(){
         "seat": reverse_sent_order ? [["You might get one.", "might"], ["You'll probably get one.", "probably"]] : [["You'll probably get one.", "probably"], ["You might get one.", "might"]],
         "percent_window": percentages[i],
         "version": randomVersion,
-        "image": "./stim/images/" + "prob_" + percentages[i] + "_" + randomVersion + ".png",
+        "image": "./stim/images/" + "prob_" + percentages[i] + "_" + randomVersion + ".png"
       });
     }
     for (var i = 0; i < percentages.length; i++) {
@@ -87,30 +87,39 @@ function make_slides(f) {
       $(".err").hide();
       $("#instructions2-2").hide();
       $("#instructions2-3").hide();
+      this.clicks = 0;
       this.step = 1;
     },
     button: function(response) {
       if (this.step == 1) {
         $("#instructions2-1").hide();
         $("#instructions2-2").show();
-        utils.make_slider("#mood-slider2")
-        if ($("#mood-slider2").slider("option", "value") == undefined) {
+        utils.make_slider("#mood-slider2");
+        this.step = 2;
+      } else if (this.step == 2) {
+        if (this.clicks == 0) {
           $(".err").show();
+          this.step = 1;
+          this.button();
         } else {
           $(".err").hide();
-          this.step = 2;
+          this.step = 3;
+          this.button();
         }
-      } else if (this.step == 2) {
+      } else if (this.step == 3) {
         $("#instructions2-2").hide();
         $("#instructions2-3").show();
         exp.data_trials.push({
           "type": "mood2",
           "mood_rating": $("#mood-slider2").slider("option", "value")
         });
-        this.step = 3;
+        this.step = 4;
       } else {
         exp.go();
       }
+    },
+    counter: function() {
+      this.clicks ++;
     }
   });
 
@@ -120,9 +129,12 @@ function make_slides(f) {
     present_handle: function(stim) {
 
 			this.step = 0;
+      this.clicks = 0;
 
 			$("#exp_trial-catch").hide();
 			$("#exp_trial-content").show();
+      $("#exp_trial-prorating").show();
+      $("#exp_trial-audio").hide();
 
       this.stim = stim;
 
@@ -130,6 +142,8 @@ function make_slides(f) {
       $("#exposure-source").attr("src", stim["audio"]);
       $("#exposure-text").attr("src", stim["request"]);
       $("#exposure-image").attr("src", stim["image"]);
+      utils.make_slider("#prob-slider");
+
       $("#exposure-audio").trigger("load");
       $("#left-check1").attr("src", stim["check1"]);
       $("#right-check2").attr("src", stim["check2"]);
@@ -137,41 +151,27 @@ function make_slides(f) {
       this.stim.catch_trial = this.stim["catch_trial"];
 
 
-      $("#exp_trial").fadeIn(700, function() {
+      $("#exp_trial").fadeIn(700); /*, function() {
 				window.setTimeout(function(){
 					$("#exposure-audio").trigger("play");
 				}, 1000);
-			});
+			});*/
+    },
+    enable_continue: function() {
+      if (this.clicks > 0) $("#exp-button").attr("disabled", null);;
     },
     button: function(response) {
       this.response = response;
-      if (this.stim.catch_trial == 1 && this.step == 0) {
-        $("#exp_trial-content").hide();
-        $("#exp_trial-catch").show();
+      this.prob_rating = $("#prob-slider").slider("option", "value");
+      if (this.step == 0) {
+        $("#exp_trial-prorating").hide();
+        $("#exp_trial-audio").show();
+        $("#exp-button").attr("disabled", "disabled");
+        window.setTimeout(function() {
+  				$("#exposure-audio").trigger("play");
+  			}, 700);
         this.step = 1;
-      } else {
-        var catch_trial_correct = -1;
-        var order = this.stim["order"];
-
-        if (this.stim.catch_trial == 1) {
-
-          if (order == 0) {
-            if (this.response){
-              catch_trial_correct = 1;
-            } else if (!this.response){
-              catch_trial_correct = 0;
-            }
-          } else if (order == 1) {
-            if (!this.response){
-              catch_trial_correct = 1;
-            } else if (this.response){
-              catch_trial_correct = 0;
-            }
-          }
-        }
-
-        this.stim.catch_trial_answer_correct =  catch_trial_correct;
-
+      } else if (this.step == 1) {
         var t = this;
         exp.data_exp_trials.push(this.stim);
 				$("#exp_trial").fadeOut(300, function() {
@@ -180,8 +180,11 @@ function make_slides(f) {
 					}, 700);
 				});
       }
+    },
+    counter: function() {
+      this.clicks++;
+      this.enable_continue();
     }
-
   });
 
   slides.instructions1 = slide({
@@ -193,6 +196,7 @@ function make_slides(f) {
       $("#instructions1-5").hide();
       $("#instruction-scene").hide();
       $(".err").hide();
+      this.clicks = 0;
       this.step = 1;
     },
     button : function(response) {
@@ -206,6 +210,16 @@ function make_slides(f) {
         utils.make_slider("#mood-slider1");
         this.step = 3;
       } else if (this.step == 3) {
+        if (this.clicks == 0) {
+          $(".err").show();
+          this.step = 2;
+          this.button();
+        } else {
+          $(".err").hide();
+          this.step = 4;
+          this.button();
+        }
+      } else if (this.step == 4) {
         $("#instructions1-3").hide();
         $("#instructions1-4").show();
         $("#instruction-scene").show();
@@ -213,14 +227,17 @@ function make_slides(f) {
           "type": "mood1",
           "mood_rating": $("#mood-slider1").slider("option", "value")
         });
-        this.step = 4;
-      } else if (this.step == 4) {
+        this.step = 5;
+      } else if (this.step == 5) {
         $("#instructions1-4").hide();
         $("#instructions1-5").show();
-        this.step = 5;
-      } else if (this.step == 5){
+        this.step = 6;
+      } else if (this.step == 6){
         exp.go();
       }
+    },
+    counter: function() {
+      this.clicks ++;
     }
   });
 
