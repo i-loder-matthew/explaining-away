@@ -169,7 +169,7 @@ function make_slides(f) {
         $("#exp-button").attr("disabled", "disabled");
         window.setTimeout(function() {
   				$("#exposure-audio").trigger("play");
-  			}, 700);
+  			}, 1000);
         this.step = 1;
       } else if (this.step == 1) {
         var t = this;

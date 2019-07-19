@@ -7,7 +7,7 @@ function build_exposures() {
   var speaker = random_speaker;
 
   randomVersion = _.shuffle(version);
-  for (let i = 0; i < 5; i ++) {
+  for (let i = 0; i < 3; i ++) {
     randomOrder = _.sample(order);
     var image = CONDITION == 1 || CONDITION == 2 ? "./stim/images/exposure_60_" + randomVersion[i + 1] + ".png" : "./stim/images/exposure_90_" + randomVersion[i + 1] + ".png";
     var oppositeImage = CONDITION == 1 || CONDITION == 2 ? "./stim/images/prob_100_1.png" : "./stim/images/exposure_25_" + randomVersion[i + 1] + ".png";
@@ -26,7 +26,7 @@ function build_exposures() {
       "check2": randomOrder == 1 ? image : oppositeImage
     });
   }
-  for (let i = 0; i < 5; i ++) {
+  for (let i = 0; i < 2; i ++) {
     randomOrder = _.sample(order);
     var image = CONDITION == 1 || CONDITION == 2 ? "./stim/images/exposure_40_" + randomVersion[i + 1] + ".png" : "./stim/images/exposure_10_" + randomVersion[i + 1] + ".png";
     var oppositeImage = CONDITION == 1 || CONDITION == 2 ? "./stim/images/prob_100_1.png" : "./stim/images/exposure_75_" + randomVersion[i + 1] + ".png";
@@ -45,7 +45,7 @@ function build_exposures() {
       "check2": randomOrder == 1 ? image : oppositeImage
     });
   }
-  for (let i = 0; i < 5; i ++) {
+  for (let i = 0; i < 2; i ++) {
     randomOrder = _.sample(order);
     var image = CONDITION == 1 || CONDITION == 2 ? "./stim/images/exposure_25_" + randomVersion[i + 1] + ".png" : "./stim/images/exposure_60_" + randomVersion[i + 1] + ".png";
     var oppositeImage = CONDITION == 1 || CONDITION == 2 ? "./stim/images/exposure_90_" + randomVersion[i + 1] + ".png" : "./stim/images/prob_100_1.png";
@@ -64,7 +64,7 @@ function build_exposures() {
       "check2": randomOrder == 1 ? image : oppositeImage
     });
   }
-  for (let i = 0; i < 5; i ++) {
+  for (let i = 0; i < 3; i ++) {
     randomOrder = _.sample(order);
     var image = CONDITION == 1 || CONDITION == 2 ? "./stim/images/exposure_75_" + randomVersion[i + 1] + ".png" : "./stim/images/exposure_40_" + randomVersion[i + 1] + ".png";
     var oppositeImage = CONDITION == 1 || CONDITION == 2 ? "./stim/images/exposure_10_" + randomVersion[i + 1] + ".png" : "./stim/images/prob_100_1.png";

@@ -137,19 +137,19 @@ Otherwise, modified to whatever is required for you given your affiliation.
   <h3>Instructions</h3>
 
   <div id="instructions2-1">
-    <p>It's now a week later, on a normal day.</p>
+    <p>It's now <strong>a week later</strong>, on a normal day.</p>
     <img src="./stim/conditions/control.png" alt="Normal flight attendant" id="mood-image" width="275px" height="300px">
     <br></br>
     <input type="button" onclick="_s.button()" class="button" value="Continue">
   </div>
   <div id="instructions2-2">
-    <p> How do you think the flight attendant is feeling?</p>
+    <p> How do you think the flight attendant is feeling today?</p>
     <table>
       <tr>
         <td><strong>Angry and pessimistic</strong></td>
         <td>
           <div style="width: 400px; padding: 15px; margin: 0 auto; overflow: hidden;">
-            <span id="mood-slider2" style="display:block; width:370px; float:left; margin: 0 20px;"></label>
+            <span id="mood-slider2" onclick="_s.counter(); return false;" style="display:block; width:370px; float:left; margin: 0 20px;"></label>
           </div>
         </td>
         <td><strong>Happy and Optimistic</strong></td>
@@ -183,29 +183,28 @@ Otherwise, modified to whatever is required for you given your affiliation.
       <!-- <img src="./stim/images/cover.png" class="cover"> -->
      </div>
      <br></br>
-     <div>
+     <div id="exp_trial-prorating">
+       <p>How likely do you think it is that the man will get the seat he wants?</p>
+       <table>
+         <tr>
+           <td><strong>Very unlikely</strong></td>
+           <td>
+             <div style="width: 400px; padding: 15px; margin: 0 auto; overflow: hidden;">
+               <span id="prob-slider" onclick="_s.counter(); return false;" style="display:block; width:370px; float:left; margin: 0 20px;"></label>
+             </div>
+           </td>
+           <td><strong>Very likely</strong></td>
+         </tr>
+       </table>
+     </div>
+     <div id="exp_trial-audio">
+       <p> Now let's listen carefully to how the airline representative responds: <p>
        <audio controls id="exposure-audio">
          <source src="./stim/audio/test.mp3" id="exposure-source" type="audio/mp3">
        </audio>
      </div>
      <br></br>
      <input type="button" onclick="_s.button()" class="button" value="Continue" id="exp-button">
- </div>
-
- <div id="exp_trial-catch">
-   <p> Please select which seat map you saw in the previous scene:</p>
-   <table>
-     <tr>
-       <td>
-           <a href="#" onclick="_s.button(true); return false;"><img src="./stim/images/prob_0_1.png" class="attention-image" id="left-check1"></a>
-       </td>
-       <td>
-       </td>
-       <td>
-           <a href="#" onclick="_s.button(false); return false;"><img src="./stim/images/prob_0_1.png" class="attention-image" id="right-check2"></a>
-       </td>
-     </tr>
-   </table>
  </div>
 </div>
 
@@ -235,7 +234,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
         <td><strong>Angry and pessimistic</strong></td>
         <td>
           <div style="width: 400px; padding: 15px; margin: 0 auto; overflow: hidden;">
-            <span id="mood-slider2" style="display:block; width:370px; float:left; margin: 0 20px;"></label>
+            <span id="mood-slider1" onclick="_s.counter(); return false;" style="display:block; width:370px; float:left; margin: 0 20px;"></label>
           </div>
         </td>
         <td><strong>Happy and Optimistic</strong></td>
