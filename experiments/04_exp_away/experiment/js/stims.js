@@ -83,7 +83,7 @@ function build_exposures() {
       "check2": randomOrder == 1 ? image : oppositeImage
     });
   }
-  for (let i = 0; i < 5; i ++) {
+  for (let i = 0; i < 3; i ++) {
     randomOrder = _.sample(order);
     var image = "./stim/images/prob_100_1.png";
     var oppositeImage = "./stim/images/exposure_60_" + randomVersion[i + 1] + ".png";
