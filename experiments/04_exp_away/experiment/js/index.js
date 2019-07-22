@@ -130,7 +130,7 @@ function make_slides(f) {
               "type": "mood2",
               "mood_rating": this.mood_rating
             });
-            this.step = 3;
+            this.step = 4;
             this.button();
           } else {
             $("#right-mood2").show();
@@ -277,7 +277,7 @@ function make_slides(f) {
               "type": "mood1",
               "mood_rating": this.mood_rating
             });
-            this.step = 4;
+            this.step = 5;
             this.button();
           } else {
             $("#right-mood1").show();
