@@ -176,7 +176,7 @@ function make_slides(f) {
       $("#exposure-text").attr("src", stim["request"]);
       $("#exposure-image").attr("src", stim["image"]);
       utils.make_slider("#prob-slider");
-      $("#exp_text").text("How likely do you think it is that the man will get " + stim["seat"] + "?");
+      $("#exp_text").html("How likely do you think it is that the man will get <strong>" + stim["seat"] + "</strong>?");
 
       $("#exposure-audio").trigger("load");
       $("#left-check1").attr("src", stim["check1"]);

@@ -75,15 +75,15 @@ format_catch_trials = function(d) {
 ## Load data:
 
 ```{r data, echo=FALSE}
-trials_cond1 = format_data(read.csv("../data/03_exp_away_cond1-trials.csv"))
-trials_cond2 = format_data(read.csv("../data/03_exp_away_cond2-trials.csv"))
-trials_cond3 = format_data(read.csv("../data/03_exp_away_cond3-trials.csv"))
-trials_cond4 = format_data(read.csv("../data/03_exp_away_cond4-trials.csv"))
+trials_cond1 = format_data(read.csv("../data/04_exp_away_cond1-trials.csv"))
+trials_cond2 = format_data(read.csv("../data/04_exp_away_cond2-trials.csv"))
+trials_cond3 = format_data(read.csv("../data/04_exp_away_cond3-trials.csv"))
+trials_cond4 = format_data(read.csv("../data/04_exp_away_cond4-trials.csv"))
 
-catch_trials1 = format_catch_trials(read.csv("../data/03_exp_away_cond1-exp_trials.csv"))
-catch_trials2 = format_catch_trials(read.csv("../data/03_exp_away_cond2-exp_trials.csv"))
-catch_trials3 = format_catch_trials(read.csv("../data/03_exp_away_cond3-exp_trials.csv"))
-catch_trials4 = format_catch_trials(read.csv("../data/03_exp_away_cond4-exp_trials.csv"))
+catch_trials1 = format_catch_trials(read.csv("../data/04_exp_away_cond1-exp_trials.csv"))
+catch_trials2 = format_catch_trials(read.csv("../data/04_exp_away_cond2-exp_trials.csv"))
+catch_trials3 = format_catch_trials(read.csv("../data/04_exp_away_cond3-exp_trials.csv"))
+catch_trials4 = format_catch_trials(read.csv("../data/04_exp_away_cond4-exp_trials.csv"))
 
 d1 = trials_cond1
 d2 = trials_cond2
@@ -98,28 +98,7 @@ d4$Answer.condition = "cautious"
 ```
 
 ## Exclude failed catch trials
-```{r}
-exclude_catch = function(catch, d) {
-  d_response = catch %>% 
-    group_by(workerid) %>%
-    summarise(correct_m = sum(catch_trial_answer_correct))
-  
-  exclude = d_response %>%
-    filter(correct_m < 7.0) %>%
-    .$workerid
-  
-  print(paste("Exclude", length(exclude), "participants based on catch trial responses."))
-  
-  d = d %>% filter(!(workerid %in% exclude))
-}
 
-d1 = exclude_catch(catch_trials1, d1)
-d2 = exclude_catch(catch_trials2, d2)
-d3 = exclude_catch(catch_trials3, d3)
-d4 = exclude_catch(catch_trials4, d4)
-
-
-```
 
 ## Exclude random responses
 
@@ -254,6 +233,13 @@ plot(ps4$p1)
 ps24 = plot_2conditions(d2,d4, "Confident-cautious")
 plot(ps24$p1)
 
+ps13 = plot_2conditions(d1,d3, "Optimist-pessimist")
+ps12 = plot_2conditions(d1,d2, "Optimist-confident")
+ps34 = plot_2conditions(d3,d4, "Pessimist-cautious")
+plot(ps13$p1)
+plot(ps12$p1)
+plot(ps34$p1)
+
 ```
 ## Individual plots
 
@@ -385,7 +371,7 @@ ggplot(aucs.all3, aes(x=0, y=auc_diff_m, color=cond)) +
 So, we're seeing what we expected for the confident speaker, with the AUC > in the optimistic condition than in the confident condition (indicating explaining away), but we're not seeing the same (with just one speaker) for the pessimistic/cautious condition, where we would expect flipped results, with the pessimistic condition having a lower AUC than the cautious condition (with adaptation). To sum up, we expect the order to be, from greater to lower difference, "cautious", "pessimistic", "optimistic", and "confident".
 ```{r t_test_method1, echo=FALSE}
 
-print(t.test(aucs.optimist$auc_diff, aucs.pessimist$auc_diff, var.equal=TRUE))
+
 
 ```
 
