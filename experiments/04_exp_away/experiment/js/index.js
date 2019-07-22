@@ -90,7 +90,6 @@ function make_slides(f) {
       $("#instructions2-2").hide();
       $("#instructions2-3").hide();
       this.mood_rating = -1;
-      this.clicks = 0;
       this.step = 1;
     },
     button: function(response) {
@@ -100,8 +99,9 @@ function make_slides(f) {
         utils.make_slider("#mood-slider2");
         this.step = 2;
       } else if (this.step == 2) {
-        if (this.clicks == 0) {
-          $("#unchecked").show();
+        if ($("#mood-slider2 .ui-slider-handle").css("display") == "none") {
+          $(".err").hide();
+          $("#unchecked2").show();
           this.step = 1;
           this.button();
         } else {
@@ -139,6 +139,7 @@ function make_slides(f) {
               "type": "mood2",
               "mood_rating": this.mood_rating
             });
+            console.log($("#mood-slider2 .ui-slider-handle").css("display"));
             this.step = 3;
             this.button();
           }
@@ -152,9 +153,6 @@ function make_slides(f) {
       } else {
         exp.go();
       }
-    },
-    counter: function() {
-      this.clicks ++;
     }
   });
 
@@ -194,7 +192,7 @@ function make_slides(f) {
 			});*/
     },
     enable_continue: function() {
-      if (this.clicks > 0) $("#exp-button").attr("disabled", null);;
+      if ($("#prob-slider .ui-slider-handle").css("display") != "none") $("#exp-button").attr("disabled", null);
     },
     button: function(response) {
       this.response = response;
@@ -247,7 +245,8 @@ function make_slides(f) {
         utils.make_slider("#mood-slider1");
         this.step = 3;
       } else if (this.step == 3) {
-        if (this.clicks == 0) {
+        if ($("#mood-slider1 .ui-slider-handle").css("display") == "none") {
+          $(".err").hide();
           $("#unchecked1").show();
           this.step = 2;
           this.button();
