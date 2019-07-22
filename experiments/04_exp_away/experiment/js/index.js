@@ -236,7 +236,7 @@ function make_slides(f) {
         this.step = 3;
       } else if (this.step == 3) {
         if (this.clicks == 0) {
-          $("#unchecked").show();
+          $("#unchecked1").show();
           this.step = 2;
           this.button();
         } else {

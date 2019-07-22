@@ -143,7 +143,10 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <input type="button" onclick="_s.button()" class="button" value="Continue">
   </div>
   <div id="instructions2-2">
-    <p> How do you think the flight attendant is feeling?</p>
+    <p> How do you think the airline representative is feeling?</p>
+    <p class="err" id="uncecked2" style="color: red;"> Please use the slider to rate the airline representative's mood.</p>
+    <p class="err" id="right-mood2" style="color: red;"> Right! She's feeling less angry than before.</p>
+    <p class="err" id="wrong-mood2" style="color: red;"> Actually, she's feeling less angry than before. Try again!</p>
     <table>
       <tr>
         <td><strong>Angry and pessimistic</strong></td>
@@ -152,7 +155,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
             <span id="mood-slider2" onclick="_s.counter(); return false;" style="display:block; width:370px; float:left; margin: 0 20px;"></label>
           </div>
         </td>
-        <td><strong>Happy and Optimistic</strong></td>
+        <td><strong>Happy and optimistic</strong></td>
       </tr>
     </table>
     <input type="button" onclick="_s.button()" class="button" value="Continue">
@@ -229,7 +232,10 @@ Otherwise, modified to whatever is required for you given your affiliation.
 
   <div id="instructions1-3">
 
-    <p> How do you think the flight attendant is feeling?</p>
+    <p> How do you think the airline representative is feeling?</p>
+    <p class="err" id="unchecked1" style="color: red;"> Please use the slider to rate the airline representative's mood</p>
+    <p class="err" id="right-mood1" style="color: red;"> Right! She's feeling pretty angry today. </p>
+    <p class="err" id="wrong-mood1" style="color: red;"> Actually, she's feeling pretty angry today. Try again!</p>
     <table>
       <tr>
         <td><strong>Angry and pessimistic</strong></td>
@@ -238,7 +244,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
             <span id="mood-slider1" onclick="_s.counter(); return false;" style="display:block; width:370px; float:left; margin: 0 20px;"></label>
           </div>
         </td>
-        <td><strong>Happy and Optimistic</strong></td>
+        <td><strong>Happy and optimistic</strong></td>
       </tr>
     </table>
 
