@@ -125,13 +125,12 @@ function make_slides(f) {
             this.step = 1;
             this.button();
           } else if (CONDITION == 2 || CONDITION == 4) {
-            $("#wrong-mood2").show();
             this.mood_rating = $("#mood-slider2").slider("option", "value");
             exp.data_mood_ratings.push({
               "type": "mood2",
               "mood_rating": this.mood_rating
             });
-            this.step = 1;
+            this.step = 3;
             this.button();
           } else {
             $("#right-mood2").show();
@@ -292,7 +291,6 @@ function make_slides(f) {
           }
         }
       } else if (this.step == 4) {
-        $("#right-mood1").show();
         this.step = 5;
       } else if (this.step == 5) {
         $("#instructions1-3").hide();
