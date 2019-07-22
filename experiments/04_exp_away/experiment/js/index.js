@@ -89,7 +89,7 @@ function make_slides(f) {
       $(".err").hide();
       $("#instructions2-2").hide();
       $("#instructions2-3").hide();
-      this.mood_rating = [];
+      this.mood_rating = -1;
       this.clicks = 0;
       this.step = 1;
     },
@@ -108,22 +108,38 @@ function make_slides(f) {
           $(".err").hide();
           if (CONDITION == 1 && ($("#mood-slider2").slider("option", "value") >= previous_mood)) {
             $("#wrong-mood2").show();
-            this.mood_rating.push($("#mood-slider2").slider("option", "value"));
+            this.mood_rating = $("#mood-slider2").slider("option", "value");
+            exp.data_mood_ratings.push({
+              "type": "mood2",
+              "mood_rating": this.mood_rating
+            });
             this.step = 1;
             this.button();
           } else if (CONDITION == 3 && ($("#mood-slider2").slider("option", "value") <= previous_mood)) {
             $("#wrong-mood2").show();
-            this.mood_rating.push($("#mood-slider2").slider("option", "value"));
+            this.mood_rating = $("#mood-slider2").slider("option", "value");
+            exp.data_mood_ratings.push({
+              "type": "mood2",
+              "mood_rating": this.mood_rating
+            });
             this.step = 1;
             this.button();
-          } else if ((CONDITION == 2 || CONDITION == 4) && ($("#mood-slider2").slider("option", "value") > .75 || $("#mood-slider2").slider("option", "value") < .25)) {
+          } else if (CONDITION == 2 || CONDITION == 4) {
             $("#wrong-mood2").show();
-            this.mood_rating.push($("#mood-slider2").slider("option", "value"));
+            this.mood_rating = $("#mood-slider2").slider("option", "value");
+            exp.data_mood_ratings.push({
+              "type": "mood2",
+              "mood_rating": this.mood_rating
+            });
             this.step = 1;
             this.button();
           } else {
             $("#right-mood2").show();
-            this.mood_rating.push($("#mood-slider2").slider("option", "value"));
+            this.mood_rating = $("#mood-slider2").slider("option", "value");
+            exp.data_mood_ratings.push({
+              "type": "mood2",
+              "mood_rating": this.mood_rating
+            });
             this.step = 3;
             this.button();
           }
@@ -133,10 +149,6 @@ function make_slides(f) {
       } else if (this.step == 4) {
         $("#instructions2-2").hide();
         $("#instructions2-3").show();
-        exp.data_trials.push({
-          "type": "mood2",
-          "mood_rating": this.mood_rating
-        });
         this.step = 5;
       } else {
         exp.go();
@@ -223,7 +235,7 @@ function make_slides(f) {
       $(".err").hide();
       this.clicks = 0;
       this.step = 1;
-      this.mood_rating = [];
+      this.mood_rating = -1;
     },
     button : function(response) {
       if (this.step == 1) {
@@ -244,22 +256,37 @@ function make_slides(f) {
           $(".err").hide();
           if (CONDITION == 1 && $("#mood-slider1").slider("option", "value") < .5) {
             $("#wrong-mood1").show();
-            this.mood_rating.push($("#mood-slider1").slider("option", "value"));
+            this.mood_rating = $("#mood-slider1").slider("option", "value");
+            exp.data_mood_ratings.push({
+              "type": "mood1",
+              "mood_rating": this.mood_rating
+            });
             this.step = 2;
             this.button();
           } else if (CONDITION == 3 && $("#mood-slider1").slider("option", "value") > .5) {
             $("#wrong-mood1").show();
-            this.mood_rating.push($("#mood-slider1").slider("option", "value"));
+            this.mood_rating = $("#mood-slider1").slider("option", "value");
+            exp.data_mood_ratings.push({
+              "type": "mood1",
+              "mood_rating": this.mood_rating
+            });
             this.step = 2;
             this.button();
-          } else if ((CONDITION == 2 || CONDITION == 4) && ($("#mood-slider1").slider("option", "value") > .75 || $("#mood-slider1").slider("option", "value") < .25)) {
-            $("#wrong-mood1").show();
-            this.mood_rating.push($("#mood-slider1").slider("option", "value"));
-            this.step = 2;
+          } else if (CONDITION == 2 || CONDITION == 4) {
+            this.mood_rating = $("#mood-slider1").slider("option", "value");
+            exp.data_mood_ratings.push({
+              "type": "mood1",
+              "mood_rating": this.mood_rating
+            });
+            this.step = 4;
             this.button();
           } else {
             $("#right-mood1").show();
-            this.mood_rating.push($("#mood-slider1").slider("option", "value"));
+            this.mood_rating = $("#mood-slider1").slider("option", "value");
+            exp.data_mood_ratings.push({
+              "type": "mood1",
+              "mood_rating": this.mood_rating
+            });
             this.step = 4;
             this.button();
           }
@@ -271,11 +298,7 @@ function make_slides(f) {
         $("#instructions1-3").hide();
         $("#instructions1-4").show();
         $("#instruction-scene").show();
-        exp.data_trials.push({
-          "type": "mood1",
-          "mood_rating": this.mood_rating
-        });
-        previous_mood = this.mood_rating[this.mood_rating.length - 1];
+        previous_mood = this.mood_rating;
         console.log(previous_mood);
         this.step = 6;
       } else if (this.step == 6) {
@@ -408,6 +431,7 @@ function make_slides(f) {
           "trials" : exp.data_trials,
           "exp_trials": exp.data_exp_trials,
           "catch_trials" : exp.catch_trials,
+          "mood_ratings" : exp.data_mood_ratings,
           "system" : exp.system,
           "condition" : exp.condition,
           "subject_information" : exp.subj_data,
@@ -439,6 +463,7 @@ function init() {
 
   exp.data_trials = [];
   exp.data_exp_trials = [];
+  exp.data_mood_ratings = [];
 
   //make corresponding slides:
   exp.slides = make_slides(exp);
