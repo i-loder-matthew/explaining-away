@@ -297,7 +297,6 @@ function make_slides(f) {
         $("#instructions1-4").show();
         $("#instruction-scene").show();
         previous_mood = this.mood_rating;
-        console.log(previous_mood);
         this.step = 6;
       } else if (this.step == 6) {
         $("#instructions1-4").hide();
