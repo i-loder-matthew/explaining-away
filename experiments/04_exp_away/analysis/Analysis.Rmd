@@ -65,9 +65,38 @@ format_data = function(d) {
 }
 
 format_catch_trials = function(d) {
-  d_catch = d %>% filter(.,(catch_trial == 1))
   
-  return(d_catch)
+  if (d$condtion == '1' || d$condtion == '2') {
+    d_window_60 = d %>% filter(.,grepl("60", image))
+    d_window_25 = d %>% filter(.,grepl("25", image))
+    d_window_100 = d %>% filter(.,grepl("100", image))
+    d_aisle_25 = d %>% filter(.,grepl("75", image))
+    d_aisle_60 = d %>% filter(.,grepl("40", image))
+    
+    d_window_60$prob = 60
+    d_aisle_60$prob = 60
+    d_window_100$prob = 100
+    d_window_25$prob = 25
+    d_aisle_25$prob = 25
+    
+    d_output = rbind(d_window_60, d_window_25, d_window_100, d_aisle_25, d_aisle_60)
+  } else if (d$condtion == '3' || d$condtion == '4') {
+    d_window_60 = d %>% filter(.,grepl("60", image))
+    d_window_90 = d %>% filter(.,grepl("90", image))
+    d_window_100 = d %>% filter(.,grepl("100", image))
+    d_aisle_90 = d %>% filter(.,grepl("10", image))
+    d_aisle_60 = d %>% filter(.,grepl("40", image))
+    
+    d_window_60$prob = 60
+    d_window_90$prob = 90
+    d_window_100$prob = 100
+    d_aisle_60$prob = 60
+    d_aisle_90$prob = 90
+    
+    d_output = rbind(d_window_60, d_window_90, d_window_100, d_aisle_90, d_aisle_60)
+  } 
+  
+  return(d_output)
 }
 
 ```
@@ -96,8 +125,6 @@ d2$Answer.condition = "confident"
 d3$Answer.condition = "pessimist"
 d4$Answer.condition = "cautious"
 ```
-
-## Exclude failed catch trials
 
 
 ## Exclude random responses
@@ -319,6 +346,8 @@ aucs.all2 = rbind(aucs.pessimist, aucs.cautious)
 
 aucs.all3 = rbind(aucs.optimist, aucs.confident, aucs.pessimist, aucs.cautious)
 
+auc.all4 = rbind(aucs.optimist, aucs.pessimist)
+
 aucs.all1 = aucs.all1 %>% 
   group_by(., cond) %>% 
   summarise(., auc_diff_m = mean(auc_diff), 
@@ -371,7 +400,28 @@ ggplot(aucs.all3, aes(x=0, y=auc_diff_m, color=cond)) +
 So, we're seeing what we expected for the confident speaker, with the AUC > in the optimistic condition than in the confident condition (indicating explaining away), but we're not seeing the same (with just one speaker) for the pessimistic/cautious condition, where we would expect flipped results, with the pessimistic condition having a lower AUC than the cautious condition (with adaptation). To sum up, we expect the order to be, from greater to lower difference, "cautious", "pessimistic", "optimistic", and "confident".
 ```{r t_test_method1, echo=FALSE}
 
+print(t.test(aucs.confident$auc_diff, aucs.cautious$auc_diff, var.equal=TRUE))
 
+print(t.test(aucs.pessimist$auc_diff, aucs.cautious$auc_diff, var.equal=TRUE))
+
+
+
+```
+
+## Power analysis
+```{r}
+m.cautious = mean(aucs.cautious$auc_diff)
+m.pessimist = mean(aucs.pessimist$auc_diff)
+
+sd.cautious = sd(aucs.cautious$auc_diff)
+sd.pessimist = sd(aucs.pessimist$auc_diff)
+
+d = m.cautious - m.pessimist
+d = d/sd.pessimist
+
+d
+
+power.t.test(n=60, delta=d, sd=1, sig.level = 0.05, type="two.sample", alternative="two.sided")
 
 ```
 

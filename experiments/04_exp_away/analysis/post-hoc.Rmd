@@ -1,0 +1,165 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Cleaning scripts:
+```{r packages, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(data.table)
+library(gridExtra)
+library(DescTools)
+library(splines)
+library(stringr)
+source("helpers.R")
+
+
+theme_set(theme_bw())
+
+colscale = scale_color_manual(values=c("#7CB637", "#666666", "#4381C1")) 
+colscale_fill = scale_fill_manual(values=c("#7CB637", "#666666", "#4381C1")) 
+
+remove_quotes = function(d) {
+  
+}
+
+format_data = function(d) {
+  drops <- c("modal1","rating1")
+  d2 = d[ , !(names(d) %in% drops)]
+  setnames(d2, old=c("rating2","modal2"), new=c("rating", "modal"))
+  
+  drops <- c("modal2","rating2")
+  d3 = d[ , !(names(d) %in% drops)]
+  setnames(d3, old=c("rating1","modal1"), new=c("rating", "modal"))
+  
+  drops <- c("modal2", "rating2", "modal1", "rating1")
+  d4 = d[ , !(names(d) %in% drops)]
+  d4$rating = d4$rating_other
+  d4$modal = "other"
+  
+  d = rbind(d2, d3, d4)
+  
+  d$modal = gsub('"', '', d$modal)
+  d$modal = factor(d$modal, levels = c("might", "probably", "other"), ordered = T)
+  
+  d$percent_window_f = factor(d$percent_window)
+  
+  d_aisle = d %>% filter(.,grepl("aisle", type))
+  d_window = d %>% filter(.,grepl("window", type))
+  
+  d_aisle_reverse = d_aisle
+  d_aisle_reverse$percent_window = 100-d_aisle$percent_window
+  
+  d_comparison = rbind(d_window, d_aisle_reverse)
+  d_comparison$percent_window_f = factor(d_comparison$percent_window)
+  
+  return(d_comparison)
+}
+
+format_catch_trials = function(d) {
+  
+  if (d$condtion == '1' || d$condtion == '2') {
+    d_window_60 = d %>% filter(.,grepl("60", image))
+    d_window_25 = d %>% filter(.,grepl("25", image))
+    d_window_100 = d %>% filter(.,grepl("100", image))
+    d_aisle_25 = d %>% filter(.,grepl("75", image))
+    d_aisle_60 = d %>% filter(.,grepl("40", image))
+    
+    d_window_60$prob = 60
+    d_aisle_60$prob = 60
+    d_window_100$prob = 100
+    d_window_25$prob = 25
+    d_aisle_25$prob = 25
+    
+    d_output = rbind(d_window_60, d_window_25, d_window_100, d_aisle_25, d_aisle_60)
+  } else if (d$condtion == '3' || d$condtion == '4') {
+    d_window_60 = d %>% filter(.,grepl("60", image))
+    d_window_90 = d %>% filter(.,grepl("90", image))
+    d_window_100 = d %>% filter(.,grepl("100", image))
+    d_aisle_90 = d %>% filter(.,grepl("10", image))
+    d_aisle_60 = d %>% filter(.,grepl("40", image))
+    
+    d_window_60$prob = 60
+    d_window_90$prob = 90
+    d_window_100$prob = 100
+    d_aisle_60$prob = 60
+    d_aisle_90$prob = 90
+    
+    d_output = rbind(d_window_60, d_window_90, d_window_100, d_aisle_90, d_aisle_60)
+  } 
+  
+  return(d_output)
+}
+
+```
+
+## Load data:
+
+```{r data, echo=FALSE}
+trials_cond1 = format_data(read.csv("../data/04_exp_away_cond1-trials.csv"))
+trials_cond2 = format_data(read.csv("../data/04_exp_away_cond2-trials.csv"))
+trials_cond3 = format_data(read.csv("../data/04_exp_away_cond3-trials.csv"))
+trials_cond4 = format_data(read.csv("../data/04_exp_away_cond4-trials.csv"))
+
+catch_trials1 = format_catch_trials(read.csv("../data/04_exp_away_cond1-exp_trials.csv"))
+catch_trials2 = format_catch_trials(read.csv("../data/04_exp_away_cond2-exp_trials.csv"))
+catch_trials3 = format_catch_trials(read.csv("../data/04_exp_away_cond3-exp_trials.csv"))
+catch_trials4 = format_catch_trials(read.csv("../data/04_exp_away_cond4-exp_trials.csv"))
+
+d1 = trials_cond1
+d2 = trials_cond2
+d3 = trials_cond3
+d4 = trials_cond4
+
+# combine data: 
+d1$Answer.condition = "optimist"
+d2$Answer.condition = "confident"
+d3$Answer.condition = "pessimist"
+d4$Answer.condition = "cautious"
+```
+
+## Compare probability ratings
+```{r}
+catch_trials1
+
+compare_probabilities = function(d) {
+  d = d %>%
+    mutate(prob_diff = abs(100*prob_rating - prob))
+  
+  d_mean_overall = d %>%
+    group_by(workerid) %>%
+    summarise(by_worker = mean(prob_diff))
+  
+  d_mean_by_prob = d %>%
+    group_by(prob) %>%
+    summarize(by_prob = mean(prob_diff))
+  
+  d_mean_by_probworker = d %>%
+    group_by(workerid, prob) %>%
+    summarize(by_probworker = mean(prob_diff))
+  
+  return(d_mean_by_probworker)
+  
+}
+
+compare_probabilities(catch_trials1)
+compare_probabilities(catch_trials2)
+compare_probabilities(catch_trials3)
+compare_probabilities(catch_trials4)
+
+```
+
+## Analyze mood
+
+```{r}
+format_mood_data
+
+mood1 = read.csv("../data/04_")
+```
+
