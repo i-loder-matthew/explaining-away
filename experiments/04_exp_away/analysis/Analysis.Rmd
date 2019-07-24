@@ -64,7 +64,7 @@ format_data = function(d) {
   return(d_comparison)
 }
 
-format_catch_trials = function(d) {
+format_exp_trials = function(d) {
   
   if (d$condtion == '1' || d$condtion == '2') {
     d_window_60 = d %>% filter(.,grepl("60", image))
@@ -105,22 +105,36 @@ format_catch_trials = function(d) {
 
 ```{r data, echo=FALSE}
 
-trials_cond2 = format_data(read.csv("../data/04_exp_away_cond2-trials.csv"))
-trials_cond3 = format_data(read.csv("../data/04_exp_away_cond3-trials.csv"))
-trials_cond4 = format_data(read.csv("../data/04_exp_away_cond4-trials.csv"))
+d2 = format_data(read.csv("../data/04_exp_away_cond2-trials.csv"))
+d3 = format_data(read.csv("../data/04_exp_away_cond3-trials.csv"))
+d4 = format_data(read.csv("../data/04_exp_away_cond4-trials.csv"))
 
-catch_trials2 = format_catch_trials(read.csv("../data/04_exp_away_cond2-exp_trials.csv"))
-catch_trials3 = format_catch_trials(read.csv("../data/04_exp_away_cond3-exp_trials.csv"))
-catch_trials4 = format_catch_trials(read.csv("../data/04_exp_away_cond4-exp_trials.csv"))
+exp_trials2 = format_exp_trials(read.csv("../data/04_exp_away_cond2-exp_trials.csv"))
+exp_trials3 = format_exp_trials(read.csv("../data/04_exp_away_cond3-exp_trials.csv"))
+exp_trials4 = format_exp_trials(read.csv("../data/04_exp_away_cond4-exp_trials.csv"))
 
-d2 = trials_cond2
-d3 = trials_cond3
-d4 = trials_cond4
-
-# combine data: 
 d2$Answer.condition = "confident"
 d3$Answer.condition = "pessimist"
 d4$Answer.condition = "cautious"
+
+
+```
+
+## Visualize probability ratings
+
+```{r}
+exp_trials = rbind(exp_trials2, exp_trials3, exp_trials4)
+
+exp_trials$prob = factor(exp_trials$prob)
+
+ggplot(data = exp_trials) +
+  geom_boxplot(mapping = aes(x = prob, y = prob_rating, fill = prob))
+
+```
+
+## Visualize mood ratings
+```{r}
+
 ```
 
 
@@ -366,31 +380,21 @@ ggplot(aucs.all3, aes(x=0, y=auc_diff_m, color=cond)) +
     xlim(-.2, .2) 
 ```
 
-So, we're seeing what we expected for the confident speaker, with the AUC > in the optimistic condition than in the confident condition (indicating explaining away), but we're not seeing the same (with just one speaker) for the pessimistic/cautious condition, where we would expect flipped results, with the pessimistic condition having a lower AUC than the cautious condition (with adaptation). To sum up, we expect the order to be, from greater to lower difference, "cautious", "pessimistic", "optimistic", and "confident".
+In the first t-test below, we see whether or not the difference in the AUC for the cautious speaker is significantly greater than that of the confident speaker. This allows us to see whether or not the speakers adapt to a specific speaker's modal usage during the exposure phase.
+
 ```{r t_test_method1, echo=FALSE}
 
 print(t.test(aucs.confident$auc_diff, aucs.cautious$auc_diff, var.equal=TRUE))
 
+```
+
+In this second t-test, we see whether the difference in the AUC for the pessimistic speaker is significantly less than that of the cautious speaker. This allows us to see whether or not explaining-away has occurred. 
+
+```{r t_test_method1.2, echo=FALSE}
 print(t.test(aucs.pessimist$auc_diff, aucs.cautious$auc_diff, var.equal=TRUE))
 
 
 
 ```
 
-## Power analysis
-```{r}
-m.cautious = mean(aucs.cautious$auc_diff)
-m.pessimist = mean(aucs.pessimist$auc_diff)
-
-sd.cautious = sd(aucs.cautious$auc_diff)
-sd.pessimist = sd(aucs.pessimist$auc_diff)
-
-d = m.cautious - m.pessimist
-d = d/sd.pessimist
-
-d
-
-power.t.test(n=60, delta=d, sd=1, sig.level = 0.05, type="two.sample", alternative="two.sided")
-
-```
 
