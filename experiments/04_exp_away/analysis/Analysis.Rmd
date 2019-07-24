@@ -158,8 +158,6 @@ mood4$workerid = mood4$workerid + max(mood3$workerid) + 1
 
 mood_all = rbind(mood2, mood3, mood4)
 
-mood_all
-
 mood1_all = mood_all %>%
   filter(type == "mood1") %>%
   mutate(mood1 = mood_rating) %>%
@@ -182,14 +180,10 @@ mood_by_participant = mood_all
 
 mood_by_participant$diff = mood_all$mood2 - mood_all$mood1
 
-mood_by_participant
+moodp1 = ggplot(data = mood_by_participant) +
+  geom_bar(mapping = aes(x = workerid, y = diff, fill = Answer.condition), stat = "identity")
 
-moodp1 = ggplot(data = mood2) %>%
-  geom_bar(mapping = aes(x = workerid, y = diff))
-
-
-
-
+moodp1
 
 ```
 
