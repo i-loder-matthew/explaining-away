@@ -126,6 +126,37 @@ d3$Answer.condition = "pessimist"
 d4$Answer.condition = "cautious"
 ```
 
+## Compare probability ratings
+```{r}
+catch_trials1
+
+compare_probabilities = function(d) {
+  d = d %>%
+    mutate(prob_diff = abs(100*prob_rating - prob))
+  
+  d_mean_overall = d %>%
+    group_by(workerid) %>%
+    summarise(by_worker = mean(prob_diff))
+  
+  d_mean_by_prob = d %>%
+    group_by(prob) %>%
+    summarize(by_prob = mean(prob_diff))
+  
+  d_mean_by_probworker = d %>%
+    group_by(workerid, prob) %>%
+    summarize(by_probworker = mean(prob_diff))
+  
+  return(d_mean_by_probworker)
+  
+}
+
+compare_probabilities(exp_trials1)
+compare_probabilities(exp_trials2)
+compare_probabilities(exp_trials3)
+compare_probabilities(exp_trials4)
+
+```
+
 
 ## Exclude random responses
 

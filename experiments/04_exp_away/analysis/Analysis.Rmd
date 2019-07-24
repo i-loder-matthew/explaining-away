@@ -117,7 +117,14 @@ d2$Answer.condition = "confident"
 d3$Answer.condition = "pessimist"
 d4$Answer.condition = "cautious"
 
+d2copy = d2
+d3copy = d3
+d4copy = d4
 
+d3copy$workerid = d3copy$workerid + max(d2copy$workerid) + 1
+d4copy$workerid = d4copy$workerid + max(d3copy$workerid) + 1
+
+d_all = rbind(d2copy, d3copy, d4copy)
 ```
 
 ## Visualize probability ratings
@@ -134,6 +141,42 @@ ggplot(data = exp_trials) +
 
 ## Visualize mood ratings
 ```{r}
+mood2 = read.csv("../data/04_exp_away_cond2-mood_ratings.csv")
+mood2$Answer.condition = "Confident"
+mood3 = read.csv("../data/04_exp_away_cond3-mood_ratings.csv")
+mood3$Answer.condition = "Pessimist"
+mood4 = read.csv("../data/04_exp_away_cond4-mood_ratings.csv")
+mood4$Answer.condition = "Cautious"
+
+mood3$workerid = mood3$workerid + max(mood2$workerid) + 1
+mood4$workerid = mood4$workerid + max(mood3$workerid) + 1
+
+mood_all = rbind(mood2, mood3, mood4)
+
+mood_all
+
+mood1_all = mood_all %>%
+  filter(type == "mood1") %>%
+  mutate(mood1 = mood_rating) %>%
+  mutate(mood_rating = NULL) %>%
+  mutate(type = NULL)
+
+mood2_all = mood_all %>%
+  filter(type == "mood2") %>%
+  mutate(mood2 = mood_rating) %>%
+  mutate(mood_rating = NULL) %>%
+  mutate(type = NULL)
+
+mood_all = merge(mood1_all, mood2_all)
+
+mood_all
+mood_by_participant = mood_all %>%
+  group_by(workerid)
+  summarise(diff = mood2 - mood1)
+
+
+
+
 
 ```
 
