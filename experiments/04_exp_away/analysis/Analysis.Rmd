@@ -99,6 +99,11 @@ format_exp_trials = function(d) {
   return(d_output)
 }
 
+format_mood = function(d) {
+  
+  return(d)
+}
+
 ```
 
 ## Load data:
@@ -141,11 +146,11 @@ ggplot(data = exp_trials) +
 
 ## Visualize mood ratings
 ```{r}
-mood2 = read.csv("../data/04_exp_away_cond2-mood_ratings.csv")
+mood2 = format_mood(read.csv("../data/04_exp_away_cond2-mood_ratings.csv"))
 mood2$Answer.condition = "Confident"
-mood3 = read.csv("../data/04_exp_away_cond3-mood_ratings.csv")
+mood3 = format_mood(read.csv("../data/04_exp_away_cond3-mood_ratings.csv"))
 mood3$Answer.condition = "Pessimist"
-mood4 = read.csv("../data/04_exp_away_cond4-mood_ratings.csv")
+mood4 = format_mood(read.csv("../data/04_exp_away_cond4-mood_ratings.csv"))
 mood4$Answer.condition = "Cautious"
 
 mood3$workerid = mood3$workerid + max(mood2$workerid) + 1
@@ -167,12 +172,20 @@ mood2_all = mood_all %>%
   mutate(mood_rating = NULL) %>%
   mutate(type = NULL)
 
-mood_all = merge(mood1_all, mood2_all)
+mood1_all = mood1_all[-c(24),]
 
-mood_all
-mood_by_participant = mood_all %>%
-  group_by(workerid)
-  summarise(diff = mood2 - mood1)
+mood_all = mood1_all
+  
+mood_all$mood2 = mood2_all$mood2
+
+mood_by_participant = mood_all
+
+mood_by_participant$diff = mood_all$mood2 - mood_all$mood1
+
+mood_by_participant
+
+moodp1 = ggplot(data = mood2) %>%
+  geom_bar(mapping = aes(x = workerid, y = diff))
 
 
 
