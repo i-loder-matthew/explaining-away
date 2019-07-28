@@ -170,11 +170,8 @@ mood2_all = mood_all %>%
   mutate(mood_rating = NULL) %>%
   mutate(type = NULL)
 
-mood1_all = mood1_all[-c(24),]
 
-mood_all = mood1_all
-  
-mood_all$mood2 = mood2_all$mood2
+mood_all = merge(mood1_all, mood2_all)
 
 mood_by_participant = mood_all
 
@@ -394,7 +391,7 @@ aucs.all2 = rbind(aucs.pessimist, aucs.cautious)
 
 aucs.all3 = rbind(aucs.confident, aucs.pessimist, aucs.cautious)
 
-auc.all4 = rbind(aucs.confident, aucs.cautious)
+aucs.all4 = rbind(aucs.confident, aucs.cautious)
 
 
 aucs.all2 = aucs.all2 %>% 
@@ -420,6 +417,22 @@ aucs.all3 = aucs.all3 %>%
                ci_low = ci.low(auc_diff))
 
 ggplot(aucs.all3, aes(x=0, y=auc_diff_m, color=cond)) +
+    geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
+    geom_point() +
+    xlab("") +
+    ylab("AUC difference (might ratings - probably ratings)") +
+    theme(axis.ticks=element_blank(), axis.text.x=element_blank(),
+          panel.grid.minor=element_blank(), 
+          plot.background=element_blank()) +
+    xlim(-.2, .2) 
+
+aucs.all4 = aucs.all4 %>%
+  group_by(., cond) %>% 
+  summarise(., auc_diff_m = mean(auc_diff), 
+               ci_high = ci.high(auc_diff), 
+               ci_low = ci.low(auc_diff))
+
+ggplot(aucs.all4, aes(x=0, y=auc_diff_m, color=cond)) +
     geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
     geom_point() +
     xlab("") +
