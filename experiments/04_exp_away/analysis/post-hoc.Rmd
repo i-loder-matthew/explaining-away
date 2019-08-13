@@ -1,0 +1,330 @@
+---
+title: "Post-Hoc Analysis"
+author: "Matthew Loder"
+date: "8/9/2019"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(data.table)
+library(gridExtra)
+library(DescTools)
+library(splines)
+library(stringr)
+source("helpers.R")
+
+
+theme_set(theme_bw())
+
+colscale = scale_color_manual(values=c("#7CB637", "#666666", "#4381C1")) 
+colscale_fill = scale_fill_manual(values=c("#7CB637", "#666666", "#4381C1")) 
+
+remove_quotes = function(d) {
+  
+}
+
+exclude_random = function(d) {
+  d_overall_means = d %>%
+  group_by(modal, workerid) %>% 
+  summarise(rating_m_overall = mean(rating))
+
+  d_indiv_means =  d %>%
+    group_by(modal,percent_window, workerid) %>% 
+    summarise(rating_m = mean(rating))
+  
+  d_indiv_merged = merge(d_indiv_means, d_overall_means, by=c("workerid", "modal"))
+  
+  cors = d_indiv_merged %>%
+    group_by(workerid) %>%
+    summarise(corr = cor(rating_m, rating_m_overall))
+  
+  exclude = cors %>%
+    filter(corr > 0.75) %>%
+    .$workerid
+  
+  print(paste("Excluded", length(exclude), "participants based on random responses."))
+  
+  d = d %>% filter(!(workerid %in% exclude))
+}
+
+format_data = function(d) {
+  drops <- c("modal1","rating1")
+  d2 = d[ , !(names(d) %in% drops)]
+  setnames(d2, old=c("rating2","modal2"), new=c("rating", "modal"))
+  
+  drops <- c("modal2","rating2")
+  d3 = d[ , !(names(d) %in% drops)]
+  setnames(d3, old=c("rating1","modal1"), new=c("rating", "modal"))
+  
+  drops <- c("modal2", "rating2", "modal1", "rating1")
+  d4 = d[ , !(names(d) %in% drops)]
+  d4$rating = d4$rating_other
+  d4$modal = "other"
+  
+  d = rbind(d2, d3, d4)
+  
+  d$modal = gsub('"', '', d$modal)
+  d$modal = factor(d$modal, levels = c("might", "probably", "other"), ordered = T)
+  
+  d$percent_window_f = factor(d$percent_window)
+  
+  d_aisle = d %>% filter(.,grepl("aisle", type))
+  d_window = d %>% filter(.,grepl("window", type))
+  
+  d_aisle_reverse = d_aisle
+  d_aisle_reverse$percent_window = 100-d_aisle$percent_window
+  
+  d_comparison = rbind(d_window, d_aisle_reverse)
+  d_comparison$percent_window_f = factor(d_comparison$percent_window)
+  
+  return(d_comparison)
+}
+
+```
+
+## Visualizing AUC differences by participant
+
+The first thing that I want to look at is if there is categorical variation in the adaptation effects for the participants in the pessimist condition - that is, I want to isolate whether or not there are some speakers who adapt and some who don't, or if there are some speakers who become more uncertain in their ratings than others. 
+
+### Load Data
+
+```{r data, echo=FALSE}
+d2 = format_data(read.csv("../data/04_exp_away_cond2-trials.csv"))
+d3 = format_data(read.csv("../data/04_exp_away_cond3-trials.csv"))
+d4 = format_data(read.csv("../data/04_exp_away_cond4-trials.csv"))
+
+d2$Answer.condition = "confident"
+d3$Answer.condition = "pessimist"
+d4$Answer.condition = "cautious"
+
+d3$workerid = d3$workerid + max(d2$workerid) + 1
+d4$workerid = d4$workerid + max(d3$workerid) + 1
+
+d_all = rbind(d2, d3, d4)
+
+d = exclude_random(d_all)
+d.pessimist = d %>% filter(Answer.condition == "pessimist")
+d.cautious = d %>% filter(Answer.condition == "cautious")
+d.confident = d %>% filter(Answer.condition == "confident")
+```
+
+### AUC Computation
+
+```{r auc_method_1, echo=FALSE}
+auc_method1 = function(d) {
+      #estimate linear model
+    model = lm(formula = rating_m ~ ns(percent_window, df = 4), data = d)
+  
+    pred = data.frame(0:1000)
+    pred$percent_window = (0:1000)/10
+    pred$rating = predict(model, pred)
+    auc = AUC(x = pred$percent_window, y=pred$rating)
+    return(auc)
+}
+
+auc_for_participants = function(d, method) {
+  
+  aucs = d %>% 
+    group_by(workerid) %>%
+    summarize(auc_might = 0, auc_probably = 0)
+  
+i = 1
+
+  for (wid in unique(d$workerid)) {
+    d.might_ratings = d %>% 
+      filter (workerid == wid) %>%
+      filter (modal == "might") %>%
+      group_by(workerid, percent_window) %>%
+      summarise(rating_m = mean(rating))
+    
+    aucs$auc_might[i] = method(d.might_ratings)
+    
+    d.probably_ratings = d %>% 
+      filter (workerid == wid) %>%
+      filter (modal == "probably") %>%
+      group_by(workerid, percent_window) %>%
+      summarise(rating_m = mean(rating))
+    
+    aucs$auc_probably[i] = method(d.probably_ratings)
+    i = i + 1
+  }
+  
+  aucs$auc_diff = aucs$auc_might - aucs$auc_probably
+  
+  return(aucs)
+}
+
+
+aucs.pessimist = d.pessimist %>% auc_for_participants(., method=auc_method1)
+
+aucs.confident = d.confident %>% auc_for_participants(., method=auc_method1)
+
+aucs.cautious = d.cautious %>% auc_for_participants(., method=auc_method1)
+
+
+aucs.confident$cond = "confident"
+
+aucs.pessimist$cond = "pessimist"
+
+aucs.cautious$cond = "cautious"
+
+aucs.all = rbind(aucs.confident, aucs.pessimist, aucs.cautious)
+
+```
+
+
+To look at the first part of this, it makes sense to start by comparing the AUC differences for all of the participants in the Pessimist condition. In plotting this data, we might see a sort of split between participants, or we may see an even spread. By looking at the spread of the distribition, we get a clearer picture of what's going on. 
+
+### AUC plots
+
+```{r}
+aucs.pessimist.plot1 = ggplot(data = aucs.pessimist) +
+  geom_point(mapping = aes(x = workerid - 80, y = auc_diff))
+
+aucs.cautious.plot1 = ggplot(data = aucs.cautious) +
+  geom_point(mapping = aes(x = workerid - 160, y = auc_diff))
+
+aucs.pessimist.plot1
+aucs.cautious.plot1
+
+aucs.all.plot1 = ggplot(data = aucs.all) +
+  geom_point(mapping = aes(x = workerid, y = auc_diff, col=cond))
+
+aucs.all.plot1
+```
+
+Presumably, in the above plot, those participants with higher AUC ratings have adapted more than those with lower AUC ratings. We can compare this with the values for the cautious and confident speakers as well, and look at the spread of the data below.
+
+```{r}
+aucs.all.plot2 = ggplot(data = aucs.all) +
+  geom_point(mapping = aes(x = workerid, y = auc_diff, col=cond))
+
+aucs.all.plot2
+```
+
+Finally, I'll look at the distributions in a histogram plot, with bins of size 5 
+
+```{r}
+aucs.pessimist.plot2 = ggplot(data = aucs.pessimist, mapping = aes(x = auc_diff)) +
+  geom_histogram(binwidth = 5)
+
+aucs.cautious.plot2 = ggplot(data = aucs.cautious, mapping = aes(x = auc_diff)) +
+  geom_histogram(binwidth = 5)
+
+aucs.confident.plot2 = ggplot(data = aucs.confident, mapping = aes(x = auc_diff)) +
+  geom_histogram(binwidth = 5)
+
+aucs.all.plot3 = ggplot(data = aucs.all, mapping = aes(x = auc_diff, fill = cond)) +
+  geom_histogram(binwidth = 5, position = "identity", alpha = 2/5)
+
+aucs.pessimist.plot2
+aucs.cautious.plot2
+aucs.confident.plot2
+aucs.all.plot3
+```
+
+In addition to this, we may want to refine our exclusion criteria, based on the end behavior of the ratings (so rating might really high at 100%, or probably really high at 0%). This might help us create a more accurate model of the behavior we're trying to look at. We might also want to look at age effects, or correlations with other 
+
+
+## Visualizing differences in variation/certain by participant
+
+I've had an idea, in addition to looking at the overall differences in the area in the curve across participants, it might also make sense to look at the absolute value of the difference in the ratings of participants for individual items. This measure, combined with the AUC measure might give us a clearer picture of what's going on.
+
+So let's look at the average squared differance in ratings for might and probably by participant and condition, and by item and condition
+
+### Compute differences in ratings per participant
+
+```{r}
+# We want to start by finding the difference in might and probably ratings for each item
+
+d.might = d %>% filter(modal == "might")
+d.probably = d %>% filter(modal == "probably")
+
+d.rating_diff = data.frame("might_rating" = d.might$rating, 
+                           "probably_rating" = d.probably$rating,
+                           "rating_diff" = (d.might$rating - d.probably$rating) ^ 2,
+                           "workerid" = d.might$workerid,
+                           "probability" = d.might$percent_window,
+                           "condition" = d.might$Answer.condition
+                           )
+
+# Now we'll look at the average differences by speaker
+avg_diff_by_speaker = d.rating_diff %>%
+  group_by(workerid, condition) %>%
+  summarise(rating_diff_m = mean(rating_diff))
+
+
+# and then by probability
+avg_diff_by_prob = d.rating_diff %>%
+  group_by(probability, condition) %>%
+  summarise(rating_diff_m = mean(rating_diff))
+
+# and then the average across conditions, by speaker, and by item
+avg_diff_by_cond = d.rating_diff %>%
+  group_by(condition) %>%
+  summarise(rating_diff_m = mean(rating_diff)) 
+
+```
+
+### Visualize differences
+
+```{r}
+avg_diff.pessimist1 = avg_diff_by_speaker %>% filter(condition == "pessimist")
+avg_diff.pessimist2 = avg_diff_by_prob %>% filter(condition == "pessimist")
+
+pessimist.rating.plot1 = ggplot(data = avg_diff.pessimist1) +
+  geom_point(mapping = aes(x = workerid, y = rating_diff_m))
+
+worker_rating.plot1 = ggplot(data = avg_diff_by_speaker) +
+  geom_point(mapping = aes(x = workerid,
+                           y = rating_diff_m,
+                           col = condition))
+  
+prob.rating.plot1 = ggplot(data = avg_diff_by_prob) +
+  geom_bar(stat = "identity", 
+           mapping = aes(x = probability, y = rating_diff_m, fill = condition), 
+           position = "dodge")
+
+pessimist.rating.plot1
+worker_rating.plot1
+prob.rating.plot1
+```
+
+Finally, consider comparing this difference in the ratings with the individual participants' AUCs
+
+```{r}
+aucs_and_diffs = data.frame("workerid" = aucs.all$workerid,
+                            "rating_diff_m" = avg_diff_by_speaker$rating_diff_m,
+                            "auc_diff" = aucs.all$auc_diff,
+                            "condition" = avg_diff_by_speaker$condition)
+
+aucs_and_diffs.pessimist = aucs_and_diffs %>% filter(condition == "pessimist")
+
+aucs_and_diffs.plot1 = ggplot(data = aucs_and_diffs.pessimist) +
+  geom_point(mapping = aes(x = rating_diff_m, y = auc_diff)) +
+  geom_smooth(method = 'lm',
+              mapping = aes(x = rating_diff_m, y = auc_diff))
+
+aucs_and_diffs.plot1
+
+aucs_and_diffs.plot2 = ggplot(data = aucs_and_diffs) +
+  geom_point(mapping = aes(x = rating_diff_m,
+                           y = auc_diff,
+                           col = condition)) +
+  geom_smooth(method='lm', 
+              mapping = aes(x = rating_diff_m,
+                           y = auc_diff,
+                           col = condition))
+
+
+aucs_and_diffs.plot2
+```
+
+One other thing that you might look at is the consistency of a participant's responses for each probability, so maybe the spread of the responses per participant, per item (sd or something like that), although there are only 4 responses. Maybe participants are less consistent in the 

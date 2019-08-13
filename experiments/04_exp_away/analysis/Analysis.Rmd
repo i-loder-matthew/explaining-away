@@ -321,7 +321,7 @@ plot(ps34$p1)
 ```
 ## Individual plots
 
-```{r by_participant_plots}
+```{r by_participant_plots, fig.width=10, fig.height=20}
 
 plot(ps2$by_participant)
 plot(ps3$by_participant)

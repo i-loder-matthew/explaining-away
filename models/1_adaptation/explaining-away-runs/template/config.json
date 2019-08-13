@@ -1,0 +1,153 @@
+{
+  "proposal_widths": {
+    "theta_nu": 0.025,
+    "theta_mu": 0.0017499999999999998,
+    "utt_other_prob": 0.01,
+    "cost": 0.013,
+    "rat_alpha": 0.005
+  },
+  "rat_alpha_prior": {
+    "rat_alpha_mu": 2.211211,
+    "rat_alpha_sd": 0.5
+  },
+  "data_path": "./data/speaker_adaptation_optimist.json",
+  "utt_other_prob_prior": {
+    "utt_other_prob_mu": 3.640688e-05,
+    "utt_other_prob_sd": 1
+  },
+  "utterances": [
+    {
+      "has_cost": true,
+      "form": "bare",
+      "mu_init": 0.8144637,
+      "has_theta": true,
+      "prior": {
+        "mu_sd": 0.175,
+        "mu_mu": 0.8144637,
+        "cost_mu": 3.03251764,
+        "cost_sd": 1.3
+      },
+      "nu_init": 1.56426646,
+      "cost_init": 3.03251764
+    },
+    {
+      "has_cost": true,
+      "form": "might",
+      "mu_init": 0.23144643,
+      "has_theta": true,
+      "prior": {
+        "mu_sd": 0.175,
+        "mu_mu": 0.23144643,
+        "cost_mu": 1,
+        "cost_sd": 1.3
+      },
+      "nu_init": 4.01429868,
+      "cost_init": 1
+    },
+    {
+      "has_cost": true,
+      "form": "probably",
+      "mu_init": 0.59029174,
+      "has_theta": true,
+      "prior": {
+        "mu_sd": 0.175,
+        "mu_mu": 0.59029174,
+        "cost_mu": 1,
+        "cost_sd": 1.3
+      },
+      "nu_init": 4.32276417,
+      "cost_init": 1
+    },
+    {
+      "has_cost": true,
+      "form": "think",
+      "mu_init": 0.61684055,
+      "has_theta": true,
+      "prior": {
+        "mu_sd": 0.175,
+        "mu_mu": 0.61684055,
+        "cost_mu": 3.03251764,
+        "cost_sd": 1.3
+      },
+      "nu_init": 2.68289959,
+      "cost_init": 3.03251764
+    },
+    {
+      "has_cost": true,
+      "copy_cost": "think",
+      "form": "could",
+      "mu_init": 0.37119028,
+      "has_theta": true,
+      "prior": {
+        "mu_sd": 0.175,
+        "mu_mu": 0.37119028,
+        "cost_mu": 3.03251764,
+        "cost_sd": 1.3
+      },
+      "nu_init": 2.15360533,
+      "cost_init": 3.03251764
+    },
+    {
+      "has_cost": true,
+      "copy_cost": "think",
+      "form": "looks_like",
+      "mu_init": 0.69623235,
+      "has_theta": true,
+      "prior": {
+        "mu_sd": 0.175,
+        "mu_mu": 0.69623235,
+        "cost_mu": 3.03251764,
+        "cost_sd": 1.3
+      },
+      "nu_init": 1.99960149,
+      "cost_init": 3.03251764
+    },
+    {
+      "has_cost": true,
+      "copy_cost": "think",
+      "form": "bare_not",
+      "mu_init": 0.25027258,
+      "has_theta": true,
+      "prior": {
+        "mu_sd": 0.175,
+        "mu_mu": 0.25027258,
+        "cost_mu": 3.03251764,
+        "cost_sd": 1.3
+      },
+      "nu_init": 1.62567899,
+      "cost_init": 3.03251764,
+      "is_neg": true
+    }
+  ],
+  "noise_strength_init": 0.07433144,
+  "theta_marginalization": "speaker",
+  "utt_other_prob_estimate": false,
+  "rat_alpha_init": 2.211211,
+  "hdi_estimation_samples": 1000,
+  "burn_in": 20000,
+  "theta_nu_scale": 2.5,
+  "utt_other_prob_init": 3.640688e-05,
+  "condition_encoding": "xxx",
+  "iterations": 120001,
+  "exposure_trials": [
+    [
+      "might",
+      25,
+      5
+    ],
+    [
+      "probably",
+      60,
+      10
+    ],
+    [
+      "bare",
+      100,
+      5
+    ]
+  ],
+  "conditions": [
+    "might-probably"
+  ],
+  "rat_alpha_estimate": true
+}
