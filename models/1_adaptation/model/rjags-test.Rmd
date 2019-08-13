@@ -1,0 +1,14 @@
+---
+title: "Playing with RJAGS for model building"
+output: html_notebook
+---
+
+I'd like to explore building a model using RJAGS. Depending on the complexity of the model, and the limitations of my coding/conceptual knowledge, this may not be possible, especially given the current time limit. Depending on the time limit, I might just end up adjusting one of Sebastian's models in python.
+
+```{r}
+library(rjags)
+library(runjags)
+
+
+```
+

@@ -1,0 +1,162 @@
+{
+  "utterances": [
+    {
+      "form": "bare",
+      "has_theta": true,
+      "has_cost": true,
+      "mu_init": 0.724772708260333,
+      "var_init": 0.0516498057971658,
+      "cost_init": 2.25781953877145,
+      "prior": {
+        "mu_log_mu": -0.321914394903054,
+        "var_log_mu": -2.96355938822823,
+        "mu_log_sd": 0.105243825830744,
+        "var_log_sd": 0.431678725740249,
+        "cost_log_mu": 0.814306224642736,
+        "cost_log_sd": 0.411934492628717
+      }
+    },
+    {
+      "form": "might",
+      "has_theta": true,
+      "has_cost": true,
+      "mu_init": 0.28562163066787,
+      "beta_init": 3.06,
+      "cost_init": 2.25781953877145,
+      "prior": {
+        "mu_log_mu": -1.25323639870474,
+        "var_log_mu": -3.56808890817706,
+        "mu_log_sd": 0.29838024058785,
+        "var_log_sd": 0.595515564580933,
+        "cost_log_mu": 0.814306224642736,
+        "cost_log_sd": 0.411934492628717
+      },
+      "var_init": 0.0282511710707493
+    },
+    {
+      "form": "looks_like",
+      "has_theta": true,
+      "has_cost": true,
+      "mu_init": 0.703676700146815,
+      "var_init": 0.0513236619362148,
+      "cost_init": 2.25781953877145,
+      "prior": {
+        "mu_log_mu": -0.351449380309716,
+        "var_log_mu": -2.96979354514361,
+        "mu_log_sd": 0.13420630040124,
+        "var_log_sd": 0.418018941832022,
+        "cost_log_mu": 0.814306224642736,
+        "cost_log_sd": 0.411934492628717
+      }
+    },
+    {
+      "form": "probably",
+      "has_theta": true,
+      "has_cost": true,
+      "mu_init": 0.661581983092768,
+      "var_init": 0.0424454090653705,
+      "cost_init": 2.25781953877145,
+      "prior": {
+        "mu_log_mu": -0.413138056824761,
+        "var_log_mu": -3.15973820439932,
+        "mu_log_sd": 0.0825954414339351,
+        "var_log_sd": 0.35849519809103,
+        "cost_log_mu": 0.814306224642736,
+        "cost_log_sd": 0.411934492628717
+      }
+    },
+    {
+      "form": "think",
+      "has_theta": true,
+      "has_cost": true,
+      "mu_init": 0.679156788076669,
+      "var_init": 0.0509250576217939,
+      "cost_init": 2.25781953877145,
+      "prior": {
+        "mu_log_mu": -0.386913609147552,
+        "var_log_mu": -2.97750522588256,
+        "mu_log_sd": 0.098187605835626,
+        "var_log_sd": 0.30121108890238,
+        "cost_log_mu": 0.814306224642736,
+        "cost_log_sd": 0.411934492628717
+      }
+    },
+    {
+      "form": "could",
+      "has_theta": true,
+      "has_cost": true,
+      "mu_init": 0.436035781367172,
+      "var_init": 0.0573107850475082,
+      "cost_init": 2.25781953877145,
+      "prior": {
+        "mu_log_mu": -0.830121560031074,
+        "var_log_mu": -2.85959945567662,
+        "mu_log_sd": 0.22964343084144,
+        "var_log_sd": 0.437247745469228,
+        "cost_log_mu": 0.814306224642736,
+        "cost_log_sd": 0.411934492628717
+      }
+    },
+    {
+      "form": "other",
+      "has_theta": false,
+      "has_cost": true,
+      "alpha_init": "random",
+      "beta_init": "random",
+      "cost_init": 0.62120670814645,
+      "prior": {
+        "cost_log_mu": -0.476364403989588,
+        "cost_log_sd": 0.433564177613965
+      }
+    },
+    {
+      "form": "bare_not",
+      "has_theta": true,
+      "has_cost": true,
+      "is_neg": true,
+      "mu_init": 0.30387755933328,
+      "var_init": 0.0582473321039053,
+      "cost_init": 2.25781953877145,
+      "prior": {
+        "mu_log_mu": -1.19119845431753,
+        "var_log_mu": -2.84324371799157,
+        "mu_log_sd": 0.252109044873698,
+        "var_log_sd": 0.380275478510259,
+        "cost_log_mu": 0.814306224642736,
+        "cost_log_sd": 0.411934492628717
+      }
+    }
+  ],
+  "noise_strength": 0.05,
+  "theta_marginalization": "speaker",
+  "condition_encoding": "cost",
+  "rat_alpha_init": 1.76104608240205,
+  "rat_alpha_estimate": false,
+  "utt_other_prob_init": 0.00119757734016346,
+  "utt_other_prob_estimate": false,
+  "proposal_widths": {
+    "theta_mu": 0.01,
+    "theta_var": 0.005,
+    "cost": 0.05,
+    "rat_alpha": 0.005,
+    "utt_other_prob": 1e-05
+  },
+  "exposure_trials": [
+    [
+      "might",
+      60,
+      10
+    ],
+    [
+      "probably",
+      90,
+      5
+    ],
+    [
+      "bare",
+      100,
+      5
+    ]
+  ],
+  "iterations": 1200001
+}

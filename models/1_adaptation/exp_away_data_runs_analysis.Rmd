@@ -1,0 +1,220 @@
+---
+title: "exp_away_data_runs_analysis"
+author: "Matthew Loder"
+date: "8/8/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(data.table)
+library(tidyverse)
+source("../../shared-analysis/data_helpers.R")
+
+```
+
+```{r functions, echo=FALSE}
+convertData = function(output_file) {
+  output_string <- paste(readLines(output_file, warn = F),
+                         collapse = "\n")
+  if (output_string != "") {
+    output <- jsonlite::fromJSON(output_string, flatten = TRUE)
+    return(output)
+  }
+}
+
+countSamples <- function(output, inference_opts) {
+  if(!(is.null(inference_opts[["samples"]]))) {
+    return(inference_opts[["samples"]])
+  } else if (!(is.null(inference_opts[["particles"]]))) {
+    return(inference_opts[["particles"]])
+  } else {
+    return(nrow(output))
+  }
+}
+
+tidy_sampleList <- function(output, chains, chain, inference_opts) {
+  names(output) <- gsub("value.", "", names(output))
+  num_samples <- countSamples(output, inference_opts)
+  # as of webppl v0.9.6, samples come out in the order they were collected
+  output$Iteration <- 1:num_samples 
+  ggmcmc_samples <- tidyr::gather_(
+    output, key_col = "Parameter", value_col = "value",
+    gather_cols = names(output)[names(output) != "Iteration"],
+    factor_key = TRUE
+  )
+  ggmcmc_samples$Chain <- chain
+  ggmcmc_samples <- ggmcmc_samples[,c("Iteration", "Chain", "Parameter", "value")] # reorder columns
+  attr(ggmcmc_samples, "nChains") <- chains
+  attr(ggmcmc_samples, "nParameters") <- ncol(output) - 1
+  attr(ggmcmc_samples, "nIterations") <- num_samples
+  attr(ggmcmc_samples, "nBurnin") <- ifelse(is.null(inference_opts[["burn"]]), 0, inference_opts[["burn"]])
+  attr(ggmcmc_samples, "nThin") <- ifelse(is.null(inference_opts[["thin"]]), 1, inference_opts[["thin"]])
+  attr(ggmcmc_samples, "description") <- ifelse(is.null(inference_opts[["method"]]), "", inference_opts[["method"]])
+  return(ggmcmc_samples)
+}
+
+reparam = function(d) {
+  modals = c("bare", "could", "looks_like", "might", "probably", "think", "bare_not")
+  for (modal in modals) {
+    alpha_param_name = paste("alpha_", modal, sep="")
+    beta_param_name = paste("beta_", modal, sep="")
+    mu_param_name = paste("mu_", modal, sep="")
+    nu_param_name = paste("nu_", modal, sep="")
+
+    alpha = d[, alpha_param_name]
+    beta = d[, beta_param_name]
+    
+    mu =  alpha / (alpha + beta)
+    nu = alpha + beta
+    d[, mu_param_name] = mu
+    d[, nu_param_name] = nu
+  }
+  return(d)
+}
+```
+
+```{r exp_data, echo=FALSE}
+exp_data.cautious = read.csv("~/Documents/research/explaining-away/experiments/04_exp_away/data/04_exp_away_cond4-trials.csv")
+exp_data.pessimist = read.csv("~/Documents/research/explaining-away/experiments/04_exp_away/data/04_exp_away_cond3-trials.csv")
+exp_data.confident = read.csv("~/Documents/research/explaining-away/experiments/04_exp_away/data/04_exp_away_cond2-trials.csv")
+
+exp_data.confident$workerid = exp_data.confident$workerid + max(exp_data.cautious$workerid) + 1
+exp_data.pessimist$workerid = exp_data.pessimist$workerid + max(exp_data.confident$workerid) + 1
+exp_data.cautious$condition = "cautious"
+exp_data.confident$condition = "confident"
+exp_data.pessimist$condition = "pessimist"
+
+exp_data = rbind(exp_data.cautious, exp_data.confident, exp_data.pessimist)
+
+exp_data = remove_quotes(exp_data)
+
+exp_trials.cautious = read.csv("~/Documents/research/explaining-away/experiments/04_exp_away/data/04_exp_away_cond4-exp_trials.csv")
+exp_trials.confident = read.csv("~/Documents/research/explaining-away/experiments/04_exp_away/data/04_exp_away_cond2-exp_trials.csv")
+exp_trials.pessimist = read.csv("~/Documents/research/explaining-away/experiments/04_exp_away/data/04_exp_away_cond3-exp_trials.csv")
+
+exp_trials.confident$workerid = exp_trials.confident$workerid + max(exp_trials.cautious$workerid) + 1
+exp_trials.pessimist$workerid = exp_trials.pessimist$workerid + max(exp_trials.confident$workerid) + 1
+exp_trials = rbind(exp_trials.cautious, exp_trials.confident, exp_trials.pessimist)
+#exp_data = exclude_participants(exp_data, exp_trials)
+exp_data = spread_data(exp_data)
+exp_data$pair = exp_data$condition
+exp_plot_data = get_data_for_plotting(exp_data)
+
+# From the norming study
+
+```
+
+Experiments where we fit parameters of the model to the post-adaptation data to investigate whether
+the model can learn these parameters and what they would look like.
+
+## Fit 1: Fitting of Thetas and individual costs
+
+In this model, the parameters guiding the distributions over thresholds as well as the costs can vary.
+There is a separate cost term for each utterance.
+
+Inferred thresholds:
+
+```{r model1_data, echo=FALSE}
+d.confident = convertData("./explaining-away-runs/main-confident/run1_output.json")
+d.confident = reparam(d.confident)
+d.confident = tidy_sampleList(d.confident, 1, 1, list())
+d.confident$condition = "confident"
+
+d.pessimist = convertData("./explaining-away-runs/main-bad-mood/run1_output.json")
+d.pessimist = reparam(d.pessimist)
+d.pessimist = tidy_sampleList(d.pessimist, 1, 1, list())
+d.pessimist$condition = "pessimist"
+
+d.cautious = convertData("./explaining-away-runs/main-cautious/run1_output.json")
+d.cautious = reparam(d.cautious)
+d.cautious = tidy_sampleList(d.cautious, 1, 1, list())
+d.cautious$condition = "cautious"
+
+d = rbind(d.confident, d.pessimist, d.cautious)
+
+mle_params = d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  spread(key = Parameter, value = value)
+
+print(mle_params$rat_alpha)
+```
+
+```{r threshold_distr1, fig.width=10, echo=FALSE}
+beta_density = data.table()
+beta_modals = c("bare", "might", "probably", "could", "looks_like", "think", "bare_not")
+for (i in 1:3) {
+for (modal in beta_modals) {
+  if (modal == "other") {
+    next
+  }
+  alpha_param_name = paste("alpha", modal, sep="_")
+  beta_param_name = paste("beta", modal, sep="_")
+  
+  alpha_param = as.numeric(mle_params[i,alpha_param_name])
+  beta_param = as.numeric(mle_params[i,beta_param_name])
+
+  
+  x = seq(0.001,0.999,.001)
+  y = dbeta(x, alpha_param, beta_param)
+  #y = y / (max(y))
+  
+  beta_density = rbind(beta_density, data.frame(x = x, y = y, modal = gsub("_", " ", modal), condition=mle_params[i, "condition"]))
+}
+}
+
+threshold_distrs = ggplot(beta_density, aes(x=x, y=y, col=condition)) + 
+  geom_line() + 
+  facet_wrap(~modal, ncol = 4, scales = "free_y") + 
+  xlab(expression(theta)) +
+  ylab(expression(paste("P(", theta, ")", sep=""))) +
+  theme(legend.position = "bottom") +
+  guides(col=guide_legend(title="Condition", nrow = 1)) 
+
+plot(threshold_distrs)
+
+d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  filter(grepl("cost_", Parameter)) %>%
+  ggplot(aes(x=Parameter, y = value, fill=condition)) +
+  geom_bar(stat="identity", position = "dodge")
+
+
+```
+
+Model fit:
+
+```{r model_fit1, echo=FALSE, fig.width=10, fig.height = 5}
+
+hdi_data.confident= read.csv(paste("../../models/2_adaptation_model/explaining-away-runs/main-confident/hdi_samples.csv", sep=""))
+hdi_data.pessimist = read.csv(paste("../../models/2_adaptation_model/explaining-away-runs/main-bad-mood/hdi_samples.csv", sep=""))
+hdi_data.cautious= read.csv(paste("../../models/2_adaptation_model/explaining-away-runs/main-cautious/hdi_samples.csv", sep=""))
+
+hdi_data.confident$condition = "confident"
+hdi_data.pessimist$condition = "pessimist"
+hdi_data.cautious$condition = "cautious"
+hdi_data.all = rbind(hdi_data.confident, hdi_data.pessimist, hdi_data.cautious)
+hdi_data.all$condition = factor(hdi_data.all$condition, levels=c("confident", "pessimist", "cautious"), ordered = T)
+hdi_data.all$rating_pred = hdi_data.all$rating_pred * 100
+
+hdi_data.all$src = factor("model prediction", levels=c("model prediction", "experimental result"), ordered=T)
+posterior_plot =  hdi_data.all %>% 
+              group_by(condition, modal, percentage_blue, src) %>%
+              summarize(rating_pred_m = mean(rating_pred)) %>%
+  ggplot(aes(x=percentage_blue, col=modal, y=rating_pred_m, group=interaction(modal,condition), lty=src)) +   geom_line(size=1) + 
+   colscale(unique(exp_plot_data$modal))  + facet_wrap(~condition) +
+  geom_vline(xintercept = 60, lty=2, col="grey", size=1) +
+  theme(legend.position = "bottom", legend.box = "vertical") +
+  guides(col=guide_legend(title="Expression", nrow = 1, override.aes = list(alpha = 1)), 
+  lty=guide_legend(title="", nrow = 1, override.aes = list(alpha = 1, size=0.5), order = 2)) +
+  ylab("predicted rating") +
+  xlab("event probability") +
+  geom_line(aes(x=percentage_blue, y=rating_m, group=modal), data=exp_plot_data %>% rename(condition = pair) %>% mutate(src="experimental result")) +
+  scale_linetype_manual(values=c("solid", "dashed"), labels=c("model prediction", "experimental result"), drop=F)
+
+plot(posterior_plot)
+
+
+```

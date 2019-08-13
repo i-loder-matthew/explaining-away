@@ -1,0 +1,2400 @@
+Iteration: 100 
+Acceptance rate: 0.5
+Iteration: 200 
+Acceptance rate: 0.49
+Iteration: 300 
+Acceptance rate: 0.5266666666666666
+Iteration: 400 
+Acceptance rate: 0.5025
+Iteration: 500 
+Acceptance rate: 0.51
+Iteration: 600 
+Acceptance rate: 0.485
+Iteration: 700 
+Acceptance rate: 0.47285714285714286
+Iteration: 800 
+Acceptance rate: 0.45875
+Iteration: 900 
+Acceptance rate: 0.45111111111111113
+Iteration: 1000 
+Acceptance rate: 0.439
+Iteration: 1100 
+Acceptance rate: 0.43454545454545457
+Iteration: 1200 
+Acceptance rate: 0.43083333333333335
+Iteration: 1300 
+Acceptance rate: 0.42230769230769233
+Iteration: 1400 
+Acceptance rate: 0.41785714285714287
+Iteration: 1500 
+Acceptance rate: 0.41333333333333333
+Iteration: 1600 
+Acceptance rate: 0.405625
+Iteration: 1700 
+Acceptance rate: 0.3982352941176471
+Iteration: 1800 
+Acceptance rate: 0.395
+Iteration: 1900 
+Acceptance rate: 0.39052631578947367
+Iteration: 2000 
+Acceptance rate: 0.3895
+Iteration: 2100 
+Acceptance rate: 0.38904761904761903
+Iteration: 2200 
+Acceptance rate: 0.3845454545454545
+Iteration: 2300 
+Acceptance rate: 0.3791304347826087
+Iteration: 2400 
+Acceptance rate: 0.37125
+Iteration: 2500 
+Acceptance rate: 0.3624
+Iteration: 2600 
+Acceptance rate: 0.35384615384615387
+Iteration: 2700 
+Acceptance rate: 0.3496296296296296
+Iteration: 2800 
+Acceptance rate: 0.3485714285714286
+Iteration: 2900 
+Acceptance rate: 0.34793103448275864
+Iteration: 3000 
+Acceptance rate: 0.3456666666666667
+Iteration: 3100 
+Acceptance rate: 0.34483870967741936
+Iteration: 3200 
+Acceptance rate: 0.3434375
+Iteration: 3300 
+Acceptance rate: 0.34606060606060607
+Iteration: 3400 
+Acceptance rate: 0.3458823529411765
+Iteration: 3500 
+Acceptance rate: 0.3434285714285714
+Iteration: 3600 
+Acceptance rate: 0.3413888888888889
+Iteration: 3700 
+Acceptance rate: 0.3410810810810811
+Iteration: 3800 
+Acceptance rate: 0.3410526315789474
+Iteration: 3900 
+Acceptance rate: 0.33974358974358976
+Iteration: 4000 
+Acceptance rate: 0.3385
+Iteration: 4100 
+Acceptance rate: 0.3380487804878049
+Iteration: 4200 
+Acceptance rate: 0.3354761904761905
+Iteration: 4300 
+Acceptance rate: 0.33348837209302323
+Iteration: 4400 
+Acceptance rate: 0.3327272727272727
+Iteration: 4500 
+Acceptance rate: 0.332
+Iteration: 4600 
+Acceptance rate: 0.331304347826087
+Iteration: 4700 
+Acceptance rate: 0.33148936170212767
+Iteration: 4800 
+Acceptance rate: 0.32916666666666666
+Iteration: 4900 
+Acceptance rate: 0.3283673469387755
+Iteration: 5000 
+Acceptance rate: 0.3274
+Iteration: 5100 
+Acceptance rate: 0.3254901960784314
+Iteration: 5200 
+Acceptance rate: 0.3236538461538462
+Iteration: 5300 
+Acceptance rate: 0.32396226415094337
+Iteration: 5400 
+Acceptance rate: 0.3224074074074074
+Iteration: 5500 
+Acceptance rate: 0.3221818181818182
+Iteration: 5600 
+Acceptance rate: 0.3219642857142857
+Iteration: 5700 
+Acceptance rate: 0.32035087719298244
+Iteration: 5800 
+Acceptance rate: 0.32
+Iteration: 5900 
+Acceptance rate: 0.3176271186440678
+Iteration: 6000 
+Acceptance rate: 0.31633333333333336
+Iteration: 6100 
+Acceptance rate: 0.3144262295081967
+Iteration: 6200 
+Acceptance rate: 0.3141935483870968
+Iteration: 6300 
+Acceptance rate: 0.31396825396825395
+Iteration: 6400 
+Acceptance rate: 0.31390625
+Iteration: 6500 
+Acceptance rate: 0.31323076923076926
+Iteration: 6600 
+Acceptance rate: 0.31272727272727274
+Iteration: 6700 
+Acceptance rate: 0.3143283582089552
+Iteration: 6800 
+Acceptance rate: 0.3120588235294118
+Iteration: 6900 
+Acceptance rate: 0.31217391304347825
+Iteration: 7000 
+Acceptance rate: 0.3117142857142857
+Iteration: 7100 
+Acceptance rate: 0.31140845070422535
+Iteration: 7200 
+Acceptance rate: 0.31083333333333335
+Iteration: 7300 
+Acceptance rate: 0.3102739726027397
+Iteration: 7400 
+Acceptance rate: 0.31027027027027027
+Iteration: 7500 
+Acceptance rate: 0.30973333333333336
+Iteration: 7600 
+Acceptance rate: 0.30973684210526314
+Iteration: 7700 
+Acceptance rate: 0.30896103896103894
+Iteration: 7800 
+Acceptance rate: 0.3078205128205128
+Iteration: 7900 
+Acceptance rate: 0.3072151898734177
+Iteration: 8000 
+Acceptance rate: 0.306625
+Iteration: 8100 
+Acceptance rate: 0.30679012345679013
+Iteration: 8200 
+Acceptance rate: 0.3071951219512195
+Iteration: 8300 
+Acceptance rate: 0.30698795180722893
+Iteration: 8400 
+Acceptance rate: 0.3061904761904762
+Iteration: 8500 
+Acceptance rate: 0.3054117647058823
+Iteration: 8600 
+Acceptance rate: 0.305
+Iteration: 8700 
+Acceptance rate: 0.3042528735632184
+Iteration: 8800 
+Acceptance rate: 0.3038636363636364
+Iteration: 8900 
+Acceptance rate: 0.30292134831460676
+Iteration: 9000 
+Acceptance rate: 0.3025555555555556
+Iteration: 9100 
+Acceptance rate: 0.3012087912087912
+Iteration: 9200 
+Acceptance rate: 0.29967391304347823
+Iteration: 9300 
+Acceptance rate: 0.29870967741935484
+Iteration: 9400 
+Acceptance rate: 0.2979787234042553
+Iteration: 9500 
+Acceptance rate: 0.29726315789473684
+Iteration: 9600 
+Acceptance rate: 0.29739583333333336
+Iteration: 9700 
+Acceptance rate: 0.29690721649484536
+Iteration: 9800 
+Acceptance rate: 0.2963265306122449
+Iteration: 9900 
+Acceptance rate: 0.2956565656565657
+Iteration: 10000 
+Acceptance rate: 0.2954
+Iteration: 10100 
+Acceptance rate: 0.29495049504950493
+Iteration: 10200 
+Acceptance rate: 0.293921568627451
+Iteration: 10300 
+Acceptance rate: 0.2929126213592233
+Iteration: 10400 
+Acceptance rate: 0.2925
+Iteration: 10500 
+Acceptance rate: 0.2923809523809524
+Iteration: 10600 
+Acceptance rate: 0.2926415094339623
+Iteration: 10700 
+Acceptance rate: 0.2922429906542056
+Iteration: 10800 
+Acceptance rate: 0.2925
+Iteration: 10900 
+Acceptance rate: 0.2923853211009174
+Iteration: 11000 
+Acceptance rate: 0.2927272727272727
+Iteration: 11100 
+Acceptance rate: 0.29225225225225226
+Iteration: 11200 
+Acceptance rate: 0.2925
+Iteration: 11300 
+Acceptance rate: 0.29230088495575224
+Iteration: 11400 
+Acceptance rate: 0.2926315789473684
+Iteration: 11500 
+Acceptance rate: 0.29234782608695653
+Iteration: 11600 
+Acceptance rate: 0.29120689655172416
+Iteration: 11700 
+Acceptance rate: 0.29085470085470083
+Iteration: 11800 
+Acceptance rate: 0.2907627118644068
+Iteration: 11900 
+Acceptance rate: 0.2911764705882353
+Iteration: 12000 
+Acceptance rate: 0.2906666666666667
+Iteration: 12100 
+Acceptance rate: 0.29082644628099175
+Iteration: 12200 
+Acceptance rate: 0.29040983606557375
+Iteration: 12300 
+Acceptance rate: 0.29032520325203254
+Iteration: 12400 
+Acceptance rate: 0.2903225806451613
+Iteration: 12500 
+Acceptance rate: 0.28992
+Iteration: 12600 
+Acceptance rate: 0.2896825396825397
+Iteration: 12700 
+Acceptance rate: 0.29015748031496064
+Iteration: 12800 
+Acceptance rate: 0.289921875
+Iteration: 12900 
+Acceptance rate: 0.2893798449612403
+Iteration: 13000 
+Acceptance rate: 0.28892307692307695
+Iteration: 13100 
+Acceptance rate: 0.28916030534351145
+Iteration: 13200 
+Acceptance rate: 0.28893939393939394
+Iteration: 13300 
+Acceptance rate: 0.2895488721804511
+Iteration: 13400 
+Acceptance rate: 0.29
+Iteration: 13500 
+Acceptance rate: 0.2900740740740741
+Iteration: 13600 
+Acceptance rate: 0.29058823529411765
+Iteration: 13700 
+Acceptance rate: 0.29043795620437957
+Iteration: 13800 
+Acceptance rate: 0.29028985507246374
+Iteration: 13900 
+Acceptance rate: 0.29
+Iteration: 14000 
+Acceptance rate: 0.2904285714285714
+Iteration: 14100 
+Acceptance rate: 0.2907801418439716
+Iteration: 14200 
+Acceptance rate: 0.29077464788732393
+Iteration: 14300 
+Acceptance rate: 0.2909090909090909
+Iteration: 14400 
+Acceptance rate: 0.2916666666666667
+Iteration: 14500 
+Acceptance rate: 0.2913103448275862
+Iteration: 14600 
+Acceptance rate: 0.291027397260274
+Iteration: 14700 
+Acceptance rate: 0.2907482993197279
+Iteration: 14800 
+Acceptance rate: 0.28993243243243244
+Iteration: 14900 
+Acceptance rate: 0.29006711409395974
+Iteration: 15000 
+Acceptance rate: 0.28973333333333334
+Iteration: 15100 
+Acceptance rate: 0.2898675496688742
+Iteration: 15200 
+Acceptance rate: 0.28980263157894737
+Iteration: 15300 
+Acceptance rate: 0.28986928104575166
+Iteration: 15400 
+Acceptance rate: 0.29
+Iteration: 15500 
+Acceptance rate: 0.2895483870967742
+Iteration: 15600 
+Acceptance rate: 0.28942307692307695
+Iteration: 15700 
+Acceptance rate: 0.289171974522293
+Iteration: 15800 
+Acceptance rate: 0.2888607594936709
+Iteration: 15900 
+Acceptance rate: 0.2889308176100629
+Iteration: 16000 
+Acceptance rate: 0.28875
+Iteration: 16100 
+Acceptance rate: 0.288695652173913
+Iteration: 16200 
+Acceptance rate: 0.2882716049382716
+Iteration: 16300 
+Acceptance rate: 0.2878527607361963
+Iteration: 16400 
+Acceptance rate: 0.28817073170731705
+Iteration: 16500 
+Acceptance rate: 0.2881212121212121
+Iteration: 16600 
+Acceptance rate: 0.28795180722891567
+Iteration: 16700 
+Acceptance rate: 0.28754491017964073
+Iteration: 16800 
+Acceptance rate: 0.28767857142857145
+Iteration: 16900 
+Acceptance rate: 0.2875147928994083
+Iteration: 17000 
+Acceptance rate: 0.2877647058823529
+Iteration: 17100 
+Acceptance rate: 0.2880116959064328
+Iteration: 17200 
+Acceptance rate: 0.28819767441860467
+Iteration: 17300 
+Acceptance rate: 0.288728323699422
+Iteration: 17400 
+Acceptance rate: 0.2886206896551724
+Iteration: 17500 
+Acceptance rate: 0.28897142857142855
+Iteration: 17600 
+Acceptance rate: 0.28857954545454545
+Iteration: 17700 
+Acceptance rate: 0.28847457627118644
+Iteration: 17800 
+Acceptance rate: 0.28837078651685394
+Iteration: 17900 
+Acceptance rate: 0.2881564245810056
+Iteration: 18000 
+Acceptance rate: 0.2881666666666667
+Iteration: 18100 
+Acceptance rate: 0.28790055248618784
+Iteration: 18200 
+Acceptance rate: 0.2875274725274725
+Iteration: 18300 
+Acceptance rate: 0.28770491803278686
+Iteration: 18400 
+Acceptance rate: 0.2875
+Iteration: 18500 
+Acceptance rate: 0.2874054054054054
+Iteration: 18600 
+Acceptance rate: 0.2871505376344086
+Iteration: 18700 
+Acceptance rate: 0.28700534759358287
+Iteration: 18800 
+Acceptance rate: 0.286968085106383
+Iteration: 18900 
+Acceptance rate: 0.2867724867724868
+Iteration: 19000 
+Acceptance rate: 0.28668421052631576
+Iteration: 19100 
+Acceptance rate: 0.28643979057591623
+Iteration: 19200 
+Acceptance rate: 0.2860416666666667
+Iteration: 19300 
+Acceptance rate: 0.2860103626943005
+Iteration: 19400 
+Acceptance rate: 0.2857216494845361
+Iteration: 19500 
+Acceptance rate: 0.2855897435897436
+Iteration: 19600 
+Acceptance rate: 0.2858673469387755
+Iteration: 19700 
+Acceptance rate: 0.2856852791878173
+Iteration: 19800 
+Acceptance rate: 0.2855050505050505
+Iteration: 19900 
+Acceptance rate: 0.28542713567839195
+Iteration: 20000 
+Acceptance rate: 0.2854
+Iteration: 20100 
+Acceptance rate: 0.2854726368159204
+Iteration: 20200 
+Acceptance rate: 0.2853465346534653
+Iteration: 20300 
+Acceptance rate: 0.2852709359605911
+Iteration: 20400 
+Acceptance rate: 0.28490196078431373
+Iteration: 20500 
+Acceptance rate: 0.28453658536585363
+Iteration: 20600 
+Acceptance rate: 0.28432038834951456
+Iteration: 20700 
+Acceptance rate: 0.2840096618357488
+Iteration: 20800 
+Acceptance rate: 0.2840384615384615
+Iteration: 20900 
+Acceptance rate: 0.28411483253588515
+Iteration: 21000 
+Acceptance rate: 0.2843333333333333
+Iteration: 21100 
+Acceptance rate: 0.2843127962085308
+Iteration: 21200 
+Acceptance rate: 0.28429245283018867
+Iteration: 21300 
+Acceptance rate: 0.2843661971830986
+Iteration: 21400 
+Acceptance rate: 0.28453271028037386
+Iteration: 21500 
+Acceptance rate: 0.28413953488372096
+Iteration: 21600 
+Acceptance rate: 0.28425925925925927
+Iteration: 21700 
+Acceptance rate: 0.2847465437788018
+Iteration: 21800 
+Acceptance rate: 0.285
+Iteration: 21900 
+Acceptance rate: 0.2847488584474886
+Iteration: 22000 
+Acceptance rate: 0.2844090909090909
+Iteration: 22100 
+Acceptance rate: 0.28434389140271493
+Iteration: 22200 
+Acceptance rate: 0.2838288288288288
+Iteration: 22300 
+Acceptance rate: 0.2834977578475336
+Iteration: 22400 
+Acceptance rate: 0.28330357142857143
+Iteration: 22500 
+Acceptance rate: 0.2830666666666667
+Iteration: 22600 
+Acceptance rate: 0.2827433628318584
+Iteration: 22700 
+Acceptance rate: 0.28251101321585903
+Iteration: 22800 
+Acceptance rate: 0.2827631578947368
+Iteration: 22900 
+Acceptance rate: 0.2828384279475983
+Iteration: 23000 
+Acceptance rate: 0.28252173913043477
+Iteration: 23100 
+Acceptance rate: 0.28255411255411256
+Iteration: 23200 
+Acceptance rate: 0.2826724137931034
+Iteration: 23300 
+Acceptance rate: 0.2824463519313305
+Iteration: 23400 
+Acceptance rate: 0.28239316239316237
+Iteration: 23500 
+Acceptance rate: 0.28191489361702127
+Iteration: 23600 
+Acceptance rate: 0.2821610169491525
+Iteration: 23700 
+Acceptance rate: 0.2820675105485232
+Iteration: 23800 
+Acceptance rate: 0.28214285714285714
+Iteration: 23900 
+Acceptance rate: 0.2818828451882845
+Iteration: 24000 
+Acceptance rate: 0.2821666666666667
+Iteration: 24100 
+Acceptance rate: 0.2817427385892116
+Iteration: 24200 
+Acceptance rate: 0.28148760330578515
+Iteration: 24300 
+Acceptance rate: 0.28131687242798353
+Iteration: 24400 
+Acceptance rate: 0.2813114754098361
+Iteration: 24500 
+Acceptance rate: 0.28085714285714286
+Iteration: 24600 
+Acceptance rate: 0.2809756097560976
+Iteration: 24700 
+Acceptance rate: 0.2808097165991903
+Iteration: 24800 
+Acceptance rate: 0.2806048387096774
+Iteration: 24900 
+Acceptance rate: 0.2805622489959839
+Iteration: 25000 
+Acceptance rate: 0.28068
+Iteration: 25100 
+Acceptance rate: 0.28103585657370517
+Iteration: 25200 
+Acceptance rate: 0.2813095238095238
+Iteration: 25300 
+Acceptance rate: 0.28197628458498025
+Iteration: 25400 
+Acceptance rate: 0.2817716535433071
+Iteration: 25500 
+Acceptance rate: 0.28168627450980394
+Iteration: 25600 
+Acceptance rate: 0.2816015625
+Iteration: 25700 
+Acceptance rate: 0.28175097276264593
+Iteration: 25800 
+Acceptance rate: 0.2817829457364341
+Iteration: 25900 
+Acceptance rate: 0.28193050193050195
+Iteration: 26000 
+Acceptance rate: 0.28207692307692306
+Iteration: 26100 
+Acceptance rate: 0.2824137931034483
+Iteration: 26200 
+Acceptance rate: 0.2822900763358779
+Iteration: 26300 
+Acceptance rate: 0.28216730038022814
+Iteration: 26400 
+Acceptance rate: 0.2821969696969697
+Iteration: 26500 
+Acceptance rate: 0.282188679245283
+Iteration: 26600 
+Acceptance rate: 0.2824436090225564
+Iteration: 26700 
+Acceptance rate: 0.2822846441947566
+Iteration: 26800 
+Acceptance rate: 0.28246268656716417
+Iteration: 26900 
+Acceptance rate: 0.28237918215613383
+Iteration: 27000 
+Acceptance rate: 0.2823703703703704
+Iteration: 27100 
+Acceptance rate: 0.28225092250922507
+Iteration: 27200 
+Acceptance rate: 0.2822058823529412
+Iteration: 27300 
+Acceptance rate: 0.28223443223443223
+Iteration: 27400 
+Acceptance rate: 0.28226277372262776
+Iteration: 27500 
+Acceptance rate: 0.28196363636363636
+Iteration: 27600 
+Acceptance rate: 0.2817753623188406
+Iteration: 27700 
+Acceptance rate: 0.2817328519855596
+Iteration: 27800 
+Acceptance rate: 0.2814028776978417
+Iteration: 27900 
+Acceptance rate: 0.28139784946236557
+Iteration: 28000 
+Acceptance rate: 0.2812857142857143
+Iteration: 28100 
+Acceptance rate: 0.2813879003558719
+Iteration: 28200 
+Acceptance rate: 0.28131205673758863
+Iteration: 28300 
+Acceptance rate: 0.2813427561837456
+Iteration: 28400 
+Acceptance rate: 0.2813380281690141
+Iteration: 28500 
+Acceptance rate: 0.2812280701754386
+Iteration: 28600 
+Acceptance rate: 0.28143356643356643
+Iteration: 28700 
+Acceptance rate: 0.2810801393728223
+Iteration: 28800 
+Acceptance rate: 0.2810416666666667
+Iteration: 28900 
+Acceptance rate: 0.28110726643598616
+Iteration: 29000 
+Acceptance rate: 0.2811034482758621
+Iteration: 29100 
+Acceptance rate: 0.2810996563573883
+Iteration: 29200 
+Acceptance rate: 0.280958904109589
+Iteration: 29300 
+Acceptance rate: 0.2808532423208191
+Iteration: 29400 
+Acceptance rate: 0.2810884353741497
+Iteration: 29500 
+Acceptance rate: 0.2810169491525424
+Iteration: 29600 
+Acceptance rate: 0.28111486486486487
+Iteration: 29700 
+Acceptance rate: 0.2812794612794613
+Iteration: 29800 
+Acceptance rate: 0.2814765100671141
+Iteration: 29900 
+Acceptance rate: 0.281505016722408
+Iteration: 30000 
+Acceptance rate: 0.28153333333333336
+Iteration: 30100 
+Acceptance rate: 0.28176079734219267
+Iteration: 30200 
+Acceptance rate: 0.2817549668874172
+Iteration: 30300 
+Acceptance rate: 0.2817161716171617
+Iteration: 30400 
+Acceptance rate: 0.28154605263157895
+Iteration: 30500 
+Acceptance rate: 0.2816393442622951
+Iteration: 30600 
+Acceptance rate: 0.2815686274509804
+Iteration: 30700 
+Acceptance rate: 0.2815635179153094
+Iteration: 30800 
+Acceptance rate: 0.2816233766233766
+Iteration: 30900 
+Acceptance rate: 0.2814886731391586
+Iteration: 31000 
+Acceptance rate: 0.28158064516129033
+Iteration: 31100 
+Acceptance rate: 0.2817363344051447
+Iteration: 31200 
+Acceptance rate: 0.2816666666666667
+Iteration: 31300 
+Acceptance rate: 0.28159744408945686
+Iteration: 31400 
+Acceptance rate: 0.2813057324840764
+Iteration: 31500 
+Acceptance rate: 0.2811746031746032
+Iteration: 31600 
+Acceptance rate: 0.2810126582278481
+Iteration: 31700 
+Acceptance rate: 0.2808832807570978
+Iteration: 31800 
+Acceptance rate: 0.28056603773584904
+Iteration: 31900 
+Acceptance rate: 0.28059561128526644
+Iteration: 32000 
+Acceptance rate: 0.28059375
+Iteration: 32100 
+Acceptance rate: 0.28046728971962614
+Iteration: 32200 
+Acceptance rate: 0.2801863354037267
+Iteration: 32300 
+Acceptance rate: 0.2802167182662539
+Iteration: 32400 
+Acceptance rate: 0.2800617283950617
+Iteration: 32500 
+Acceptance rate: 0.2800615384615385
+Iteration: 32600 
+Acceptance rate: 0.2800613496932515
+Iteration: 32700 
+Acceptance rate: 0.28021406727828746
+Iteration: 32800 
+Acceptance rate: 0.28021341463414634
+Iteration: 32900 
+Acceptance rate: 0.28012158054711245
+Iteration: 33000 
+Acceptance rate: 0.2801212121212121
+Iteration: 33100 
+Acceptance rate: 0.28
+Iteration: 33200 
+Acceptance rate: 0.27990963855421686
+Iteration: 33300 
+Acceptance rate: 0.2801201201201201
+Iteration: 33400 
+Acceptance rate: 0.28020958083832337
+Iteration: 33500 
+Acceptance rate: 0.2802985074626866
+Iteration: 33600 
+Acceptance rate: 0.28038690476190475
+Iteration: 33700 
+Acceptance rate: 0.27997032640949554
+Iteration: 33800 
+Acceptance rate: 0.27994082840236684
+Iteration: 33900 
+Acceptance rate: 0.27997050147492625
+Iteration: 34000 
+Acceptance rate: 0.27994117647058825
+Iteration: 34100 
+Acceptance rate: 0.27964809384164224
+Iteration: 34200 
+Acceptance rate: 0.27941520467836256
+Iteration: 34300 
+Acceptance rate: 0.2795918367346939
+Iteration: 34400 
+Acceptance rate: 0.2795058139534884
+Iteration: 34500 
+Acceptance rate: 0.27944927536231884
+Iteration: 34600 
+Acceptance rate: 0.2795086705202312
+Iteration: 34700 
+Acceptance rate: 0.27953890489913547
+Iteration: 34800 
+Acceptance rate: 0.27948275862068966
+Iteration: 34900 
+Acceptance rate: 0.2793696275071633
+Iteration: 35000 
+Acceptance rate: 0.2794857142857143
+Iteration: 35100 
+Acceptance rate: 0.2794871794871795
+Iteration: 35200 
+Acceptance rate: 0.2796590909090909
+Iteration: 35300 
+Acceptance rate: 0.2796883852691218
+Iteration: 35400 
+Acceptance rate: 0.27954802259887007
+Iteration: 35500 
+Acceptance rate: 0.27904225352112677
+Iteration: 35600 
+Acceptance rate: 0.2789887640449438
+Iteration: 35700 
+Acceptance rate: 0.2788515406162465
+Iteration: 35800 
+Acceptance rate: 0.2792458100558659
+Iteration: 35900 
+Acceptance rate: 0.2791922005571031
+Iteration: 36000 
+Acceptance rate: 0.27925
+Iteration: 36100 
+Acceptance rate: 0.2792797783933518
+Iteration: 36200 
+Acceptance rate: 0.27914364640883976
+Iteration: 36300 
+Acceptance rate: 0.2790358126721763
+Iteration: 36400 
+Acceptance rate: 0.27884615384615385
+Iteration: 36500 
+Acceptance rate: 0.2787945205479452
+Iteration: 36600 
+Acceptance rate: 0.27882513661202185
+Iteration: 36700 
+Acceptance rate: 0.27850136239782014
+Iteration: 36800 
+Acceptance rate: 0.2785597826086956
+Iteration: 36900 
+Acceptance rate: 0.27872628726287263
+Iteration: 37000 
+Acceptance rate: 0.2787297297297297
+Iteration: 37100 
+Acceptance rate: 0.27884097035040434
+Iteration: 37200 
+Acceptance rate: 0.279005376344086
+Iteration: 37300 
+Acceptance rate: 0.27908847184986596
+Iteration: 37400 
+Acceptance rate: 0.27906417112299464
+Iteration: 37500 
+Acceptance rate: 0.27917333333333333
+Iteration: 37600 
+Acceptance rate: 0.27925531914893614
+Iteration: 37700 
+Acceptance rate: 0.2793899204244032
+Iteration: 37800 
+Acceptance rate: 0.27936507936507937
+Iteration: 37900 
+Acceptance rate: 0.2793931398416887
+Iteration: 38000 
+Acceptance rate: 0.2796578947368421
+Iteration: 38100 
+Acceptance rate: 0.27960629921259844
+Iteration: 38200 
+Acceptance rate: 0.27960732984293196
+Iteration: 38300 
+Acceptance rate: 0.27947780678851175
+Iteration: 38400 
+Acceptance rate: 0.27953125
+Iteration: 38500 
+Acceptance rate: 0.27945454545454546
+Iteration: 38600 
+Acceptance rate: 0.2793782383419689
+Iteration: 38700 
+Acceptance rate: 0.2795348837209302
+Iteration: 38800 
+Acceptance rate: 0.27940721649484535
+Iteration: 38900 
+Acceptance rate: 0.2793316195372751
+Iteration: 39000 
+Acceptance rate: 0.2794615384615385
+Iteration: 39100 
+Acceptance rate: 0.27953964194373404
+Iteration: 39200 
+Acceptance rate: 0.2795408163265306
+Iteration: 39300 
+Acceptance rate: 0.2794910941475827
+Iteration: 39400 
+Acceptance rate: 0.2793147208121827
+Iteration: 39500 
+Acceptance rate: 0.2790379746835443
+Iteration: 39600 
+Acceptance rate: 0.27883838383838383
+Iteration: 39700 
+Acceptance rate: 0.2787153652392947
+Iteration: 39800 
+Acceptance rate: 0.2787185929648241
+Iteration: 39900 
+Acceptance rate: 0.27882205513784464
+Iteration: 40000 
+Acceptance rate: 0.2789
+Iteration: 40100 
+Acceptance rate: 0.278927680798005
+Iteration: 40200 
+Acceptance rate: 0.27888059701492535
+Iteration: 40300 
+Acceptance rate: 0.27878411910669976
+Iteration: 40400 
+Acceptance rate: 0.27881188118811884
+Iteration: 40500 
+Acceptance rate: 0.2788395061728395
+Iteration: 40600 
+Acceptance rate: 0.27876847290640394
+Iteration: 40700 
+Acceptance rate: 0.27872235872235873
+Iteration: 40800 
+Acceptance rate: 0.27897058823529414
+Iteration: 40900 
+Acceptance rate: 0.279119804400978
+Iteration: 41000 
+Acceptance rate: 0.2793414634146342
+Iteration: 41100 
+Acceptance rate: 0.27909975669099757
+Iteration: 41200 
+Acceptance rate: 0.27929611650485436
+Iteration: 41300 
+Acceptance rate: 0.2792009685230024
+Iteration: 41400 
+Acceptance rate: 0.2791545893719807
+Iteration: 41500 
+Acceptance rate: 0.27920481927710844
+Iteration: 41600 
+Acceptance rate: 0.2792788461538461
+Iteration: 41700 
+Acceptance rate: 0.2791127098321343
+Iteration: 41800 
+Acceptance rate: 0.27916267942583733
+Iteration: 41900 
+Acceptance rate: 0.27933174224343676
+Iteration: 42000 
+Acceptance rate: 0.2792857142857143
+Iteration: 42100 
+Acceptance rate: 0.2793349168646081
+Iteration: 42200 
+Acceptance rate: 0.27943127962085307
+Iteration: 42300 
+Acceptance rate: 0.2793144208037825
+Iteration: 42400 
+Acceptance rate: 0.2794811320754717
+Iteration: 42500 
+Acceptance rate: 0.2792470588235294
+Iteration: 42600 
+Acceptance rate: 0.27892018779342725
+Iteration: 42700 
+Acceptance rate: 0.27899297423887587
+Iteration: 42800 
+Acceptance rate: 0.27901869158878506
+Iteration: 42900 
+Acceptance rate: 0.27913752913752915
+Iteration: 43000 
+Acceptance rate: 0.2787906976744186
+Iteration: 43100 
+Acceptance rate: 0.2786078886310905
+Iteration: 43200 
+Acceptance rate: 0.27849537037037037
+Iteration: 43300 
+Acceptance rate: 0.27838337182448036
+Iteration: 43400 
+Acceptance rate: 0.2782718894009217
+Iteration: 43500 
+Acceptance rate: 0.2782528735632184
+Iteration: 43600 
+Acceptance rate: 0.27807339449541285
+Iteration: 43700 
+Acceptance rate: 0.2780549199084668
+Iteration: 43800 
+Acceptance rate: 0.278013698630137
+Iteration: 43900 
+Acceptance rate: 0.27806378132118453
+Iteration: 44000 
+Acceptance rate: 0.27797727272727274
+Iteration: 44100 
+Acceptance rate: 0.2780045351473923
+Iteration: 44200 
+Acceptance rate: 0.2779864253393665
+Iteration: 44300 
+Acceptance rate: 0.27772009029345374
+Iteration: 44400 
+Acceptance rate: 0.27783783783783783
+Iteration: 44500 
+Acceptance rate: 0.278
+Iteration: 44600 
+Acceptance rate: 0.2780717488789238
+Iteration: 44700 
+Acceptance rate: 0.2779194630872483
+Iteration: 44800 
+Acceptance rate: 0.27792410714285715
+Iteration: 44900 
+Acceptance rate: 0.2779510022271715
+Iteration: 45000 
+Acceptance rate: 0.2777777777777778
+Iteration: 45100 
+Acceptance rate: 0.27776053215077606
+Iteration: 45200 
+Acceptance rate: 0.27783185840707963
+Iteration: 45300 
+Acceptance rate: 0.2775496688741722
+Iteration: 45400 
+Acceptance rate: 0.27748898678414097
+Iteration: 45500 
+Acceptance rate: 0.2776263736263736
+Iteration: 45600 
+Acceptance rate: 0.27765350877192985
+Iteration: 45700 
+Acceptance rate: 0.27761487964989057
+Iteration: 45800 
+Acceptance rate: 0.27744541484716156
+Iteration: 45900 
+Acceptance rate: 0.27758169934640525
+Iteration: 46000 
+Acceptance rate: 0.2775
+Iteration: 46100 
+Acceptance rate: 0.2775704989154013
+Iteration: 46200 
+Acceptance rate: 0.27740259740259743
+Iteration: 46300 
+Acceptance rate: 0.2772354211663067
+Iteration: 46400 
+Acceptance rate: 0.27717672413793104
+Iteration: 46500 
+Acceptance rate: 0.2770537634408602
+Iteration: 46600 
+Acceptance rate: 0.27684549356223176
+Iteration: 46700 
+Acceptance rate: 0.27670235546038546
+Iteration: 46800 
+Acceptance rate: 0.2765384615384615
+Iteration: 46900 
+Acceptance rate: 0.2765031982942431
+Iteration: 47000 
+Acceptance rate: 0.2764042553191489
+Iteration: 47100 
+Acceptance rate: 0.27632696390658174
+Iteration: 47200 
+Acceptance rate: 0.27620762711864405
+Iteration: 47300 
+Acceptance rate: 0.2759196617336152
+Iteration: 47400 
+Acceptance rate: 0.2759493670886076
+Iteration: 47500 
+Acceptance rate: 0.27597894736842105
+Iteration: 47600 
+Acceptance rate: 0.27588235294117647
+Iteration: 47700 
+Acceptance rate: 0.2759538784067086
+Iteration: 47800 
+Acceptance rate: 0.2760460251046025
+Iteration: 47900 
+Acceptance rate: 0.2760125260960334
+Iteration: 48000 
+Acceptance rate: 0.27589583333333334
+Iteration: 48100 
+Acceptance rate: 0.27584199584199587
+Iteration: 48200 
+Acceptance rate: 0.275850622406639
+Iteration: 48300 
+Acceptance rate: 0.2757349896480331
+Iteration: 48400 
+Acceptance rate: 0.2756818181818182
+Iteration: 48500 
+Acceptance rate: 0.275319587628866
+Iteration: 48600 
+Acceptance rate: 0.2752057613168724
+Iteration: 48700 
+Acceptance rate: 0.27507186858316224
+Iteration: 48800 
+Acceptance rate: 0.27491803278688526
+Iteration: 48900 
+Acceptance rate: 0.2748466257668712
+Iteration: 49000 
+Acceptance rate: 0.2747551020408163
+Iteration: 49100 
+Acceptance rate: 0.27470468431771894
+Iteration: 49200 
+Acceptance rate: 0.27449186991869917
+Iteration: 49300 
+Acceptance rate: 0.2745638945233266
+Iteration: 49400 
+Acceptance rate: 0.27439271255060727
+Iteration: 49500 
+Acceptance rate: 0.27446464646464647
+Iteration: 49600 
+Acceptance rate: 0.2746774193548387
+Iteration: 49700 
+Acceptance rate: 0.27472837022132796
+Iteration: 49800 
+Acceptance rate: 0.27467871485943773
+Iteration: 49900 
+Acceptance rate: 0.27468937875751503
+Iteration: 50000 
+Acceptance rate: 0.27462
+Iteration: 50100 
+Acceptance rate: 0.27441117764471057
+Iteration: 50200 
+Acceptance rate: 0.27450199203187253
+Iteration: 50300 
+Acceptance rate: 0.2743936381709742
+Iteration: 50400 
+Acceptance rate: 0.27436507936507937
+Iteration: 50500 
+Acceptance rate: 0.27433663366336636
+Iteration: 50600 
+Acceptance rate: 0.2743478260869565
+Iteration: 50700 
+Acceptance rate: 0.2742800788954635
+Iteration: 50800 
+Acceptance rate: 0.27403543307086614
+Iteration: 50900 
+Acceptance rate: 0.27410609037328093
+Iteration: 51000 
+Acceptance rate: 0.2741372549019608
+Iteration: 51100 
+Acceptance rate: 0.2742270058708415
+Iteration: 51200 
+Acceptance rate: 0.27416015625
+Iteration: 51300 
+Acceptance rate: 0.27419103313840154
+Iteration: 51400 
+Acceptance rate: 0.27408560311284047
+Iteration: 51500 
+Acceptance rate: 0.2741359223300971
+Iteration: 51600 
+Acceptance rate: 0.2741472868217054
+Iteration: 51700 
+Acceptance rate: 0.27421663442940036
+Iteration: 51800 
+Acceptance rate: 0.2743243243243243
+Iteration: 51900 
+Acceptance rate: 0.27429672447013487
+Iteration: 52000 
+Acceptance rate: 0.27421153846153845
+Iteration: 52100 
+Acceptance rate: 0.27408829174664107
+Iteration: 52200 
+Acceptance rate: 0.27415708812260536
+Iteration: 52300 
+Acceptance rate: 0.2740917782026769
+Iteration: 52400 
+Acceptance rate: 0.27419847328244273
+Iteration: 52500 
+Acceptance rate: 0.2741904761904762
+Iteration: 52600 
+Acceptance rate: 0.2744106463878327
+Iteration: 52700 
+Acceptance rate: 0.2744212523719165
+Iteration: 52800 
+Acceptance rate: 0.27443181818181817
+Iteration: 52900 
+Acceptance rate: 0.2744234404536862
+Iteration: 53000 
+Acceptance rate: 0.27428301886792456
+Iteration: 53100 
+Acceptance rate: 0.27429378531073445
+Iteration: 53200 
+Acceptance rate: 0.2742669172932331
+Iteration: 53300 
+Acceptance rate: 0.2743714821763602
+Iteration: 53400 
+Acceptance rate: 0.27415730337078653
+Iteration: 53500 
+Acceptance rate: 0.27413084112149533
+Iteration: 53600 
+Acceptance rate: 0.2741417910447761
+Iteration: 53700 
+Acceptance rate: 0.27405959031657356
+Iteration: 53800 
+Acceptance rate: 0.274089219330855
+Iteration: 53900 
+Acceptance rate: 0.27393320964749535
+Iteration: 54000 
+Acceptance rate: 0.2737962962962963
+Iteration: 54100 
+Acceptance rate: 0.27380776340110907
+Iteration: 54200 
+Acceptance rate: 0.2737269372693727
+Iteration: 54300 
+Acceptance rate: 0.27353591160220997
+Iteration: 54400 
+Acceptance rate: 0.27345588235294116
+Iteration: 54500 
+Acceptance rate: 0.2735229357798165
+Iteration: 54600 
+Acceptance rate: 0.2735897435897436
+Iteration: 54700 
+Acceptance rate: 0.2736745886654479
+Iteration: 54800 
+Acceptance rate: 0.27364963503649636
+Iteration: 54900 
+Acceptance rate: 0.27380692167577414
+Iteration: 55000 
+Acceptance rate: 0.2738
+Iteration: 55100 
+Acceptance rate: 0.27372050816696913
+Iteration: 55200 
+Acceptance rate: 0.273786231884058
+Iteration: 55300 
+Acceptance rate: 0.27381555153707055
+Iteration: 55400 
+Acceptance rate: 0.2737364620938628
+Iteration: 55500 
+Acceptance rate: 0.2736216216216216
+Iteration: 55600 
+Acceptance rate: 0.2735611510791367
+Iteration: 55700 
+Acceptance rate: 0.273572710951526
+Iteration: 55800 
+Acceptance rate: 0.2735663082437276
+Iteration: 55900 
+Acceptance rate: 0.27366726296958854
+Iteration: 56000 
+Acceptance rate: 0.27373214285714287
+Iteration: 56100 
+Acceptance rate: 0.27370766488413545
+Iteration: 56200 
+Acceptance rate: 0.2737544483985765
+Iteration: 56300 
+Acceptance rate: 0.27376554174067497
+Iteration: 56400 
+Acceptance rate: 0.27377659574468083
+Iteration: 56500 
+Acceptance rate: 0.27378761061946905
+Iteration: 56600 
+Acceptance rate: 0.2737102473498233
+Iteration: 56700 
+Acceptance rate: 0.27377425044091713
+Iteration: 56800 
+Acceptance rate: 0.27382042253521127
+Iteration: 56900 
+Acceptance rate: 0.27397188049209137
+Iteration: 57000 
+Acceptance rate: 0.2739824561403509
+Iteration: 57100 
+Acceptance rate: 0.27408056042031526
+Iteration: 57200 
+Acceptance rate: 0.27395104895104894
+Iteration: 57300 
+Acceptance rate: 0.27397905759162305
+Iteration: 57400 
+Acceptance rate: 0.27400696864111496
+Iteration: 57500 
+Acceptance rate: 0.27396521739130436
+Iteration: 57600 
+Acceptance rate: 0.27394097222222225
+Iteration: 57700 
+Acceptance rate: 0.2738474870017331
+Iteration: 57800 
+Acceptance rate: 0.2738235294117647
+Iteration: 57900 
+Acceptance rate: 0.2738687392055268
+Iteration: 58000 
+Acceptance rate: 0.2738448275862069
+Iteration: 58100 
+Acceptance rate: 0.2736660929432014
+Iteration: 58200 
+Acceptance rate: 0.27362542955326463
+Iteration: 58300 
+Acceptance rate: 0.2734648370497427
+Iteration: 58400 
+Acceptance rate: 0.27335616438356164
+Iteration: 58500 
+Acceptance rate: 0.27331623931623933
+Iteration: 58600 
+Acceptance rate: 0.273259385665529
+Iteration: 58700 
+Acceptance rate: 0.2732708688245315
+Iteration: 58800 
+Acceptance rate: 0.27318027210884355
+Iteration: 58900 
+Acceptance rate: 0.2733106960950764
+Iteration: 59000 
+Acceptance rate: 0.2733728813559322
+Iteration: 59100 
+Acceptance rate: 0.27311336717428086
+Iteration: 59200 
+Acceptance rate: 0.2729560810810811
+Iteration: 59300 
+Acceptance rate: 0.27283305227655985
+Iteration: 59400 
+Acceptance rate: 0.27255892255892256
+Iteration: 59500 
+Acceptance rate: 0.27252100840336135
+Iteration: 59600 
+Acceptance rate: 0.2725503355704698
+Iteration: 59700 
+Acceptance rate: 0.27241206030150755
+Iteration: 59800 
+Acceptance rate: 0.2724247491638796
+Iteration: 59900 
+Acceptance rate: 0.2722871452420701
+Iteration: 60000 
+Acceptance rate: 0.27218333333333333
+Iteration: 60100 
+Acceptance rate: 0.27209650582362727
+Iteration: 60200 
+Acceptance rate: 0.27204318936877075
+Iteration: 60300 
+Acceptance rate: 0.2719402985074627
+Iteration: 60400 
+Acceptance rate: 0.2719867549668874
+Iteration: 60500 
+Acceptance rate: 0.2719173553719008
+Iteration: 60600 
+Acceptance rate: 0.27202970297029705
+Iteration: 60700 
+Acceptance rate: 0.27182866556836904
+Iteration: 60800 
+Acceptance rate: 0.2720065789473684
+Iteration: 60900 
+Acceptance rate: 0.27208538587848935
+Iteration: 61000 
+Acceptance rate: 0.2721639344262295
+Iteration: 61100 
+Acceptance rate: 0.2720621931260229
+Iteration: 61200 
+Acceptance rate: 0.27200980392156865
+Iteration: 61300 
+Acceptance rate: 0.27199021207177815
+Iteration: 61400 
+Acceptance rate: 0.27205211726384365
+Iteration: 61500 
+Acceptance rate: 0.27214634146341465
+Iteration: 61600 
+Acceptance rate: 0.2721753246753247
+Iteration: 61700 
+Acceptance rate: 0.2720907617504052
+Iteration: 61800 
+Acceptance rate: 0.2721359223300971
+Iteration: 61900 
+Acceptance rate: 0.27222940226171244
+Iteration: 62000 
+Acceptance rate: 0.27222580645161293
+Iteration: 62100 
+Acceptance rate: 0.27230273752012885
+Iteration: 62200 
+Acceptance rate: 0.2721704180064309
+Iteration: 62300 
+Acceptance rate: 0.27208667736757625
+Iteration: 62400 
+Acceptance rate: 0.2719871794871795
+Iteration: 62500 
+Acceptance rate: 0.271968
+Iteration: 62600 
+Acceptance rate: 0.2718370607028754
+Iteration: 62700 
+Acceptance rate: 0.2719138755980861
+Iteration: 62800 
+Acceptance rate: 0.2719904458598726
+Iteration: 62900 
+Acceptance rate: 0.2718918918918919
+Iteration: 63000 
+Acceptance rate: 0.27196825396825397
+Iteration: 63100 
+Acceptance rate: 0.2720602218700475
+Iteration: 63200 
+Acceptance rate: 0.2720886075949367
+Iteration: 63300 
+Acceptance rate: 0.2720379146919431
+Iteration: 63400 
+Acceptance rate: 0.2720347003154574
+Iteration: 63500 
+Acceptance rate: 0.2720629921259842
+Iteration: 63600 
+Acceptance rate: 0.2721069182389937
+Iteration: 63700 
+Acceptance rate: 0.2721664050235479
+Iteration: 63800 
+Acceptance rate: 0.2722413793103448
+Iteration: 63900 
+Acceptance rate: 0.27225352112676054
+Iteration: 64000 
+Acceptance rate: 0.272265625
+Iteration: 64100 
+Acceptance rate: 0.27232449297971917
+Iteration: 64200 
+Acceptance rate: 0.27238317757009345
+Iteration: 64300 
+Acceptance rate: 0.2723794712286159
+Iteration: 64400 
+Acceptance rate: 0.2724534161490683
+Iteration: 64500 
+Acceptance rate: 0.27234108527131784
+Iteration: 64600 
+Acceptance rate: 0.2722445820433437
+Iteration: 64700 
+Acceptance rate: 0.2723338485316847
+Iteration: 64800 
+Acceptance rate: 0.2722067901234568
+Iteration: 64900 
+Acceptance rate: 0.2721879815100154
+Iteration: 65000 
+Acceptance rate: 0.27229230769230767
+Iteration: 65100 
+Acceptance rate: 0.2723963133640553
+Iteration: 65200 
+Acceptance rate: 0.2725613496932515
+Iteration: 65300 
+Acceptance rate: 0.2726033690658499
+Iteration: 65400 
+Acceptance rate: 0.2725382262996942
+Iteration: 65500 
+Acceptance rate: 0.2725648854961832
+Iteration: 65600 
+Acceptance rate: 0.27260670731707315
+Iteration: 65700 
+Acceptance rate: 0.27264840182648403
+Iteration: 65800 
+Acceptance rate: 0.27268996960486325
+Iteration: 65900 
+Acceptance rate: 0.2727314112291351
+Iteration: 66000 
+Acceptance rate: 0.2728030303030303
+Iteration: 66100 
+Acceptance rate: 0.2727987897125567
+Iteration: 66200 
+Acceptance rate: 0.272809667673716
+Iteration: 66300 
+Acceptance rate: 0.27266968325791857
+Iteration: 66400 
+Acceptance rate: 0.2728012048192771
+Iteration: 66500 
+Acceptance rate: 0.27275187969924813
+Iteration: 66600 
+Acceptance rate: 0.2726726726726727
+Iteration: 66700 
+Acceptance rate: 0.27265367316341826
+Iteration: 66800 
+Acceptance rate: 0.2727245508982036
+Iteration: 66900 
+Acceptance rate: 0.27267563527653216
+Iteration: 67000 
+Acceptance rate: 0.27271641791044776
+Iteration: 67100 
+Acceptance rate: 0.2726974664679583
+Iteration: 67200 
+Acceptance rate: 0.27279761904761907
+Iteration: 67300 
+Acceptance rate: 0.2728380386329866
+Iteration: 67400 
+Acceptance rate: 0.27283382789317506
+Iteration: 67500 
+Acceptance rate: 0.2728148148148148
+Iteration: 67600 
+Acceptance rate: 0.27281065088757395
+Iteration: 67700 
+Acceptance rate: 0.2727178729689808
+Iteration: 67800 
+Acceptance rate: 0.2726548672566372
+Iteration: 67900 
+Acceptance rate: 0.27278350515463917
+Iteration: 68000 
+Acceptance rate: 0.27283823529411766
+Iteration: 68100 
+Acceptance rate: 0.27273127753303966
+Iteration: 68200 
+Acceptance rate: 0.272683284457478
+Iteration: 68300 
+Acceptance rate: 0.2727672035139092
+Iteration: 68400 
+Acceptance rate: 0.272733918128655
+Iteration: 68500 
+Acceptance rate: 0.2726131386861314
+Iteration: 68600 
+Acceptance rate: 0.2726239067055394
+Iteration: 68700 
+Acceptance rate: 0.2725618631732169
+Iteration: 68800 
+Acceptance rate: 0.27247093023255814
+Iteration: 68900 
+Acceptance rate: 0.27249637155297535
+Iteration: 69000 
+Acceptance rate: 0.27253623188405796
+Iteration: 69100 
+Acceptance rate: 0.2726193921852388
+Iteration: 69200 
+Acceptance rate: 0.2727456647398844
+Iteration: 69300 
+Acceptance rate: 0.27275613275613275
+Iteration: 69400 
+Acceptance rate: 0.2726801152737752
+Iteration: 69500 
+Acceptance rate: 0.2728345323741007
+Iteration: 69600 
+Acceptance rate: 0.2727586206896552
+Iteration: 69700 
+Acceptance rate: 0.2728263988522238
+Iteration: 69800 
+Acceptance rate: 0.27277936962750715
+Iteration: 69900 
+Acceptance rate: 0.27274678111587985
+Iteration: 70000 
+Acceptance rate: 0.2728285714285714
+Iteration: 70100 
+Acceptance rate: 0.27268188302425106
+Iteration: 70200 
+Acceptance rate: 0.27267806267806266
+Iteration: 70300 
+Acceptance rate: 0.2726458036984353
+Iteration: 70400 
+Acceptance rate: 0.27269886363636364
+Iteration: 70500 
+Acceptance rate: 0.2726099290780142
+Iteration: 70600 
+Acceptance rate: 0.27253541076487253
+Iteration: 70700 
+Acceptance rate: 0.2726732673267327
+Iteration: 70800 
+Acceptance rate: 0.2727401129943503
+Iteration: 70900 
+Acceptance rate: 0.27282087447108605
+Iteration: 71000 
+Acceptance rate: 0.27307042253521124
+Iteration: 71100 
+Acceptance rate: 0.2730379746835443
+Iteration: 71200 
+Acceptance rate: 0.27303370786516856
+Iteration: 71300 
+Acceptance rate: 0.27304347826086955
+Iteration: 71400 
+Acceptance rate: 0.2730812324929972
+Iteration: 71500 
+Acceptance rate: 0.2731188811188811
+Iteration: 71600 
+Acceptance rate: 0.27304469273743015
+Iteration: 71700 
+Acceptance rate: 0.273068340306834
+Iteration: 71800 
+Acceptance rate: 0.2731476323119777
+Iteration: 71900 
+Acceptance rate: 0.2732545201668985
+Iteration: 72000 
+Acceptance rate: 0.27329166666666665
+Iteration: 72100 
+Acceptance rate: 0.27325936199722606
+Iteration: 72200 
+Acceptance rate: 0.2732825484764543
+Iteration: 72300 
+Acceptance rate: 0.27323651452282155
+Iteration: 72400 
+Acceptance rate: 0.27319060773480663
+Iteration: 72500 
+Acceptance rate: 0.2732275862068966
+Iteration: 72600 
+Acceptance rate: 0.27331955922865014
+Iteration: 72700 
+Acceptance rate: 0.2734525447042641
+Iteration: 72800 
+Acceptance rate: 0.27342032967032964
+Iteration: 72900 
+Acceptance rate: 0.2734019204389575
+Iteration: 73000 
+Acceptance rate: 0.2733972602739726
+Iteration: 73100 
+Acceptance rate: 0.27333789329685365
+Iteration: 73200 
+Acceptance rate: 0.2733606557377049
+Iteration: 73300 
+Acceptance rate: 0.2733151432469304
+Iteration: 73400 
+Acceptance rate: 0.2734059945504087
+Iteration: 73500 
+Acceptance rate: 0.27341496598639453
+Iteration: 73600 
+Acceptance rate: 0.2734782608695652
+Iteration: 73700 
+Acceptance rate: 0.2735006784260516
+Iteration: 73800 
+Acceptance rate: 0.2736178861788618
+Iteration: 73900 
+Acceptance rate: 0.27359945872801084
+Iteration: 74000 
+Acceptance rate: 0.27356756756756756
+Iteration: 74100 
+Acceptance rate: 0.2736302294197031
+Iteration: 74200 
+Acceptance rate: 0.2735579514824798
+Iteration: 74300 
+Acceptance rate: 0.2735800807537012
+Iteration: 74400 
+Acceptance rate: 0.2735483870967742
+Iteration: 74500 
+Acceptance rate: 0.2735436241610738
+Iteration: 74600 
+Acceptance rate: 0.27349865951742625
+Iteration: 74700 
+Acceptance rate: 0.2735475234270415
+Iteration: 74800 
+Acceptance rate: 0.2736631016042781
+Iteration: 74900 
+Acceptance rate: 0.2737249666221629
+Iteration: 75000 
+Acceptance rate: 0.27372
+Iteration: 75100 
+Acceptance rate: 0.27359520639147805
+Iteration: 75200 
+Acceptance rate: 0.2734973404255319
+Iteration: 75300 
+Acceptance rate: 0.27355909694555114
+Iteration: 75400 
+Acceptance rate: 0.2736074270557029
+Iteration: 75500 
+Acceptance rate: 0.27358940397350995
+Iteration: 75600 
+Acceptance rate: 0.27365079365079364
+Iteration: 75700 
+Acceptance rate: 0.27373844121532365
+Iteration: 75800 
+Acceptance rate: 0.2736939313984169
+Iteration: 75900 
+Acceptance rate: 0.27364953886693016
+Iteration: 76000 
+Acceptance rate: 0.2736710526315789
+Iteration: 76100 
+Acceptance rate: 0.2737319316688568
+Iteration: 76200 
+Acceptance rate: 0.2737270341207349
+Iteration: 76300 
+Acceptance rate: 0.27370904325032763
+Iteration: 76400 
+Acceptance rate: 0.273717277486911
+Iteration: 76500 
+Acceptance rate: 0.2737516339869281
+Iteration: 76600 
+Acceptance rate: 0.2736553524804178
+Iteration: 76700 
+Acceptance rate: 0.27371577574967404
+Iteration: 76800 
+Acceptance rate: 0.2737109375
+Iteration: 76900 
+Acceptance rate: 0.2737191157347204
+Iteration: 77000 
+Acceptance rate: 0.27361038961038964
+Iteration: 77100 
+Acceptance rate: 0.2735667963683528
+Iteration: 77200 
+Acceptance rate: 0.27363989637305697
+Iteration: 77300 
+Acceptance rate: 0.27366106080206987
+Iteration: 77400 
+Acceptance rate: 0.2737596899224806
+Iteration: 77500 
+Acceptance rate: 0.27375483870967743
+Iteration: 77600 
+Acceptance rate: 0.2737757731958763
+Iteration: 77700 
+Acceptance rate: 0.27378378378378376
+Iteration: 77800 
+Acceptance rate: 0.2737146529562982
+Iteration: 77900 
+Acceptance rate: 0.27381258023106547
+Iteration: 78000 
+Acceptance rate: 0.2738076923076923
+Iteration: 78100 
+Acceptance rate: 0.27390524967989754
+Iteration: 78200 
+Acceptance rate: 0.2737979539641944
+Iteration: 78300 
+Acceptance rate: 0.27383141762452107
+Iteration: 78400 
+Acceptance rate: 0.27372448979591835
+Iteration: 78500 
+Acceptance rate: 0.273656050955414
+Iteration: 78600 
+Acceptance rate: 0.2736386768447837
+Iteration: 78700 
+Acceptance rate: 0.273710292249047
+Iteration: 78800 
+Acceptance rate: 0.2736802030456853
+Iteration: 78900 
+Acceptance rate: 0.2736755386565273
+Iteration: 79000 
+Acceptance rate: 0.27367088607594936
+Iteration: 79100 
+Acceptance rate: 0.2736409608091024
+Iteration: 79200 
+Acceptance rate: 0.27362373737373735
+Iteration: 79300 
+Acceptance rate: 0.2736317780580076
+Iteration: 79400 
+Acceptance rate: 0.27357682619647355
+Iteration: 79500 
+Acceptance rate: 0.27345911949685536
+Iteration: 79600 
+Acceptance rate: 0.273429648241206
+Iteration: 79700 
+Acceptance rate: 0.2733500627352572
+Iteration: 79800 
+Acceptance rate: 0.2733208020050125
+Iteration: 79900 
+Acceptance rate: 0.2732916145181477
+Iteration: 80000 
+Acceptance rate: 0.273225
+Iteration: 80100 
+Acceptance rate: 0.27318352059925094
+Iteration: 80200 
+Acceptance rate: 0.27316708229426434
+Iteration: 80300 
+Acceptance rate: 0.27308841843088416
+Iteration: 80400 
+Acceptance rate: 0.27317164179104475
+Iteration: 80500 
+Acceptance rate: 0.2731801242236025
+Iteration: 80600 
+Acceptance rate: 0.27318858560794046
+Iteration: 80700 
+Acceptance rate: 0.27314745972738536
+Iteration: 80800 
+Acceptance rate: 0.2731930693069307
+Iteration: 80900 
+Acceptance rate: 0.27331273176761434
+Iteration: 81000 
+Acceptance rate: 0.27328395061728394
+Iteration: 81100 
+Acceptance rate: 0.27325524044389643
+Iteration: 81200 
+Acceptance rate: 0.27327586206896554
+Iteration: 81300 
+Acceptance rate: 0.2733087330873309
+Iteration: 81400 
+Acceptance rate: 0.27324324324324323
+Iteration: 81500 
+Acceptance rate: 0.2732883435582822
+Iteration: 81600 
+Acceptance rate: 0.2732352941176471
+Iteration: 81700 
+Acceptance rate: 0.27312117503059974
+Iteration: 81800 
+Acceptance rate: 0.2730684596577017
+Iteration: 81900 
+Acceptance rate: 0.2731013431013431
+Iteration: 82000 
+Acceptance rate: 0.2730365853658537
+Iteration: 82100 
+Acceptance rate: 0.2730694275274056
+Iteration: 82200 
+Acceptance rate: 0.273029197080292
+Iteration: 82300 
+Acceptance rate: 0.2730012150668287
+Iteration: 82400 
+Acceptance rate: 0.2729490291262136
+Iteration: 82500 
+Acceptance rate: 0.2729939393939394
+Iteration: 82600 
+Acceptance rate: 0.2730629539951574
+Iteration: 82700 
+Acceptance rate: 0.2731197097944377
+Iteration: 82800 
+Acceptance rate: 0.2731159420289855
+Iteration: 82900 
+Acceptance rate: 0.27317249698431845
+Iteration: 83000 
+Acceptance rate: 0.27326506024096386
+Iteration: 83100 
+Acceptance rate: 0.2731407942238267
+Iteration: 83200 
+Acceptance rate: 0.2731370192307692
+Iteration: 83300 
+Acceptance rate: 0.2732533013205282
+Iteration: 83400 
+Acceptance rate: 0.27329736211031175
+Iteration: 83500 
+Acceptance rate: 0.27325748502994013
+Iteration: 83600 
+Acceptance rate: 0.27330143540669855
+Iteration: 83700 
+Acceptance rate: 0.2732974910394265
+Iteration: 83800 
+Acceptance rate: 0.2733651551312649
+Iteration: 83900 
+Acceptance rate: 0.2734326579261025
+Iteration: 84000 
+Acceptance rate: 0.2733690476190476
+Iteration: 84100 
+Acceptance rate: 0.27338882282996435
+Iteration: 84200 
+Acceptance rate: 0.2734204275534442
+Iteration: 84300 
+Acceptance rate: 0.27341637010676156
+Iteration: 84400 
+Acceptance rate: 0.273436018957346
+Iteration: 84500 
+Acceptance rate: 0.2734319526627219
+Iteration: 84600 
+Acceptance rate: 0.2733333333333333
+Iteration: 84700 
+Acceptance rate: 0.2732939787485242
+Iteration: 84800 
+Acceptance rate: 0.27326650943396225
+Iteration: 84900 
+Acceptance rate: 0.2732037691401649
+Iteration: 85000 
+Acceptance rate: 0.2731764705882353
+Iteration: 85100 
+Acceptance rate: 0.27313748531139836
+Iteration: 85200 
+Acceptance rate: 0.27316901408450706
+Iteration: 85300 
+Acceptance rate: 0.27311840562719814
+Iteration: 85400 
+Acceptance rate: 0.2730093676814988
+Iteration: 85500 
+Acceptance rate: 0.27293567251461986
+Iteration: 85600 
+Acceptance rate: 0.27286214953271026
+Iteration: 85700 
+Acceptance rate: 0.2728471411901984
+Iteration: 85800 
+Acceptance rate: 0.2727039627039627
+Iteration: 85900 
+Acceptance rate: 0.2726658905704307
+Iteration: 86000 
+Acceptance rate: 0.27262790697674416
+Iteration: 86100 
+Acceptance rate: 0.27267131242741
+Iteration: 86200 
+Acceptance rate: 0.2726682134570766
+Iteration: 86300 
+Acceptance rate: 0.27259559675550404
+Iteration: 86400 
+Acceptance rate: 0.27261574074074074
+Iteration: 86500 
+Acceptance rate: 0.27260115606936414
+Iteration: 86600 
+Acceptance rate: 0.2725750577367205
+Iteration: 86700 
+Acceptance rate: 0.2725259515570934
+Iteration: 86800 
+Acceptance rate: 0.2725115207373272
+Iteration: 86900 
+Acceptance rate: 0.27245109321058686
+Iteration: 87000 
+Acceptance rate: 0.272448275862069
+Iteration: 87100 
+Acceptance rate: 0.27242250287026404
+Iteration: 87200 
+Acceptance rate: 0.27237385321100915
+Iteration: 87300 
+Acceptance rate: 0.2722794959908362
+Iteration: 87400 
+Acceptance rate: 0.2721967963386728
+Iteration: 87500 
+Acceptance rate: 0.2721257142857143
+Iteration: 87600 
+Acceptance rate: 0.2721803652968037
+Iteration: 87700 
+Acceptance rate: 0.2721094640820981
+Iteration: 87800 
+Acceptance rate: 0.27210706150341685
+Iteration: 87900 
+Acceptance rate: 0.2720477815699659
+Iteration: 88000 
+Acceptance rate: 0.2721363636363636
+Iteration: 88100 
+Acceptance rate: 0.27211123723041997
+Iteration: 88200 
+Acceptance rate: 0.27214285714285713
+Iteration: 88300 
+Acceptance rate: 0.27217440543601357
+Iteration: 88400 
+Acceptance rate: 0.2722058823529412
+Iteration: 88500 
+Acceptance rate: 0.27220338983050846
+Iteration: 88600 
+Acceptance rate: 0.2722234762979684
+Iteration: 88700 
+Acceptance rate: 0.2721533258173619
+Iteration: 88800 
+Acceptance rate: 0.2721283783783784
+Iteration: 88900 
+Acceptance rate: 0.2722047244094488
+Iteration: 89000 
+Acceptance rate: 0.27224719101123596
+Iteration: 89100 
+Acceptance rate: 0.2722895622895623
+Iteration: 89200 
+Acceptance rate: 0.27221973094170404
+Iteration: 89300 
+Acceptance rate: 0.2722284434490482
+Iteration: 89400 
+Acceptance rate: 0.2721700223713647
+Iteration: 89500 
+Acceptance rate: 0.2722122905027933
+Iteration: 89600 
+Acceptance rate: 0.27225446428571426
+Iteration: 89700 
+Acceptance rate: 0.272329988851728
+Iteration: 89800 
+Acceptance rate: 0.2723608017817372
+Iteration: 89900 
+Acceptance rate: 0.27238042269187984
+Iteration: 90000 
+Acceptance rate: 0.2724
+Iteration: 90100 
+Acceptance rate: 0.2724639289678135
+Iteration: 90200 
+Acceptance rate: 0.27249445676274947
+Iteration: 90300 
+Acceptance rate: 0.27246954595791806
+Iteration: 90400 
+Acceptance rate: 0.27241150442477874
+Iteration: 90500 
+Acceptance rate: 0.27247513812154694
+Iteration: 90600 
+Acceptance rate: 0.2724834437086093
+Iteration: 90700 
+Acceptance rate: 0.2725358324145535
+Iteration: 90800 
+Acceptance rate: 0.27269823788546255
+Iteration: 90900 
+Acceptance rate: 0.2727062706270627
+Iteration: 91000 
+Acceptance rate: 0.2727142857142857
+Iteration: 91100 
+Acceptance rate: 0.2726564215148189
+Iteration: 91200 
+Acceptance rate: 0.27268640350877194
+Iteration: 91300 
+Acceptance rate: 0.27268346111719605
+Iteration: 91400 
+Acceptance rate: 0.2726695842450766
+Iteration: 91500 
+Acceptance rate: 0.2726120218579235
+Iteration: 91600 
+Acceptance rate: 0.27254366812227077
+Iteration: 91700 
+Acceptance rate: 0.27249727371864774
+Iteration: 91800 
+Acceptance rate: 0.2724400871459695
+Iteration: 91900 
+Acceptance rate: 0.272480957562568
+Iteration: 92000 
+Acceptance rate: 0.2723586956521739
+Iteration: 92100 
+Acceptance rate: 0.27243213897937024
+Iteration: 92200 
+Acceptance rate: 0.27247288503253797
+Iteration: 92300 
+Acceptance rate: 0.2724160346695558
+Iteration: 92400 
+Acceptance rate: 0.27230519480519483
+Iteration: 92500 
+Acceptance rate: 0.2722702702702703
+Iteration: 92600 
+Acceptance rate: 0.27223542116630667
+Iteration: 92700 
+Acceptance rate: 0.27225458468176916
+Iteration: 92800 
+Acceptance rate: 0.2722413793103448
+Iteration: 92900 
+Acceptance rate: 0.2722712594187298
+Iteration: 93000 
+Acceptance rate: 0.2723010752688172
+Iteration: 93100 
+Acceptance rate: 0.27226638023630506
+Iteration: 93200 
+Acceptance rate: 0.27236051502145925
+Iteration: 93300 
+Acceptance rate: 0.2722722400857449
+Iteration: 93400 
+Acceptance rate: 0.2722591006423983
+Iteration: 93500 
+Acceptance rate: 0.2722352941176471
+Iteration: 93600 
+Acceptance rate: 0.272232905982906
+Iteration: 93700 
+Acceptance rate: 0.2723265741728922
+Iteration: 93800 
+Acceptance rate: 0.27245202558635395
+Iteration: 93900 
+Acceptance rate: 0.27246006389776356
+Iteration: 94000 
+Acceptance rate: 0.2725
+Iteration: 94100 
+Acceptance rate: 0.2724442082890542
+Iteration: 94200 
+Acceptance rate: 0.2724203821656051
+Iteration: 94300 
+Acceptance rate: 0.27244962884411456
+Iteration: 94400 
+Acceptance rate: 0.2723834745762712
+Iteration: 94500 
+Acceptance rate: 0.27230687830687833
+Iteration: 94600 
+Acceptance rate: 0.2722832980972516
+Iteration: 94700 
+Acceptance rate: 0.2722492080253432
+Iteration: 94800 
+Acceptance rate: 0.2722784810126582
+Iteration: 94900 
+Acceptance rate: 0.27233930453108535
+Iteration: 95000 
+Acceptance rate: 0.2724526315789474
+Iteration: 95100 
+Acceptance rate: 0.2725552050473186
+Iteration: 95200 
+Acceptance rate: 0.2726155462184874
+Iteration: 95300 
+Acceptance rate: 0.2725603357817419
+Iteration: 95400 
+Acceptance rate: 0.27258909853249474
+Iteration: 95500 
+Acceptance rate: 0.2725759162303665
+Iteration: 95600 
+Acceptance rate: 0.2725836820083682
+Iteration: 95700 
+Acceptance rate: 0.2725496342737722
+Iteration: 95800 
+Acceptance rate: 0.2725678496868476
+Iteration: 95900 
+Acceptance rate: 0.2724713242961418
+Iteration: 96000 
+Acceptance rate: 0.27245833333333336
+Iteration: 96100 
+Acceptance rate: 0.27247658688865767
+Iteration: 96200 
+Acceptance rate: 0.27244282744282744
+Iteration: 96300 
+Acceptance rate: 0.27247144340602286
+Iteration: 96400 
+Acceptance rate: 0.2725829875518672
+Iteration: 96500 
+Acceptance rate: 0.2725699481865285
+Iteration: 96600 
+Acceptance rate: 0.272639751552795
+Iteration: 96700 
+Acceptance rate: 0.272688728024819
+Iteration: 96800 
+Acceptance rate: 0.2727479338842975
+Iteration: 96900 
+Acceptance rate: 0.27270381836945307
+Iteration: 97000 
+Acceptance rate: 0.2727216494845361
+Iteration: 97100 
+Acceptance rate: 0.27265705458290423
+Iteration: 97200 
+Acceptance rate: 0.2725925925925926
+Iteration: 97300 
+Acceptance rate: 0.27258992805755394
+Iteration: 97400 
+Acceptance rate: 0.2725564681724846
+Iteration: 97500 
+Acceptance rate: 0.2726153846153846
+Iteration: 97600 
+Acceptance rate: 0.2726127049180328
+Iteration: 97700 
+Acceptance rate: 0.2725383828045036
+Iteration: 97800 
+Acceptance rate: 0.27258691206543967
+Iteration: 97900 
+Acceptance rate: 0.27261491317671094
+Iteration: 98000 
+Acceptance rate: 0.2725714285714286
+Iteration: 98100 
+Acceptance rate: 0.27254841997961265
+Iteration: 98200 
+Acceptance rate: 0.2725254582484725
+Iteration: 98300 
+Acceptance rate: 0.2724923702950153
+Iteration: 98400 
+Acceptance rate: 0.27239837398373984
+Iteration: 98500 
+Acceptance rate: 0.27245685279187815
+Iteration: 98600 
+Acceptance rate: 0.27253549695740364
+Iteration: 98700 
+Acceptance rate: 0.2724822695035461
+Iteration: 98800 
+Acceptance rate: 0.2724291497975708
+Iteration: 98900 
+Acceptance rate: 0.2724368048533873
+Iteration: 99000 
+Acceptance rate: 0.2723939393939394
+Iteration: 99100 
+Acceptance rate: 0.2724217961654894
+Iteration: 99200 
+Acceptance rate: 0.27245967741935484
+Iteration: 99300 
+Acceptance rate: 0.27248741188318226
+Iteration: 99400 
+Acceptance rate: 0.2725251509054326
+Iteration: 99500 
+Acceptance rate: 0.27256281407035177
+Iteration: 99600 
+Acceptance rate: 0.2726204819277108
+Iteration: 99700 
+Acceptance rate: 0.2726780341023069
+Iteration: 99800 
+Acceptance rate: 0.27268537074148297
+Iteration: 99900 
+Acceptance rate: 0.2727027027027027
+Iteration: 100000 
+Acceptance rate: 0.27274
+Iteration: 100100 
+Acceptance rate: 0.27277722277722277
+Iteration: 100200 
+Acceptance rate: 0.27285429141716566
+Iteration: 100300 
+Acceptance rate: 0.27283150548354934
+Iteration: 100400 
+Acceptance rate: 0.2727988047808765
+Iteration: 100500 
+Acceptance rate: 0.2728358208955224
+Iteration: 100600 
+Acceptance rate: 0.27284294234592443
+Iteration: 100700 
+Acceptance rate: 0.272850049652433
+Iteration: 100800 
+Acceptance rate: 0.2728174603174603
+Iteration: 100900 
+Acceptance rate: 0.27279484638255697
+Iteration: 101000 
+Acceptance rate: 0.27282178217821784
+Iteration: 101100 
+Acceptance rate: 0.27281899109792285
+Iteration: 101200 
+Acceptance rate: 0.27280632411067196
+Iteration: 101300 
+Acceptance rate: 0.27281342546890425
+Iteration: 101400 
+Acceptance rate: 0.2728402366863905
+Iteration: 101500 
+Acceptance rate: 0.27282758620689657
+Iteration: 101600 
+Acceptance rate: 0.2728248031496063
+Iteration: 101700 
+Acceptance rate: 0.27281219272369717
+Iteration: 101800 
+Acceptance rate: 0.2728585461689587
+Iteration: 101900 
+Acceptance rate: 0.272855740922473
+Iteration: 102000 
+Acceptance rate: 0.27284313725490195
+Iteration: 102100 
+Acceptance rate: 0.2728305582761998
+Iteration: 102200 
+Acceptance rate: 0.27285714285714285
+Iteration: 102300 
+Acceptance rate: 0.27284457478005864
+Iteration: 102400 
+Acceptance rate: 0.272861328125
+Iteration: 102500 
+Acceptance rate: 0.272790243902439
+Iteration: 102600 
+Acceptance rate: 0.2727972709551657
+Iteration: 102700 
+Acceptance rate: 0.2728627069133398
+Iteration: 102800 
+Acceptance rate: 0.2728112840466926
+Iteration: 102900 
+Acceptance rate: 0.27281827016520893
+Iteration: 103000 
+Acceptance rate: 0.27284466019417475
+Iteration: 103100 
+Acceptance rate: 0.27286129970902034
+Iteration: 103200 
+Acceptance rate: 0.27291666666666664
+Iteration: 103300 
+Acceptance rate: 0.27286544046466604
+Iteration: 103400 
+Acceptance rate: 0.27288201160541586
+Iteration: 103500 
+Acceptance rate: 0.2727826086956522
+Iteration: 103600 
+Acceptance rate: 0.2727895752895753
+Iteration: 103700 
+Acceptance rate: 0.2727675988428158
+Iteration: 103800 
+Acceptance rate: 0.2727071290944123
+Iteration: 103900 
+Acceptance rate: 0.2726852743022137
+Iteration: 104000 
+Acceptance rate: 0.2725961538461538
+Iteration: 104100 
+Acceptance rate: 0.27267050912584057
+Iteration: 104200 
+Acceptance rate: 0.27272552783109405
+Iteration: 104300 
+Acceptance rate: 0.2727037392138063
+Iteration: 104400 
+Acceptance rate: 0.27273946360153256
+Iteration: 104500 
+Acceptance rate: 0.27276555023923443
+Iteration: 104600 
+Acceptance rate: 0.272791586998088
+Iteration: 104700 
+Acceptance rate: 0.2728080229226361
+Iteration: 104800 
+Acceptance rate: 0.2728148854961832
+Iteration: 104900 
+Acceptance rate: 0.27282173498570067
+Iteration: 105000 
+Acceptance rate: 0.2729047619047619
+Iteration: 105100 
+Acceptance rate: 0.27288296860133204
+Iteration: 105200 
+Acceptance rate: 0.2728802281368821
+Iteration: 105300 
+Acceptance rate: 0.2729249762583096
+Iteration: 105400 
+Acceptance rate: 0.2729316888045541
+Iteration: 105500 
+Acceptance rate: 0.27288151658767773
+Iteration: 105600 
+Acceptance rate: 0.2728882575757576
+Iteration: 105700 
+Acceptance rate: 0.2729422894985809
+Iteration: 105800 
+Acceptance rate: 0.27294896030245747
+Iteration: 105900 
+Acceptance rate: 0.27291784702549576
+Iteration: 106000 
+Acceptance rate: 0.27283962264150946
+Iteration: 106100 
+Acceptance rate: 0.27279924599434496
+Iteration: 106200 
+Acceptance rate: 0.2727966101694915
+Iteration: 106300 
+Acceptance rate: 0.27277516462841017
+Iteration: 106400 
+Acceptance rate: 0.2727443609022556
+Iteration: 106500 
+Acceptance rate: 0.2727511737089202
+Iteration: 106600 
+Acceptance rate: 0.2727767354596623
+Iteration: 106700 
+Acceptance rate: 0.27264292408622304
+Iteration: 106800 
+Acceptance rate: 0.2725842696629214
+Iteration: 106900 
+Acceptance rate: 0.2725444340505145
+Iteration: 107000 
+Acceptance rate: 0.2725514018691589
+Iteration: 107100 
+Acceptance rate: 0.2725396825396825
+Iteration: 107200 
+Acceptance rate: 0.2725186567164179
+Iteration: 107300 
+Acceptance rate: 0.27250698974836907
+Iteration: 107400 
+Acceptance rate: 0.2724860335195531
+Iteration: 107500 
+Acceptance rate: 0.27254883720930234
+Iteration: 107600 
+Acceptance rate: 0.27248141263940523
+Iteration: 107700 
+Acceptance rate: 0.2724605385329619
+Iteration: 107800 
+Acceptance rate: 0.272430426716141
+Iteration: 107900 
+Acceptance rate: 0.2723911028730306
+Iteration: 108000 
+Acceptance rate: 0.2723055555555556
+Iteration: 108100 
+Acceptance rate: 0.2723404255319149
+Iteration: 108200 
+Acceptance rate: 0.27243992606284656
+Iteration: 108300 
+Acceptance rate: 0.2724561403508772
+Iteration: 108400 
+Acceptance rate: 0.27247232472324723
+Iteration: 108500 
+Acceptance rate: 0.27244239631336403
+Iteration: 108600 
+Acceptance rate: 0.2725046040515654
+Iteration: 108700 
+Acceptance rate: 0.2725298988040478
+Iteration: 108800 
+Acceptance rate: 0.2724816176470588
+Iteration: 108900 
+Acceptance rate: 0.27248852157943065
+Iteration: 109000 
+Acceptance rate: 0.27243119266055044
+Iteration: 109100 
+Acceptance rate: 0.2724472960586618
+Iteration: 109200 
+Acceptance rate: 0.2725
+Iteration: 109300 
+Acceptance rate: 0.27250686184812445
+Iteration: 109400 
+Acceptance rate: 0.2725776965265082
+Iteration: 109500 
+Acceptance rate: 0.2725296803652968
+Iteration: 109600 
+Acceptance rate: 0.27245437956204377
+Iteration: 109700 
+Acceptance rate: 0.27245214220601643
+Iteration: 109800 
+Acceptance rate: 0.272431693989071
+Iteration: 109900 
+Acceptance rate: 0.27236578707916287
+Iteration: 110000 
+Acceptance rate: 0.27241818181818184
+Iteration: 110100 
+Acceptance rate: 0.27236148955495004
+Iteration: 110200 
+Acceptance rate: 0.27235934664246825
+Iteration: 110300 
+Acceptance rate: 0.27234814143245695
+Iteration: 110400 
+Acceptance rate: 0.27227355072463766
+Iteration: 110500 
+Acceptance rate: 0.2722533936651584
+Iteration: 110600 
+Acceptance rate: 0.2722151898734177
+Iteration: 110700 
+Acceptance rate: 0.2721499548328817
+Iteration: 110800 
+Acceptance rate: 0.2720758122743682
+Iteration: 110900 
+Acceptance rate: 0.27209197475202884
+Iteration: 111000 
+Acceptance rate: 0.2720900900900901
+Iteration: 111100 
+Acceptance rate: 0.2721332133213321
+Iteration: 111200 
+Acceptance rate: 0.2720953237410072
+Iteration: 111300 
+Acceptance rate: 0.2721473495058401
+Iteration: 111400 
+Acceptance rate: 0.27220825852782765
+Iteration: 111500 
+Acceptance rate: 0.2721883408071749
+Iteration: 111600 
+Acceptance rate: 0.2721326164874552
+Iteration: 111700 
+Acceptance rate: 0.27212175470008954
+Iteration: 111800 
+Acceptance rate: 0.27219141323792484
+Iteration: 111900 
+Acceptance rate: 0.2720911528150134
+Iteration: 112000 
+Acceptance rate: 0.27202678571428573
+Iteration: 112100 
+Acceptance rate: 0.27203389830508473
+Iteration: 112200 
+Acceptance rate: 0.27210338680926915
+Iteration: 112300 
+Acceptance rate: 0.2721371326803206
+Iteration: 112400 
+Acceptance rate: 0.27208185053380785
+Iteration: 112500 
+Acceptance rate: 0.2720444444444444
+Iteration: 112600 
+Acceptance rate: 0.2721225577264654
+Iteration: 112700 
+Acceptance rate: 0.2721472937000887
+Iteration: 112800 
+Acceptance rate: 0.2722340425531915
+Iteration: 112900 
+Acceptance rate: 0.27215234720992026
+Iteration: 113000 
+Acceptance rate: 0.2721504424778761
+Iteration: 113100 
+Acceptance rate: 0.2720954907161804
+Iteration: 113200 
+Acceptance rate: 0.2721024734982332
+Iteration: 113300 
+Acceptance rate: 0.2721182700794351
+Iteration: 113400 
+Acceptance rate: 0.2721164021164021
+Iteration: 113500 
+Acceptance rate: 0.2721674008810573
+Iteration: 113600 
+Acceptance rate: 0.27211267605633804
+Iteration: 113700 
+Acceptance rate: 0.2721108179419525
+Iteration: 113800 
+Acceptance rate: 0.2721353251318102
+Iteration: 113900 
+Acceptance rate: 0.2721246707638279
+Iteration: 114000 
+Acceptance rate: 0.27217543859649124
+Iteration: 114100 
+Acceptance rate: 0.27218229623137596
+Iteration: 114200 
+Acceptance rate: 0.27222416812609457
+Iteration: 114300 
+Acceptance rate: 0.272169728783902
+Iteration: 114400 
+Acceptance rate: 0.27222902097902096
+Iteration: 114500 
+Acceptance rate: 0.2722707423580786
+Iteration: 114600 
+Acceptance rate: 0.27225130890052357
+Iteration: 114700 
+Acceptance rate: 0.27225806451612905
+Iteration: 114800 
+Acceptance rate: 0.2722212543554007
+Iteration: 114900 
+Acceptance rate: 0.2721845082680592
+Iteration: 115000 
+Acceptance rate: 0.27222608695652173
+Iteration: 115100 
+Acceptance rate: 0.2722328410078193
+Iteration: 115200 
+Acceptance rate: 0.27229166666666665
+Iteration: 115300 
+Acceptance rate: 0.27231569817866436
+Iteration: 115400 
+Acceptance rate: 0.2723310225303293
+Iteration: 115500 
+Acceptance rate: 0.2722770562770563
+Iteration: 115600 
+Acceptance rate: 0.2722231833910035
+Iteration: 115700 
+Acceptance rate: 0.27226447709593776
+Iteration: 115800 
+Acceptance rate: 0.27224525043177894
+Iteration: 115900 
+Acceptance rate: 0.27226056945642796
+Iteration: 116000 
+Acceptance rate: 0.27226724137931035
+Iteration: 116100 
+Acceptance rate: 0.27223944875107664
+Iteration: 116200 
+Acceptance rate: 0.2722547332185886
+Iteration: 116300 
+Acceptance rate: 0.27226139294926915
+Iteration: 116400 
+Acceptance rate: 0.27224226804123713
+Iteration: 116500 
+Acceptance rate: 0.27224892703862663
+Iteration: 116600 
+Acceptance rate: 0.27226415094339623
+Iteration: 116700 
+Acceptance rate: 0.27227077977720654
+Iteration: 116800 
+Acceptance rate: 0.27231164383561646
+Iteration: 116900 
+Acceptance rate: 0.27234388366124895
+Iteration: 117000 
+Acceptance rate: 0.27244444444444443
+Iteration: 117100 
+Acceptance rate: 0.2724508966695132
+Iteration: 117200 
+Acceptance rate: 0.27232935153583615
+Iteration: 117300 
+Acceptance rate: 0.2722932651321398
+Iteration: 117400 
+Acceptance rate: 0.27226575809199316
+Iteration: 117500 
+Acceptance rate: 0.27228936170212764
+Iteration: 117600 
+Acceptance rate: 0.27224489795918366
+Iteration: 117700 
+Acceptance rate: 0.2722429906542056
+Iteration: 117800 
+Acceptance rate: 0.2723089983022071
+Iteration: 117900 
+Acceptance rate: 0.2723155216284987
+Iteration: 118000 
+Acceptance rate: 0.2722966101694915
+Iteration: 118100 
+Acceptance rate: 0.2722523285351397
+Iteration: 118200 
+Acceptance rate: 0.27230118443316415
+Iteration: 118300 
+Acceptance rate: 0.272240067624683
+Iteration: 118400 
+Acceptance rate: 0.2722972972972973
+Iteration: 118500 
+Acceptance rate: 0.2722784810126582
+Iteration: 118600 
+Acceptance rate: 0.27227655986509275
+Iteration: 118700 
+Acceptance rate: 0.2722999157540017
+Iteration: 118800 
+Acceptance rate: 0.27230639730639733
+Iteration: 118900 
+Acceptance rate: 0.2723044575273339
+Iteration: 119000 
+Acceptance rate: 0.27232773109243696
+Iteration: 119100 
+Acceptance rate: 0.27235096557514693
+Iteration: 119200 
+Acceptance rate: 0.27231543624161075
+Iteration: 119300 
+Acceptance rate: 0.27232187761944676
+Iteration: 119400 
+Acceptance rate: 0.27233668341708545
+Iteration: 119500 
+Acceptance rate: 0.2723096234309623
+Iteration: 119600 
+Acceptance rate: 0.27237458193979935
+Iteration: 119700 
+Acceptance rate: 0.2723642439431913
+Iteration: 119800 
+Acceptance rate: 0.27246243739565945
+Iteration: 119900 
+Acceptance rate: 0.27251042535446207
+Iteration: 120000 
+Acceptance rate: 0.272475

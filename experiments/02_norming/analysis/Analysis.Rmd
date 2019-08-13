@@ -180,7 +180,7 @@ plot(ps2$p1)
 ```
 ## Individual plots
 
-```{r by_participant_plots}
+```{r by_participant_plots, fig.width = 20, fig.height=10}
 plot(ps1$by_participant)
 plot(ps2$by_participant)
 ```
