@@ -3,7 +3,7 @@
     "theta_nu": 0.025,
     "theta_mu": 0.0017499999999999998,
     "utt_other_prob": 0.01,
-    "cost": 0.013,
+    "cost": 0,
     "rat_alpha": 0.005
   },
   "rat_alpha_prior": {
@@ -127,7 +127,7 @@
   "burn_in": 20000,
   "theta_nu_scale": 2.5,
   "utt_other_prob_init": 3.640688e-05,
-  "condition_encoding": "cost",
+  "condition_encoding": "xxx",
   "iterations": 120001,
   "exposure_trials": [
     [

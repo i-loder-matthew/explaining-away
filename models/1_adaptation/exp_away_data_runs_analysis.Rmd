@@ -96,14 +96,26 @@ exp_trials.pessimist = read.csv("~/Documents/research/explaining-away/experiment
 exp_trials.confident$workerid = exp_trials.confident$workerid + max(exp_trials.cautious$workerid) + 1
 exp_trials.pessimist$workerid = exp_trials.pessimist$workerid + max(exp_trials.confident$workerid) + 1
 exp_trials = rbind(exp_trials.cautious, exp_trials.confident, exp_trials.pessimist)
-#exp_data = exclude_participants(exp_data, exp_trials)
 exp_data = spread_data(exp_data)
 exp_data$pair = exp_data$condition
 exp_plot_data = get_data_for_plotting(exp_data)
 
 # From the norming study
 
+exp_data.opt = read.csv("~/Documents/research/explaining-away/experiments/02_norming/data/02_norming_cond1-trials.csv")
+exp_data.psmst = read.csv("~/Documents/research/explaining-away/experiments/02_norming/data/02_norming_cond2-trials.csv")
 
+exp_data.psmst$workerid = exp_data.psmst$workerid + max(exp_data.opt$workerid) + 1
+
+exp_data.opt$condition = "optimist"
+exp_data.psmst$condition = "pessimist"
+
+exp_data.norming = rbind(exp_data.opt, exp_data.psmst)
+
+exp_data.norming = remove_quotes(exp_data.norming)
+exp_data.norming = spread_data(exp_data.norming)
+exp_data.norming$pair = exp_data.norming$condition
+exp_plot_data_norming = get_data_for_plotting(exp_data.norming)
 ```
 
 Experiments where we fit parameters of the model to the post-adaptation data to investigate whether
@@ -118,7 +130,7 @@ There is a separate cost term for each utterance.
 
 Inferred thresholds:
 
-```{r model1_data, echo=FALSE}
+```{r model1_data_norming, echo=FALSE}
 d.opt.norming = convertData("./explaining-away-runs/norming-good-mood/thetas-cost/run1_output.json")
 d.opt.norming = reparam(d.opt.norming)
 d.opt.norming = tidy_sampleList(d.opt.norming, 1, 1, list())
@@ -138,7 +150,7 @@ mle_params_norming = d.norming %>%
 
 ```
 
-```{r threshold_distr1, fig.width=10, echo=FALSE}
+```{r threshold_distr1_norming, fig.width=10, echo=FALSE}
 beta_density = data.table()
 beta_modals = c("bare", "might", "probably", "could", "looks_like", "think", "bare_not")
 for (i in 1:2) {
@@ -183,7 +195,7 @@ d.norming %>%
 
 Model fit for norming data: 
 
-```{r model_fit1, echo=FALSE, fig.width=10}
+```{r model_fit1_norming, echo=FALSE, fig.width=10}
 hdi_data.opt.norming= read.csv(paste("./explaining-away-runs/norming-good-mood/thetas-cost/hdi_samples.csv", sep=""))
 hdi_data.psmst.norming = read.csv(paste("./explaining-away-runs/norming-bad-mood/thetas-cost/hdi_samples.csv", sep=""))
 
@@ -205,7 +217,7 @@ posterior_plot =  hdi_data.all.norming %>%
   lty=guide_legend(title="", nrow = 1, override.aes = list(alpha = 1, size=0.5), order = 2)) +
   ylab("predicted rating") +
   xlab("event probability") +
-  geom_line(aes(x=percentage_blue, y=rating_m, group=modal), data=exp_plot_data %>% rename(condition = pair) %>% mutate(src="experimental result")) +
+  geom_line(aes(x=percentage_blue, y=rating_m, group=modal), data=exp_plot_data_norming %>% rename(condition = pair) %>% mutate(src="experimental result")) +
   scale_linetype_manual(values=c("solid", "dashed"), labels=c("model prediction", "experimental result"), drop=F)
 
 plot(posterior_plot)
@@ -288,9 +300,9 @@ Model fit for the main study:
 
 ```{r model_fit1, echo=FALSE, fig.width=10, fig.height = 5}
 
-hdi_data.confident= read.csv(paste("./explaining-away-runs/main-confident/hdi_samples.csv", sep=""))
-hdi_data.pessimist = read.csv(paste("../../models/2_adaptation_model/explaining-away-runs/main-bad-mood/hdi_samples.csv", sep=""))
-hdi_data.cautious= read.csv(paste("../../models/2_adaptation_model/explaining-away-runs/main-cautious/hdi_samples.csv", sep=""))
+hdi_data.confident= read.csv(paste("./explaining-away-runs/main-confident/thetas-cost/hdi_samples.csv", sep=""))
+hdi_data.pessimist = read.csv(paste("./explaining-away-runs/main-bad-mood/thetas-cost/hdi_samples.csv", sep=""))
+hdi_data.cautious= read.csv(paste("./explaining-away-runs/main-cautious/thetas-cost/hdi_samples.csv", sep=""))
 
 hdi_data.confident$condition = "confident"
 hdi_data.pessimist$condition = "pessimist"
@@ -319,21 +331,20 @@ plot(posterior_plot)
 
 ```
 
-## Fit 2: Fitting of Thetas and individual costs + fixed cost of might and probably
+## Fit 2: Fitting of Thetas and individual costs + fixed rat-alpha
 
 In this model, the parameters guiding the distributions over thresholds as well as the costs can vary.
-There is a separate cost term for each utterance. The cost of might and probably is fixed and set to 1.
 
 ### Norming data:
 
 Inferred thresholds:
-```{r model1_data, echo=FALSE}
-d.opt.norming = convertData("./explaining-away-runs/norming-good-mood/cost-fixed/run1_output.json")
+```{r model2_data_norming, echo=FALSE}
+d.opt.norming = convertData("./explaining-away-runs/norming-good-mood/rat-fixed/run1_output.json")
 d.opt.norming = reparam(d.opt.norming)
 d.opt.norming = tidy_sampleList(d.opt.norming, 1, 1, list())
 d.opt.norming$condition = "optimist"
 
-d.psmst.norming = convertData("./explaining-away-runs/norming-bad-mood/cost-fixed/run1_output.json")
+d.psmst.norming = convertData("./explaining-away-runs/norming-bad-mood/rat-fixed/run1_output.json")
 d.psmst.norming = reparam(d.psmst.norming)
 d.psmst.norming = tidy_sampleList(d.psmst.norming, 1, 1, list())
 d.psmst.norming$condition = "pessimist"
@@ -347,7 +358,7 @@ mle_params_norming = d.norming %>%
 
 ```
 
-```{r threshold_distr1, fig.width=10, echo=FALSE}
+```{r threshold_distr2_norming, fig.width=10, echo=FALSE}
 beta_density = data.table()
 beta_modals = c("bare", "might", "probably", "could", "looks_like", "think", "bare_not")
 for (i in 1:2) {
@@ -380,7 +391,220 @@ threshold_distrs = ggplot(beta_density, aes(x=x, y=y, col=condition)) +
 
 plot(threshold_distrs)
 
-cost_data = d.norming %>% 
+d.norming %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  filter(grepl("cost_", Parameter)) %>%
+  ggplot(aes(x=Parameter, y = value, fill=condition)) +
+  geom_bar(stat="identity", position = "dodge")
+
+```
+
+Model fit for norming data:
+
+```{r model_fit2_norming, echo=FALSE, fig.width=10}
+hdi_data.opt.norming= read.csv(paste("./explaining-away-runs/norming-good-mood/rat-fixed/hdi_samples.csv", sep=""))
+hdi_data.psmst.norming = read.csv(paste("./explaining-away-runs/norming-bad-mood/rat-fixed/hdi_samples.csv", sep=""))
+
+hdi_data.opt.norming$condition = "optimist"
+hdi_data.psmst.norming$condition = "pessimist"
+hdi_data.all.norming = rbind(hdi_data.opt.norming, hdi_data.psmst.norming)
+hdi_data.all.norming$condition = factor(hdi_data.all.norming$condition, levels=c("optimist", "pessimist"), ordered = T)
+hdi_data.all.norming$rating_pred = hdi_data.all.norming$rating_pred * 100
+
+hdi_data.all.norming$src = factor("model prediction", levels=c("model prediction", "experimental result"), ordered=T)
+posterior_plot =  hdi_data.all.norming %>% 
+              group_by(condition, modal, percentage_blue, src) %>%
+              summarize(rating_pred_m = mean(rating_pred)) %>%
+  ggplot(aes(x=percentage_blue, col=modal, y=rating_pred_m, group=interaction(modal,condition), lty=src)) +   geom_line(size=1) + 
+   colscale(unique(exp_plot_data$modal))  + facet_wrap(~condition) +
+  geom_vline(xintercept = 60, lty=2, col="grey", size=1) +
+  theme(legend.position = "bottom", legend.box = "vertical") +
+  guides(col=guide_legend(title="Expression", nrow = 1, override.aes = list(alpha = 1)), 
+  lty=guide_legend(title="", nrow = 1, override.aes = list(alpha = 1, size=0.5), order = 2)) +
+  ylab("predicted rating") +
+  xlab("event probability") +
+  geom_line(aes(x=percentage_blue, y=rating_m, group=modal), data=exp_plot_data_norming %>% rename(condition = pair) %>% mutate(src="experimental result")) +
+  scale_linetype_manual(values=c("solid", "dashed"), labels=c("model prediction", "experimental result"), drop=F)
+
+plot(posterior_plot)
+```
+
+
+### Main study data:
+
+Inferred thresholds:
+
+```{r model2_data, echo=FALSE}
+d.confident = convertData("./explaining-away-runs/main-confident/rat-fixed/run1_output.json")
+d.confident = reparam(d.confident)
+d.confident = tidy_sampleList(d.confident, 1, 1, list())
+d.confident$condition = "confident"
+
+d.pessimist = convertData("./explaining-away-runs/main-bad-mood/rat-fixed/run1_output.json")
+d.pessimist = reparam(d.pessimist)
+d.pessimist = tidy_sampleList(d.pessimist, 1, 1, list())
+d.pessimist$condition = "pessimist"
+
+d.cautious = convertData("./explaining-away-runs/main-cautious/rat-fixed/run1_output.json")
+d.cautious = reparam(d.cautious)
+d.cautious = tidy_sampleList(d.cautious, 1, 1, list())
+d.cautious$condition = "cautious"
+
+d = rbind(d.confident, d.pessimist, d.cautious)
+
+mle_params = d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  spread(key = Parameter, value = value)
+
+
+```
+
+```{r threshold_distr2, fig.width=10, echo=FALSE}
+beta_density = data.table()
+beta_modals = c("bare", "might", "probably", "could", "looks_like", "think", "bare_not")
+for (i in 1:3) {
+for (modal in beta_modals) {
+  if (modal == "other") {
+    next
+  }
+  alpha_param_name = paste("alpha", modal, sep="_")
+  beta_param_name = paste("beta", modal, sep="_")
+  
+  alpha_param = as.numeric(mle_params[i,alpha_param_name])
+  beta_param = as.numeric(mle_params[i,beta_param_name])
+
+  
+  x = seq(0.001,0.999,.001)
+  y = dbeta(x, alpha_param, beta_param)
+  y = y / (max(y))
+  
+  beta_density = rbind(beta_density, data.frame(x = x, y = y, modal = gsub("_", " ", modal), condition=mle_params[i, "condition"]))
+}
+}
+
+threshold_distrs = ggplot(beta_density, aes(x=x, y=y, col=condition)) + 
+  geom_line() + 
+  facet_wrap(~modal, ncol = 4) + 
+  xlab(expression(theta)) +
+  ylab(expression(paste("P(", theta, ")", sep=""))) +
+  theme(legend.position = "bottom") +
+  guides(col=guide_legend(title="Condition", nrow = 1)) 
+
+plot(threshold_distrs)
+
+d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  filter(grepl("cost_", Parameter)) %>%
+  ggplot(aes(x=Parameter, y = value, fill=condition)) +
+  geom_bar(stat="identity", position = "dodge")
+
+```
+
+Model fit for the main data:
+
+```{r model_fit2, echo=FALSE, fig.width=10, fig.height = 5}
+
+hdi_data.confident= read.csv(paste("./explaining-away-runs/main-confident/rat-fixed/hdi_samples.csv", sep=""))
+hdi_data.pessimist = read.csv(paste("./explaining-away-runs/main-bad-mood/rat-fixed/hdi_samples.csv", sep=""))
+hdi_data.cautious= read.csv(paste("./explaining-away-runs/main-cautious/rat-fixed/hdi_samples.csv", sep=""))
+
+hdi_data.confident$condition = "confident"
+hdi_data.pessimist$condition = "pessimist"
+hdi_data.cautious$condition = "cautious"
+hdi_data.all = rbind(hdi_data.confident, hdi_data.pessimist, hdi_data.cautious)
+hdi_data.all$condition = factor(hdi_data.all$condition, levels=c("confident", "pessimist", "cautious"), ordered = T)
+hdi_data.all$rating_pred = hdi_data.all$rating_pred * 100
+
+hdi_data.all$src = factor("model prediction", levels=c("model prediction", "experimental result"), ordered=T)
+posterior_plot =  hdi_data.all %>% 
+              group_by(condition, modal, percentage_blue, src) %>%
+              summarize(rating_pred_m = mean(rating_pred)) %>%
+  ggplot(aes(x=percentage_blue, col=modal, y=rating_pred_m, group=interaction(modal,condition), lty=src)) +   geom_line(size=1) + 
+   colscale(unique(exp_plot_data$modal))  + facet_wrap(~condition) +
+  geom_vline(xintercept = 60, lty=2, col="grey", size=1) +
+  theme(legend.position = "bottom", legend.box = "vertical") +
+  guides(col=guide_legend(title="Expression", nrow = 1, override.aes = list(alpha = 1)), 
+  lty=guide_legend(title="", nrow = 1, override.aes = list(alpha = 1, size=0.5), order = 2)) +
+  ylab("predicted rating") +
+  xlab("event probability") +
+  geom_line(aes(x=percentage_blue, y=rating_m, group=modal), data=exp_plot_data %>% rename(condition = pair) %>% mutate(src="experimental result")) +
+  scale_linetype_manual(values=c("solid", "dashed"), labels=c("model prediction", "experimental result"), drop=F)
+
+plot(posterior_plot)
+```
+
+## Fit 3: Fitting of Thetas and individual costs + fixed cost of might and probably
+
+In this model, the parameters guiding the distributions over thresholds as well as the costs can vary.
+There is a separate cost term for each utterance. The cost of might and probably is fixed and set to 1.
+
+### Main study data:
+
+Inferred thresholds:
+
+```{r model3_data, echo=FALSE}
+d.confident = convertData("./explaining-away-runs/main-confident/cost-fixed/run1_output.json")
+d.confident = reparam(d.confident)
+d.confident = tidy_sampleList(d.confident, 1, 1, list())
+d.confident$condition = "confident"
+
+d.pessimist = convertData("./explaining-away-runs/main-bad-mood/cost-fixed/run1_output.json")
+d.pessimist = reparam(d.pessimist)
+d.pessimist = tidy_sampleList(d.pessimist, 1, 1, list())
+d.pessimist$condition = "pessimist"
+
+d.cautious = convertData("./explaining-away-runs/main-cautious/cost-fixed/run1_output.json")
+d.cautious = reparam(d.cautious)
+d.cautious = tidy_sampleList(d.cautious, 1, 1, list())
+d.cautious$condition = "cautious"
+
+d = rbind(d.confident, d.pessimist, d.cautious)
+
+mle_params = d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  spread(key = Parameter, value = value)
+
+
+```
+
+```{r threshold_distr3, fig.width=10, echo=FALSE}
+beta_density = data.table()
+beta_modals = c("bare", "might", "probably", "could", "looks_like", "think", "bare_not")
+for (i in 1:3) {
+for (modal in beta_modals) {
+  if (modal == "other") {
+    next
+  }
+  alpha_param_name = paste("alpha", modal, sep="_")
+  beta_param_name = paste("beta", modal, sep="_")
+  
+  alpha_param = as.numeric(mle_params[i,alpha_param_name])
+  beta_param = as.numeric(mle_params[i,beta_param_name])
+
+  
+  x = seq(0.001,0.999,.001)
+  y = dbeta(x, alpha_param, beta_param)
+  y = y / (max(y))
+  
+  beta_density = rbind(beta_density, data.frame(x = x, y = y, modal = gsub("_", " ", modal), condition=mle_params[i, "condition"]))
+}
+}
+
+threshold_distrs = ggplot(beta_density, aes(x=x, y=y, col=condition)) + 
+  geom_line() + 
+  facet_wrap(~modal, ncol = 4) + 
+  xlab(expression(theta)) +
+  ylab(expression(paste("P(", theta, ")", sep=""))) +
+  theme(legend.position = "bottom") +
+  guides(col=guide_legend(title="Condition", nrow = 1)) 
+
+plot(threshold_distrs)
+
+cost_data = d %>% 
   group_by(Parameter, condition) %>%
   summarize(value=mean(value)) %>%
   filter(grepl("cost_", Parameter))
@@ -393,8 +617,272 @@ cost_data %>%
     ggplot(aes(x=Parameter, y = value, fill=condition)) +
   geom_bar(stat="identity", position = "dodge")
 
+```
+
+Model fit for the main data:
+
+```{r model_fit3, echo=FALSE, fig.width=10, fig.height = 5}
+
+hdi_data.confident= read.csv(paste("./explaining-away-runs/main-confident/cost-fixed/hdi_samples.csv", sep=""))
+hdi_data.pessimist = read.csv(paste("./explaining-away-runs/main-bad-mood/cost-fixed/hdi_samples.csv", sep=""))
+hdi_data.cautious= read.csv(paste("./explaining-away-runs/main-cautious/cost-fixed/hdi_samples.csv", sep=""))
+
+hdi_data.confident$condition = "confident"
+hdi_data.pessimist$condition = "pessimist"
+hdi_data.cautious$condition = "cautious"
+hdi_data.all = rbind(hdi_data.confident, hdi_data.pessimist, hdi_data.cautious)
+hdi_data.all$condition = factor(hdi_data.all$condition, levels=c("confident", "pessimist", "cautious"), ordered = T)
+hdi_data.all$rating_pred = hdi_data.all$rating_pred * 100
+
+hdi_data.all$src = factor("model prediction", levels=c("model prediction", "experimental result"), ordered=T)
+posterior_plot =  hdi_data.all %>% 
+              group_by(condition, modal, percentage_blue, src) %>%
+              summarize(rating_pred_m = mean(rating_pred)) %>%
+  ggplot(aes(x=percentage_blue, col=modal, y=rating_pred_m, group=interaction(modal,condition), lty=src)) +   geom_line(size=1) + 
+   colscale(unique(exp_plot_data$modal))  + facet_wrap(~condition) +
+  geom_vline(xintercept = 60, lty=2, col="grey", size=1) +
+  theme(legend.position = "bottom", legend.box = "vertical") +
+  guides(col=guide_legend(title="Expression", nrow = 1, override.aes = list(alpha = 1)), 
+  lty=guide_legend(title="", nrow = 1, override.aes = list(alpha = 1, size=0.5), order = 2)) +
+  ylab("predicted rating") +
+  xlab("event probability") +
+  geom_line(aes(x=percentage_blue, y=rating_m, group=modal), data=exp_plot_data %>% rename(condition = pair) %>% mutate(src="experimental result")) +
+  scale_linetype_manual(values=c("solid", "dashed"), labels=c("model prediction", "experimental result"), drop=F)
+
+plot(posterior_plot)
+```
+
+## Fit 4. Fitting in a simplified model with fixed cost-values
+
+In this simplified model, we only used the modals from the explaining away studies, "might" and "probably", as well as the bare and the bare-not option. The parameters guiding the distributions over thresholds could vary, but the costs were fixed.
+
+```{r functions2, echo=FALSE}
+reparam = function(d) {
+  modals = c("bare", "might", "probably","bare_not")
+  for (modal in modals) {
+    alpha_param_name = paste("alpha_", modal, sep="")
+    beta_param_name = paste("beta_", modal, sep="")
+    mu_param_name = paste("mu_", modal, sep="")
+    nu_param_name = paste("nu_", modal, sep="")
+
+    alpha = d[, alpha_param_name]
+    beta = d[, beta_param_name]
+    
+    mu =  alpha / (alpha + beta)
+    nu = alpha + beta
+    d[, mu_param_name] = mu
+    d[, nu_param_name] = nu
+  }
+  return(d)
+}
+```
+
+Inferred thresholds:
+
+```{r model4_data, echo=FALSE}
+d.confident = convertData("./explaining-away-runs/main-confident/simp-cost-fixed/run1_output.json")
+d.confident = reparam(d.confident)
+d.confident = tidy_sampleList(d.confident, 1, 1, list())
+d.confident$condition = "confident"
+
+d.pessimist = convertData("./explaining-away-runs/main-bad-mood/simp-cost-fixed/run1_output.json")
+d.pessimist = reparam(d.pessimist)
+d.pessimist = tidy_sampleList(d.pessimist, 1, 1, list())
+d.pessimist$condition = "pessimist"
+
+d.cautious = convertData("./explaining-away-runs/main-cautious/simp-cost-fixed/run1_output.json")
+d.cautious = reparam(d.cautious)
+d.cautious = tidy_sampleList(d.cautious, 1, 1, list())
+d.cautious$condition = "cautious"
+
+d = rbind(d.confident, d.pessimist, d.cautious)
+
+mle_params = d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  spread(key = Parameter, value = value)
+
 
 ```
 
-Model fit for norming data:
+```{r threshold_distr4, fig.width=10, echo=FALSE}
+beta_density = data.table()
+beta_modals = c("bare", "might", "probably", "bare_not")
+for (i in 1:3) {
+for (modal in beta_modals) {
+  if (modal == "other") {
+    next
+  }
+  alpha_param_name = paste("alpha", modal, sep="_")
+  beta_param_name = paste("beta", modal, sep="_")
+  
+  alpha_param = as.numeric(mle_params[i,alpha_param_name])
+  beta_param = as.numeric(mle_params[i,beta_param_name])
 
+  
+  x = seq(0.001,0.999,.001)
+  y = dbeta(x, alpha_param, beta_param)
+  y = y / (max(y))
+  
+  beta_density = rbind(beta_density, data.frame(x = x, y = y, modal = gsub("_", " ", modal), condition=mle_params[i, "condition"]))
+}
+}
+
+threshold_distrs = ggplot(beta_density, aes(x=x, y=y, col=condition)) + 
+  geom_line() + 
+  facet_wrap(~modal, ncol = 4) + 
+  xlab(expression(theta)) +
+  ylab(expression(paste("P(", theta, ")", sep=""))) +
+  theme(legend.position = "bottom") +
+  guides(col=guide_legend(title="Condition", nrow = 1)) 
+
+plot(threshold_distrs)
+
+d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  filter(grepl("cost_", Parameter)) %>%
+  ggplot(aes(x=Parameter, y = value, fill=condition)) +
+  geom_bar(stat="identity", position = "dodge")
+
+```
+
+Model fit for the main data:
+
+```{r model_fit4, echo=FALSE, fig.width=10, fig.height = 5}
+
+hdi_data.confident= read.csv(paste("./explaining-away-runs/main-confident/simp-cost-fixed/hdi_samples.csv", sep=""))
+hdi_data.pessimist = read.csv(paste("./explaining-away-runs/main-bad-mood/simp-cost-fixed/hdi_samples.csv", sep=""))
+hdi_data.cautious= read.csv(paste("./explaining-away-runs/main-cautious/simp-cost-fixed/hdi_samples.csv", sep=""))
+
+hdi_data.confident$condition = "confident"
+hdi_data.pessimist$condition = "pessimist"
+hdi_data.cautious$condition = "cautious"
+hdi_data.all = rbind(hdi_data.confident, hdi_data.pessimist, hdi_data.cautious)
+hdi_data.all$condition = factor(hdi_data.all$condition, levels=c("confident", "pessimist", "cautious"), ordered = T)
+hdi_data.all$rating_pred = hdi_data.all$rating_pred * 100
+
+hdi_data.all$src = factor("model prediction", levels=c("model prediction", "experimental result"), ordered=T)
+posterior_plot =  hdi_data.all %>% 
+              group_by(condition, modal, percentage_blue, src) %>%
+              summarize(rating_pred_m = mean(rating_pred)) %>%
+  ggplot(aes(x=percentage_blue, col=modal, y=rating_pred_m, group=interaction(modal,condition), lty=src)) +   geom_line(size=1) + 
+   colscale(unique(exp_plot_data$modal))  + facet_wrap(~condition) +
+  geom_vline(xintercept = 60, lty=2, col="grey", size=1) +
+  theme(legend.position = "bottom", legend.box = "vertical") +
+  guides(col=guide_legend(title="Expression", nrow = 1, override.aes = list(alpha = 1)), 
+  lty=guide_legend(title="", nrow = 1, override.aes = list(alpha = 1, size=0.5), order = 2)) +
+  ylab("predicted rating") +
+  xlab("event probability") +
+  geom_line(aes(x=percentage_blue, y=rating_m, group=modal), data=exp_plot_data %>% rename(condition = pair) %>% mutate(src="experimental result")) +
+  scale_linetype_manual(values=c("solid", "dashed"), labels=c("model prediction", "experimental result"), drop=F)
+
+plot(posterior_plot)
+```
+
+## Fit 5: Fitting in a simplified model with fixed theta values
+
+In this simplified model, we only used the modals from the explaining away studies, "might" and "probably", as well as the bare and the bare-not option. The parameters guiding the distributions over thresholds were fixed, but the costs could vary.
+
+Inferred thresholds:
+
+```{r model5_data, echo=FALSE}
+d.confident = convertData("./explaining-away-runs/main-confident/simp-theta-fixed/run1_output.json")
+d.confident = reparam(d.confident)
+d.confident = tidy_sampleList(d.confident, 1, 1, list())
+d.confident$condition = "confident"
+
+d.pessimist = convertData("./explaining-away-runs/main-bad-mood/simp-theta-fixed/run1_output.json")
+d.pessimist = reparam(d.pessimist)
+d.pessimist = tidy_sampleList(d.pessimist, 1, 1, list())
+d.pessimist$condition = "pessimist"
+
+d.cautious = convertData("./explaining-away-runs/main-cautious/simp-theta-fixed/run1_output.json")
+d.cautious = reparam(d.cautious)
+d.cautious = tidy_sampleList(d.cautious, 1, 1, list())
+d.cautious$condition = "cautious"
+
+d = rbind(d.confident, d.pessimist, d.cautious)
+
+mle_params = d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  spread(key = Parameter, value = value)
+
+
+```
+
+```{r threshold_distr5, fig.width=10, echo=FALSE}
+beta_density = data.table()
+beta_modals = c("bare", "might", "probably", "bare_not")
+for (i in 1:3) {
+for (modal in beta_modals) {
+  if (modal == "other") {
+    next
+  }
+  alpha_param_name = paste("alpha", modal, sep="_")
+  beta_param_name = paste("beta", modal, sep="_")
+  
+  alpha_param = as.numeric(mle_params[i,alpha_param_name])
+  beta_param = as.numeric(mle_params[i,beta_param_name])
+
+  
+  x = seq(0.001,0.999,.001)
+  y = dbeta(x, alpha_param, beta_param)
+  y = y / (max(y))
+  
+  beta_density = rbind(beta_density, data.frame(x = x, y = y, modal = gsub("_", " ", modal), condition=mle_params[i, "condition"]))
+}
+}
+
+threshold_distrs = ggplot(beta_density, aes(x=x, y=y, col=condition)) + 
+  geom_line() + 
+  facet_wrap(~modal, ncol = 4) + 
+  xlab(expression(theta)) +
+  ylab(expression(paste("P(", theta, ")", sep=""))) +
+  theme(legend.position = "bottom") +
+  guides(col=guide_legend(title="Condition", nrow = 1)) 
+
+plot(threshold_distrs)
+
+d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  filter(grepl("cost_", Parameter)) %>%
+  ggplot(aes(x=Parameter, y = value, fill=condition)) +
+  geom_bar(stat="identity", position = "dodge")
+
+```
+
+Model fit for the main data:
+
+```{r model_fit5, echo=FALSE, fig.width=10, fig.height = 5}
+
+hdi_data.confident= read.csv(paste("./explaining-away-runs/main-confident/simp-theta-fixed/hdi_samples.csv", sep=""))
+hdi_data.pessimist = read.csv(paste("./explaining-away-runs/main-bad-mood/simp-theta-fixed/hdi_samples.csv", sep=""))
+hdi_data.cautious= read.csv(paste("./explaining-away-runs/main-cautious/simp-theta-fixed/hdi_samples.csv", sep=""))
+
+hdi_data.confident$condition = "confident"
+hdi_data.pessimist$condition = "pessimist"
+hdi_data.cautious$condition = "cautious"
+hdi_data.all = rbind(hdi_data.confident, hdi_data.pessimist, hdi_data.cautious)
+hdi_data.all$condition = factor(hdi_data.all$condition, levels=c("confident", "pessimist", "cautious"), ordered = T)
+hdi_data.all$rating_pred = hdi_data.all$rating_pred * 100
+
+hdi_data.all$src = factor("model prediction", levels=c("model prediction", "experimental result"), ordered=T)
+posterior_plot =  hdi_data.all %>% 
+              group_by(condition, modal, percentage_blue, src) %>%
+              summarize(rating_pred_m = mean(rating_pred)) %>%
+  ggplot(aes(x=percentage_blue, col=modal, y=rating_pred_m, group=interaction(modal,condition), lty=src)) +   geom_line(size=1) + 
+   colscale(unique(exp_plot_data$modal))  + facet_wrap(~condition) +
+  geom_vline(xintercept = 60, lty=2, col="grey", size=1) +
+  theme(legend.position = "bottom", legend.box = "vertical") +
+  guides(col=guide_legend(title="Expression", nrow = 1, override.aes = list(alpha = 1)), 
+  lty=guide_legend(title="", nrow = 1, override.aes = list(alpha = 1, size=0.5), order = 2)) +
+  ylab("predicted rating") +
+  xlab("event probability") +
+  geom_line(aes(x=percentage_blue, y=rating_m, group=modal), data=exp_plot_data %>% rename(condition = pair) %>% mutate(src="experimental result")) +
+  scale_linetype_manual(values=c("solid", "dashed"), labels=c("model prediction", "experimental result"), drop=F)
+
+plot(posterior_plot)
+```
