@@ -886,3 +886,111 @@ posterior_plot =  hdi_data.all %>%
 
 plot(posterior_plot)
 ```
+
+
+## Fit 6: Fitting in a simplified model
+
+In this simplified model, we only used the modals from the explaining away studies, "might" and "probably", as well as the bare and the bare-not option. The parameters guiding the distributions over thresholds as well as the costs could vary.
+
+Inferred thresholds:
+
+```{r model6_data, echo=FALSE}
+d.confident = convertData("./explaining-away-runs/main-confident/simp/run1_output.json")
+d.confident = reparam(d.confident)
+d.confident = tidy_sampleList(d.confident, 1, 1, list())
+d.confident$condition = "confident"
+
+d.pessimist = convertData("./explaining-away-runs/main-bad-mood/simp/run1_output.json")
+d.pessimist = reparam(d.pessimist)
+d.pessimist = tidy_sampleList(d.pessimist, 1, 1, list())
+d.pessimist$condition = "pessimist"
+
+d.cautious = convertData("./explaining-away-runs/main-cautious/simp/run1_output.json")
+d.cautious = reparam(d.cautious)
+d.cautious = tidy_sampleList(d.cautious, 1, 1, list())
+d.cautious$condition = "cautious"
+
+d = rbind(d.confident, d.pessimist, d.cautious)
+
+mle_params = d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  spread(key = Parameter, value = value)
+
+
+```
+
+```{r threshold_distr6, fig.width=10, echo=FALSE}
+beta_density = data.table()
+beta_modals = c("bare", "might", "probably", "bare_not")
+for (i in 1:3) {
+for (modal in beta_modals) {
+  if (modal == "other") {
+    next
+  }
+  alpha_param_name = paste("alpha", modal, sep="_")
+  beta_param_name = paste("beta", modal, sep="_")
+  
+  alpha_param = as.numeric(mle_params[i,alpha_param_name])
+  beta_param = as.numeric(mle_params[i,beta_param_name])
+
+  
+  x = seq(0.001,0.999,.001)
+  y = dbeta(x, alpha_param, beta_param)
+  y = y / (max(y))
+  
+  beta_density = rbind(beta_density, data.frame(x = x, y = y, modal = gsub("_", " ", modal), condition=mle_params[i, "condition"]))
+}
+}
+
+threshold_distrs = ggplot(beta_density, aes(x=x, y=y, col=condition)) + 
+  geom_line() + 
+  facet_wrap(~modal, ncol = 4) + 
+  xlab(expression(theta)) +
+  ylab(expression(paste("P(", theta, ")", sep=""))) +
+  theme(legend.position = "bottom") +
+  guides(col=guide_legend(title="Condition", nrow = 1)) 
+
+plot(threshold_distrs)
+
+d %>% 
+  group_by(Parameter, condition) %>%
+  summarize(value=mean(value)) %>%
+  filter(grepl("cost_", Parameter)) %>%
+  ggplot(aes(x=Parameter, y = value, fill=condition)) +
+  geom_bar(stat="identity", position = "dodge")
+
+```
+
+Model fit for the main data:
+
+```{r model_fit6, echo=FALSE, fig.width=10, fig.height = 5}
+
+hdi_data.confident= read.csv(paste("./explaining-away-runs/main-confident/simp/hdi_samples.csv", sep=""))
+hdi_data.pessimist = read.csv(paste("./explaining-away-runs/main-bad-mood/simp/hdi_samples.csv", sep=""))
+hdi_data.cautious= read.csv(paste("./explaining-away-runs/main-cautious/simp/hdi_samples.csv", sep=""))
+
+hdi_data.confident$condition = "confident"
+hdi_data.pessimist$condition = "pessimist"
+hdi_data.cautious$condition = "cautious"
+hdi_data.all = rbind(hdi_data.confident, hdi_data.pessimist, hdi_data.cautious)
+hdi_data.all$condition = factor(hdi_data.all$condition, levels=c("confident", "pessimist", "cautious"), ordered = T)
+hdi_data.all$rating_pred = hdi_data.all$rating_pred * 100
+
+hdi_data.all$src = factor("model prediction", levels=c("model prediction", "experimental result"), ordered=T)
+posterior_plot =  hdi_data.all %>% 
+              group_by(condition, modal, percentage_blue, src) %>%
+              summarize(rating_pred_m = mean(rating_pred)) %>%
+  ggplot(aes(x=percentage_blue, col=modal, y=rating_pred_m, group=interaction(modal,condition), lty=src)) +   geom_line(size=1) + 
+   colscale(unique(exp_plot_data$modal))  + facet_wrap(~condition) +
+  geom_vline(xintercept = 60, lty=2, col="grey", size=1) +
+  theme(legend.position = "bottom", legend.box = "vertical") +
+  guides(col=guide_legend(title="Expression", nrow = 1, override.aes = list(alpha = 1)), 
+  lty=guide_legend(title="", nrow = 1, override.aes = list(alpha = 1, size=0.5), order = 2)) +
+  ylab("predicted rating") +
+  xlab("event probability") +
+  geom_line(aes(x=percentage_blue, y=rating_m, group=modal), data=exp_plot_data %>% rename(condition = pair) %>% mutate(src="experimental result")) +
+  scale_linetype_manual(values=c("solid", "dashed"), labels=c("model prediction", "experimental result"), drop=F)
+
+plot(posterior_plot)
+```
