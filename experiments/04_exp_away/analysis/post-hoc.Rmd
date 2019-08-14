@@ -2,7 +2,9 @@
 title: "Post-Hoc Analysis"
 author: "Matthew Loder"
 date: "8/9/2019"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -249,11 +251,17 @@ d.probably = d %>% filter(modal == "probably")
 
 d.rating_diff = data.frame("might_rating" = d.might$rating, 
                            "probably_rating" = d.probably$rating,
-                           "rating_diff" = (d.might$rating - d.probably$rating) ^ 2,
+                           "rating_diff" = (d.might$rating - d.probably$rating),
+                           "rating_sum" = (d.might$rating  + d.probably$rating),
                            "workerid" = d.might$workerid,
                            "probability" = d.might$percent_window,
                            "condition" = d.might$Answer.condition
-                           )
+
+                                                      )
+
+#normalize
+d.rating_diff = d.rating_diff %>% mutate(rating_diff = replace_na(rating_diff / rating_sum, 0) ) 
+
 
 # Now we'll look at the average differences by speaker
 avg_diff_by_speaker = d.rating_diff %>%
@@ -264,7 +272,9 @@ avg_diff_by_speaker = d.rating_diff %>%
 # and then by probability
 avg_diff_by_prob = d.rating_diff %>%
   group_by(probability, condition) %>%
-  summarise(rating_diff_m = mean(rating_diff))
+  summarise(rating_diff_m = mean(rating_diff),
+            ci_min = ci.low(rating_diff),
+            ci_max = ci.high(rating_diff))
 
 # and then the average across conditions, by speaker, and by item
 avg_diff_by_cond = d.rating_diff %>%
@@ -290,11 +300,18 @@ worker_rating.plot1 = ggplot(data = avg_diff_by_speaker) +
 prob.rating.plot1 = ggplot(data = avg_diff_by_prob) +
   geom_bar(stat = "identity", 
            mapping = aes(x = probability, y = rating_diff_m, fill = condition), 
-           position = "dodge")
+           position = "dodge") +
+           ylab("normalized: might-rating - probably rating")
+
+prob.rating.plot2 = ggplot(data = avg_diff_by_prob, aes(x = probability, y = rating_diff_m, group = condition, col = condition)) +
+  geom_line() + 
+           ylab("normalized: might-rating - probably rating") +
+  geom_errorbar(aes(ymin=rating_diff_m - ci_min, ymax=rating_diff_m + ci_max), width=5, size=.5, alpha=.6, col="black")
 
 pessimist.rating.plot1
 worker_rating.plot1
 prob.rating.plot1
+prob.rating.plot2
 ```
 
 Finally, consider comparing this difference in the ratings with the individual participants' AUCs
