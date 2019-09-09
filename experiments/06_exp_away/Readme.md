@@ -31,6 +31,6 @@ We conducted a pilot with 40 total participants (10 in each of four conditions).
 
 ## An Earlier Experiment
 
-We are running this condition as a follow up to an earlier experiment run with just three conditions. See the following link to that experiment: 
+We are running this condition as a follow up to an earlier experiment run with just three conditions. See the following link to that experiment: https://github.com/i-loder-matthew/explaining-away/tree/master/experiments/04_exp_away
 
 In that experiment, we compared the cautious and confident conditions to one another to demonstrate adaptation effects, and the pessimistic and cautious conditions to demonstrate explaining away. In this experiment then, we will explore the difference between the AUCs for the optimistic condition and the confident condition, to see how much adaptation happens there as well. 
