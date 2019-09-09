@@ -15,7 +15,7 @@ We exclude participants who seem to provide random ratings independent of the sc
 See the following web-based experiments:
 
 Condition 1:
-https://i-loder-matthew.github.io/explaining-away/experiments/04_exp_away/experiment/cond-1
+https://i-loder-matthew.github.io/explaining-away/experiments/06_exp_away/experiment/cond-1
 
 ## Predictions
 
