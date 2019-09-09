@@ -1,0 +1,50 @@
+.slider {
+  /* default is width 400 and margin 10 */
+	width: 400;
+	margin: 5px;
+}
+
+#trial {
+	height: 750px
+}
+
+#instructions {
+	height: 650px;
+}
+
+.err {
+	color: red;
+}
+
+.feedback {
+	color: red;
+	font-weight: bold;
+}
+.scene-class {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.image {
+	object-fit: cover;
+	width: 700;
+	height: 400;
+	object-position: 100% 0;
+}
+
+.text {
+	height: 85;
+	width: 140;
+	position: absolute;
+	top: 65;
+	left: 90;
+}
+
+.mug {
+	position: absolute;
+	top: 275;
+	left: 290;
+	width: 60;
+	height: 60;
+}

@@ -1,0 +1,14 @@
+check1,audio,order,image,check2,mood,seat,request,catch_trial,modal,workerid,condtion,prob_rating,text
+./stim/images/exposure_75_1.png,./stim/audio/angry_probably2_s2.mp3,1,./stim/images/exposure_10_1.png,./stim/images/exposure_10_1.png,pessimist,an aisle seat (blue),./stim/text/text-2.png,0,probably,0,3,0.27,You'll probably get one.
+./stim/images/exposure_90_8.png,./stim/audio/angry_probably1_s2.mp3,0,./stim/images/exposure_90_8.png,./stim/images/exposure_25_8.png,pessimist,a window seat (red),./stim/text/text-1.png,0,probably,0,3,0.48,You'll probably get one.
+./stim/images/prob_100_1.png,./stim/audio/angry_might1_s2.mp3,1,./stim/images/exposure_60_1.png,./stim/images/exposure_60_1.png,pessimist,a window seat (red),./stim/text/text-1.png,0,might,0,3,0.61,You might get one.
+./stim/images/exposure_25_2.png,./stim/audio/angry_probably1_s2.mp3,1,./stim/images/exposure_90_2.png,./stim/images/exposure_90_2.png,pessimist,a window seat (red),./stim/text/text-1.png,1,probably,0,3,0.54,You'll probably get one.
+./stim/images/exposure_40_8.png,./stim/audio/angry_might2_s2.mp3,0,./stim/images/exposure_40_8.png,./stim/images/prob_100_1.png,pessimist,an aisle seat (blue),./stim/text/text-2.png,0,might,0,3,0.64,You might get one.
+./stim/images/exposure_60_1.png,./stim/audio/angry_bare_s2.mp3,1,./stim/images/prob_100_1.png,./stim/images/prob_100_1.png,pessimist,a window seat (red),./stim/text/text-1.png,0,bare,0,3,1,You'll get one.
+./stim/images/prob_100_1.png,./stim/audio/angry_might2_s2.mp3,1,./stim/images/exposure_40_2.png,./stim/images/exposure_40_2.png,pessimist,an aisle seat (blue),./stim/text/text-2.png,1,might,0,3,0.61,You might get one.
+./stim/images/exposure_25_1.png,./stim/audio/angry_probably1_s2.mp3,1,./stim/images/exposure_90_1.png,./stim/images/exposure_90_1.png,pessimist,a window seat (red),./stim/text/text-1.png,0,probably,0,3,0.88,You'll probably get one.
+./stim/images/exposure_60_8.png,./stim/audio/angry_bare_s2.mp3,1,./stim/images/prob_100_1.png,./stim/images/prob_100_1.png,pessimist,a window seat (red),./stim/text/text-1.png,0,bare,0,3,1,You'll get one.
+./stim/images/exposure_10_2.png,./stim/audio/angry_probably2_s2.mp3,0,./stim/images/exposure_10_2.png,./stim/images/exposure_75_2.png,pessimist,an aisle seat (blue),./stim/text/text-2.png,1,probably,0,3,1,You'll probably get one.
+./stim/images/exposure_40_1.png,./stim/audio/angry_might2_s2.mp3,0,./stim/images/exposure_40_1.png,./stim/images/prob_100_1.png,pessimist,an aisle seat (blue),./stim/text/text-2.png,0,might,0,3,0.68,You might get one.
+./stim/images/prob_100_1.png,./stim/audio/angry_bare_s2.mp3,0,./stim/images/prob_100_1.png,./stim/images/exposure_60_2.png,pessimist,a window seat (red),./stim/text/text-1.png,1,bare,0,3,1,You'll get one.
+./stim/images/exposure_60_2.png,./stim/audio/angry_might1_s2.mp3,0,./stim/images/exposure_60_2.png,./stim/images/prob_100_1.png,pessimist,a window seat (red),./stim/text/text-1.png,1,might,0,3,0.78,You might get one.

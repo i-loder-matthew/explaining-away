@@ -1,0 +1,14 @@
+seat,check1,audio,catch_trial,check2,text,prob_rating,condtion,order,image,request,modal,workerid,mood
+an aisle seat (blue),./stim/images/exposure_10_3.png,./stim/audio/control_might2_s1.mp3,0,./stim/images/exposure_75_3.png,You might get one.,1,2,1,./stim/images/exposure_75_3.png,./stim/text/text-2.png,might,0,control
+an aisle seat (blue),./stim/images/exposure_10_2.png,./stim/audio/control_might2_s1.mp3,0,./stim/images/exposure_75_2.png,You might get one.,0.77,2,1,./stim/images/exposure_75_2.png,./stim/text/text-2.png,might,0,control
+a window seat (red),./stim/images/prob_100_1.png,./stim/audio/control_bare_s1.mp3,1,./stim/images/exposure_60_9.png,You'll get one.,1,2,0,./stim/images/prob_100_1.png,./stim/text/text-1.png,bare,0,control
+an aisle seat (blue),./stim/images/exposure_40_3.png,./stim/audio/control_probably2_s1.mp3,0,./stim/images/prob_100_1.png,You'll probably get one.,0.58,2,0,./stim/images/exposure_40_3.png,./stim/text/text-2.png,probably,0,control
+a window seat (red),./stim/images/exposure_90_3.png,./stim/audio/control_might1_s1.mp3,0,./stim/images/exposure_25_3.png,You might get one.,0.38,2,1,./stim/images/exposure_25_3.png,./stim/text/text-1.png,might,0,control
+a window seat (red),./stim/images/exposure_60_3.png,./stim/audio/control_probably1_s1.mp3,0,./stim/images/prob_100_1.png,You'll probably get one.,0.45,2,0,./stim/images/exposure_60_3.png,./stim/text/text-1.png,probably,0,control
+an aisle seat (blue),./stim/images/prob_100_1.png,./stim/audio/control_probably2_s1.mp3,1,./stim/images/exposure_40_9.png,You'll probably get one.,0.53,2,1,./stim/images/exposure_40_9.png,./stim/text/text-2.png,probably,0,control
+a window seat (red),./stim/images/exposure_25_9.png,./stim/audio/control_might1_s1.mp3,1,./stim/images/exposure_90_9.png,You might get one.,0.22,2,0,./stim/images/exposure_25_9.png,./stim/text/text-1.png,might,0,control
+a window seat (red),./stim/images/exposure_60_9.png,./stim/audio/control_probably1_s1.mp3,1,./stim/images/prob_100_1.png,You'll probably get one.,0.61,2,0,./stim/images/exposure_60_9.png,./stim/text/text-1.png,probably,0,control
+a window seat (red),./stim/images/exposure_60_3.png,./stim/audio/control_bare_s1.mp3,0,./stim/images/prob_100_1.png,You'll get one.,1,2,1,./stim/images/prob_100_1.png,./stim/text/text-1.png,bare,0,control
+a window seat (red),./stim/images/prob_100_1.png,./stim/audio/control_bare_s1.mp3,0,./stim/images/exposure_60_2.png,You'll get one.,1,2,0,./stim/images/prob_100_1.png,./stim/text/text-1.png,bare,0,control
+an aisle seat (blue),./stim/images/exposure_10_9.png,./stim/audio/control_might2_s1.mp3,1,./stim/images/exposure_75_9.png,You might get one.,0.1,2,1,./stim/images/exposure_75_9.png,./stim/text/text-2.png,might,0,control
+a window seat (red),./stim/images/exposure_60_2.png,./stim/audio/control_probably1_s1.mp3,0,./stim/images/prob_100_1.png,You'll probably get one.,0.56,2,0,./stim/images/exposure_60_2.png,./stim/text/text-1.png,probably,0,control

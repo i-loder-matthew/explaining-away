@@ -145,8 +145,8 @@ plot_conditions = function(d, plot_title) {
     xlab("% preferred seating") +
     ylab("mean ratings") +
     geom_errorbar(aes(ymin=mu-ci_low, ymax=mu+ci_high), width=.1) +
-    geom_line() +
-    geom_point(size=1) +
+    geom_line(size=2) +
+    geom_point(size=3) +
     guides(col=guide_legend(title="Expr.")) +
     colscale +
     theme(legend.position="bottom") + 
@@ -171,18 +171,66 @@ plot_conditions = function(d, plot_title) {
     return(list("p1" = p1, "p2" = p2, "by_participant" = by_participant))
 }
 
+plot_2conditions = function(d1, d2, plot_title) {
+  
+  d2$workerid = d2$workerid + max(d1$workerid) + 1
+  d1$condition = "optimist"
+  d2$condition = "pessimist"
+  
+  d = rbind(d1,d2)
+  d$condition = factor(d$condition)
+  
+  d_means = d %>%
+    group_by(workerid, percent_window, modal, condition) %>%
+    summarise(participant_mean = mean(rating)) %>%
+    group_by(percent_window, modal, condition) %>%
+    summarise(mu = mean(participant_mean),
+              ci_high = ci.high(participant_mean),
+              ci_low = ci.low(participant_mean))
+
+  p1 = ggplot(d_means, aes(x = percent_window, y = mu, col=modal, lty=condition)) + 
+    xlab("% preferred seating") +
+    ylab("mean ratings") +
+    geom_errorbar(aes(ymin=mu-ci_low, ymax=mu+ci_high), width=.1) +
+    geom_line(size=2) +
+    geom_point(size=3) +
+    guides(col=guide_legend(title="Expr.")) +
+    colscale +
+    theme(legend.position="bottom") + 
+    ggtitle(plot_title) 
+  
+  p2 = ggplot(d, aes(x=percent_window_f, y=rating, fill=modal)) + 
+    geom_boxplot() +
+    ggtitle(plot_title) + xlab("percentage") + colscale_fill +   theme(legend.position="bottom")
+  
+  by_participant = ggplot( d %>%
+    group_by(workerid, percent_window, modal) %>% 
+    summarise(participant_mean = mean(rating)) , 
+      aes(x=percent_window, y=participant_mean, col=modal)
+        ) + 
+    xlab("% preferred seat") +
+    ylab("mean ratings") +
+    geom_line() +
+    geom_point(size=1) +
+    guides(col=guide_legend(title="Expr.")) +
+    colscale +
+    theme(legend.position="bottom") + ggtitle(plot_title) + facet_wrap(~workerid, ncol = 8)
+    return(list("p1" = p1, "p2" = p2, "by_participant" = by_participant))
+}
 
 ps1 = plot_conditions(d1, "")
 ps2 = plot_conditions(d2, "")
+ps12 = plot_2conditions(d1, d2, "")
 
 plot(ps1$p1)
 plot(ps2$p1)
+plot(ps12$p1)
 ```
 ## Individual plots
 
 ```{r by_participant_plots, fig.width = 20, fig.height=10}
-plot(ps1$by_participant)
-plot(ps2$by_participant)
+#plot(ps1$by_participant)
+#plot(ps2$by_participant)
 ```
 
 ## AUC Computation
@@ -249,8 +297,8 @@ aucs.all = aucs.all %>%
                ci_low = ci.low(auc_diff))
 
 ggplot(aucs.all, aes(x=0, y=auc_diff_m, color=cond)) +
-    geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
-    geom_point() +
+    geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1, size=1) +
+    geom_point(size = 2) +
     xlab("") +
     ylab("AUC difference (might ratings - probably ratings)") +
     theme(axis.ticks=element_blank(), axis.text.x=element_blank(),
