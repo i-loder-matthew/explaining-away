@@ -19,7 +19,7 @@ https://i-loder-matthew.github.io/explaining-away/experiments/06_exp_away/experi
 
 ## Predictions
 
-We predict further that the difference in AUC between the might ratings and the probably rating will be significantly higher when the speakers are providing ratings for a confident speaker (without explanation) than when they are providing ratings for an optimistic context.   
+We compare the difference in AUC between the might ratings and the probably ratings to the ratings from the "confident speaker" condition from a previous experiment. Based on a  pilot study, we expect the difference in this "optimistic" condition to be qualitatively smaller than or equal to the difference in the "confident speaker" condition of the previous experiment.  
 
 ## Analysis
 
@@ -27,7 +27,7 @@ See analysis/analysis.Rmd for the exact analysis procedures.
 
 ## Pilot
 
-We conducted a pilot with 40 total participants (10 in each of four conditions). On the basis of the performance in the pilot, we've decided to proceed with this experiment in three of the original four conditions. We will not be using the data from the pilot in our main analysis.
+We conducted a pilot with 40 total participants (10 in each of four conditions). On the basis of the performance in the pilot, we had initially decided to proceed with the experiment in only three of the original four conditions. In this experiment, we collect data for the fourth condition, which we omitted in the previous experiment.
 
 ## An Earlier Experiment
 
