@@ -115,7 +115,7 @@ d2 = format_data(read.csv("../../04_exp_away/data/04_exp_away_cond2-trials.csv")
 d3 = format_data(read.csv("../../04_exp_away/data/04_exp_away_cond3-trials.csv"))
 d4 = format_data(read.csv("../../04_exp_away/data/04_exp_away_cond4-trials.csv"))
 
-exp_trials1 = format_exp_trials(read.csv("../data/06_exp_away_cond1-trials.csv"))
+exp_trials1 = format_exp_trials(read.csv("../data/06_exp_away_cond1-exp_trials.csv"))
 exp_trials2 = format_exp_trials(read.csv("../../04_exp_away/data/04_exp_away_cond2-exp_trials.csv"))
 exp_trials3 = format_exp_trials(read.csv("../../04_exp_away/data/04_exp_away_cond3-exp_trials.csv"))
 exp_trials4 = format_exp_trials(read.csv("../../04_exp_away/data/04_exp_away_cond4-exp_trials.csv"))
@@ -218,6 +218,7 @@ exclude_random = function(d) {
   d = d %>% filter(!(workerid %in% exclude))
 }
 
+d1 = exclude_random(d1)
 d2 = exclude_random(d2)
 d3 = exclude_random(d3)
 d4 = exclude_random(d4)
@@ -310,16 +311,20 @@ plot_2conditions = function(d1, d2, plot_title) {
     return(list("p1" = p1, "p2" = p2, "by_participant" = by_participant))
 }
 
+ps1 = plot_conditions(d1, "Optimist")
 ps2 = plot_conditions(d2, "Confident")
 ps3 = plot_conditions(d3, "Pessimist")
 ps4 = plot_conditions(d4, "Cautious")
 
+plot(ps1$p1)
 plot(ps2$p1)
 plot(ps3$p1)
 plot(ps4$p1)
 
 ps24 = plot_2conditions(d2,d4, "Confident-cautious")
 plot(ps24$p1)
+
+ps12 = plot_2conditions(d1, d2, "Optimist-confident")
 
 ps34 = plot_2conditions(d3,d4, "Pessimist-cautious")
 plot(ps34$p1)
@@ -381,11 +386,15 @@ i = 1
   return(aucs)
 }
 
+aucs.optimist = d1 %>% auc_for_participants(., method=auc_method1)
+
 aucs.confident = d2 %>% auc_for_participants(., method=auc_method1)
 
 aucs.pessimist = d3 %>% auc_for_participants(., method=auc_method1)
 
 aucs.cautious = d4 %>% auc_for_participants(., method=auc_method1)
+
+aucs.optimist$cond = "Optimistic condition"
 
 aucs.confident$cond = "Confident condition"
 
@@ -393,12 +402,31 @@ aucs.pessimist$cond = "Pessimistic condition"
 
 aucs.cautious$cond = "Cautious condition"
 
+aucs.all1 = rbind(aucs.optimist, aucs.confident)
+
 aucs.all2 = rbind(aucs.pessimist, aucs.cautious)
 
-aucs.all3 = rbind(aucs.confident, aucs.pessimist, aucs.cautious)
+aucs.all3 = rbind(aucs.optimist, aucs.confident, aucs.pessimist, aucs.cautious)
 
 aucs.all4 = rbind(aucs.confident, aucs.cautious)
 
+aucs.all5 = rbind(aucs.optimist, aucs.pessimist)
+
+aucs.all1 = aucs.all1 %>% 
+  group_by(., cond) %>% 
+  summarise(., auc_diff_m = mean(auc_diff), 
+               ci_high = ci.high(auc_diff), 
+               ci_low = ci.low(auc_diff))
+
+ggplot(aucs.all1, aes(x=0, y=auc_diff_m, color=cond)) +
+    geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
+    geom_point() +
+    xlab("") +
+    ylab("AUC difference (might ratings - probably ratings)") +
+    theme(axis.ticks=element_blank(), axis.text.x=element_blank(),
+          panel.grid.minor=element_blank(), 
+          plot.background=element_blank()) +
+    xlim(-.2, .2) 
 
 aucs.all2 = aucs.all2 %>% 
   group_by(., cond) %>% 
@@ -447,6 +475,22 @@ ggplot(aucs.all4, aes(x=0, y=auc_diff_m, color=cond)) +
           panel.grid.minor=element_blank(), 
           plot.background=element_blank()) +
     xlim(-.2, .2) 
+
+aucs.all5 = aucs.all5 %>% 
+  group_by(., cond) %>% 
+  summarise(., auc_diff_m = mean(auc_diff), 
+               ci_high = ci.high(auc_diff), 
+               ci_low = ci.low(auc_diff))
+
+ggplot(aucs.all5, aes(x=0, y=auc_diff_m, color=cond)) +
+    geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
+    geom_point() +
+    xlab("") +
+    ylab("AUC difference (might ratings - probably ratings)") +
+    theme(axis.ticks=element_blank(), axis.text.x=element_blank(),
+          panel.grid.minor=element_blank(), 
+          plot.background=element_blank()) +
+    xlim(-.2, .2) 
 ```
 
 In the first t-test below, we see whether or not the difference in the AUC for the cautious speaker is significantly greater than that of the confident speaker. This allows us to see whether or not the speakers adapt to a specific speaker's modal usage during the exposure phase.
@@ -466,4 +510,12 @@ print(t.test(aucs.pessimist$auc_diff, aucs.cautious$auc_diff, var.equal=TRUE))
 
 ```
 
+Finally in this t-test we see whether the difference in the AUC for the optimistic speaker is significantly more than that of the confident speaker.
+
+```{r t_test_method1.3, echo=FALSE}
+print(t.test(aucs.confident$auc_diff, aucs.optimist$auc_diff, var.equal=TRUE))
+
+
+
+```
 
