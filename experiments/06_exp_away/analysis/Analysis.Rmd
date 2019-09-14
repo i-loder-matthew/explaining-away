@@ -240,8 +240,8 @@ plot_conditions = function(d, plot_title) {
     xlab("% preferred seating") +
     ylab("mean ratings") +
     geom_errorbar(aes(ymin=mu-ci_low, ymax=mu+ci_high), width=.1) +
-    geom_line(size=2) +
-    geom_point(size=3) +
+    geom_line() +
+    geom_point(size=1) +
     guides(col=guide_legend(title="Expr.")) +
     colscale +
     theme(legend.position="bottom") + 
@@ -285,8 +285,8 @@ plot_2conditions = function(d1, d2, plot_title) {
     xlab("% preferred seating") +
     ylab("mean ratings") +
     geom_errorbar(aes(ymin=mu-ci_low, ymax=mu+ci_high), width=.1) +
-    geom_line(size=2) +
-    geom_point(size=3) +
+    geom_line() +
+    geom_point(size=1) +
     guides(col=guide_legend(title="Expr.")) +
     colscale +
     theme(legend.position="bottom") + 
@@ -325,7 +325,7 @@ ps24 = plot_2conditions(d2,d4, "Confident-cautious")
 plot(ps24$p1)
 
 ps12 = plot_2conditions(d1, d2, "Optimist-confident")
-polt(ps12$p1)
+plot(ps12$p1)
 
 ps34 = plot_2conditions(d3,d4, "Pessimist-cautious")
 plot(ps34$p1)

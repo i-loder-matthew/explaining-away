@@ -250,7 +250,7 @@ ps1 = plot_conditions(d1, "Optimist")
 ps2 = plot_conditions(d2, "Pessimist")
 ps3 = plot_conditions(d3, "Neutral")
 
-#ps12 = plot_2conditions(d1, d2, "Optimist-pessimist")
+ps12 = plot_2conditions(d1, d2, "Optimist-pessimist")
 ps13 = plot_2conditions(d1, d3, "Optimist-neutral")
 #ps23 = plot_2conditions(d2, d3, "Pessimist-neutral")
 
@@ -259,7 +259,7 @@ plot(ps1$p1)
 plot(ps2$p1)
 plot(ps3$p1)
 
-#plot(ps12$p1)
+plot(ps12$p1)
 plot(ps13$p1)
 #plot(ps23$p1)
 
