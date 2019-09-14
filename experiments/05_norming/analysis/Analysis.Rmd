@@ -69,21 +69,70 @@ format_data = function(d) {
 ## Load data:
 
 ```{r data, echo=FALSE}
-# trials_cond1 = format_data(read.csv("../data/02_norming_cond1-trials.csv"))
-# trials_cond2 = format_data(read.csv("../data/02_norming_cond2-trials.csv"))
+trials_cond1 = format_data(read.csv("../../02_norming/data/02_norming_cond1-trials.csv"))
+trials_cond2 = format_data(read.csv("../../02_norming/data/02_norming_cond2-trials.csv"))
 trials_cond3 = format_data(read.csv("../data/05_norming_cond3-trials.csv"))
 
-# d1 = trials_cond1
-# d2 = trials_cond2
+d1 = trials_cond1
+d2 = trials_cond2
 d3 = trials_cond3
 
 # combine data: 
-# d1$Answer.condition = "optimist"
-# d2$Answer.condition = "pessimist"
-d3$Anwser.condition = "neutral"
+d1$Answer.condition = "optimist"
+d2$Answer.condition = "pessimist"
+d3$Answer.condition = "neutral"
+d3$condition = 3
 ```
 
 ## Exclude random responses
+```{r}
+d_overall_means = d1 %>%
+  group_by(modal, workerid) %>% 
+  summarise(rating_m_overall = mean(rating))
+
+d_indiv_means =  d1 %>%
+  group_by(modal,percent_window, workerid) %>% 
+  summarise(rating_m = mean(rating))
+
+d_indiv_merged = merge(d_indiv_means, d_overall_means, by=c("workerid", "modal"))
+
+cors = d_indiv_merged %>%
+  group_by(workerid) %>%
+  summarise(corr = cor(rating_m, rating_m_overall))
+
+exclude = cors %>%
+  filter(corr > 0.75) %>%
+  .$workerid
+
+print(paste("Excluded", length(exclude), "participants based on random responses."))
+
+d1 = d1 %>% filter(!(workerid %in% exclude))
+```
+
+```{r}
+d_overall_means = d2 %>%
+  group_by(modal, workerid) %>% 
+  summarise(rating_m_overall = mean(rating))
+
+d_indiv_means =  d2 %>%
+  group_by(modal,percent_window, workerid) %>% 
+  summarise(rating_m = mean(rating))
+
+d_indiv_merged = merge(d_indiv_means, d_overall_means, by=c("workerid", "modal"))
+
+cors = d_indiv_merged %>%
+  group_by(workerid) %>%
+  summarise(corr = cor(rating_m, rating_m_overall))
+
+exclude = cors %>%
+  filter(corr > 0.75) %>%
+  .$workerid
+
+print(paste("Excluded", length(exclude), "participants based on random responses."))
+
+d2 = d2 %>% filter(!(workerid %in% exclude))
+```
+
 ```{r}
 d_overall_means = d3 %>%
   group_by(modal, workerid) %>% 
@@ -126,8 +175,8 @@ plot_conditions = function(d, plot_title) {
     xlab("% preferred seating") +
     ylab("mean ratings") +
     geom_errorbar(aes(ymin=mu-ci_low, ymax=mu+ci_high), width=.1) +
-    geom_line(size=2) +
-    geom_point(size=3) +
+    geom_line() +
+    geom_point(size=1) +
     guides(col=guide_legend(title="Expr.")) +
     colscale +
     theme(legend.position="bottom") + 
@@ -155,11 +204,9 @@ plot_conditions = function(d, plot_title) {
 plot_2conditions = function(d1, d2, plot_title) {
   
   d2$workerid = d2$workerid + max(d1$workerid) + 1
-  d1$condition = "optimist"
-  d2$condition = "pessimist"
   
   d = rbind(d1,d2)
-  d$condition = factor(d$condition)
+  d$condition = factor(d$Answer.condition)
   
   d_means = d %>%
     group_by(workerid, percent_window, modal, condition) %>%
@@ -173,8 +220,8 @@ plot_2conditions = function(d1, d2, plot_title) {
     xlab("% preferred seating") +
     ylab("mean ratings") +
     geom_errorbar(aes(ymin=mu-ci_low, ymax=mu+ci_high), width=.1) +
-    geom_line(size=2) +
-    geom_point(size=3) +
+    geom_line() +
+    geom_point(size=1) +
     guides(col=guide_legend(title="Expr.")) +
     colscale +
     theme(legend.position="bottom") + 
@@ -199,7 +246,22 @@ plot_2conditions = function(d1, d2, plot_title) {
     return(list("p1" = p1, "p2" = p2, "by_participant" = by_participant))
 }
 
-ps1 = plot_conditions(d3, "")
+ps1 = plot_conditions(d1, "Optimist")
+ps2 = plot_conditions(d2, "Pessimist")
+ps3 = plot_conditions(d3, "Neutral")
+
+#ps12 = plot_2conditions(d1, d2, "Optimist-pessimist")
+ps13 = plot_2conditions(d1, d3, "Optimist-neutral")
+#ps23 = plot_2conditions(d2, d3, "Pessimist-neutral")
+
+
+plot(ps1$p1)
+plot(ps2$p1)
+plot(ps3$p1)
+
+#plot(ps12$p1)
+plot(ps13$p1)
+#plot(ps23$p1)
 
 ```
 ## Individual plots
@@ -256,17 +318,19 @@ i = 1
   return(aucs)
 }
 
-# aucs.optimist = d1 %>% auc_for_participants(., method=auc_method1)
+aucs.optimist = d1 %>% auc_for_participants(., method=auc_method1)
 
-# aucs.pessimist = d2 %>% auc_for_participants(., method=auc_method1)
+aucs.pessimist = d2 %>% auc_for_participants(., method=auc_method1)
 
-# aucs.optimist$cond = "Optimistic condition"
+aucs.optimist$cond = "Optimistic condition"
 
-# aucs.pessimist$cond = "Pessimistic condition"
+aucs.pessimist$cond = "Pessimistic condition"
 
 aucs.neutral = d3 %>% auc_for_participants(., method=auc_method1)
 
-aucs.all = rbind(aucs.neutral)
+aucs.neutral$cond = "Neutral condition"
+
+aucs.all = rbind(aucs.optimist, aucs.pessimist, aucs.neutral)
 
 aucs.all = aucs.all %>% 
   group_by(., cond) %>% 
