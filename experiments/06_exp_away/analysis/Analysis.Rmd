@@ -325,6 +325,7 @@ ps24 = plot_2conditions(d2,d4, "Confident-cautious")
 plot(ps24$p1)
 
 ps12 = plot_2conditions(d1, d2, "Optimist-confident")
+polt(ps12$p1)
 
 ps34 = plot_2conditions(d3,d4, "Pessimist-cautious")
 plot(ps34$p1)
