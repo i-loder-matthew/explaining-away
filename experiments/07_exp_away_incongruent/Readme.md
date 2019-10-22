@@ -1,10 +1,15 @@
-# Explaining away effects and semantic adaptation
+# Explaining away effects and semantic adaptation: Incongruent conditions
 
-Each participant sees a pair of speakers, a customer and an airline representative, along with a seat map demonstrating the probability of a certain outcome. In the first part of the experiment, the exposure phase, the participant is asked to look at the seat map and listen carefully to a recording of the airline representative responding to a customer's request. This experiment (optimist-c) are a follow-up to an identical version of the experiment run with three conditions (pessimist, cautious, confident). In the cautious and pessimistic conditions the speakers see the same language usage, but the pessimistic speaker is told that the airline representative is in a particularly bad mood that day. Likewise, in the optimistic and confident condition, participants see the exact same language usage, but in the optimistic condition, the listener is told that the airline representative is in a particularly good mood. In the second part of the experiment, the participant is asked to respond to the customer as they think the flight attendant would. The participants are asked to rate each of the pair of responses based on how likely they think it is that they would use a particular uncertainty expression.
+We investigate how much listeners adapt to variable use of uncertainty expressions  such as _might_ and _probably_ in different contexts. In particular, we ask whether there is a consistent relationship between surprisal of observed interactions and adaptation, such that listeners adapt more if the speaker's language use is unexpected.
+
+Each participant sees a pair of speakers, a customer and an airline representative, along with a seat map demonstrating the probability of a certain outcome. In the first part of the experiment, the exposure phase, the participant is asked to look at the seat map and listen carefully to a recording of the airline representative responding to a customer's request.
+
+
+In this experiment, there are two conditions: _optimist-incongruent_ and _pessimist-incongruent_.  In the pessimist condition, participants are told that the airline representative is in a particularly bad mood that day. Likewise, in the optimist condition,  participants are told that the airline representative is in a particularly good mood. In the second part of the experiment, the participant is asked to respond to the customer as they think the flight attendant would. The participants are asked to rate each of the pair of responses based on how likely they think it is that they would use a particular uncertainty expression.
 
 ## Participants
 
-MTurk participants with US IP addresses and >95% approval. In total we collect data from 160 particpants.
+MTurk participants with US IP addresses and >95% approval. In total we collect data from 160 particpants (80 per condition).
 
 ## Exclusion Criteria
 
@@ -14,23 +19,20 @@ We exclude participants who seem to provide random ratings independent of the sc
 
 See the following web-based experiments:
 
-Condition 1:
-https://i-loder-matthew.github.io/explaining-away/experiments/06_exp_away/experiment/cond-1
+Condition _optimist-incongruent_:
+https://i-loder-matthew.github.io/explaining-away/experiments/07_exp_away_incongruent/experiment/cond-5
+
+Condition _pessimist-incongruent_:
+https://i-loder-matthew.github.io/explaining-away/experiments/07_exp_away_incongruent/experiment/cond-6
 
 ## Predictions
 
-We compare the difference in AUC between the might ratings and the probably ratings to the ratings from the "confident speaker" condition from a previous experiment. Based on a  pilot study, we expect the difference in this "optimistic" condition to be qualitatively smaller than or equal to the difference in the "confident speaker" condition of the previous experiment.  
+We compare the difference in AUC between the _might_ ratings and the _probably_ ratings across these two conditions, and then compare the effect size to the 
+effect size of a baseline experiment to the "cautious-confident" effect from a [previous experiment](../04_exp_away). We expect the effect size to be bigger
+in this experiment than in the baseline experiment.
 
 ## Analysis
 
-See analysis/analysis.Rmd for the exact analysis procedures.
+See [analysis/Analysis.Rmd](analysis/Analysis.Rmd) for the exact analysis procedures.
 
-## Pilot
 
-We conducted a pilot with 40 total participants (10 in each of four conditions). On the basis of the performance in the pilot, we had initially decided to proceed with the experiment in only three of the original four conditions. In this experiment, we collect data for the fourth condition, which we omitted in the previous experiment.
-
-## An Earlier Experiment
-
-We are running this condition as a follow up to an earlier experiment run with just three conditions. See the following link to that experiment: https://github.com/i-loder-matthew/explaining-away/tree/master/experiments/04_exp_away
-
-In that experiment, we compared the cautious and confident conditions to one another to demonstrate adaptation effects, and the pessimistic and cautious conditions to demonstrate explaining away. In this experiment then, we will explore the difference between the AUCs for the optimistic condition and the confident condition, to see how much adaptation happens there as well. 
