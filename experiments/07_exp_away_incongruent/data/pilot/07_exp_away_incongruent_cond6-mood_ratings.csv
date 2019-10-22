@@ -1,0 +1,5 @@
+mood_rating,workerid,type
+0.03,0,mood1
+0.49,0,mood2
+0,1,mood1
+0.9,1,mood2

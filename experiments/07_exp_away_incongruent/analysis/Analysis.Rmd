@@ -19,17 +19,14 @@ library(gridExtra)
 library(DescTools)
 library(splines)
 library(stringr)
+library(effsize)
 source("helpers.R")
 
 
 theme_set(theme_bw())
 
-colscale = scale_color_manual(values=c("#7CB637", "#666666", "#4381C1")) 
-colscale_fill = scale_fill_manual(values=c("#7CB637", "#666666", "#4381C1")) 
-
-remove_quotes = function(d) {
-  
-}
+colscale = scale_color_manual(values=c("#7CB637", "#4381C1", "#666666")) 
+colscale_fill = scale_fill_manual(values=c("#7CB637", "#4381C1", "#666666")) 
 
 format_data = function(d) {
   drops <- c("modal1","rating1")
@@ -66,7 +63,7 @@ format_data = function(d) {
 
 format_exp_trials = function(d) {
   
-  if (d$condtion == '1' || d$condtion == '2') {
+  if (d$condtion == '1' || d$condtion == '2' || d$condtion == '6') {
     d_window_60 = d %>% filter(.,grepl("60", image))
     d_window_25 = d %>% filter(.,grepl("25", image))
     d_window_100 = d %>% filter(.,grepl("100", image))
@@ -80,7 +77,7 @@ format_exp_trials = function(d) {
     d_aisle_25$prob = 25
     
     d_output = rbind(d_window_60, d_window_25, d_window_100, d_aisle_25, d_aisle_60)
-  } else if (d$condtion == '3' || d$condtion == '4') {
+  } else if (d$condtion == '3' || d$condtion == '4' || d$condtion == '5') {
     d_window_60 = d %>% filter(.,grepl("60", image))
     d_window_90 = d %>% filter(.,grepl("90", image))
     d_window_100 = d %>% filter(.,grepl("100", image))
@@ -110,37 +107,44 @@ format_mood = function(d) {
 
 ```{r data, echo=FALSE}
 
-d1 = format_data(read.csv("../data/06_exp_away_cond1-trials.csv"))
+d1 = format_data(read.csv("../../06_exp_away/data/06_exp_away_cond1-trials.csv"))
 d2 = format_data(read.csv("../../04_exp_away/data/04_exp_away_cond2-trials.csv"))
 d3 = format_data(read.csv("../../04_exp_away/data/04_exp_away_cond3-trials.csv"))
 d4 = format_data(read.csv("../../04_exp_away/data/04_exp_away_cond4-trials.csv"))
+d5 = format_data(read.csv("../data/07_exp_away_incongruent_cond5-trials.csv"))
+d6 = format_data(read.csv("../data/07_exp_away_incongruent_cond6-trials.csv"))
 
-exp_trials1 = format_exp_trials(read.csv("../data/06_exp_away_cond1-exp_trials.csv"))
+
+exp_trials1 = format_exp_trials(read.csv("../../06_exp_away/data/06_exp_away_cond1-exp_trials.csv"))
 exp_trials2 = format_exp_trials(read.csv("../../04_exp_away/data/04_exp_away_cond2-exp_trials.csv"))
 exp_trials3 = format_exp_trials(read.csv("../../04_exp_away/data/04_exp_away_cond3-exp_trials.csv"))
 exp_trials4 = format_exp_trials(read.csv("../../04_exp_away/data/04_exp_away_cond4-exp_trials.csv"))
+exp_trials5 = format_exp_trials(read.csv("../data/07_exp_away_incongruent_cond5-exp_trials.csv"))
+exp_trials6 = format_exp_trials(read.csv("../data/07_exp_away_incongruent_cond6-exp_trials.csv"))
+
 
 d1$Answer.condition = "optimist"
 d2$Answer.condition = "confident"
 d3$Answer.condition = "pessimist"
 d4$Answer.condition = "cautious"
+d5$Answer.condition = "optimist_incongruent"
+d6$Answer.condition = "pessimist_incongurent"
 
-d1copy = d1
-d2copy = d2
-d3copy = d3
-d4copy = d4
 
-d2copy$workerid = d2copy$workerid + max(d1copy$workerid) + 1
-d3copy$workerid = d3copy$workerid + max(d2copy$workerid) + 1
-d4copy$workerid = d4copy$workerid + max(d3copy$workerid) + 1
+d2$workerid = d2$workerid + max(d1$workerid) + 1
+d3$workerid = d3$workerid + max(d2$workerid) + 1
+d4$workerid = d4$workerid + max(d3$workerid) + 1
+d5$workerid = d5$workerid + max(d4$workerid) + 1
+d6$workerid = d6$workerid + max(d5$workerid) + 1
 
-d_all = rbind(d1copy, d2copy, d3copy, d4copy)
+
+d_all = rbind(d1, d2, d3, d4, d5, d6)
 ```
 
 ## Visualize probability ratings
 
 ```{r}
-exp_trials = rbind(exp_trials1, exp_trials2, exp_trials3, exp_trials4)
+exp_trials = rbind(exp_trials1, exp_trials2, exp_trials3, exp_trials4, exp_trials5, exp_trials6)
 
 exp_trials$prob = factor(exp_trials$prob)
 
@@ -151,18 +155,28 @@ ggplot(data = exp_trials) +
 
 ## Visualize mood ratings
 ```{r}
-mood1 = format_mood(read.csv("../data/06_exp_away_cond1-mood_ratings.csv"))
+mood1 = format_mood(read.csv("../../06_exp_away/data/06_exp_away_cond1-mood_ratings.csv"))
+mood1$Answer.condition = "optimist"
 mood2 = format_mood(read.csv("../../04_exp_away/data/04_exp_away_cond2-mood_ratings.csv"))
-mood2$Answer.condition = "Confident"
+mood2$Answer.condition = "confident"
 mood3 = format_mood(read.csv("../../04_exp_away/data/04_exp_away_cond3-mood_ratings.csv"))
-mood3$Answer.condition = "Pessimist"
+mood3$Answer.condition = "pessimist"
 mood4 = format_mood(read.csv("../../04_exp_away/data/04_exp_away_cond4-mood_ratings.csv"))
-mood4$Answer.condition = "Cautious"
+mood4$Answer.condition = "cautious"
+mood5 = format_mood(read.csv("../data/07_exp_away_incongruent_cond5-mood_ratings.csv"))
+mood5$Answer.condition = "optimist_incongruent"
+mood6 = format_mood(read.csv("../data/07_exp_away_incongruent_cond6-mood_ratings.csv"))
+mood6$Answer.condition = "pessimist_incongruent"
 
+
+
+mood2$workerid = mood2$workerid + max(mood1$workerid) + 1
 mood3$workerid = mood3$workerid + max(mood2$workerid) + 1
 mood4$workerid = mood4$workerid + max(mood3$workerid) + 1
+mood5$workerid = mood5$workerid + max(mood4$workerid) + 1
+mood6$workerid = mood6$workerid + max(mood5$workerid) + 1
 
-mood_all = rbind(mood2, mood3, mood4)
+mood_all = rbind(mood1, mood2, mood3, mood4, mood5, mood6)
 
 mood1_all = mood_all %>%
   filter(type == "mood1") %>%
@@ -222,6 +236,9 @@ d1 = exclude_random(d1)
 d2 = exclude_random(d2)
 d3 = exclude_random(d3)
 d4 = exclude_random(d4)
+d5 = exclude_random(d5)
+d6 = exclude_random(d6)
+
 ```
 
 ## Aggregated results
@@ -315,11 +332,16 @@ ps1 = plot_conditions(d1, "Optimist")
 ps2 = plot_conditions(d2, "Confident")
 ps3 = plot_conditions(d3, "Pessimist")
 ps4 = plot_conditions(d4, "Cautious")
+ps5 = plot_conditions(d5, "Optimist incongruent")
+ps6 = plot_conditions(d6, "Pessimist incongruent")
 
 plot(ps1$p1)
 plot(ps2$p1)
 plot(ps3$p1)
 plot(ps4$p1)
+plot(ps5$p1)
+plot(ps6$p1)
+
 
 ps24 = plot_2conditions(d2,d4, "Confident-cautious")
 plot(ps24$p1)
@@ -329,6 +351,10 @@ plot(ps12$p1)
 
 ps34 = plot_2conditions(d3,d4, "Pessimist-cautious")
 plot(ps34$p1)
+
+ps56 = plot_2conditions(d5,d6, "Optimist incongruent-Pessimist incongruent")
+plot(ps56$p1)
+
 
 ```
 ## Individual plots
@@ -395,6 +421,10 @@ aucs.pessimist = d3 %>% auc_for_participants(., method=auc_method1)
 
 aucs.cautious = d4 %>% auc_for_participants(., method=auc_method1)
 
+aucs.optimist_incongruent = d5 %>% auc_for_participants(., method=auc_method1)
+aucs.pessimist_incongruent = d6 %>% auc_for_participants(., method=auc_method1)
+
+
 aucs.optimist$cond = "Optimistic condition"
 
 aucs.confident$cond = "Confident condition"
@@ -402,6 +432,11 @@ aucs.confident$cond = "Confident condition"
 aucs.pessimist$cond = "Pessimistic condition"
 
 aucs.cautious$cond = "Cautious condition"
+
+aucs.optimist_incongruent$cond = "Optimist incongruent condition"
+
+aucs.pessimist_incongruent$cond = "Pessimist incongruent condition"
+
 
 aucs.all1 = rbind(aucs.optimist, aucs.confident)
 
@@ -412,6 +447,9 @@ aucs.all3 = rbind(aucs.optimist, aucs.confident, aucs.pessimist, aucs.cautious)
 aucs.all4 = rbind(aucs.confident, aucs.cautious)
 
 aucs.all5 = rbind(aucs.optimist, aucs.pessimist)
+
+aucs.all6 = rbind(aucs.optimist_incongruent, aucs.pessimist_incongruent)
+
 
 aucs.all1 = aucs.all1 %>% 
   group_by(., cond) %>% 
@@ -492,31 +530,42 @@ ggplot(aucs.all5, aes(x=0, y=auc_diff_m, color=cond)) +
           panel.grid.minor=element_blank(), 
           plot.background=element_blank()) +
     xlim(-.2, .2) 
+
+
+aucs.all6 = aucs.all6 %>% 
+  group_by(., cond) %>% 
+  summarise(., auc_diff_m = mean(auc_diff), 
+               ci_high = ci.high(auc_diff), 
+               ci_low = ci.low(auc_diff))
+
+ggplot(aucs.all6, aes(x=0, y=auc_diff_m, color=cond)) +
+    geom_errorbar(aes(ymin=auc_diff_m-ci_low, ymax=auc_diff_m+ci_high), width=.1) +
+    geom_point() +
+    xlab("") +
+    ylab("AUC difference (might ratings - probably ratings)") +
+    theme(axis.ticks=element_blank(), axis.text.x=element_blank(),
+          panel.grid.minor=element_blank(), 
+          plot.background=element_blank()) +
+    xlim(-.2, .2) 
+
 ```
 
-In the first t-test below, we see whether or not the difference in the AUC for the cautious speaker is significantly greater than that of the confident speaker. This allows us to see whether or not the speakers adapt to a specific speaker's modal usage during the exposure phase.
 
-```{r t_test_method1, echo=FALSE}
+
+```{r t_test1, echo=FALSE}
 
 print(t.test(aucs.confident$auc_diff, aucs.cautious$auc_diff, var.equal=TRUE))
 
-```
-
-In this second t-test, we see whether the difference in the AUC for the pessimistic speaker is significantly less than that of the cautious speaker. This allows us to see whether or not explaining-away has occurred. 
-
-```{r t_test_method1.2, echo=FALSE}
-print(t.test(aucs.pessimist$auc_diff, aucs.cautious$auc_diff, var.equal=TRUE))
-
-
+print(cohen.d(aucs.confident$auc_diff, aucs.cautious$auc_diff))
 
 ```
 
-Finally in this t-test we see whether the difference in the AUC for the optimistic speaker is significantly more than that of the confident speaker.
 
-```{r t_test_method1.3, echo=FALSE}
-print(t.test(aucs.confident$auc_diff, aucs.optimist$auc_diff, var.equal=TRUE))
+```{r t_test2, echo=FALSE}
 
+print(t.test(aucs.optimist_incongruent$auc_diff, aucs.pessimist_incongruent$auc_diff, var.equal=TRUE))
 
+print(cohen.d(aucs.optimist_incongruent$auc_diff, aucs.pessimist_incongruent$auc_diff))
 
 ```
 
