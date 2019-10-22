@@ -1,7 +1,7 @@
 ---
 title: "Analysis"
-author: "Matthew Loder"
-date: "7/11/2019"
+author: "Sebastian Schuster and Matthew Loder"
+date: "10/22/2019"
 output: html_document
 ---
 
