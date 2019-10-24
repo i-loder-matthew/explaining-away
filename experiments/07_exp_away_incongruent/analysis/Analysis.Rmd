@@ -243,7 +243,7 @@ d6 = exclude_random(d6)
 
 ## Aggregated results
 
-```{r aggregate_plots, echo=FALSE, fig.width=10, fig.height=8}
+```{r aggregate_plots, echo=FALSE, fig.width=5, fig.height=4}
 plot_conditions = function(d, plot_title) {
   d_means = d %>%
     group_by(workerid, percent_window, modal) %>%
@@ -355,6 +355,21 @@ plot(ps34$p1)
 ps56 = plot_2conditions(d5,d6, "Optimist incongruent-Pessimist incongruent")
 plot(ps56$p1)
 
+ps26 = plot_2conditions(d2,d6, "Confident-Pessimist incongruent")
+plot(ps26$p1)
+
+ps45 = plot_2conditions(d4,d5, "Cautious-Optimist incongruent")
+plot(ps45$p1)
+
+```
+
+```{r indiv_plots, echo=FALSE, fig.width=10, fig.height=30}
+
+plot(ps2$by_participant)
+plot(ps4$by_participant)
+plot(ps5$by_participant)
+plot(ps6$by_participant)
+
 
 ```
 ## Individual plots
@@ -385,7 +400,7 @@ auc_for_participants = function(d, method) {
   
   aucs = d %>% 
     group_by(workerid) %>%
-    summarize(auc_might = 0, auc_probably = 0)
+    summarise(auc_might = 0, auc_probably = 0)
   
 i = 1
 
@@ -566,6 +581,48 @@ print(cohen.d(aucs.confident$auc_diff, aucs.cautious$auc_diff))
 print(t.test(aucs.optimist_incongruent$auc_diff, aucs.pessimist_incongruent$auc_diff, var.equal=TRUE))
 
 print(cohen.d(aucs.optimist_incongruent$auc_diff, aucs.pessimist_incongruent$auc_diff))
+
+```
+
+```{r reshuffle, echo=FALSE}
+
+
+aucs_cautious_all = rbind(aucs.cautious %>% mutate(source = 1), aucs.optimist_incongruent %>% mutate(source = 2))
+aucs_confident_all = rbind(aucs.confident %>% mutate(source = 1), aucs.pessimist_incongruent %>% mutate(source = 2))
+
+c1_orig = cohen.d(aucs.confident$auc_diff, aucs.cautious$auc_diff)$estimate
+c2_orig = cohen.d(aucs.pessimist_incongruent$auc_diff, aucs.optimist_incongruent$auc_diff)$estimate
+
+diff_orig = c1_orig - c2_orig
+
+bigger_diff = 0
+
+n = 1000
+
+for (i in 1:n) {
+  aucs_cautious_reshuffled = aucs_cautious_all
+  aucs_cautious_reshuffled$source = sample(aucs_cautious_reshuffled$source, replace=FALSE)
+  
+  aucs_confident_reshuffled = aucs_confident_all
+  aucs_confident_reshuffled$source = sample(aucs_confident_reshuffled$source, replace=FALSE)
+
+  aucs_cautious_reshuffled_1 = aucs_cautious_reshuffled %>% filter (source == 1)
+  aucs_cautious_reshuffled_2 = aucs_cautious_reshuffled %>% filter (source == 2)
+  
+  aucs_confident_reshuffled_1 = aucs_confident_reshuffled %>% filter (source == 1)
+  aucs_confident_reshuffled_2 = aucs_confident_reshuffled %>% filter (source == 2)
+
+  c1_reshuffled = cohen.d(aucs_confident_reshuffled_1$auc_diff, aucs_cautious_reshuffled_1$auc_diff)$estimate
+  c2_reshuffled = cohen.d(aucs_confident_reshuffled_1$auc_diff, aucs_cautious_reshuffled_2$auc_diff)$estimate
+
+  diff_reshuffled = c1_reshuffled - c2_reshuffled
+  
+  if (diff_reshuffled > diff_orig) {
+    bigger_diff = bigger_diff + 1
+  }
+}
+
+print(paste("p-value according to permutation test:", bigger_diff / n))
 
 ```
 
