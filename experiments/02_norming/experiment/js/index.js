@@ -316,7 +316,7 @@ function init() {
     };
   //blocks of the experiment:
   exp.structure=["i0", "instructions", "test", "separator", "trial", 'subj_info', 'thanks'];
-  
+
   exp.data_trials = [];
 
   //make corresponding slides:
