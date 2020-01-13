@@ -1,3 +1,56 @@
+var REPETITIONS = 2
+var SPEAKER = _.sample(["m", "f"])
+
+function build_trials() {
+  var trials = [];
+  var ratings = [0, 1, 2, 3, 4, 5, 6];
+  var cond = CONDITION;
+  var speaker = SPEAKER;
+  var text_prompt = _.shuffle([
+    "The croissants were ______.",
+    "The red velvet cake was ______.",
+    "The cinnamon rolls were ______.",
+    "The lemon loaf was ______.",
+    "The cheesecake was ______.",
+    "The donuts were ______.",
+    "The pecan pie was ______.",
+    "The chocolate cake was ______.",
+    "The bear claw was ______.",
+    "The carrot cake was ______.",
+    "The apple pie was ______.",
+    ""
+  ]);
+  var text_counter = 0;
+
+
+  for (var j = 0; j < REPETITIONS; j ++) {
+    for (var i = 0; i < ratings.length; i++) {
+
+      var text_to_add = "";
+      if (text_counter < text_prompt.length) {
+        text_to_add = text_prompt[text_counter];
+        text_counter ++;
+      } else {
+        text_counter = 0;
+        text_to_add = text_prompt[text_counter];
+        text_counter ++;
+      }
+
+      trials.push({
+        "cond": cond,
+        "text": text_to_add,
+        "ratings": ratings[i],
+        "rating text": ratings[i] + " star(s)",
+        "speaker": speaker,
+        "image": "./stim/" + ratings[i] + "_stars.png",
+        "speaker-img": "./stim/eval-adj-person-" + speaker + ".png"
+      })
+    }
+  }
+  console.log(trials);
+  return trials;
+}
+
 function make_slides(f) {
   var   slides = {};
 
@@ -15,6 +68,48 @@ function make_slides(f) {
     }
   });
 
+  slides.trial = slide({
+    name: "trial",
+    present: exp.trials,
+    present_handle: function(stim) {
+      $(".err").hide();
+      
+
+      this.stim = stim;
+
+      console.log(stim)
+
+      $("#rating-image").attr("src", stim["image"]);
+      $("#speaker-image").attr("src", stim["speaker-img"]);
+      $("#rating-text").html(stim["text"]);
+
+      $("#trial").fadeIn(700);
+
+    },
+    button : function() {
+      response = $("#text_response").val();
+
+      if (response.length == 0) {
+        $(".err").show();
+      } else {
+        exp.data_trials.push({
+          "trial_type" : "trials",
+          "response" : response,
+          "condition" : this.stim["cond"],
+          "version" : this.stim["speaker"],
+          "text" : this.stim["text"]
+        });
+
+        var t = this;
+        $("#trial").fadeOut(300, function() {
+					window.setTimeout(function() {
+						_stream.apply(t);
+					}, 700);
+				}); //make sure this is at the *end*, after you log your data
+      }
+    }
+  });
+
   slides.single_trial = slide({
     name: "single_trial",
     start: function() {
@@ -28,7 +123,10 @@ function make_slides(f) {
       } else {
         exp.data_trials.push({
           "trial_type" : "single_trial",
-          "response" : response
+          "response" : response,
+          "condition" : this.stim["cond"],
+          "version" : this.stim["speaker"],
+          "text" : this.stim["text"]
         });
         exp.go(); //make sure this is at the *end*, after you log your data
       }
@@ -74,7 +172,7 @@ function make_slides(f) {
 
 /// init ///
 function init() {
-  exp.trials = [];
+  exp.trials = _.shuffle(build_trials());
   exp.catch_trials = [];
   exp.condition = _.sample(["condition 1", "condition 2"]); //can randomize between subject conditions here
   exp.system = {
@@ -86,7 +184,7 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "instructions", "single_trial", 'subj_info', 'thanks'];
+  exp.structure=["i0", "instructions", "trial", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
   //make corresponding slides:

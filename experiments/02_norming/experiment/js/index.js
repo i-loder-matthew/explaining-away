@@ -184,6 +184,7 @@ function make_slides(f) {
       exp.go();
     }
   });
+
   slides.trial = slide({
     name: "trial",
     present: exp.trials,
@@ -207,7 +208,7 @@ function make_slides(f) {
 				if (total > 1.0) {
 					var other_total = total - $(this).slider("option", "value");
 					$(this).slider("option", "value", 1 - other_total);
-				}
+				
 
 				var perc = Math.round($(this).slider("option", "value") * 100);
 				$("#" + $(this).attr("id") + "_val").val(perc);
