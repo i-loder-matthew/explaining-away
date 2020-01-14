@@ -77,6 +77,7 @@ function make_slides(f) {
       $("#instructions-part3").hide();
       $("#instructions-speaker").hide();
       $("#rating-stuff").hide();
+      $("#practice-item").hide();
       this.step=1;
     },
     button : function(response) {
