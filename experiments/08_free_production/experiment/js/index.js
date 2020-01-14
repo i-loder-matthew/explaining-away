@@ -72,9 +72,27 @@ function make_slides(f) {
     start: function() {
       $(".err").hide();
       $("#instructions-speaker").attr("src", "./stim/eval-adj-person-" + SPEAKER + ".png");
+
+      $("#instructions-part2").hide();
+      $("#instructions-part3").hide();
+      $("#instructions-speaker").hide();
+      $("#rating-stuff").hide();
+      this.step=1;
     },
-    button : function() {
-      exp.go(); //use exp.go() if and only if there is no "present" data.
+    button : function(response) {
+      if(this.step == 1) {
+        $("#instructions-part1").hide();
+        $("#instructions-part2").show();
+        $("#instructions-speaker").show();
+        this.step = 2;
+      } else if (this.step == 2) {
+        $("#instructions-part2").hide();
+        $("#instructions-part3").show();
+        $("#rating-stuff").show();
+        this.step = 3;
+      } else {
+        exp.go();
+      }
     }
   });
 
@@ -83,6 +101,7 @@ function make_slides(f) {
     present: exp.trials,
     present_handle: function(stim) {
       $(".err").hide();
+      $("#adj-response-form").trigger("reset");
 
 
       this.stim = stim;
@@ -194,21 +213,5 @@ function init() {
 
   exp.go(); //show first slide
 
-  function completedCaptcha(resp) {
-     $.ajax({
-    type: "POST",
-    url: "https://stanford.edu/~sebschu/cgi-bin/verify.php",
-    data : {"captcha" : resp},
-    success: function(data) {
-      if (data != "failure") {
-        exp[data]();
-      } else {
-        $(".loading").hide()
-        $(".captcha_error").show();
-      }
-      },
-    error: function() {
-      console.log("Error: form not sent");
-      },
-    });
+
 }
