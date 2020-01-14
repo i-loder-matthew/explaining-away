@@ -18,9 +18,9 @@ function build_trials() {
     "The bear claw was ______.",
     "The carrot cake was ______.",
     "The apple pie was ______.",
-    "The ... was ______.",
-    "The ... was ______.",
-    "The ... was ______."
+    "The blueberry lavender scone was ______.",
+    "The chocolate chip cookies were ______.",
+    "The cherry pie was ______."
   ]);
   var text_counter = 0;
 
