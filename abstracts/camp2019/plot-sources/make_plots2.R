@@ -36,7 +36,6 @@ colscale3 = scale_color_manual(
 ) 
 
 
-
 ## Prepare data functions
 
 format_data = function(d) {
