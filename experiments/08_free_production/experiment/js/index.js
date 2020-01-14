@@ -18,7 +18,9 @@ function build_trials() {
     "The bear claw was ______.",
     "The carrot cake was ______.",
     "The apple pie was ______.",
-    ""
+    "The ... was ______.",
+    "The ... was ______.",
+    "The ... was ______."
   ]);
   var text_counter = 0;
 
@@ -59,6 +61,10 @@ function make_slides(f) {
      start: function() {
       exp.startT = Date.now();
      }
+  });
+
+  slides.auth = slide({
+    "name": "auth"
   });
 
   slides.instructions = slide({
@@ -112,29 +118,6 @@ function make_slides(f) {
 				}); //make sure this is at the *end*, after you log your data
       }
     }
-  });
-
-  slides.single_trial = slide({
-    name: "single_trial",
-    start: function() {
-      $(".err").hide();
-      $(".display_condition").html("You are in " + exp.condition + ".");
-    },
-    button : function() {
-      response = $("#text_response").val();
-      if (response.length == 0) {
-        $(".err").show();
-      } else {
-        exp.data_trials.push({
-          "trial_type" : "single_trial",
-          "response" : response,
-          "condition" : this.stim["cond"],
-          "version" : this.stim["speaker"],
-          "text" : this.stim["text"]
-        });
-        exp.go(); //make sure this is at the *end*, after you log your data
-      }
-    },
   });
 
   slides.subj_info =  slide({
@@ -210,4 +193,22 @@ function init() {
   });
 
   exp.go(); //show first slide
+
+  function completedCaptcha(resp) {
+     $.ajax({
+    type: "POST",
+    url: "https://stanford.edu/~sebschu/cgi-bin/verify.php",
+    data : {"captcha" : resp},
+    success: function(data) {
+      if (data != "failure") {
+        exp[data]();
+      } else {
+        $(".loading").hide()
+        $(".captcha_error").show();
+      }
+      },
+    error: function() {
+      console.log("Error: form not sent");
+      },
+    });
 }
