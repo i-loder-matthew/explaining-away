@@ -38,7 +38,18 @@
 
     <!-- experiment file -->
     <script src="js/index.js"></script>
-
+    
+    <!-- unique turker -->
+    <script src="//uniqueturker.myleott.com/lib.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          var ut_id = "b7b208e83c43f03696d9bddf692968dc";
+          if (UTWorkerLimitReached(ut_id)) {
+            $(".slide").hide();
+            $("body").html("You have already completed the maximum number of HITs allowed by this requester. Please click 'Return HIT' to avoid any impact on your approval rating.");
+          }
+        });
+    </script>
 
 <!-- Load consent form
 <script>
