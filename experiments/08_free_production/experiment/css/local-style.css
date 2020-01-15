@@ -3,3 +3,21 @@
 	width: 400;
 	margin: 10px;
 }
+
+.err {
+    color: red;
+}
+
+.button {
+  padding: 10px 40px 10px 40px;
+  margin: 5px;
+  border: 1px solid black;
+  font-size: 14pt;
+  font-weight: bold;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.slide {
+    height: 700px;
+}

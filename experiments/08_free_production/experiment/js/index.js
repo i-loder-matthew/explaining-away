@@ -1,6 +1,16 @@
 var REPETITIONS = 2
 var SPEAKER = _.sample(["m", "f"])
 
+var TEMPLATE_DICT = {
+    "f": {
+        "{{she}}" : "she",
+        "{{her}}" : "her"
+    }, "m": {
+        "{{she}}" : "he",
+        "{{her}}" : "his"
+    }
+}[SPEAKER];
+
 function build_trials() {
   var trials = [];
   var ratings = [0, 1, 2, 3, 4, 5, 6];
@@ -49,7 +59,6 @@ function build_trials() {
       })
     }
   }
-  console.log(trials);
   return trials;
 }
 
@@ -104,11 +113,7 @@ function make_slides(f) {
       $(".err").hide();
       $("#adj-response-form").trigger("reset");
 
-
       this.stim = stim;
-
-      console.log(stim)
-
       $("#rating-image").attr("src", stim["image"]);
       $("#speaker-image").attr("src", stim["speaker-img"]);
       $("#rating-text").html(stim["text"]);
@@ -127,7 +132,8 @@ function make_slides(f) {
           "response" : response,
           "condition" : this.stim["cond"],
           "version" : this.stim["speaker"],
-          "text" : this.stim["text"]
+          "text" : this.stim["text"],
+          "rating": this.stim["ratings"]
         });
 
         var t = this;
@@ -196,6 +202,13 @@ function init() {
   exp.data_trials = [];
   //make corresponding slides:
   exp.slides = make_slides(exp);
+
+  exp.nQs = utils.get_exp_length();
+  $(".placeholder").each(function() {
+    var key = $(this).text();
+    $(this).text(TEMPLATE_DICT[key]);
+  });
+  
 
   //exp.nQs = utils.get_exp_length(); //this does not work if there are stacks of stims (but does work for an experiment with this structure)
                     //relies on structure and slides being defined
