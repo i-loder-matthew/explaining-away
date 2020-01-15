@@ -113,13 +113,17 @@ function make_slides(f) {
       $("#practice-speaker").attr("src", "./stim/eval-adj-person-" + SPEAKER + ".png");
     },
     button: function() {
-      response = $("#practice_response").val();
+      $(".err").hide();
+      var response = $("#practice_response").val();
+      var response_words = response.split(" ").filter(function(x) { return x.length != 0 });
       if (response.length == 0) {
-        $(".err").show();
+        $("#err-practice-empty").show();
+      } else if(response_words.length > 2) {
+        $("#err-practice-toolong").show();  
       } else {
         exp.data_trials.push({
           "trial_type" : "practice",
-          "response" : response
+          "response" : response_words.join(" ")
         });
         exp.go(); //make sure this is at the *end*, after you log your data
       }
@@ -152,14 +156,18 @@ function make_slides(f) {
 
     },
     button : function() {
-      response = $("#text_response").val();
+      $(".err").hide();
+      var response = $("#text_response").val();
+      var response_words = response.split(" ").filter(function(x) { return x.length != 0 });
 
       if (response.length == 0) {
-        $(".err").show();
+        $("#err-empty").show();
+      } else if(response_words.length > 2) {
+        $("#err-toolong").show();  
       } else {
         exp.data_trials.push({
           "trial_type" : "trials",
-          "response" : response,
+          "response" : response_words.join(" "),
           "condition" : this.stim["cond"],
           "version" : this.stim["speaker"],
           "text" : this.stim["text"],

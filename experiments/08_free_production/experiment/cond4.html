@@ -115,7 +115,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
   </div>
   <div id="instructions-part3">
     <p>For each bakery item, you will see a rating, given from 0 - 6 stars, along with Taylor's review. </p>
-    <p>You’ll notice that Taylor's reviews are incomplete. It is your job to complete each review by filling in the blank, taking into account <span class="placeholder">{{her}}</span> rating, as well as <span class="placeholder">{{her}}</span> connection to the bakery.</p>
+    <p>You’ll notice that Taylor's reviews are incomplete. It is your job to complete each review by <strong>filling in the blank</strong>, taking into account <span class="placeholder">{{her}}</span> rating, as well as <span class="placeholder">{{her}}</span> connection to the bakery. You may use <strong>up to 2 words</strong> to complete the review.</p>
 
   </div>
   <table>
@@ -133,7 +133,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
 </div>
 
 <div class="slide" id="practice">
-    <p> Try it out! Consider Taylor's rating of <span class="placeholder">{{her}}</span> rival's bakery and complete the review by filling in the blank:
+    <p> Try it out! Consider Taylor's rating of <span class="placeholder">{{her}}</span> rival's bakery and complete the review by filling in the blank.  You may use <strong>up to 2 words</strong> to complete the review.
       <table>
         <tr>
           <td id="practice-rating">
@@ -148,7 +148,8 @@ Otherwise, modified to whatever is required for you given your affiliation.
         </tr>
       </table>
   <button onclick="_s.button()" class="button">Continue</button>
-  <p class="err">Please write into the text field to fill in the blank.</p>
+  <p class="err" id="err-practice-empty">Please write into the text field to fill in the blank.</p>
+<p class="err" id="err-practice-toolong">Please enter at most two words.</p>
 </div>
 
 <div class="slide" id="separator">
@@ -173,7 +174,8 @@ Otherwise, modified to whatever is required for you given your affiliation.
     </tr>
   </table>
   <button onclick="_s.button()" class="button">Continue</button>
-  <p class="err">Please write into the text field to fill in the blank.</p>
+  <p class="err" id="err-empty">Please write into the text field to fill in the blank.</p>
+<p class="err" id="err-toolong">Please enter at most two words.</p>
 </div>
 
   <div class="slide"  id="subj_info">
