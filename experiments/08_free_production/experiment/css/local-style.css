@@ -25,3 +25,15 @@
 .slide {
     height: 700px;
 }
+
+.input {
+    border: 1px solid #999;
+    border-bottom: 2px solid #000;
+    font-size: 1em;
+    width: 150px;
+    padding: 5px;
+}
+
+.stars {
+    margin: 0 80px;
+}

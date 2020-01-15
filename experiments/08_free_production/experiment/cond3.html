@@ -57,7 +57,7 @@ $(function(){
 
   <img src="./shared/images/alpslogo.png" alt="InterActive Language Processing Lab at Stanford">
     <p id="cocolab">InterActive Language Processing Lab at Stanford</p>
-    <p id="instruct-text">In the following experiment, you'll see a series of visual cues and be asked to answer some questions about them. The HIT should take ~6 minutes. Please pay attention, and answer carefully. Thank you!</p>
+    <p id="instruct-text">In the following experiment, you'll see a series of visual scenes and be asked to complete sentences about them. The HIT should take around 3-4 minutes. Please pay attention, and answer carefully. Thank you!</p>
       <button id="start_button" type="button" class="button">Continue</button>
     <p id="legal">
     <strong>LEGAL INFORMATION:</strong><br>
@@ -81,6 +81,28 @@ $(function(){
 Otherwise, modified to whatever is required for you given your affiliation.
 -->
 
+<div class="slide" id="auth">
+    <p>
+        &nbsp;
+    </p>
+    <br>
+    <p id="check-story">{{story}}</p>
+    <br>
+    <form action="#" onsubmit="_s.button();return false;">
+    <p><span id="check-question">{{question}}</span><br>
+        <input type="text" id="check-input" style="border: 1px solid black; width: 200px; font-size: 1em;">
+    </p>
+    </form>
+    <p class="err" id="check-error">Your answer is incorrect. Please try again.</p>
+    <p class="err" id="check-error-final">
+        Your answer is again incorrect and you won't be able to take this experiment. <br> 
+        Please return this HIT to avoid any impact on your acceptance rating. We apologize for any inconvenience caused.
+    </p>
+    
+    <p><input type="button" onclick="_s.button()" class="button" id="check-button" value="Continue"></p>
+    
+</div>
+
 <div class="slide" id="instructions">
   <h3>Instructions</h3>
 
@@ -99,7 +121,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
   <table>
     <tr>
       <td id="rating-stuff">
-        <img src="./stim/4_stars.png" class="image" width="250" height="100">
+        <img src="./stim/4_stars.png" class="stars"  width="250" height="100">
         <h2>The Boston Creme is ______. </h2>
       </td>
       <td>
@@ -116,7 +138,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
       <table>
         <tr>
           <td id="practice-rating">
-            <img src="./stim/4_stars.png" class="image" width="250" height="100">
+            <img src="./stim/4_stars.png" class="stars"  width="250" height="100">
             <form id="adj-practice-form">
               <h2> The boston creme is <input type="text" id="practice_response">.</h2>
             </form>
@@ -127,7 +149,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
         </tr>
       </table>
   <button onclick="_s.button()" class="button">Continue</button>
-  <p class="err">Please write something.</p>
+  <p class="err">Please write into the text field to fill in the blank.</p>
 </div>
 
 <div class="slide" id="separator">
@@ -141,7 +163,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
   <table>
     <tr>
       <td>
-        <img src="./stim/0_stars.png" class="image" id="rating-image" width="250" height="100">
+        <img src="./stim/0_stars.png" class="stars" id="rating-image" width="250" height="100">
         <form id="adj-response-form" onsubmit="_s.button(); return false;">
           <h2 id="rating-text">{{}}</h2>
         </form>
@@ -152,7 +174,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
     </tr>
   </table>
   <button onclick="_s.button()" class="button">Continue</button>
-  <p class="err">Please write something.</p>
+  <p class="err">Please write into the text field to fill in the blank.</p>
 </div>
 
   <div class="slide"  id="subj_info">

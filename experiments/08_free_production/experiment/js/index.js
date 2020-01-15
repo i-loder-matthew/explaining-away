@@ -146,7 +146,7 @@ function make_slides(f) {
       this.stim = stim;
       $("#rating-image").attr("src", stim["image"]);
       $("#speaker-image").attr("src", stim["speaker-img"]);
-      $("#rating-text").html(stim["text"] + '<input type="text" id="text_response">.');
+      $("#rating-text").html(stim["text"] + '<input type="text" id="text_response" class="input">.');
 
       $("#trial").fadeIn(700);
 
@@ -209,6 +209,42 @@ function make_slides(f) {
       setTimeout(function() {turk.submit(exp.data);}, 1000);
     }
   });
+  
+  slides.auth = slide({
+      "name": "auth",
+      start: function() {
+
+          $(".err").hide();
+          // define possible speaker and listener names
+          // fun fact: 10 most popular names for boys and girls
+          var speaker = _.shuffle(["James", "John", "Robert", "Michael", "William", "David", "Richard", "Joseph", "Thomas", "Charles"])[0];
+          var listener = _.shuffle(["Mary", "Patricia", "Jennifer", "Linda", "Elizabeth", "Barbara", "Susan", "Jessica", "Sarah", "Margaret"])[0];
+
+          var story = speaker + ' says to ' + listener + ': "It\'s a beautiful day, isn\'t it?"'
+
+          $("#check-story").text(story);
+          $("#check-question").text("Who is " + speaker + " talking to?");
+          this.trials = 0;
+          this.listener = listener;
+
+      },
+      button: function() {
+          this.trials++;
+          $(".err").hide();
+          resp = $("#check-input").val();
+          if (resp.toLowerCase() == this.listener.toLowerCase()) {
+              exp.go();
+          } else {
+              if (this.trials < 2) {
+                  $("#check-error").show();
+              } else {
+                  $("#check-error-final").show();
+                  $("#check-button").attr("disabled", "disabled");
+              }
+          }
+      }
+  });
+  
 
   return slides;
 }
@@ -227,7 +263,7 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "instructions", "practice", "separator", "trial", 'subj_info', 'thanks'];
+  exp.structure=["i0", "auth", "instructions", "practice", "separator", "trial", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
   //make corresponding slides:
