@@ -1,0 +1,76 @@
+workerid,Answer.time_in_minutes,trial_type,version,condition,Answer.condition,text,response,rating
+0,7.895333333333333,practice,,,condition 2,,very nice,
+0,7.895333333333333,trials,f,enemy,condition 2,The chocolate cake was ,better,3
+0,7.895333333333333,trials,f,enemy,condition 2,The bear claw was ,excellent,6
+0,7.895333333333333,trials,f,enemy,condition 2,The apple pie was ,awsome,6
+0,7.895333333333333,trials,f,enemy,condition 2,The pecan pie was ,moderate,4
+0,7.895333333333333,trials,f,enemy,condition 2,The lemon loaf was ,better,2
+0,7.895333333333333,trials,f,enemy,condition 2,The cinnamon rolls were ,moderate,2
+0,7.895333333333333,trials,f,enemy,condition 2,The croissants were ,nice,4
+0,7.895333333333333,trials,f,enemy,condition 2,The red velvet cake was ,nice,5
+0,7.895333333333333,trials,f,enemy,condition 2,The chocolate chip cookies were ,excellent,5
+0,7.895333333333333,trials,f,enemy,condition 2,The carrot cake was ,worst,0
+0,7.895333333333333,trials,f,enemy,condition 2,The cheesecake was ,moderate,3
+0,7.895333333333333,trials,f,enemy,condition 2,The cherry pie was ,worst,0
+0,7.895333333333333,trials,f,enemy,condition 2,The blueberry lavender scone was ,worst,1
+0,7.895333333333333,trials,f,enemy,condition 2,The donuts were ,bad,1
+1,2.5796666666666668,practice,,,condition 2,,great,
+1,2.5796666666666668,trials,m,enemy,condition 2,The red velvet cake was ,mediocre,3
+1,2.5796666666666668,trials,m,enemy,condition 2,The bear claw was ,okay,3
+1,2.5796666666666668,trials,m,enemy,condition 2,The donuts were ,pretty good,4
+1,2.5796666666666668,trials,m,enemy,condition 2,The carrot cake was ,exceptional,6
+1,2.5796666666666668,trials,m,enemy,condition 2,The cherry pie was ,terrible,1
+1,2.5796666666666668,trials,m,enemy,condition 2,The chocolate chip cookies were ,awful,1
+1,2.5796666666666668,trials,m,enemy,condition 2,The apple pie was ,exceptional,6
+1,2.5796666666666668,trials,m,enemy,condition 2,The croissants were ,pretty great,5
+1,2.5796666666666668,trials,m,enemy,condition 2,The blueberry lavender scone was ,not good,2
+1,2.5796666666666668,trials,m,enemy,condition 2,The pecan pie was ,not good,2
+1,2.5796666666666668,trials,m,enemy,condition 2,The cheesecake was ,inedible,0
+1,2.5796666666666668,trials,m,enemy,condition 2,The lemon loaf was ,pretty great,5
+1,2.5796666666666668,trials,m,enemy,condition 2,The cinnamon rolls were ,delightful,4
+1,2.5796666666666668,trials,m,enemy,condition 2,The chocolate cake was ,inedible,0
+2,3.5355666666666665,practice,,,condition 1,,decent,
+2,3.5355666666666665,trials,f,enemy,condition 1,The lemon loaf was ,great,5
+2,3.5355666666666665,trials,f,enemy,condition 1,The pecan pie was ,awful,2
+2,3.5355666666666665,trials,f,enemy,condition 1,The bear claw was ,okay,3
+2,3.5355666666666665,trials,f,enemy,condition 1,The blueberry lavender scone was ,disgusting,0
+2,3.5355666666666665,trials,f,enemy,condition 1,The croissants were ,deplorable,1
+2,3.5355666666666665,trials,f,enemy,condition 1,The cinnamon rolls were ,good enough,4
+2,3.5355666666666665,trials,f,enemy,condition 1,The chocolate cake was ,pretty good,4
+2,3.5355666666666665,trials,f,enemy,condition 1,The cheesecake was ,gross,0
+2,3.5355666666666665,trials,f,enemy,condition 1,The donuts were ,excellent,6
+2,3.5355666666666665,trials,f,enemy,condition 1,The chocolate chip cookies were ,very good,5
+2,3.5355666666666665,trials,f,enemy,condition 1,The carrot cake was ,all right,3
+2,3.5355666666666665,trials,f,enemy,condition 1,The red velvet cake was ,pretty bad,2
+2,3.5355666666666665,trials,f,enemy,condition 1,The apple pie was ,so good,6
+2,3.5355666666666665,trials,f,enemy,condition 1,The cherry pie was ,the worst,1
+3,18.595266666666667,practice,,,condition 2,,pretty good,
+3,18.595266666666667,trials,f,enemy,condition 2,The croissants were ,absolutely disgusting,1
+3,18.595266666666667,trials,f,enemy,condition 2,The apple pie was ,the worst,0
+3,18.595266666666667,trials,f,enemy,condition 2,The chocolate chip cookies were ,simply delectable,6
+3,18.595266666666667,trials,f,enemy,condition 2,The cinnamon rolls were ,very bland,0
+3,18.595266666666667,trials,f,enemy,condition 2,The bear claw was ,just okay,2
+3,18.595266666666667,trials,f,enemy,condition 2,The donuts were ,not good,2
+3,18.595266666666667,trials,f,enemy,condition 2,The carrot cake was ,very delicious,5
+3,18.595266666666667,trials,f,enemy,condition 2,The cheesecake was ,pretty flavorless,1
+3,18.595266666666667,trials,f,enemy,condition 2,The lemon loaf was ,quite decadent,5
+3,18.595266666666667,trials,f,enemy,condition 2,The red velvet cake was ,cooked poorly,3
+3,18.595266666666667,trials,f,enemy,condition 2,The cherry pie was ,somewhat dry,3
+3,18.595266666666667,trials,f,enemy,condition 2,The chocolate cake was ,very moist,4
+3,18.595266666666667,trials,f,enemy,condition 2,The pecan pie was ,super sweet,4
+3,18.595266666666667,trials,f,enemy,condition 2,The blueberry lavender scone was ,absolutely amazing,6
+4,3.0911833333333334,practice,,,condition 2,,pretty good,
+4,3.0911833333333334,trials,m,enemy,condition 2,The donuts were ,terrible,1
+4,3.0911833333333334,trials,m,enemy,condition 2,The bear claw was ,good,4
+4,3.0911833333333334,trials,m,enemy,condition 2,The lemon loaf was ,decent,3
+4,3.0911833333333334,trials,m,enemy,condition 2,The carrot cake was ,amazing,6
+4,3.0911833333333334,trials,m,enemy,condition 2,The chocolate chip cookies were ,horrible,1
+4,3.0911833333333334,trials,m,enemy,condition 2,The cinnamon rolls were ,delicious,6
+4,3.0911833333333334,trials,m,enemy,condition 2,The apple pie was ,average,3
+4,3.0911833333333334,trials,m,enemy,condition 2,The blueberry lavender scone was ,good,4
+4,3.0911833333333334,trials,m,enemy,condition 2,The cherry pie was ,tasty,5
+4,3.0911833333333334,trials,m,enemy,condition 2,The croissants were ,pretty bad,2
+4,3.0911833333333334,trials,m,enemy,condition 2,The pecan pie was ,disgusting,0
+4,3.0911833333333334,trials,m,enemy,condition 2,The chocolate cake was ,good,5
+4,3.0911833333333334,trials,m,enemy,condition 2,The cheesecake was ,terrible,0
+4,3.0911833333333334,trials,m,enemy,condition 2,The red velvet cake was ,bad,2

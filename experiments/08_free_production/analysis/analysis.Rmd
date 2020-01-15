@@ -1,0 +1,35 @@
+---
+title: "Analysis of free production data"
+author: "Sebastian Schuster"
+date: "1/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+theme_set(theme_bw())
+```
+
+```{r load_data}
+
+d1 = read.csv("../data/08_free_production-pilot-cond1-trials.csv")
+d2 = read.csv("../data/08_free_production-pilot-cond2-trials.csv")
+d3 = read.csv("../data/08_free_production-pilot-cond3-trials.csv")
+d4 = read.csv("../data/08_free_production-pilot-cond4-trials.csv")
+
+d = rbind(d1,d2,d3,d4)
+
+frequent_terms = d %>% group_by(response) %>% dplyr::summarize(n = n()) %>% filter(n > 2) %>% select(response) %>% .$response
+
+d.freq = d %>% filter(response %in% frequent_terms)
+d.other = d %>% filter(!(response %in% frequent_terms)) %>% mutate(response ="other")
+d = rbind(d.freq, d.other)
+
+d %>% filter(condition == "neutral") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response) + ggtitle("Neutral")
+d %>% filter(condition == "friends") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response) + ggtitle("Friend")
+d %>% filter(condition == "critic") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response) + ggtitle("Critic")
+d %>% filter(condition == "enemy") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response) + ggtitle("Enemy")
+
+
+
+```
