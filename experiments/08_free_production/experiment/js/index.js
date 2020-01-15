@@ -17,20 +17,20 @@ function build_trials() {
   var cond = CONDITION;
   var speaker = SPEAKER;
   var text_prompt = _.shuffle([
-    "The croissants were ______.",
-    "The red velvet cake was ______.",
-    "The cinnamon rolls were ______.",
-    "The lemon loaf was ______.",
-    "The cheesecake was ______.",
-    "The donuts were ______.",
-    "The pecan pie was ______.",
-    "The chocolate cake was ______.",
-    "The bear claw was ______.",
-    "The carrot cake was ______.",
-    "The apple pie was ______.",
-    "The blueberry lavender scone was ______.",
-    "The chocolate chip cookies were ______.",
-    "The cherry pie was ______."
+    "The croissants were ",
+    "The red velvet cake was ",
+    "The cinnamon rolls were ",
+    "The lemon loaf was ",
+    "The cheesecake was ",
+    "The donuts were ",
+    "The pecan pie was ",
+    "The chocolate cake was ",
+    "The bear claw was ",
+    "The carrot cake was ",
+    "The apple pie was ",
+    "The blueberry lavender scone was ",
+    "The chocolate chip cookies were ",
+    "The cherry pie was "
   ]);
   var text_counter = 0;
 
@@ -106,6 +106,36 @@ function make_slides(f) {
     }
   });
 
+  slides.practice = slide({
+    name: "practice",
+    start: function() {
+      $(".err").hide();
+      $("#practice-speaker").attr("src", "./stim/eval-adj-person-" + SPEAKER + ".png");
+    },
+    button: function() {
+      response = $("#practice_response").val();
+      if (response.length == 0) {
+        $(".err").show();
+      } else {
+        exp.data_trials.push({
+          "trial_type" : "practice",
+          "response" : response
+        });
+        exp.go(); //make sure this is at the *end*, after you log your data
+      }
+    }
+  });
+
+  slides.separator = slide({
+    name: "separator",
+    start: function() {
+      $(".button").show();
+    },
+    button: function() {
+      exp.go();
+    }
+  });
+
   slides.trial = slide({
     name: "trial",
     present: exp.trials,
@@ -116,7 +146,7 @@ function make_slides(f) {
       this.stim = stim;
       $("#rating-image").attr("src", stim["image"]);
       $("#speaker-image").attr("src", stim["speaker-img"]);
-      $("#rating-text").html(stim["text"]);
+      $("#rating-text").html(stim["text"] + '<input type="text" id="text_response">.');
 
       $("#trial").fadeIn(700);
 
@@ -197,7 +227,7 @@ function init() {
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "instructions", "trial", 'subj_info', 'thanks'];
+  exp.structure=["i0", "instructions", "practice", "separator", "trial", 'subj_info', 'thanks'];
 
   exp.data_trials = [];
   //make corresponding slides:
@@ -208,7 +238,7 @@ function init() {
     var key = $(this).text();
     $(this).text(TEMPLATE_DICT[key]);
   });
-  
+
 
   //exp.nQs = utils.get_exp_length(); //this does not work if there are stacks of stims (but does work for an experiment with this structure)
                     //relies on structure and slides being defined

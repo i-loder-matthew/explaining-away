@@ -18,6 +18,10 @@
   cursor: pointer;
 }
 
+#i0 {
+	height: 800px;
+}
+
 .slide {
     height: 700px;
 }

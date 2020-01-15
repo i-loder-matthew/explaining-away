@@ -55,7 +55,8 @@ $(function(){
 
   <div class="slide" id="i0" >
 
-    <p id="cocolab">Interactive Language Processing Lab at Stanford</p>
+  <img src="./shared/images/alpslogo.png" alt="InterActive Language Processing Lab at Stanford">
+    <p id="cocolab">InterActive Language Processing Lab at Stanford</p>
     <p id="instruct-text">In the following experiment, you'll see a series of visual cues and be asked to answer some questions about them. The HIT should take ~6 minutes. Please pay attention, and answer carefully. Thank you!</p>
       <button id="start_button" type="button" class="button">Continue</button>
     <p id="legal">
@@ -107,13 +108,30 @@ Otherwise, modified to whatever is required for you given your affiliation.
     </tr>
   </table>
 
-  <div id="practice-item">
-    <p> Try it out! Fill in the blank with a word you think Taylor would use:
-    <form id="adj-practice-form" onsubmit="_s.button();return false;">
-      <input type="text" id="practice_response">
-    </form>
-  </div>
+  <button onclick="_s.button()" class="button">Continue</button>
+</div>
 
+<div class="slide" id="practice">
+    <p> Try it out! Consider the food critic's rating and complete the review by filling in the blank:
+      <table>
+        <tr>
+          <td id="practice-rating">
+            <img src="./stim/4_stars.png" class="image" width="250" height="100">
+            <form id="adj-practice-form">
+              <h2> The boston creme is <input type="text" id="practice_response">.</h2>
+            </form>
+          </td>
+          <td>
+            <img src="./stim/eval-adj-person-f.png" id="practice-speaker" class="image" width="400" height="200">
+          </td>
+        </tr>
+      </table>
+  <button onclick="_s.button()" class="button">Continue</button>
+  <p class="err">Please write something.</p>
+</div>
+
+<div class="slide" id="separator">
+  <h2>Great! Let's begin.</h2>
   <button onclick="_s.button()" class="button">Continue</button>
 </div>
 
@@ -124,16 +142,15 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <tr>
       <td>
         <img src="./stim/0_stars.png" class="image" id="rating-image" width="250" height="100">
-        <h2 id="rating-text">{{}}</h2>
+        <form id="adj-response-form" onsubmit="_s.button(); return false;">
+          <h2 id="rating-text">{{}}</h2>
+        </form>
       </td>
       <td>
         <img src="./stim/eval-adj-person-f.png" id="speaker-image" class="image" width="400" height="200">
       </td>
     </tr>
   </table>
-  <form id="adj-response-form">
-    <input type="text" id="text_response">
-  </form>
   <button onclick="_s.button()" class="button">Continue</button>
   <p class="err">Please write something.</p>
 </div>
