@@ -1,0 +1,752 @@
+Answer.time_in_minutes,rating,response,trial_type,workerid,Answer.condition,condition,text,version
+4.165483333333333,,decent.,practice,0,condition 1,,,
+4.165483333333333,4,above average,trials,0,condition 1,critic,The bear claw was ,f
+4.165483333333333,3,mildly dissapointing,trials,0,condition 1,critic,The chocolate chip cookies were ,f
+4.165483333333333,1,awful,trials,0,condition 1,critic,The carrot cake was ,f
+4.165483333333333,2,not good,trials,0,condition 1,critic,The cinnamon rolls were ,f
+4.165483333333333,6,excellent,trials,0,condition 1,critic,The donuts were ,f
+4.165483333333333,0,unedible,trials,0,condition 1,critic,The lemon loaf was ,f
+4.165483333333333,0,unedible,trials,0,condition 1,critic,The pecan pie was ,f
+4.165483333333333,1,disgusting,trials,0,condition 1,critic,The apple pie was ,f
+4.165483333333333,5,delicious,trials,0,condition 1,critic,The cheesecake was ,f
+4.165483333333333,3,average,trials,0,condition 1,critic,The croissants were ,f
+4.165483333333333,5,decidant,trials,0,condition 1,critic,The chocolate cake was ,f
+4.165483333333333,2,not great,trials,0,condition 1,critic,The red velvet cake was ,f
+4.165483333333333,6,terrific,trials,0,condition 1,critic,The blueberry lavender scone was ,f
+4.165483333333333,4,above average,trials,0,condition 1,critic,The cherry pie was ,f
+3.3923666666666668,,just fine,practice,1,condition 1,,,
+3.3923666666666668,6,excellent,trials,1,condition 1,critic,The chocolate cake was ,f
+3.3923666666666668,1,disgusting,trials,1,condition 1,critic,The apple pie was ,f
+3.3923666666666668,5,very tasty,trials,1,condition 1,critic,The bear claw was ,f
+3.3923666666666668,6,amazing,trials,1,condition 1,critic,The lemon loaf was ,f
+3.3923666666666668,5,great,trials,1,condition 1,critic,The cherry pie was ,f
+3.3923666666666668,2,horrible,trials,1,condition 1,critic,The red velvet cake was ,f
+3.3923666666666668,0,the worst,trials,1,condition 1,critic,The cheesecake was ,f
+3.3923666666666668,4,average,trials,1,condition 1,critic,The cinnamon rolls were ,f
+3.3923666666666668,2,hard,trials,1,condition 1,critic,The croissants were ,f
+3.3923666666666668,1,trash,trials,1,condition 1,critic,The chocolate chip cookies were ,f
+3.3923666666666668,3,below average,trials,1,condition 1,critic,The blueberry lavender scone was ,f
+3.3923666666666668,4,above average,trials,1,condition 1,critic,The carrot cake was ,f
+3.3923666666666668,0,yuck,trials,1,condition 1,critic,The pecan pie was ,f
+3.3923666666666668,3,average,trials,1,condition 1,critic,The donuts were ,f
+15.8728,,good,practice,2,condition 1,,,
+15.8728,0,terrible,trials,2,condition 1,critic,The cinnamon rolls were ,f
+15.8728,6,the best,trials,2,condition 1,critic,The bear claw was ,f
+15.8728,3,OK,trials,2,condition 1,critic,The pecan pie was ,f
+15.8728,5,good,trials,2,condition 1,critic,The cherry pie was ,f
+15.8728,2,too sweet,trials,2,condition 1,critic,The chocolate cake was ,f
+15.8728,3,average,trials,2,condition 1,critic,The blueberry lavender scone was ,f
+15.8728,4,crispy,trials,2,condition 1,critic,The chocolate chip cookies were ,f
+15.8728,5,very fresh,trials,2,condition 1,critic,The croissants were ,f
+15.8728,1,not tasty,trials,2,condition 1,critic,The carrot cake was ,f
+15.8728,1,tasteless,trials,2,condition 1,critic,The apple pie was ,f
+15.8728,6,the best,trials,2,condition 1,critic,The red velvet cake was ,f
+15.8728,0,no taste,trials,2,condition 1,critic,The donuts were ,f
+15.8728,4,good,trials,2,condition 1,critic,The cheesecake was ,f
+15.8728,2,too sweet,trials,2,condition 1,critic,The lemon loaf was ,f
+2.5939833333333335,,very yummy,practice,3,condition 2,,,
+2.5939833333333335,1,terrible,trials,3,condition 2,critic,The carrot cake was ,m
+2.5939833333333335,0,disgusting,trials,3,condition 2,critic,The bear claw was ,m
+2.5939833333333335,6,the best,trials,3,condition 2,critic,The croissants were ,m
+2.5939833333333335,3,okay,trials,3,condition 2,critic,The blueberry lavender scone was ,m
+2.5939833333333335,2,pretty bad,trials,3,condition 2,critic,The pecan pie was ,m
+2.5939833333333335,0,the worst,trials,3,condition 2,critic,The cherry pie was ,m
+2.5939833333333335,5,very tasty,trials,3,condition 2,critic,The apple pie was ,m
+2.5939833333333335,2,terrible,trials,3,condition 2,critic,The cinnamon rolls were ,m
+2.5939833333333335,4,above average,trials,3,condition 2,critic,The donuts were ,m
+2.5939833333333335,6,my favorite,trials,3,condition 2,critic,The chocolate cake was ,m
+2.5939833333333335,4,pretty good,trials,3,condition 2,critic,The cheesecake was ,m
+2.5939833333333335,1,terrible,trials,3,condition 2,critic,The red velvet cake was ,m
+2.5939833333333335,5,very good,trials,3,condition 2,critic,The chocolate chip cookies were ,m
+2.5939833333333335,3,average,trials,3,condition 2,critic,The lemon loaf was ,m
+2.294366666666667,,pretty good,practice,4,condition 1,,,
+2.294366666666667,2,not good,trials,4,condition 1,critic,The donuts were ,f
+2.294366666666667,0,horrible,trials,4,condition 1,critic,The carrot cake was ,f
+2.294366666666667,6,excellent,trials,4,condition 1,critic,The croissants were ,f
+2.294366666666667,5,really good,trials,4,condition 1,critic,The blueberry lavender scone was ,f
+2.294366666666667,5,amazing,trials,4,condition 1,critic,The lemon loaf was ,f
+2.294366666666667,1,not good,trials,4,condition 1,critic,The bear claw was ,f
+2.294366666666667,2,pretty bad,trials,4,condition 1,critic,The cinnamon rolls were ,f
+2.294366666666667,3,decent,trials,4,condition 1,critic,The chocolate cake was ,f
+2.294366666666667,1,horrible,trials,4,condition 1,critic,The cheesecake was ,f
+2.294366666666667,6,the best,trials,4,condition 1,critic,The chocolate chip cookies were ,f
+2.294366666666667,3,okay,trials,4,condition 1,critic,The apple pie was ,f
+2.294366666666667,4,good,trials,4,condition 1,critic,The cherry pie was ,f
+2.294366666666667,0,the worst,trials,4,condition 1,critic,The pecan pie was ,f
+2.294366666666667,4,pretty good,trials,4,condition 1,critic,The red velvet cake was ,f
+7.101166666666667,,fairly decent,practice,5,condition 1,,,
+7.101166666666667,2,stale,trials,5,condition 1,critic,The carrot cake was ,m
+7.101166666666667,1,bland,trials,5,condition 1,critic,The croissants were ,m
+7.101166666666667,4,passable,trials,5,condition 1,critic,The chocolate cake was ,m
+7.101166666666667,6,excellent,trials,5,condition 1,critic,The pecan pie was ,m
+7.101166666666667,1,tasteless,trials,5,condition 1,critic,The cinnamon rolls were ,m
+7.101166666666667,2,dry,trials,5,condition 1,critic,The apple pie was ,m
+7.101166666666667,6,spectacular,trials,5,condition 1,critic,The lemon loaf was ,m
+7.101166666666667,3,average,trials,5,condition 1,critic,The blueberry lavender scone was ,m
+7.101166666666667,0,hard cracked,trials,5,condition 1,critic,The chocolate chip cookies were ,m
+7.101166666666667,3,edible,trials,5,condition 1,critic,The bear claw was ,m
+7.101166666666667,4,unspectacular,trials,5,condition 1,critic,The donuts were ,m
+7.101166666666667,5,quite good,trials,5,condition 1,critic,The cheesecake was ,m
+7.101166666666667,0,disgusting,trials,5,condition 1,critic,The cherry pie was ,m
+7.101166666666667,5,velvety,trials,5,condition 1,critic,The red velvet cake was ,m
+6.544016666666667,,above average,practice,6,condition 1,,,
+6.544016666666667,6,absolutely amazing,trials,6,condition 1,critic,The lemon loaf was ,m
+6.544016666666667,3,below par,trials,6,condition 1,critic,The cherry pie was ,m
+6.544016666666667,2,pretty unimpressive,trials,6,condition 1,critic,The chocolate cake was ,m
+6.544016666666667,6,fantastic,trials,6,condition 1,critic,The chocolate chip cookies were ,m
+6.544016666666667,1,the worst,trials,6,condition 1,critic,The bear claw was ,m
+6.544016666666667,2,poor quality,trials,6,condition 1,critic,The cheesecake was ,m
+6.544016666666667,5,almost perfect,trials,6,condition 1,critic,The red velvet cake was ,m
+6.544016666666667,5,really good,trials,6,condition 1,critic,The carrot cake was ,m
+6.544016666666667,3,bland,trials,6,condition 1,critic,The croissants were ,m
+6.544016666666667,4,about average,trials,6,condition 1,critic,The cinnamon rolls were ,m
+6.544016666666667,0,beyond pathetic,trials,6,condition 1,critic,The blueberry lavender scone was ,m
+6.544016666666667,4,good,trials,6,condition 1,critic,The donuts were ,m
+6.544016666666667,0,terrible,trials,6,condition 1,critic,The pecan pie was ,m
+6.544016666666667,1,pathetic,trials,6,condition 1,critic,The apple pie was ,m
+4.920483333333333,,very creamy,practice,7,condition 2,,,
+4.920483333333333,4,delicious,trials,7,condition 2,critic,The red velvet cake was ,m
+4.920483333333333,1,gritty,trials,7,condition 2,critic,The cheesecake was ,m
+4.920483333333333,0,the worst,trials,7,condition 2,critic,The cherry pie was ,m
+4.920483333333333,1,very dry,trials,7,condition 2,critic,The chocolate cake was ,m
+4.920483333333333,2,soapy tasting,trials,7,condition 2,critic,The lemon loaf was ,m
+4.920483333333333,3,perfume like,trials,7,condition 2,critic,The blueberry lavender scone was ,m
+4.920483333333333,3,somewhat dry,trials,7,condition 2,critic,The cinnamon rolls were ,m
+4.920483333333333,5,incredibly moist,trials,7,condition 2,critic,The carrot cake was ,m
+4.920483333333333,5,delicious,trials,7,condition 2,critic,The pecan pie was ,m
+4.920483333333333,0,very hard,trials,7,condition 2,critic,The chocolate chip cookies were ,m
+4.920483333333333,4,like mom's,trials,7,condition 2,critic,The apple pie was ,m
+4.920483333333333,6,on point,trials,7,condition 2,critic,The croissants were ,m
+4.920483333333333,2,dry,trials,7,condition 2,critic,The bear claw was ,m
+4.920483333333333,6,incredibly delicious,trials,7,condition 2,critic,The donuts were ,m
+6.195,,not bad,practice,8,condition 1,,,
+6.195,4,decent,trials,8,condition 1,critic,The cinnamon rolls were ,m
+6.195,1,beyond disgusting,trials,8,condition 1,critic,The apple pie was ,m
+6.195,5,good,trials,8,condition 1,critic,The pecan pie was ,m
+6.195,2,rubbish,trials,8,condition 1,critic,The cherry pie was ,m
+6.195,6,superb,trials,8,condition 1,critic,The blueberry lavender scone was ,m
+6.195,4,average,trials,8,condition 1,critic,The bear claw was ,m
+6.195,3,lackluster,trials,8,condition 1,critic,The cheesecake was ,m
+6.195,5,satisfying,trials,8,condition 1,critic,The chocolate cake was ,m
+6.195,3,sup par,trials,8,condition 1,critic,The carrot cake was ,m
+6.195,2,inferior,trials,8,condition 1,critic,The red velvet cake was ,m
+6.195,1,unedible,trials,8,condition 1,critic,The donuts were ,m
+6.195,0,not food,trials,8,condition 1,critic,The croissants were ,m
+6.195,0,dog biscuits,trials,8,condition 1,critic,The chocolate chip cookies were ,m
+6.195,6,heavenly,trials,8,condition 1,critic,The lemon loaf was ,m
+3.3776333333333333,,delicious,practice,9,condition 2,,,
+3.3776333333333333,0,amazing,trials,9,condition 2,critic,The chocolate chip cookies were ,f
+3.3776333333333333,3,good,trials,9,condition 2,critic,The lemon loaf was ,f
+3.3776333333333333,5,wonderful,trials,9,condition 2,critic,The bear claw was ,f
+3.3776333333333333,0,not good,trials,9,condition 2,critic,The red velvet cake was ,f
+3.3776333333333333,2,not good,trials,9,condition 2,critic,The blueberry lavender scone was ,f
+3.3776333333333333,2,ok,trials,9,condition 2,critic,The cinnamon rolls were ,f
+3.3776333333333333,6,amazing,trials,9,condition 2,critic,The carrot cake was ,f
+3.3776333333333333,6,the best,trials,9,condition 2,critic,The croissants were ,f
+3.3776333333333333,4,very good,trials,9,condition 2,critic,The pecan pie was ,f
+3.3776333333333333,1,ok,trials,9,condition 2,critic,The apple pie was ,f
+3.3776333333333333,5,really good,trials,9,condition 2,critic,The donuts were ,f
+3.3776333333333333,3,ok,trials,9,condition 2,critic,The chocolate cake was ,f
+3.3776333333333333,1,not good,trials,9,condition 2,critic,The cherry pie was ,f
+3.3776333333333333,4,pretty good,trials,9,condition 2,critic,The cheesecake was ,f
+3.6196333333333333,,decent,practice,10,condition 1,,,
+3.6196333333333333,4,good,trials,10,condition 1,critic,The bear claw was ,f
+3.6196333333333333,0,very bad,trials,10,condition 1,critic,The pecan pie was ,f
+3.6196333333333333,3,ok,trials,10,condition 1,critic,The cinnamon rolls were ,f
+3.6196333333333333,1,awful,trials,10,condition 1,critic,The donuts were ,f
+3.6196333333333333,5,great,trials,10,condition 1,critic,The lemon loaf was ,f
+3.6196333333333333,6,great,trials,10,condition 1,critic,The red velvet cake was ,f
+3.6196333333333333,5,awesome,trials,10,condition 1,critic,The blueberry lavender scone was ,f
+3.6196333333333333,3,ok,trials,10,condition 1,critic,The cheesecake was ,f
+3.6196333333333333,6,amazing,trials,10,condition 1,critic,The carrot cake was ,f
+3.6196333333333333,0,bad,trials,10,condition 1,critic,The chocolate cake was ,f
+3.6196333333333333,1,bad,trials,10,condition 1,critic,The apple pie was ,f
+3.6196333333333333,2,horrible,trials,10,condition 1,critic,The chocolate chip cookies were ,f
+3.6196333333333333,2,gross,trials,10,condition 1,critic,The cherry pie was ,f
+3.6196333333333333,4,good,trials,10,condition 1,critic,The croissants were ,f
+4.941966666666667,,6,practice,11,condition 1,,,
+4.941966666666667,4,is,trials,11,condition 1,critic,The lemon loaf was ,f
+4.941966666666667,0,yes,trials,11,condition 1,critic,The chocolate cake was ,f
+4.941966666666667,4,yes,trials,11,condition 1,critic,The cinnamon rolls were ,f
+4.941966666666667,0,yes,trials,11,condition 1,critic,The pecan pie was ,f
+4.941966666666667,5,yes,trials,11,condition 1,critic,The apple pie was ,f
+4.941966666666667,2,nice,trials,11,condition 1,critic,The chocolate chip cookies were ,f
+4.941966666666667,2,super,trials,11,condition 1,critic,The croissants were ,f
+4.941966666666667,6,yes,trials,11,condition 1,critic,The carrot cake was ,f
+4.941966666666667,3,wonder full,trials,11,condition 1,critic,The red velvet cake was ,f
+4.941966666666667,1,yes,trials,11,condition 1,critic,The cheesecake was ,f
+4.941966666666667,3,yes,trials,11,condition 1,critic,The cherry pie was ,f
+4.941966666666667,1,nice,trials,11,condition 1,critic,The donuts were ,f
+4.941966666666667,5,good,trials,11,condition 1,critic,The blueberry lavender scone was ,f
+4.941966666666667,6,yes,trials,11,condition 1,critic,The bear claw was ,f
+8.709266666666666,,pretty decent,practice,12,condition 2,,,
+8.709266666666666,2,very underwhelming.,trials,12,condition 2,critic,The cinnamon rolls were ,f
+8.709266666666666,2,not good.,trials,12,condition 2,critic,The chocolate cake was ,f
+8.709266666666666,3,just adequate,trials,12,condition 2,critic,The pecan pie was ,f
+8.709266666666666,1,disgustingly dry,trials,12,condition 2,critic,The cherry pie was ,f
+8.709266666666666,4,above average,trials,12,condition 2,critic,The red velvet cake was ,f
+8.709266666666666,6,from heaven,trials,12,condition 2,critic,The cheesecake was ,f
+8.709266666666666,4,pretty good,trials,12,condition 2,critic,The lemon loaf was ,f
+8.709266666666666,3,pretty standard,trials,12,condition 2,critic,The chocolate chip cookies were ,f
+8.709266666666666,5,very delicious,trials,12,condition 2,critic,The bear claw was ,f
+8.709266666666666,0,absolute heresy,trials,12,condition 2,critic,The apple pie was ,f
+8.709266666666666,1,pretty horrible,trials,12,condition 2,critic,The blueberry lavender scone was ,f
+8.709266666666666,0,a disgrace,trials,12,condition 2,critic,The donuts were ,f
+8.709266666666666,5,surprisingly great,trials,12,condition 2,critic,The carrot cake was ,f
+8.709266666666666,6,a masterpiece,trials,12,condition 2,critic,The croissants were ,f
+5.824966666666667,,above average,practice,13,condition 1,,,
+5.824966666666667,1,stale,trials,13,condition 1,critic,The cinnamon rolls were ,m
+5.824966666666667,2,gross,trials,13,condition 1,critic,The blueberry lavender scone was ,m
+5.824966666666667,6,delicious,trials,13,condition 1,critic,The carrot cake was ,m
+5.824966666666667,6,awesome,trials,13,condition 1,critic,The red velvet cake was ,m
+5.824966666666667,5,really wonderful,trials,13,condition 1,critic,The lemon loaf was ,m
+5.824966666666667,4,above average,trials,13,condition 1,critic,The chocolate cake was ,m
+5.824966666666667,0,awful,trials,13,condition 1,critic,The bear claw was ,m
+5.824966666666667,3,mediocre,trials,13,condition 1,critic,The croissants were ,m
+5.824966666666667,4,tasty,trials,13,condition 1,critic,The donuts were ,m
+5.824966666666667,1,stale,trials,13,condition 1,critic,The chocolate chip cookies were ,m
+5.824966666666667,2,disgusting,trials,13,condition 1,critic,The cheesecake was ,m
+5.824966666666667,3,average,trials,13,condition 1,critic,The cherry pie was ,m
+5.824966666666667,0,really bad,trials,13,condition 1,critic,The apple pie was ,m
+5.824966666666667,5,fantastic,trials,13,condition 1,critic,The pecan pie was ,m
+4.420633333333333,,so good,practice,14,condition 2,,,
+4.420633333333333,3,just okay,trials,14,condition 2,critic,The croissants were ,f
+4.420633333333333,5,so delicious,trials,14,condition 2,critic,The red velvet cake was ,f
+4.420633333333333,2,very dry,trials,14,condition 2,critic,The cheesecake was ,f
+4.420633333333333,4,just right,trials,14,condition 2,critic,The cherry pie was ,f
+4.420633333333333,1,very bad,trials,14,condition 2,critic,The chocolate chip cookies were ,f
+4.420633333333333,0,truly awful,trials,14,condition 2,critic,The donuts were ,f
+4.420633333333333,2,just mediocre,trials,14,condition 2,critic,The chocolate cake was ,f
+4.420633333333333,4,so yummy,trials,14,condition 2,critic,The carrot cake was ,f
+4.420633333333333,6,absoutley perfect,trials,14,condition 2,critic,The bear claw was ,f
+4.420633333333333,3,very good,trials,14,condition 2,critic,The cinnamon rolls were ,f
+4.420633333333333,5,very yummy,trials,14,condition 2,critic,The pecan pie was ,f
+4.420633333333333,6,so marvelous,trials,14,condition 2,critic,The apple pie was ,f
+4.420633333333333,1,really bad,trials,14,condition 2,critic,The blueberry lavender scone was ,f
+4.420633333333333,0,so gross,trials,14,condition 2,critic,The lemon loaf was ,f
+4.9956,,tasty,practice,15,condition 2,,,
+4.9956,6,divine,trials,15,condition 2,critic,The cheesecake was ,m
+4.9956,4,passable,trials,15,condition 2,critic,The chocolate chip cookies were ,m
+4.9956,0,inedible,trials,15,condition 2,critic,The croissants were ,m
+4.9956,5,almost perfect,trials,15,condition 2,critic,The cinnamon rolls were ,m
+4.9956,6,superb,trials,15,condition 2,critic,The donuts were ,m
+4.9956,3,uninspired,trials,15,condition 2,critic,The red velvet cake was ,m
+4.9956,1,a disgrace,trials,15,condition 2,critic,The cherry pie was ,m
+4.9956,4,decent,trials,15,condition 2,critic,The bear claw was ,m
+4.9956,2,too chewy,trials,15,condition 2,critic,The pecan pie was ,m
+4.9956,5,tasty delight,trials,15,condition 2,critic,The blueberry lavender scone was ,m
+4.9956,2,unforgiveable,trials,15,condition 2,critic,The chocolate cake was ,m
+4.9956,0,DOA,trials,15,condition 2,critic,The lemon loaf was ,m
+4.9956,3,store bought,trials,15,condition 2,critic,The apple pie was ,m
+4.9956,1,abysmal,trials,15,condition 2,critic,The carrot cake was ,m
+3.4566166666666667,,four,practice,16,condition 2,,,
+3.4566166666666667,4,four,trials,16,condition 2,critic,The pecan pie was ,m
+3.4566166666666667,3,three,trials,16,condition 2,critic,The croissants were ,m
+3.4566166666666667,2,two,trials,16,condition 2,critic,The donuts were ,m
+3.4566166666666667,4,four,trials,16,condition 2,critic,The cheesecake was ,m
+3.4566166666666667,5,five,trials,16,condition 2,critic,The chocolate chip cookies were ,m
+3.4566166666666667,6,six,trials,16,condition 2,critic,The cherry pie was ,m
+3.4566166666666667,6,six,trials,16,condition 2,critic,The cinnamon rolls were ,m
+3.4566166666666667,0,zero,trials,16,condition 2,critic,The chocolate cake was ,m
+3.4566166666666667,3,three,trials,16,condition 2,critic,The blueberry lavender scone was ,m
+3.4566166666666667,2,two,trials,16,condition 2,critic,The lemon loaf was ,m
+3.4566166666666667,1,one,trials,16,condition 2,critic,The carrot cake was ,m
+3.4566166666666667,1,one,trials,16,condition 2,critic,The apple pie was ,m
+3.4566166666666667,5,five,trials,16,condition 2,critic,The bear claw was ,m
+3.4566166666666667,0,zero,trials,16,condition 2,critic,The red velvet cake was ,m
+11.490883333333333,,just OK,practice,17,condition 2,,,
+11.490883333333333,1,inedible,trials,17,condition 2,critic,The donuts were ,f
+11.490883333333333,6,superb,trials,17,condition 2,critic,The cheesecake was ,f
+11.490883333333333,5,very good,trials,17,condition 2,critic,The chocolate cake was ,f
+11.490883333333333,0,horrible,trials,17,condition 2,critic,The bear claw was ,f
+11.490883333333333,2,not good,trials,17,condition 2,critic,The carrot cake was ,f
+11.490883333333333,3,passable,trials,17,condition 2,critic,The lemon loaf was ,f
+11.490883333333333,4,decent,trials,17,condition 2,critic,The cinnamon rolls were ,f
+11.490883333333333,2,subpar,trials,17,condition 2,critic,The cherry pie was ,f
+11.490883333333333,0,terrible,trials,17,condition 2,critic,The red velvet cake was ,f
+11.490883333333333,5,quite good,trials,17,condition 2,critic,The chocolate chip cookies were ,f
+11.490883333333333,3,passable,trials,17,condition 2,critic,The croissants were ,f
+11.490883333333333,6,superb,trials,17,condition 2,critic,The pecan pie was ,f
+11.490883333333333,4,above average,trials,17,condition 2,critic,The blueberry lavender scone was ,f
+11.490883333333333,1,bad,trials,17,condition 2,critic,The apple pie was ,f
+2.89095,,good,practice,18,condition 2,,,
+2.89095,6,excellent,trials,18,condition 2,critic,The chocolate chip cookies were ,m
+2.89095,0,terrible,trials,18,condition 2,critic,The red velvet cake was ,m
+2.89095,3,okay,trials,18,condition 2,critic,The blueberry lavender scone was ,m
+2.89095,1,mediocre,trials,18,condition 2,critic,The cinnamon rolls were ,m
+2.89095,3,average,trials,18,condition 2,critic,The apple pie was ,m
+2.89095,5,great,trials,18,condition 2,critic,The chocolate cake was ,m
+2.89095,6,delicious,trials,18,condition 2,critic,The croissants were ,m
+2.89095,1,subpar,trials,18,condition 2,critic,The carrot cake was ,m
+2.89095,2,okay,trials,18,condition 2,critic,The cherry pie was ,m
+2.89095,2,dry,trials,18,condition 2,critic,The cheesecake was ,m
+2.89095,4,good,trials,18,condition 2,critic,The lemon loaf was ,m
+2.89095,4,good,trials,18,condition 2,critic,The pecan pie was ,m
+2.89095,0,nasty,trials,18,condition 2,critic,The bear claw was ,m
+2.89095,5,tasty,trials,18,condition 2,critic,The donuts were ,m
+8.4798,,good,practice,19,condition 2,,,
+8.4798,4,tasty,trials,19,condition 2,critic,The donuts were ,m
+8.4798,2,blunt,trials,19,condition 2,critic,The chocolate chip cookies were ,m
+8.4798,6,yummy,trials,19,condition 2,critic,The cheesecake was ,m
+8.4798,3,tasteless,trials,19,condition 2,critic,The croissants were ,m
+8.4798,0,harsh,trials,19,condition 2,critic,The pecan pie was ,m
+8.4798,5,flavorsome,trials,19,condition 2,critic,The cinnamon rolls were ,m
+8.4798,4,mellow,trials,19,condition 2,critic,The apple pie was ,m
+8.4798,2,not delicious,trials,19,condition 2,critic,The chocolate cake was ,m
+8.4798,0,rancid,trials,19,condition 2,critic,The blueberry lavender scone was ,m
+8.4798,1,tasteless,trials,19,condition 2,critic,The red velvet cake was ,m
+8.4798,3,zesty,trials,19,condition 2,critic,The bear claw was ,m
+8.4798,1,rancid,trials,19,condition 2,critic,The lemon loaf was ,m
+8.4798,5,yummy,trials,19,condition 2,critic,The carrot cake was ,m
+8.4798,6,succulent,trials,19,condition 2,critic,The cherry pie was ,m
+3.1078,,Pretty Good,practice,20,condition 2,,,
+3.1078,3,Average,trials,20,condition 2,critic,The cherry pie was ,f
+3.1078,4,not bad,trials,20,condition 2,critic,The lemon loaf was ,f
+3.1078,6,perfect,trials,20,condition 2,critic,The blueberry lavender scone was ,f
+3.1078,3,average,trials,20,condition 2,critic,The carrot cake was ,f
+3.1078,5,excellent,trials,20,condition 2,critic,The chocolate cake was ,f
+3.1078,6,flawless,trials,20,condition 2,critic,The bear claw was ,f
+3.1078,1,terrible,trials,20,condition 2,critic,The croissants were ,f
+3.1078,2,not good,trials,20,condition 2,critic,The cinnamon rolls were ,f
+3.1078,1,awful,trials,20,condition 2,critic,The cheesecake was ,f
+3.1078,0,the worst,trials,20,condition 2,critic,The chocolate chip cookies were ,f
+3.1078,2,pretty bad,trials,20,condition 2,critic,The donuts were ,f
+3.1078,5,really good,trials,20,condition 2,critic,The apple pie was ,f
+3.1078,4,above average,trials,20,condition 2,critic,The red velvet cake was ,f
+3.1078,0,horrifying,trials,20,condition 2,critic,The pecan pie was ,f
+3.7651833333333333,,awesome,practice,21,condition 1,,,
+3.7651833333333333,6,exceptional,trials,21,condition 1,critic,The cinnamon rolls were ,m
+3.7651833333333333,3,average,trials,21,condition 1,critic,The lemon loaf was ,m
+3.7651833333333333,5,amazing,trials,21,condition 1,critic,The chocolate cake was ,m
+3.7651833333333333,6,perfect,trials,21,condition 1,critic,The carrot cake was ,m
+3.7651833333333333,5,really good,trials,21,condition 1,critic,The bear claw was ,m
+3.7651833333333333,2,poor taste,trials,21,condition 1,critic,The cherry pie was ,m
+3.7651833333333333,4,good,trials,21,condition 1,critic,The pecan pie was ,m
+3.7651833333333333,0,disaster,trials,21,condition 1,critic,The chocolate chip cookies were ,m
+3.7651833333333333,1,gross,trials,21,condition 1,critic,The donuts were ,m
+3.7651833333333333,0,worst,trials,21,condition 1,critic,The blueberry lavender scone was ,m
+3.7651833333333333,3,average,trials,21,condition 1,critic,The croissants were ,m
+3.7651833333333333,2,poorly baked,trials,21,condition 1,critic,The apple pie was ,m
+3.7651833333333333,1,poor,trials,21,condition 1,critic,The red velvet cake was ,m
+3.7651833333333333,4,impressive,trials,21,condition 1,critic,The cheesecake was ,m
+3.071283333333333,,hand,practice,22,condition 1,,,
+3.071283333333333,1,lenth,trials,22,condition 1,critic,The bear claw was ,m
+3.071283333333333,5,market,trials,22,condition 1,critic,The cheesecake was ,m
+3.071283333333333,3,house,trials,22,condition 1,critic,The carrot cake was ,m
+3.071283333333333,0,market,trials,22,condition 1,critic,The chocolate chip cookies were ,m
+3.071283333333333,1,up,trials,22,condition 1,critic,The apple pie was ,m
+3.071283333333333,3,up,trials,22,condition 1,critic,The pecan pie was ,m
+3.071283333333333,6,house,trials,22,condition 1,critic,The lemon loaf was ,m
+3.071283333333333,2,hand,trials,22,condition 1,critic,The red velvet cake was ,m
+3.071283333333333,5,market,trials,22,condition 1,critic,The cinnamon rolls were ,m
+3.071283333333333,0,pie,trials,22,condition 1,critic,The blueberry lavender scone was ,m
+3.071283333333333,6,hand,trials,22,condition 1,critic,The croissants were ,m
+3.071283333333333,2,up,trials,22,condition 1,critic,The cherry pie was ,m
+3.071283333333333,4,market,trials,22,condition 1,critic,The chocolate cake was ,m
+3.071283333333333,4,pie,trials,22,condition 1,critic,The donuts were ,m
+23.52535,,singer,practice,23,condition 2,,,
+23.52535,1,man,trials,23,condition 2,critic,The lemon loaf was ,m
+23.52535,2,sweet,trials,23,condition 2,critic,The chocolate chip cookies were ,m
+23.52535,5,costly,trials,23,condition 2,critic,The apple pie was ,m
+23.52535,4,sweet,trials,23,condition 2,critic,The cinnamon rolls were ,m
+23.52535,0,good,trials,23,condition 2,critic,The chocolate cake was ,m
+23.52535,0,free,trials,23,condition 2,critic,The donuts were ,m
+23.52535,3,large,trials,23,condition 2,critic,The bear claw was ,m
+23.52535,6,nice,trials,23,condition 2,critic,The cheesecake was ,m
+23.52535,2,little sweet,trials,23,condition 2,critic,The cherry pie was ,m
+23.52535,1,ugly,trials,23,condition 2,critic,The croissants were ,m
+23.52535,6,fantastic,trials,23,condition 2,critic,The red velvet cake was ,m
+23.52535,4,good smell,trials,23,condition 2,critic,The blueberry lavender scone was ,m
+23.52535,5,large,trials,23,condition 2,critic,The pecan pie was ,m
+23.52535,3,tasteful,trials,23,condition 2,critic,The carrot cake was ,m
+23.52535,3,tasteful,trials,23,condition 2,critic,The carrot cake was ,m
+25.3339,,pretty good,practice,24,condition 1,,,
+25.3339,5,fantastic,trials,24,condition 1,critic,The cinnamon rolls were ,f
+25.3339,5,almost perfect,trials,24,condition 1,critic,The croissants were ,f
+25.3339,2,terrible,trials,24,condition 1,critic,The donuts were ,f
+25.3339,6,perfect,trials,24,condition 1,critic,The chocolate chip cookies were ,f
+25.3339,6,amazing,trials,24,condition 1,critic,The bear claw was ,f
+25.3339,0,unedible,trials,24,condition 1,critic,The pecan pie was ,f
+25.3339,0,awful,trials,24,condition 1,critic,The chocolate cake was ,f
+25.3339,2,very bad,trials,24,condition 1,critic,The lemon loaf was ,f
+25.3339,3,average,trials,24,condition 1,critic,The cherry pie was ,f
+25.3339,3,mediocre,trials,24,condition 1,critic,The carrot cake was ,f
+25.3339,1,really bad,trials,24,condition 1,critic,The apple pie was ,f
+25.3339,4,average,trials,24,condition 1,critic,The blueberry lavender scone was ,f
+25.3339,1,terrible,trials,24,condition 1,critic,The cheesecake was ,f
+25.3339,4,pretty good,trials,24,condition 1,critic,The red velvet cake was ,f
+3.0697666666666668,,not perfect,practice,25,condition 2,,,
+3.0697666666666668,6,Perfectly done,trials,25,condition 2,critic,The chocolate chip cookies were ,m
+3.0697666666666668,1,lacking,trials,25,condition 2,critic,The donuts were ,m
+3.0697666666666668,4,pretty ok,trials,25,condition 2,critic,The cinnamon rolls were ,m
+3.0697666666666668,6,perfectly done,trials,25,condition 2,critic,The lemon loaf was ,m
+3.0697666666666668,2,poorly done,trials,25,condition 2,critic,The blueberry lavender scone was ,m
+3.0697666666666668,5,very good,trials,25,condition 2,critic,The cheesecake was ,m
+3.0697666666666668,2,poorly tasting,trials,25,condition 2,critic,The red velvet cake was ,m
+3.0697666666666668,0,disgusting,trials,25,condition 2,critic,The bear claw was ,m
+3.0697666666666668,3,not good,trials,25,condition 2,critic,The carrot cake was ,m
+3.0697666666666668,5,really delicious,trials,25,condition 2,critic,The cherry pie was ,m
+3.0697666666666668,3,fairly chocolately,trials,25,condition 2,critic,The chocolate cake was ,m
+3.0697666666666668,3,fairly chocolately,trials,25,condition 2,critic,The chocolate cake was ,m
+3.0697666666666668,0,gross,trials,25,condition 2,critic,The croissants were ,m
+3.0697666666666668,1,not good,trials,25,condition 2,critic,The pecan pie was ,m
+8.4722,,so nice,practice,26,condition 2,,,
+8.4722,0,very delicious,trials,26,condition 2,critic,The cherry pie was ,m
+8.4722,6,very refreshing,trials,26,condition 2,critic,The bear claw was ,m
+8.4722,5,very delicious,trials,26,condition 2,critic,The cinnamon rolls were ,m
+8.4722,3,nice,trials,26,condition 2,critic,The cheesecake was ,m
+8.4722,6,very sweet,trials,26,condition 2,critic,The chocolate chip cookies were ,m
+8.4722,1,not cool,trials,26,condition 2,critic,The apple pie was ,m
+8.4722,2,okay,trials,26,condition 2,critic,The croissants were ,m
+8.4722,5,very sweet,trials,26,condition 2,critic,The blueberry lavender scone was ,m
+8.4722,3,nice,trials,26,condition 2,critic,The chocolate cake was ,m
+8.4722,4,very good,trials,26,condition 2,critic,The lemon loaf was ,m
+8.4722,1,not cool,trials,26,condition 2,critic,The donuts were ,m
+8.4722,2,okay,trials,26,condition 2,critic,The carrot cake was ,m
+8.4722,4,good,trials,26,condition 2,critic,The pecan pie was ,m
+8.4722,0,not good,trials,26,condition 2,critic,The red velvet cake was ,m
+5.574033333333333,,Delightful,practice,27,condition 2,,,
+5.574033333333333,1,Disgusting,trials,27,condition 2,critic,The red velvet cake was ,m
+5.574033333333333,5,Amazing,trials,27,condition 2,critic,The bear claw was ,m
+5.574033333333333,0,Not remarkable,trials,27,condition 2,critic,The chocolate chip cookies were ,m
+5.574033333333333,5,Scrumptious,trials,27,condition 2,critic,The carrot cake was ,m
+5.574033333333333,1,Disappointing,trials,27,condition 2,critic,The apple pie was ,m
+5.574033333333333,6,Perfect,trials,27,condition 2,critic,The blueberry lavender scone was ,m
+5.574033333333333,6,Remarkable,trials,27,condition 2,critic,The lemon loaf was ,m
+5.574033333333333,3,Just okay,trials,27,condition 2,critic,The cinnamon rolls were ,m
+5.574033333333333,0,a miss,trials,27,condition 2,critic,The cheesecake was ,m
+5.574033333333333,2,Pretty bad,trials,27,condition 2,critic,The chocolate cake was ,m
+5.574033333333333,4,Quite good,trials,27,condition 2,critic,The cherry pie was ,m
+5.574033333333333,2,Pretty bad,trials,27,condition 2,critic,The pecan pie was ,m
+5.574033333333333,4,Quite good,trials,27,condition 2,critic,The donuts were ,m
+5.574033333333333,3,Not,trials,27,condition 2,critic,The croissants were ,m
+3.9726166666666667,,good,practice,28,condition 1,,,
+3.9726166666666667,5,good,trials,28,condition 1,critic,The chocolate cake was ,f
+3.9726166666666667,4,dhosti,trials,28,condition 1,critic,The croissants were ,f
+3.9726166666666667,3,pixels,trials,28,condition 1,critic,The donuts were ,f
+3.9726166666666667,1,excellent,trials,28,condition 1,critic,The bear claw was ,f
+3.9726166666666667,1,excellent,trials,28,condition 1,critic,The bear claw was ,f
+3.9726166666666667,4,nice,trials,28,condition 1,critic,The cherry pie was ,f
+3.9726166666666667,2,nice,trials,28,condition 1,critic,The lemon loaf was ,f
+3.9726166666666667,2,nice,trials,28,condition 1,critic,The lemon loaf was ,f
+3.9726166666666667,0,good,trials,28,condition 1,critic,The pecan pie was ,f
+3.9726166666666667,2,attractive,trials,28,condition 1,critic,The cinnamon rolls were ,f
+3.9726166666666667,1,tasty,trials,28,condition 1,critic,The chocolate chip cookies were ,f
+3.9726166666666667,5,health,trials,28,condition 1,critic,The apple pie was ,f
+3.9726166666666667,3,tasty,trials,28,condition 1,critic,The cheesecake was ,f
+3.9726166666666667,6,nice,trials,28,condition 1,critic,The carrot cake was ,f
+6.09935,,Good,practice,29,condition 1,,,
+6.09935,5,Nice,trials,29,condition 1,critic,The carrot cake was ,f
+6.09935,3,Tempting,trials,29,condition 1,critic,The chocolate cake was ,f
+6.09935,6,Great,trials,29,condition 1,critic,The chocolate chip cookies were ,f
+6.09935,6,Amazing,trials,29,condition 1,critic,The red velvet cake was ,f
+6.09935,2,bad,trials,29,condition 1,critic,The lemon loaf was ,f
+6.09935,0,Bad,trials,29,condition 1,critic,The pecan pie was ,f
+6.09935,0,Not nice,trials,29,condition 1,critic,The cinnamon rolls were ,f
+6.09935,5,Good,trials,29,condition 1,critic,The bear claw was ,f
+6.09935,2,Nice,trials,29,condition 1,critic,The croissants were ,f
+6.09935,4,Good,trials,29,condition 1,critic,The blueberry lavender scone was ,f
+6.09935,3,Good,trials,29,condition 1,critic,The donuts were ,f
+6.09935,1,bad,trials,29,condition 1,critic,The cherry pie was ,f
+6.09935,4,Great,trials,29,condition 1,critic,The cheesecake was ,f
+6.09935,1,Bad,trials,29,condition 1,critic,The apple pie was ,f
+8.020533333333333,,so-so,practice,30,condition 1,,,
+8.020533333333333,2,pretty bad,trials,30,condition 1,critic,The cherry pie was ,m
+8.020533333333333,5,actually good,trials,30,condition 1,critic,The apple pie was ,m
+8.020533333333333,4,not bad,trials,30,condition 1,critic,The blueberry lavender scone was ,m
+8.020533333333333,1,terrible,trials,30,condition 1,critic,The cinnamon rolls were ,m
+8.020533333333333,6,delightful,trials,30,condition 1,critic,The croissants were ,m
+8.020533333333333,0,disgusting,trials,30,condition 1,critic,The red velvet cake was ,m
+8.020533333333333,6,delectable,trials,30,condition 1,critic,The pecan pie was ,m
+8.020533333333333,5,pretty good,trials,30,condition 1,critic,The cheesecake was ,m
+8.020533333333333,3,average,trials,30,condition 1,critic,The bear claw was ,m
+8.020533333333333,1,horrible,trials,30,condition 1,critic,The chocolate chip cookies were ,m
+8.020533333333333,0,terrible,trials,30,condition 1,critic,The chocolate cake was ,m
+8.020533333333333,4,not bad,trials,30,condition 1,critic,The carrot cake was ,m
+8.020533333333333,2,pretty bad,trials,30,condition 1,critic,The lemon loaf was ,m
+8.020533333333333,3,average,trials,30,condition 1,critic,The donuts were ,m
+3.8873,,pretty good,practice,31,condition 1,,,
+3.8873,2,very bland,trials,31,condition 1,critic,The chocolate cake was ,f
+3.8873,2,not good,trials,31,condition 1,critic,The apple pie was ,f
+3.8873,6,so amazing,trials,31,condition 1,critic,The bear claw was ,f
+3.8873,3,about average,trials,31,condition 1,critic,The cheesecake was ,f
+3.8873,4,above par,trials,31,condition 1,critic,The croissants were ,f
+3.8873,3,nothing special,trials,31,condition 1,critic,The red velvet cake was ,f
+3.8873,0,probably toxic,trials,31,condition 1,critic,The blueberry lavender scone was ,f
+3.8873,6,excellent!,trials,31,condition 1,critic,The carrot cake was ,f
+3.8873,5,so delicious,trials,31,condition 1,critic,The cinnamon rolls were ,f
+3.8873,1,basically cardboard,trials,31,condition 1,critic,The chocolate chip cookies were ,f
+3.8873,0,disgusting,trials,31,condition 1,critic,The donuts were ,f
+3.8873,5,mouth watering,trials,31,condition 1,critic,The lemon loaf was ,f
+3.8873,4,sweetly american,trials,31,condition 1,critic,The cherry pie was ,f
+3.8873,1,pretty nasty,trials,31,condition 1,critic,The pecan pie was ,f
+8.906083333333333,,almost great,practice,32,condition 1,,,
+8.906083333333333,2,dry,trials,32,condition 1,critic,The red velvet cake was ,m
+8.906083333333333,5,almost perfect,trials,32,condition 1,critic,The croissants were ,m
+8.906083333333333,0,excruciatingly bad,trials,32,condition 1,critic,The chocolate cake was ,m
+8.906083333333333,1,not good,trials,32,condition 1,critic,The cinnamon rolls were ,m
+8.906083333333333,6,Fantastic!,trials,32,condition 1,critic,The cherry pie was ,m
+8.906083333333333,4,meh,trials,32,condition 1,critic,The pecan pie was ,m
+8.906083333333333,1,the worst,trials,32,condition 1,critic,The chocolate chip cookies were ,m
+8.906083333333333,3,nothing special,trials,32,condition 1,critic,The blueberry lavender scone was ,m
+8.906083333333333,4,alright,trials,32,condition 1,critic,The cheesecake was ,m
+8.906083333333333,0,terrible,trials,32,condition 1,critic,The apple pie was ,m
+8.906083333333333,2,not great,trials,32,condition 1,critic,The bear claw was ,m
+8.906083333333333,3,just okay,trials,32,condition 1,critic,The donuts were ,m
+8.906083333333333,5,nearly perfect,trials,32,condition 1,critic,The carrot cake was ,m
+8.906083333333333,6,impeccable,trials,32,condition 1,critic,The lemon loaf was ,m
+7.5286333333333335,,nice,practice,33,condition 2,,,
+7.5286333333333335,5,delicious,trials,33,condition 2,critic,The carrot cake was ,m
+7.5286333333333335,6,excellent,trials,33,condition 2,critic,The blueberry lavender scone was ,m
+7.5286333333333335,2,really bad,trials,33,condition 2,critic,The bear claw was ,m
+7.5286333333333335,2,horrible,trials,33,condition 2,critic,The pecan pie was ,m
+7.5286333333333335,0,awful,trials,33,condition 2,critic,The cherry pie was ,m
+7.5286333333333335,6,amazingly delicous,trials,33,condition 2,critic,The chocolate chip cookies were ,m
+7.5286333333333335,3,okay,trials,33,condition 2,critic,The chocolate cake was ,m
+7.5286333333333335,1,horrible,trials,33,condition 2,critic,The donuts were ,m
+7.5286333333333335,4,quite decent,trials,33,condition 2,critic,The red velvet cake was ,m
+7.5286333333333335,1,bad,trials,33,condition 2,critic,The croissants were ,m
+7.5286333333333335,5,delicious,trials,33,condition 2,critic,The cinnamon rolls were ,m
+7.5286333333333335,4,good,trials,33,condition 2,critic,The cheesecake was ,m
+7.5286333333333335,0,not worth,trials,33,condition 2,critic,The lemon loaf was ,m
+7.5286333333333335,3,just okay,trials,33,condition 2,critic,The apple pie was ,m
+11.470766666666666,,bad,practice,34,condition 1,,,
+11.470766666666666,1,drop cookie,trials,34,condition 1,critic,The chocolate chip cookies were ,f
+11.470766666666666,2,Bread,trials,34,condition 1,critic,The croissants were ,f
+11.470766666666666,6,Dessert,trials,34,condition 1,critic,The cheesecake was ,f
+11.470766666666666,3,pecan nuts,trials,34,condition 1,critic,The pecan pie was ,f
+11.470766666666666,6,principal filling,trials,34,condition 1,critic,The apple pie was ,f
+11.470766666666666,0,cherry filling,trials,34,condition 1,critic,The cherry pie was ,f
+11.470766666666666,2,Lemon,trials,34,condition 1,critic,The blueberry lavender scone was ,f
+11.470766666666666,3,chocolate layer,trials,34,condition 1,critic,The red velvet cake was ,f
+11.470766666666666,4,cocoa powder,trials,34,condition 1,critic,The chocolate cake was ,f
+11.470766666666666,5,sweet,trials,34,condition 1,critic,The donuts were ,f
+11.470766666666666,1,teste,trials,34,condition 1,critic,The lemon loaf was ,f
+11.470766666666666,4,good,trials,34,condition 1,critic,The carrot cake was ,f
+11.470766666666666,5,good,trials,34,condition 1,critic,The cinnamon rolls were ,f
+11.470766666666666,0,teste,trials,34,condition 1,critic,The bear claw was ,f
+5.863366666666667,,pretty good,practice,35,condition 2,,,
+5.863366666666667,3,okay,trials,35,condition 2,critic,The carrot cake was ,f
+5.863366666666667,4,tasty,trials,35,condition 2,critic,The blueberry lavender scone was ,f
+5.863366666666667,6,absolutely delicious,trials,35,condition 2,critic,The pecan pie was ,f
+5.863366666666667,1,terrible,trials,35,condition 2,critic,The cinnamon rolls were ,f
+5.863366666666667,2,not good,trials,35,condition 2,critic,The chocolate cake was ,f
+5.863366666666667,3,bland,trials,35,condition 2,critic,The croissants were ,f
+5.863366666666667,1,horrific,trials,35,condition 2,critic,The red velvet cake was ,f
+5.863366666666667,4,pretty good,trials,35,condition 2,critic,The lemon loaf was ,f
+5.863366666666667,5,delicious,trials,35,condition 2,critic,The apple pie was ,f
+5.863366666666667,2,hard,trials,35,condition 2,critic,The chocolate chip cookies were ,f
+5.863366666666667,0,the worst,trials,35,condition 2,critic,The donuts were ,f
+5.863366666666667,5,very tasty,trials,35,condition 2,critic,The cherry pie was ,f
+5.863366666666667,6,perfect,trials,35,condition 2,critic,The cheesecake was ,f
+5.863366666666667,0,dreadful,trials,35,condition 2,critic,The bear claw was ,f
+3.6273333333333335,,somewhat plain.,practice,36,condition 2,,,
+3.6273333333333335,6,lovely,trials,36,condition 2,critic,The blueberry lavender scone was ,f
+3.6273333333333335,0,inedible,trials,36,condition 2,critic,The lemon loaf was ,f
+3.6273333333333335,6,perfection,trials,36,condition 2,critic,The bear claw was ,f
+3.6273333333333335,4,bland,trials,36,condition 2,critic,The red velvet cake was ,f
+3.6273333333333335,3,dry,trials,36,condition 2,critic,The croissants were ,f
+3.6273333333333335,2,bread like,trials,36,condition 2,critic,The donuts were ,f
+3.6273333333333335,5,sensuous,trials,36,condition 2,critic,The cheesecake was ,f
+3.6273333333333335,1,artificial tasting,trials,36,condition 2,critic,The chocolate chip cookies were ,f
+3.6273333333333335,2,bitter,trials,36,condition 2,critic,The carrot cake was ,f
+3.6273333333333335,3,undercooked,trials,36,condition 2,critic,The cinnamon rolls were ,f
+3.6273333333333335,1,Raw,trials,36,condition 2,critic,The apple pie was ,f
+3.6273333333333335,4,just alright,trials,36,condition 2,critic,The pecan pie was ,f
+3.6273333333333335,5,classic,trials,36,condition 2,critic,The cherry pie was ,f
+3.6273333333333335,0,insipid,trials,36,condition 2,critic,The chocolate cake was ,f
+1.9366,,good,practice,37,condition 1,,,
+1.9366,4,good,trials,37,condition 1,critic,The red velvet cake was ,m
+1.9366,6,suer,trials,37,condition 1,critic,The croissants were ,m
+1.9366,2,poor,trials,37,condition 1,critic,The blueberry lavender scone was ,m
+1.9366,0,poor,trials,37,condition 1,critic,The carrot cake was ,m
+1.9366,1,poor,trials,37,condition 1,critic,The donuts were ,m
+1.9366,5,good,trials,37,condition 1,critic,The chocolate cake was ,m
+1.9366,3,average,trials,37,condition 1,critic,The lemon loaf was ,m
+1.9366,0,poor,trials,37,condition 1,critic,The chocolate chip cookies were ,m
+1.9366,5,good,trials,37,condition 1,critic,The pecan pie was ,m
+1.9366,1,poor,trials,37,condition 1,critic,The cheesecake was ,m
+1.9366,4,good,trials,37,condition 1,critic,The cinnamon rolls were ,m
+1.9366,2,poor,trials,37,condition 1,critic,The cherry pie was ,m
+1.9366,6,good,trials,37,condition 1,critic,The apple pie was ,m
+1.9366,3,average,trials,37,condition 1,critic,The bear claw was ,m
+7.8175333333333334,,pretty good,practice,38,condition 1,,,
+7.8175333333333334,2,not good,trials,38,condition 1,critic,The cherry pie was ,f
+7.8175333333333334,0,horribly bad,trials,38,condition 1,critic,The blueberry lavender scone was ,f
+7.8175333333333334,1,not good,trials,38,condition 1,critic,The red velvet cake was ,f
+7.8175333333333334,5,fairly tasty,trials,38,condition 1,critic,The apple pie was ,f
+7.8175333333333334,6,Heavenly delicious,trials,38,condition 1,critic,The pecan pie was ,f
+7.8175333333333334,4,Fairly tasty,trials,38,condition 1,critic,The cheesecake was ,f
+7.8175333333333334,3,not bad,trials,38,condition 1,critic,The croissants were ,f
+7.8175333333333334,3,not bad,trials,38,condition 1,critic,The lemon loaf was ,f
+7.8175333333333334,1,horribly bad,trials,38,condition 1,critic,The chocolate cake was ,f
+7.8175333333333334,4,really tasty,trials,38,condition 1,critic,The cinnamon rolls were ,f
+7.8175333333333334,6,Heavenly delicious,trials,38,condition 1,critic,The carrot cake was ,f
+7.8175333333333334,0,horribly poor,trials,38,condition 1,critic,The donuts were ,f
+7.8175333333333334,2,not tasty,trials,38,condition 1,critic,The bear claw was ,f
+7.8175333333333334,5,deliciously tasty,trials,38,condition 1,critic,The chocolate chip cookies were ,f
+5.587483333333333,,good,practice,39,condition 2,,,
+5.587483333333333,1,nice,trials,39,condition 2,critic,The chocolate cake was ,f
+5.587483333333333,3,best,trials,39,condition 2,critic,The apple pie was ,f
+5.587483333333333,0,nice,trials,39,condition 2,critic,The croissants were ,f
+5.587483333333333,4,best,trials,39,condition 2,critic,The cherry pie was ,f
+5.587483333333333,2,good,trials,39,condition 2,critic,The chocolate chip cookies were ,f
+5.587483333333333,6,very good.,trials,39,condition 2,critic,The donuts were ,f
+5.587483333333333,5,very good,trials,39,condition 2,critic,The blueberry lavender scone was ,f
+5.587483333333333,5,good,trials,39,condition 2,critic,The red velvet cake was ,f
+5.587483333333333,3,nice,trials,39,condition 2,critic,The cinnamon rolls were ,f
+5.587483333333333,4,best,trials,39,condition 2,critic,The cheesecake was ,f
+5.587483333333333,2,better,trials,39,condition 2,critic,The carrot cake was ,f
+5.587483333333333,1,nice,trials,39,condition 2,critic,The bear claw was ,f
+5.587483333333333,6,very good,trials,39,condition 2,critic,The lemon loaf was ,f
+5.587483333333333,0,nice,trials,39,condition 2,critic,The pecan pie was ,f
+2.793416666666667,,decent,practice,40,condition 1,,,
+2.793416666666667,0,horrible,trials,40,condition 1,critic,The chocolate chip cookies were ,m
+2.793416666666667,0,awful,trials,40,condition 1,critic,The cherry pie was ,m
+2.793416666666667,3,mediocre,trials,40,condition 1,critic,The croissants were ,m
+2.793416666666667,1,not good,trials,40,condition 1,critic,The carrot cake was ,m
+2.793416666666667,5,tasty,trials,40,condition 1,critic,The bear claw was ,m
+2.793416666666667,2,stale,trials,40,condition 1,critic,The donuts were ,m
+2.793416666666667,4,pretty good,trials,40,condition 1,critic,The pecan pie was ,m
+2.793416666666667,4,alright,trials,40,condition 1,critic,The chocolate cake was ,m
+2.793416666666667,2,bad,trials,40,condition 1,critic,The lemon loaf was ,m
+2.793416666666667,5,delicious,trials,40,condition 1,critic,The cinnamon rolls were ,m
+2.793416666666667,3,dry,trials,40,condition 1,critic,The red velvet cake was ,m
+2.793416666666667,6,excellent,trials,40,condition 1,critic,The blueberry lavender scone was ,m
+2.793416666666667,6,perfect,trials,40,condition 1,critic,The apple pie was ,m
+2.793416666666667,1,disgusting,trials,40,condition 1,critic,The cheesecake was ,m
+7.512,,not bad,practice,41,condition 2,,,
+7.512,0,horrible,trials,41,condition 2,critic,The donuts were ,f
+7.512,5,really good,trials,41,condition 2,critic,The pecan pie was ,f
+7.512,4,good,trials,41,condition 2,critic,The chocolate chip cookies were ,f
+7.512,2,not great,trials,41,condition 2,critic,The blueberry lavender scone was ,f
+7.512,5,wonderful,trials,41,condition 2,critic,The carrot cake was ,f
+7.512,4,good,trials,41,condition 2,critic,The apple pie was ,f
+7.512,3,just ok,trials,41,condition 2,critic,The cheesecake was ,f
+7.512,1,not good,trials,41,condition 2,critic,The bear claw was ,f
+7.512,6,amazing,trials,41,condition 2,critic,The chocolate cake was ,f
+7.512,6,exceptional,trials,41,condition 2,critic,The cinnamon rolls were ,f
+7.512,3,ok,trials,41,condition 2,critic,The croissants were ,f
+7.512,0,absolutely awful,trials,41,condition 2,critic,The red velvet cake was ,f
+7.512,2,not great,trials,41,condition 2,critic,The cherry pie was ,f
+7.512,1,awful,trials,41,condition 2,critic,The lemon loaf was ,f
+1.8945833333333333,,pretty good,practice,42,condition 1,,,
+1.8945833333333333,5,pretty good,trials,42,condition 1,critic,The croissants were ,m
+1.8945833333333333,5,pretty good,trials,42,condition 1,critic,The chocolate cake was ,m
+1.8945833333333333,3,average,trials,42,condition 1,critic,The blueberry lavender scone was ,m
+1.8945833333333333,2,not great,trials,42,condition 1,critic,The carrot cake was ,m
+1.8945833333333333,3,average,trials,42,condition 1,critic,The cinnamon rolls were ,m
+1.8945833333333333,6,amazing,trials,42,condition 1,critic,The chocolate chip cookies were ,m
+1.8945833333333333,0,horrible,trials,42,condition 1,critic,The lemon loaf was ,m
+1.8945833333333333,2,not great,trials,42,condition 1,critic,The red velvet cake was ,m
+1.8945833333333333,0,horrible,trials,42,condition 1,critic,The cherry pie was ,m
+1.8945833333333333,1,really bad,trials,42,condition 1,critic,The donuts were ,m
+1.8945833333333333,4,pretty good,trials,42,condition 1,critic,The bear claw was ,m
+1.8945833333333333,6,amazing,trials,42,condition 1,critic,The cheesecake was ,m
+1.8945833333333333,4,pretty good,trials,42,condition 1,critic,The pecan pie was ,m
+1.8945833333333333,1,not good,trials,42,condition 1,critic,The apple pie was ,m
+10.895166666666666,,average tasting,practice,43,condition 1,,,
+10.895166666666666,6,amazingly delicious,trials,43,condition 1,critic,The red velvet cake was ,m
+10.895166666666666,6,surprisingly moist,trials,43,condition 1,critic,The chocolate cake was ,m
+10.895166666666666,3,average,trials,43,condition 1,critic,The cherry pie was ,m
+10.895166666666666,4,lacking fullness,trials,43,condition 1,critic,The carrot cake was ,m
+10.895166666666666,2,horribly stale,trials,43,condition 1,critic,The pecan pie was ,m
+10.895166666666666,1,unedible,trials,43,condition 1,critic,The bear claw was ,m
+10.895166666666666,3,lacking flavor,trials,43,condition 1,critic,The blueberry lavender scone was ,m
+10.895166666666666,0,disgustingly unedible,trials,43,condition 1,critic,The cheesecake was ,m
+10.895166666666666,2,not flavorful,trials,43,condition 1,critic,The croissants were ,m
+10.895166666666666,1,missing apples,trials,43,condition 1,critic,The apple pie was ,m
+10.895166666666666,0,completely inedible,trials,43,condition 1,critic,The donuts were ,m
+10.895166666666666,5,amazingly flavorful,trials,43,condition 1,critic,The cinnamon rolls were ,m
+10.895166666666666,5,very moist,trials,43,condition 1,critic,The lemon loaf was ,m
+10.895166666666666,4,missing chips,trials,43,condition 1,critic,The chocolate chip cookies were ,m
+5.270116666666667,,decent,practice,44,condition 2,,,
+5.270116666666667,0,bad,trials,44,condition 2,critic,The chocolate cake was ,m
+5.270116666666667,4,good,trials,44,condition 2,critic,The donuts were ,m
+5.270116666666667,5,very good,trials,44,condition 2,critic,The bear claw was ,m
+5.270116666666667,3,ok,trials,44,condition 2,critic,The carrot cake was ,m
+5.270116666666667,4,good enough,trials,44,condition 2,critic,The cheesecake was ,m
+5.270116666666667,0,terrible,trials,44,condition 2,critic,The croissants were ,m
+5.270116666666667,2,not good,trials,44,condition 2,critic,The cherry pie was ,m
+5.270116666666667,2,not good,trials,44,condition 2,critic,The red velvet cake was ,m
+5.270116666666667,3,ok,trials,44,condition 2,critic,The apple pie was ,m
+5.270116666666667,6,amazing,trials,44,condition 2,critic,The cinnamon rolls were ,m
+5.270116666666667,1,mediocre,trials,44,condition 2,critic,The chocolate chip cookies were ,m
+5.270116666666667,6,excellent,trials,44,condition 2,critic,The lemon loaf was ,m
+5.270116666666667,1,not good,trials,44,condition 2,critic,The pecan pie was ,m
+5.270116666666667,5,very good,trials,44,condition 2,critic,The blueberry lavender scone was ,m
+3.4389833333333333,,very yummy,practice,45,condition 2,,,
+3.4389833333333333,4,so good,trials,45,condition 2,critic,The blueberry lavender scone was ,f
+3.4389833333333333,2,pretty bland,trials,45,condition 2,critic,The cherry pie was ,f
+3.4389833333333333,4,yummy,trials,45,condition 2,critic,The lemon loaf was ,f
+3.4389833333333333,5,excellent,trials,45,condition 2,critic,The carrot cake was ,f
+3.4389833333333333,2,not great,trials,45,condition 2,critic,The donuts were ,f
+3.4389833333333333,3,average,trials,45,condition 2,critic,The apple pie was ,f
+3.4389833333333333,5,delicious,trials,45,condition 2,critic,The pecan pie was ,f
+3.4389833333333333,3,okay,trials,45,condition 2,critic,The cheesecake was ,f
+3.4389833333333333,1,awful,trials,45,condition 2,critic,The chocolate cake was ,f
+3.4389833333333333,1,terrible,trials,45,condition 2,critic,The red velvet cake was ,f
+3.4389833333333333,6,perfection,trials,45,condition 2,critic,The bear claw was ,f
+3.4389833333333333,0,bad,trials,45,condition 2,critic,The cinnamon rolls were ,f
+3.4389833333333333,0,pretty good,trials,45,condition 2,critic,The chocolate chip cookies were ,f
+3.4389833333333333,6,perfection,trials,45,condition 2,critic,The croissants were ,f
+2.73255,,not bad,practice,46,condition 1,,,
+2.73255,4,pretty good,trials,46,condition 1,critic,The chocolate chip cookies were ,f
+2.73255,4,good,trials,46,condition 1,critic,The red velvet cake was ,f
+2.73255,3,just OK,trials,46,condition 1,critic,The carrot cake was ,f
+2.73255,1,not good,trials,46,condition 1,critic,The cherry pie was ,f
+2.73255,2,below average,trials,46,condition 1,critic,The pecan pie was ,f
+2.73255,6,amazing,trials,46,condition 1,critic,The cheesecake was ,f
+2.73255,3,average,trials,46,condition 1,critic,The cinnamon rolls were ,f
+2.73255,5,very good,trials,46,condition 1,critic,The blueberry lavender scone was ,f
+2.73255,0,horrible,trials,46,condition 1,critic,The lemon loaf was ,f
+2.73255,0,awful,trials,46,condition 1,critic,The bear claw was ,f
+2.73255,5,excellent,trials,46,condition 1,critic,The donuts were ,f
+2.73255,2,not good,trials,46,condition 1,critic,The croissants were ,f
+2.73255,6,incredible,trials,46,condition 1,critic,The apple pie was ,f
+2.73255,1,pretty bad,trials,46,condition 1,critic,The chocolate cake was ,f
+2.929,,2,practice,47,condition 1,,,
+2.929,1,1,trials,47,condition 1,critic,The apple pie was ,m
+2.929,5,5,trials,47,condition 1,critic,The cinnamon rolls were ,m
+2.929,5,5,trials,47,condition 1,critic,The carrot cake was ,m
+2.929,1,1,trials,47,condition 1,critic,The chocolate cake was ,m
+2.929,2,1,trials,47,condition 1,critic,The cheesecake was ,m
+2.929,2,2,trials,47,condition 1,critic,The donuts were ,m
+2.929,4,4,trials,47,condition 1,critic,The blueberry lavender scone was ,m
+2.929,4,4,trials,47,condition 1,critic,The lemon loaf was ,m
+2.929,0,0,trials,47,condition 1,critic,The chocolate chip cookies were ,m
+2.929,6,6,trials,47,condition 1,critic,The croissants were ,m
+2.929,0,0,trials,47,condition 1,critic,The bear claw was ,m
+2.929,3,3,trials,47,condition 1,critic,The pecan pie was ,m
+2.929,6,6,trials,47,condition 1,critic,The red velvet cake was ,m
+2.929,3,3,trials,47,condition 1,critic,The cherry pie was ,m
+4.542983333333333,,pretty good,practice,48,condition 1,,,
+4.542983333333333,6,absolutely fantastic,trials,48,condition 1,critic,The donuts were ,f
+4.542983333333333,0,utterly abysmal,trials,48,condition 1,critic,The bear claw was ,f
+4.542983333333333,4,adequate,trials,48,condition 1,critic,The carrot cake was ,f
+4.542983333333333,4,serviceable,trials,48,condition 1,critic,The chocolate chip cookies were ,f
+4.542983333333333,5,very tasty,trials,48,condition 1,critic,The blueberry lavender scone was ,f
+4.542983333333333,1,barely edible,trials,48,condition 1,critic,The cinnamon rolls were ,f
+4.542983333333333,2,pretty dry,trials,48,condition 1,critic,The chocolate cake was ,f
+4.542983333333333,3,just okay,trials,48,condition 1,critic,The apple pie was ,f
+4.542983333333333,5,very good,trials,48,condition 1,critic,The pecan pie was ,f
+4.542983333333333,1,fairly awful,trials,48,condition 1,critic,The red velvet cake was ,f
+4.542983333333333,3,rather bland,trials,48,condition 1,critic,The lemon loaf was ,f
+4.542983333333333,2,not good,trials,48,condition 1,critic,The croissants were ,f
+4.542983333333333,6,really outstanding,trials,48,condition 1,critic,The cherry pie was ,f
+4.542983333333333,0,seriously atrocious,trials,48,condition 1,critic,The cheesecake was ,f
+9.360266666666666,,decent,practice,49,condition 1,,,
+9.360266666666666,1,a nightmare,trials,49,condition 1,critic,The lemon loaf was ,f
+9.360266666666666,0,beyond horrible,trials,49,condition 1,critic,The donuts were ,f
+9.360266666666666,0,abysmal,trials,49,condition 1,critic,The croissants were ,f
+9.360266666666666,5,sublime,trials,49,condition 1,critic,The carrot cake was ,f
+9.360266666666666,3,acceptable,trials,49,condition 1,critic,The bear claw was ,f
+9.360266666666666,6,absolute perfection,trials,49,condition 1,critic,The pecan pie was ,f
+9.360266666666666,5,quite tasty,trials,49,condition 1,critic,The red velvet cake was ,f
+9.360266666666666,6,unimaginable perfection,trials,49,condition 1,critic,The cheesecake was ,f
+9.360266666666666,4,good,trials,49,condition 1,critic,The chocolate chip cookies were ,f
+9.360266666666666,3,passable,trials,49,condition 1,critic,The blueberry lavender scone was ,f
+9.360266666666666,1,truly bad,trials,49,condition 1,critic,The apple pie was ,f
+9.360266666666666,4,decent,trials,49,condition 1,critic,The cinnamon rolls were ,f
+9.360266666666666,2,heavingly bad,trials,49,condition 1,critic,The cherry pie was ,f
+9.360266666666666,2,wasted chocolate,trials,49,condition 1,critic,The chocolate cake was ,f

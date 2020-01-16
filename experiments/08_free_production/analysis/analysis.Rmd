@@ -2,7 +2,9 @@
 title: "Analysis of free production data"
 author: "Sebastian Schuster"
 date: "1/15/2020"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -10,26 +12,45 @@ knitr::opts_chunk$set(echo = TRUE)
 theme_set(theme_bw())
 ```
 
-```{r load_data}
+```{r load_data, fig.height=18, fig.width=10}
 
-d1 = read.csv("../data/08_free_production-pilot-cond1-trials.csv")
-d2 = read.csv("../data/08_free_production-pilot-cond2-trials.csv")
-d3 = read.csv("../data/08_free_production-pilot-cond3-trials.csv")
-d4 = read.csv("../data/08_free_production-pilot-cond4-trials.csv")
+d1 = read.csv("../data/08_free_production-cond1-trials.csv")
+d2 = read.csv("../data/08_free_production-cond2-trials.csv")
+d3 = read.csv("../data/08_free_production-cond3-trials.csv")
+d4 = read.csv("../data/08_free_production-cond4-trials.csv")
 
 d = rbind(d1,d2,d3,d4)
 
-frequent_terms = d %>% group_by(response) %>% dplyr::summarize(n = n()) %>% filter(n > 2) %>% select(response) %>% .$response
 
-d.freq = d %>% filter(response %in% frequent_terms)
-d.other = d %>% filter(!(response %in% frequent_terms)) %>% mutate(response ="other")
+response_mapping = read.csv("response_mapping.csv")
+
+d = d %>% merge(response_mapping, by=c("response"))
+
+frequent_terms = d %>% group_by(response_clean) %>% dplyr::summarize(n = n()) %>% filter(n > 10) %>% select(response_clean) %>% .$response_clean
+
+d.freq = d %>% filter(response_clean %in% frequent_terms)
+d.other = d %>% filter(!(response_clean %in% frequent_terms)) %>% mutate(response_clean ="other")
 d = rbind(d.freq, d.other)
 
-d %>% filter(condition == "neutral") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response) + ggtitle("Neutral")
-d %>% filter(condition == "friends") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response) + ggtitle("Friend")
-d %>% filter(condition == "critic") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response) + ggtitle("Critic")
-d %>% filter(condition == "enemy") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response) + ggtitle("Enemy")
 
+
+d %>% filter(condition != "") %>% ggplot(aes(x=factor(rating), fill=condition) ) + geom_histogram(stat="count", position = "dodge") + facet_wrap(~response_clean, scales = "free", ncol=4) +theme(legend.position = "bottom") + scale_x_discrete(breaks=c(0,1,2,3,4,5,6), drop=F)
+#d %>% filter(condition == "friends") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response_clean) + ggtitle("Friend")
+#d %>% filter(condition == "critic") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response_clean) + ggtitle("Critic")
+#d %>% filter(condition == "enemy") %>% ggplot(aes(x=factor(rating))) + geom_histogram(stat="count") + facet_wrap(~response_clean) + ggtitle("Enemy")
+
+```
+
+```{r fig2, fig.height=10, fig.width=10}
+
+d.filtered = d %>% filter(! (response_clean %in% c("other", "TASTE-ADJ", "ASTE-ADJ", "DESCRIPTION", "TAUTOLOGY", "SPAM"))) %>% filter(condition != "")
+
+top_responses = d.filtered %>% group_by(rating, condition, response_clean) %>% dplyr::summarize(n = n()) %>% group_by(rating, condition) %>% filter(n >= nth(sort(n), -2)) %>% arrange(rating, condition, desc(n),  response_clean)
+
+
+top_responses_ordered = c("terrible", "horrible", "awful", "bad", "not bad", "pretty bad", "not good", "not great", "just okay", "okay", "average", "good", "pretty good", "very good", "great", "the best", "excellent", "awesome", "amazing")
+
+d.filtered  %>% filter(response_clean %in% top_responses_ordered) %>% mutate(response_clean = factor(response_clean, levels=top_responses_ordered, ordered = T)) %>% ggplot(aes(x=factor(rating), fill=condition) ) + geom_histogram(stat="count", position = "dodge") + facet_wrap(~response_clean, scales = "free", ncol=4) +theme(legend.position = "bottom") + xlab("Rating") + scale_x_discrete(breaks= c(0,1,2,3,4,5,6), drop=FALSE)
 
 
 ```
