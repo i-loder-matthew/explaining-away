@@ -18,6 +18,20 @@ var COMPLETIONS = [
     ["amazing", "... amazing."],
 ];
 
+var COMPLETIONS_WITH_OKAY = [
+    ["terrible", "... terrible."],
+    ["bad", "... bad."],
+    ["okay", "... okay"],
+    ["good", "... good."],
+    ["amazing", "... amazing."],
+];
+
+if (INCLUDE_OKAY) {
+  COMPLETIONS = COMPLETIONS_WITH_OKAY;
+}
+
+var N_COMPLETIONS = COMPLETIONS.length;
+
 var trial_counter = 0;
 
 
@@ -126,7 +140,7 @@ function make_slides(f) {
       var callback = function () {
       
         var total = 0;
-        for (var i = 1; i < 6; i++) {
+        for (var i = 1; i < (N_COMPLETIONS + 2); i++) {
           total += $("#practice_slider_" + i).slider("option", "value");
         }
         
@@ -140,9 +154,9 @@ function make_slides(f) {
       
       }
       
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < (N_COMPLETIONS + 1); i++) {
         utils.make_slider("#practice_slider_" + (i+1), callback);
-        if (i < 4) {
+        if (i < N_COMPLETIONS) {
           $("#practice_sent_" + (i+1)).text(COMPLETIONS[i][1]);
         }
       }
@@ -152,7 +166,7 @@ function make_slides(f) {
       $(".err").hide();
       
       var total = 0;
-      for (var i = 1; i < 6; i++) {
+      for (var i = 1; i < (N_COMPLETIONS + 2); i++) {
         total += $("#practice_slider_" + i).slider("option", "value");
       }
 		
@@ -165,7 +179,7 @@ function make_slides(f) {
     },
     
     log_responses: function() {
-      for (var i = 0; i < 4; i++) {
+      for (var i = 0; i < N_COMPLETIONS; i++) {
         exp.data_trials.push({
             "trial_type": "practice",
             "trial" : -1,
@@ -183,7 +197,7 @@ function make_slides(f) {
           "trial" : -1,
           "sentence": "",
           "adjective": "other",
-          "response": $("#practice_slider_5").slider("option", "value"),
+          "response": $("#practice_slider_" + (N_COMPLETIONS + 1)).slider("option", "value"),
           "rating": 4,
           "condition" : CONDITION,
           "version" : SPEAKER,
@@ -220,7 +234,7 @@ function make_slides(f) {
       var callback = function () {
       
         var total = 0;
-        for (var i = 1; i < 6; i++) {
+        for (var i = 1; i < (N_COMPLETIONS + 2); i++) {
           total += $("#slider_" + i).slider("option", "value");
         }
         
@@ -234,9 +248,9 @@ function make_slides(f) {
       
       }
       
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < (N_COMPLETIONS + 1); i++) {
         utils.make_slider("#slider_" + (i+1), callback);
-        if (i < 4) {
+        if (i < N_COMPLETIONS) {
           $("#sent_" + (i+1)).text(COMPLETIONS[i][1]);
         }
       }
@@ -246,7 +260,7 @@ function make_slides(f) {
       $(".err").hide();
 
       var total = 0;
-      for (var i = 1; i < 6; i++) {
+      for (var i = 1; i < (N_COMPLETIONS + 2); i++) {
         total += $("#slider_" + i).slider("option", "value");
       }
     
@@ -265,7 +279,7 @@ function make_slides(f) {
   
   log_responses: function() {
     trial_counter++;
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < N_COMPLETIONS; i++) {
       exp.data_trials.push({
           "trial_type": "trial", 
           "trial" : trial_counter,
@@ -283,7 +297,7 @@ function make_slides(f) {
         "trial" : trial_counter,
         "sentence": "",
         "adjective": "other",
-        "response": $("#slider_5").slider("option", "value"),
+        "response": $("#slider_" + (N_COMPLETIONS + 1)).slider("option", "value"),
         "rating": this.stim["ratings"],
         "condition" : this.stim["cond"],
         "version" : this.stim["speaker"],

@@ -7,7 +7,7 @@
 
     <script type="text/javascript">
       var CONDITION = "neutral";
-      var INCLUDE_OKAY = false; 
+      var INCLUDE_OKAY = true; 
     </script>
 
     <!-- external general utilities -->
@@ -145,7 +145,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
 </div>
 
 <div class="slide" id="practice">
-    <p> Try it out! Consider Taylor's rating and complete <span class="placeholder">{{her}}</span> review by using the sliders to distribute 100 points across the four endings. If you think none of the four endings are likely, you can indicate this by assigning a lot of points to the <em>something else</em> option. The sliders will automatically snap back if you try to assign more than 100 points.
+    <p> Try it out! Consider Taylor's rating and complete <span class="placeholder">{{her}}</span> review by using the sliders to distribute 100 points across the five endings. If you think none of the five endings are likely, you can indicate this by assigning a lot of points to the <em>something else</em> option. The sliders will automatically snap back if you try to assign more than 100 points.
       <table>
         <tr>
           <td id="practice-rating">
@@ -160,7 +160,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
         </tr>
       </table>
       <p>How do you think Taylor's review ends?</p>
-      <p class="err"> Please make sure that the five ratings sum to 100!</p>
+      <p class="err"> Please make sure that the six ratings sum to 100!</p>
       <table>
           <tr>
               <td><strong><span class="display_condition" id="practice_sent_1">{}</span></strong></td>
@@ -187,9 +187,15 @@ Otherwise, modified to whatever is required for you given your affiliation.
           </td>
           </tr>
           <tr>
+          <td><strong><span class="display_condition" id="practice_sent_5">{}</span></strong></td>
+          <td>
+              <div style="width:290px; padding: 3px 15px; margin: 0 auto; overflow: hidden;"><span id="practice_slider_5" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="practice_slider_5_val" value="0" disabled="disabled"></div>
+          </td>
+          </tr>
+          <tr>
               <td><strong><em><span class="sent_other">something else</span></em></strong></td>
               <td>
-                  <div style="width:290px; padding: 3px 15px; margin: 0 auto; overflow: hidden;"><span id="practice_slider_5" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="practice_slider_5_val" value="0" disabled="disabled"></div>
+                  <div style="width:290px; padding: 3px 15px; margin: 0 auto; overflow: hidden;"><span id="practice_slider_6" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="practice_slider_6_val" value="0" disabled="disabled"></div>
               </td>
           </tr>
           
@@ -220,7 +226,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
     </tr>
   </table>
   <p>How do you think Taylor's review ends?</p>
-  <p class="err"> Please make sure that the five ratings sum to 100!</p>
+  <p class="err"> Please make sure that the six ratings sum to 100!</p>
   <table>
       <tr>
           <td><strong><span class="display_condition" id="sent_1">{}</span></strong></td>
@@ -247,9 +253,15 @@ Otherwise, modified to whatever is required for you given your affiliation.
       </td>
       </tr>
       <tr>
+      <td><strong><span class="display_condition" id="sent_5">{}</span></strong></td>
+      <td>
+          <div style="width:290px; padding: 3px 15px; margin: 0 auto; overflow: hidden;"><span id="slider_5" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="slider_5_val" value="0" disabled="disabled"></div>
+      </td>
+      </tr>
+      <tr>
           <td><strong><em><span class="sent_other">something else</span></em></strong></td>
           <td>
-              <div style="width:290px; padding: 3px 15px; margin: 0 auto; overflow: hidden;"><span id="slider_5" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="slider_5_val" value="0" disabled="disabled"></div>
+              <div style="width:290px; padding: 3px 15px; margin: 0 auto; overflow: hidden;"><span id="slider_6" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="slider_6_val" value="0" disabled="disabled"></div>
           </td>
       </tr>
       
