@@ -1,0 +1,326 @@
+trial_type,response,sentence,trial,rating,text,adjective,Answer.time_in_minutes,Answer.condition,condition,version,workerid
+practice,0,... terrible.,-1,4,,terrible,7.4921,condition 2,enemy,m,0
+practice,0.03,... bad.,-1,4,,bad,7.4921,condition 2,enemy,m,0
+practice,0.71,... good.,-1,4,,good,7.4921,condition 2,enemy,m,0
+practice,0.26,... amazing.,-1,4,,amazing,7.4921,condition 2,enemy,m,0
+practice,0,,-1,4,,other,7.4921,condition 2,enemy,m,0
+trial,0,... terrible.,1,5,The chocolate chip cookies were ,terrible,7.4921,condition 2,enemy,m,0
+trial,0,... bad.,1,5,The chocolate chip cookies were ,bad,7.4921,condition 2,enemy,m,0
+trial,0.09999999999999987,... good.,1,5,The chocolate chip cookies were ,good,7.4921,condition 2,enemy,m,0
+trial,0.9,... amazing.,1,5,The chocolate chip cookies were ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,1,5,The chocolate chip cookies were ,other,7.4921,condition 2,enemy,m,0
+trial,0.45,... terrible.,2,2,The chocolate cake was ,terrible,7.4921,condition 2,enemy,m,0
+trial,0.5499999999999999,... bad.,2,2,The chocolate cake was ,bad,7.4921,condition 2,enemy,m,0
+trial,0,... good.,2,2,The chocolate cake was ,good,7.4921,condition 2,enemy,m,0
+trial,0,... amazing.,2,2,The chocolate cake was ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,2,2,The chocolate cake was ,other,7.4921,condition 2,enemy,m,0
+trial,0.3,... terrible.,3,2,The cherry pie was ,terrible,7.4921,condition 2,enemy,m,0
+trial,0.7,... bad.,3,2,The cherry pie was ,bad,7.4921,condition 2,enemy,m,0
+trial,0,... good.,3,2,The cherry pie was ,good,7.4921,condition 2,enemy,m,0
+trial,0,... amazing.,3,2,The cherry pie was ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,3,2,The cherry pie was ,other,7.4921,condition 2,enemy,m,0
+trial,0,... terrible.,4,4,The red velvet cake was ,terrible,7.4921,condition 2,enemy,m,0
+trial,0,... bad.,4,4,The red velvet cake was ,bad,7.4921,condition 2,enemy,m,0
+trial,0.67,... good.,4,4,The red velvet cake was ,good,7.4921,condition 2,enemy,m,0
+trial,0.33,... amazing.,4,4,The red velvet cake was ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,4,4,The red velvet cake was ,other,7.4921,condition 2,enemy,m,0
+trial,0,... terrible.,5,3,The donuts were ,terrible,7.4921,condition 2,enemy,m,0
+trial,0.41,... bad.,5,3,The donuts were ,bad,7.4921,condition 2,enemy,m,0
+trial,0.5900000000000001,... good.,5,3,The donuts were ,good,7.4921,condition 2,enemy,m,0
+trial,0,... amazing.,5,3,The donuts were ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,5,3,The donuts were ,other,7.4921,condition 2,enemy,m,0
+trial,0,... terrible.,6,6,The blueberry lavender scone was ,terrible,7.4921,condition 2,enemy,m,0
+trial,0,... bad.,6,6,The blueberry lavender scone was ,bad,7.4921,condition 2,enemy,m,0
+trial,0,... good.,6,6,The blueberry lavender scone was ,good,7.4921,condition 2,enemy,m,0
+trial,1,... amazing.,6,6,The blueberry lavender scone was ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,6,6,The blueberry lavender scone was ,other,7.4921,condition 2,enemy,m,0
+trial,0,... terrible.,7,5,The apple pie was ,terrible,7.4921,condition 2,enemy,m,0
+trial,0,... bad.,7,5,The apple pie was ,bad,7.4921,condition 2,enemy,m,0
+trial,0.18999999999999984,... good.,7,5,The apple pie was ,good,7.4921,condition 2,enemy,m,0
+trial,0.81,... amazing.,7,5,The apple pie was ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,7,5,The apple pie was ,other,7.4921,condition 2,enemy,m,0
+trial,0,... terrible.,8,3,The croissants were ,terrible,7.4921,condition 2,enemy,m,0
+trial,0.35,... bad.,8,3,The croissants were ,bad,7.4921,condition 2,enemy,m,0
+trial,0.65,... good.,8,3,The croissants were ,good,7.4921,condition 2,enemy,m,0
+trial,0,... amazing.,8,3,The croissants were ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,8,3,The croissants were ,other,7.4921,condition 2,enemy,m,0
+trial,0,... terrible.,9,4,The cheesecake was ,terrible,7.4921,condition 2,enemy,m,0
+trial,0.04,... bad.,9,4,The cheesecake was ,bad,7.4921,condition 2,enemy,m,0
+trial,0.81,... good.,9,4,The cheesecake was ,good,7.4921,condition 2,enemy,m,0
+trial,0.15,... amazing.,9,4,The cheesecake was ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,9,4,The cheesecake was ,other,7.4921,condition 2,enemy,m,0
+trial,1,... terrible.,10,1,The cinnamon rolls were ,terrible,7.4921,condition 2,enemy,m,0
+trial,0,... bad.,10,1,The cinnamon rolls were ,bad,7.4921,condition 2,enemy,m,0
+trial,0,... good.,10,1,The cinnamon rolls were ,good,7.4921,condition 2,enemy,m,0
+trial,0,... amazing.,10,1,The cinnamon rolls were ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,10,1,The cinnamon rolls were ,other,7.4921,condition 2,enemy,m,0
+trial,0,... terrible.,11,6,The carrot cake was ,terrible,7.4921,condition 2,enemy,m,0
+trial,0,... bad.,11,6,The carrot cake was ,bad,7.4921,condition 2,enemy,m,0
+trial,0,... good.,11,6,The carrot cake was ,good,7.4921,condition 2,enemy,m,0
+trial,1,... amazing.,11,6,The carrot cake was ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,11,6,The carrot cake was ,other,7.4921,condition 2,enemy,m,0
+trial,1,... terrible.,12,1,The pecan pie was ,terrible,7.4921,condition 2,enemy,m,0
+trial,0,... bad.,12,1,The pecan pie was ,bad,7.4921,condition 2,enemy,m,0
+trial,0,... good.,12,1,The pecan pie was ,good,7.4921,condition 2,enemy,m,0
+trial,0,... amazing.,12,1,The pecan pie was ,amazing,7.4921,condition 2,enemy,m,0
+trial,0,,12,1,The pecan pie was ,other,7.4921,condition 2,enemy,m,0
+practice,0,... terrible.,-1,4,,terrible,5.472016666666667,condition 1,enemy,f,1
+practice,0,... bad.,-1,4,,bad,5.472016666666667,condition 1,enemy,f,1
+practice,0.89,... good.,-1,4,,good,5.472016666666667,condition 1,enemy,f,1
+practice,0,... amazing.,-1,4,,amazing,5.472016666666667,condition 1,enemy,f,1
+practice,0.1100000000000001,,-1,4,,other,5.472016666666667,condition 1,enemy,f,1
+trial,0,... terrible.,1,3,The cinnamon rolls were ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0.17,... bad.,1,3,The cinnamon rolls were ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0.79,... good.,1,3,The cinnamon rolls were ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0,... amazing.,1,3,The cinnamon rolls were ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.040000000000000036,,1,3,The cinnamon rolls were ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0.91,... terrible.,2,1,The donuts were ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0.06,... bad.,2,1,The donuts were ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0,... good.,2,1,The donuts were ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0,... amazing.,2,1,The donuts were ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.030000000000000027,,2,1,The donuts were ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0,... terrible.,3,6,The red velvet cake was ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0,... bad.,3,6,The red velvet cake was ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0,... good.,3,6,The red velvet cake was ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0.95,... amazing.,3,6,The red velvet cake was ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.050000000000000155,,3,6,The red velvet cake was ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0.2,... terrible.,4,2,The apple pie was ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0.77,... bad.,4,2,The apple pie was ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0,... good.,4,2,The apple pie was ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0,... amazing.,4,2,The apple pie was ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.030000000000000138,,4,2,The apple pie was ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0.12,... terrible.,5,2,The bear claw was ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0.7899999999999998,... bad.,5,2,The bear claw was ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0.03,... good.,5,2,The bear claw was ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0,... amazing.,5,2,The bear claw was ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.06,,5,2,The bear claw was ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0,... terrible.,6,4,The carrot cake was ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0,... bad.,6,4,The carrot cake was ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0.78,... good.,6,4,The carrot cake was ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0.19,... amazing.,6,4,The carrot cake was ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.030000000000000138,,6,4,The carrot cake was ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0,... terrible.,7,3,The cherry pie was ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0.12,... bad.,7,3,The cherry pie was ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0.7999999999999999,... good.,7,3,The cherry pie was ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0.01,... amazing.,7,3,The cherry pie was ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.07,,7,3,The cherry pie was ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0,... terrible.,8,5,The blueberry lavender scone was ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0,... bad.,8,5,The blueberry lavender scone was ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0.3,... good.,8,5,The blueberry lavender scone was ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0.66,... amazing.,8,5,The blueberry lavender scone was ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.040000000000000036,,8,5,The blueberry lavender scone was ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0,... terrible.,9,4,The cheesecake was ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0.02,... bad.,9,4,The cheesecake was ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0.64,... good.,9,4,The cheesecake was ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0.3,... amazing.,9,4,The cheesecake was ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.040000000000000036,,9,4,The cheesecake was ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0,... terrible.,10,5,The lemon loaf was ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0,... bad.,10,5,The lemon loaf was ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0.31,... good.,10,5,The lemon loaf was ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0.69,... amazing.,10,5,The lemon loaf was ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0,,10,5,The lemon loaf was ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0.76,... terrible.,11,1,The chocolate chip cookies were ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0.24,... bad.,11,1,The chocolate chip cookies were ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0,... good.,11,1,The chocolate chip cookies were ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0,... amazing.,11,1,The chocolate chip cookies were ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0,,11,1,The chocolate chip cookies were ,other,5.472016666666667,condition 1,enemy,f,1
+trial,0,... terrible.,12,6,The croissants were ,terrible,5.472016666666667,condition 1,enemy,f,1
+trial,0,... bad.,12,6,The croissants were ,bad,5.472016666666667,condition 1,enemy,f,1
+trial,0,... good.,12,6,The croissants were ,good,5.472016666666667,condition 1,enemy,f,1
+trial,0.98,... amazing.,12,6,The croissants were ,amazing,5.472016666666667,condition 1,enemy,f,1
+trial,0.019999999999999907,,12,6,The croissants were ,other,5.472016666666667,condition 1,enemy,f,1
+practice,0,... terrible.,-1,4,,terrible,6.740766666666667,condition 2,enemy,m,2
+practice,0,... bad.,-1,4,,bad,6.740766666666667,condition 2,enemy,m,2
+practice,0.63,... good.,-1,4,,good,6.740766666666667,condition 2,enemy,m,2
+practice,0.37,... amazing.,-1,4,,amazing,6.740766666666667,condition 2,enemy,m,2
+practice,0,,-1,4,,other,6.740766666666667,condition 2,enemy,m,2
+trial,0.61,... terrible.,1,1,The cheesecake was ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0.39,... bad.,1,1,The cheesecake was ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0,... good.,1,1,The cheesecake was ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0,... amazing.,1,1,The cheesecake was ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0,,1,1,The cheesecake was ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0,... terrible.,2,4,The red velvet cake was ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0,... bad.,2,4,The red velvet cake was ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0.4900000000000001,... good.,2,4,The red velvet cake was ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0.36,... amazing.,2,4,The red velvet cake was ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0.1499999999999999,,2,4,The red velvet cake was ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0.36,... terrible.,3,2,The bear claw was ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0.6399999999999999,... bad.,3,2,The bear claw was ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0,... good.,3,2,The bear claw was ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0,... amazing.,3,2,The bear claw was ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0,,3,2,The bear claw was ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0,... terrible.,4,6,The cinnamon rolls were ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0,... bad.,4,6,The cinnamon rolls were ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0,... good.,4,6,The cinnamon rolls were ,good,6.740766666666667,condition 2,enemy,m,2
+trial,1,... amazing.,4,6,The cinnamon rolls were ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0,,4,6,The cinnamon rolls were ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0,... terrible.,5,6,The chocolate cake was ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0,... bad.,5,6,The chocolate cake was ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0,... good.,5,6,The chocolate cake was ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0.64,... amazing.,5,6,The chocolate cake was ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0.3599999999999999,,5,6,The chocolate cake was ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0,... terrible.,6,5,The croissants were ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0,... bad.,6,5,The croissants were ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0,... good.,6,5,The croissants were ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0.66,... amazing.,6,5,The croissants were ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0.33999999999999986,,6,5,The croissants were ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0,... terrible.,7,3,The donuts were ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0.45,... bad.,7,3,The donuts were ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0.46,... good.,7,3,The donuts were ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0,... amazing.,7,3,The donuts were ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0.08999999999999986,,7,3,The donuts were ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0.5,... terrible.,8,1,The carrot cake was ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0.33,... bad.,8,1,The carrot cake was ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0,... good.,8,1,The carrot cake was ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0,... amazing.,8,1,The carrot cake was ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0.17000000000000004,,8,1,The carrot cake was ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0,... terrible.,9,4,The lemon loaf was ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0.15,... bad.,9,4,The lemon loaf was ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0.45,... good.,9,4,The lemon loaf was ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0.3,... amazing.,9,4,The lemon loaf was ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0.10000000000000009,,9,4,The lemon loaf was ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0,... terrible.,10,5,The cherry pie was ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0,... bad.,10,5,The cherry pie was ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0.29,... good.,10,5,The cherry pie was ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0.57,... amazing.,10,5,The cherry pie was ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0.14000000000000012,,10,5,The cherry pie was ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0.18999999999999995,... terrible.,11,2,The pecan pie was ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0.56,... bad.,11,2,The pecan pie was ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0,... good.,11,2,The pecan pie was ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0,... amazing.,11,2,The pecan pie was ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0.25,,11,2,The pecan pie was ,other,6.740766666666667,condition 2,enemy,m,2
+trial,0.08,... terrible.,12,3,The apple pie was ,terrible,6.740766666666667,condition 2,enemy,m,2
+trial,0.32,... bad.,12,3,The apple pie was ,bad,6.740766666666667,condition 2,enemy,m,2
+trial,0.36,... good.,12,3,The apple pie was ,good,6.740766666666667,condition 2,enemy,m,2
+trial,0,... amazing.,12,3,The apple pie was ,amazing,6.740766666666667,condition 2,enemy,m,2
+trial,0.24,,12,3,The apple pie was ,other,6.740766666666667,condition 2,enemy,m,2
+practice,0,... terrible.,-1,4,,terrible,10.271316666666667,condition 1,enemy,f,3
+practice,0.11,... bad.,-1,4,,bad,10.271316666666667,condition 1,enemy,f,3
+practice,0.71,... good.,-1,4,,good,10.271316666666667,condition 1,enemy,f,3
+practice,0.18000000000000005,... amazing.,-1,4,,amazing,10.271316666666667,condition 1,enemy,f,3
+practice,0,,-1,4,,other,10.271316666666667,condition 1,enemy,f,3
+trial,0.7,... terrible.,1,1,The chocolate cake was ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0.29999999999999993,... bad.,1,1,The chocolate cake was ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0,... good.,1,1,The chocolate cake was ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0,... amazing.,1,1,The chocolate cake was ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,1,1,The chocolate cake was ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0,... terrible.,2,5,The red velvet cake was ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0,... bad.,2,5,The red velvet cake was ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.3599999999999999,... good.,2,5,The red velvet cake was ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0.64,... amazing.,2,5,The red velvet cake was ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,2,5,The red velvet cake was ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0.15,... terrible.,3,2,The blueberry lavender scone was ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0.51,... bad.,3,2,The blueberry lavender scone was ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.3400000000000001,... good.,3,2,The blueberry lavender scone was ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0,... amazing.,3,2,The blueberry lavender scone was ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,3,2,The blueberry lavender scone was ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0,... terrible.,4,6,The carrot cake was ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0,... bad.,4,6,The carrot cake was ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.24,... good.,4,6,The carrot cake was ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0.76,... amazing.,4,6,The carrot cake was ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,4,6,The carrot cake was ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0,... terrible.,5,5,The cheesecake was ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0,... bad.,5,5,The cheesecake was ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.79,... good.,5,5,The cheesecake was ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0.20999999999999996,... amazing.,5,5,The cheesecake was ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,5,5,The cheesecake was ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0,... terrible.,6,6,The cherry pie was ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0,... bad.,6,6,The cherry pie was ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.19999999999999996,... good.,6,6,The cherry pie was ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0.8,... amazing.,6,6,The cherry pie was ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,6,6,The cherry pie was ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0.74,... terrible.,7,1,The donuts were ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0.18,... bad.,7,1,The donuts were ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.08,... good.,7,1,The donuts were ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0,... amazing.,7,1,The donuts were ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,7,1,The donuts were ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0,... terrible.,8,3,The croissants were ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0.32999999999999985,... bad.,8,3,The croissants were ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.67,... good.,8,3,The croissants were ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0,... amazing.,8,3,The croissants were ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,8,3,The croissants were ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0,... terrible.,9,4,The lemon loaf was ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0.05999999999999994,... bad.,9,4,The lemon loaf was ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.73,... good.,9,4,The lemon loaf was ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0.21,... amazing.,9,4,The lemon loaf was ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,9,4,The lemon loaf was ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0.07,... terrible.,10,3,The apple pie was ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0.21,... bad.,10,3,The apple pie was ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.59,... good.,10,3,The apple pie was ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0.1299999999999999,... amazing.,10,3,The apple pie was ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,10,3,The apple pie was ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0,... terrible.,11,4,The chocolate chip cookies were ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0.05,... bad.,11,4,The chocolate chip cookies were ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.71,... good.,11,4,The chocolate chip cookies were ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0.24,... amazing.,11,4,The chocolate chip cookies were ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,11,4,The chocolate chip cookies were ,other,10.271316666666667,condition 1,enemy,f,3
+trial,0.31,... terrible.,12,2,The pecan pie was ,terrible,10.271316666666667,condition 1,enemy,f,3
+trial,0.57,... bad.,12,2,The pecan pie was ,bad,10.271316666666667,condition 1,enemy,f,3
+trial,0.11,... good.,12,2,The pecan pie was ,good,10.271316666666667,condition 1,enemy,f,3
+trial,0.010000000000000231,... amazing.,12,2,The pecan pie was ,amazing,10.271316666666667,condition 1,enemy,f,3
+trial,0,,12,2,The pecan pie was ,other,10.271316666666667,condition 1,enemy,f,3
+practice,0.56,... terrible.,-1,4,,terrible,4.900016666666667,condition 1,enemy,f,4
+practice,0.02,... bad.,-1,4,,bad,4.900016666666667,condition 1,enemy,f,4
+practice,0.22999999999999987,... good.,-1,4,,good,4.900016666666667,condition 1,enemy,f,4
+practice,0.18999999999999995,... amazing.,-1,4,,amazing,4.900016666666667,condition 1,enemy,f,4
+practice,1.1102230246251565e-16,,-1,4,,other,4.900016666666667,condition 1,enemy,f,4
+trial,0.06999999999999984,... terrible.,1,2,The lemon loaf was ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0.42,... bad.,1,2,The lemon loaf was ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0.21,... good.,1,2,The lemon loaf was ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0.17,... amazing.,1,2,The lemon loaf was ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0.13,,1,2,The lemon loaf was ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0.34,... terrible.,2,6,The chocolate cake was ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0,... bad.,2,6,The chocolate cake was ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0.35,... good.,2,6,The chocolate cake was ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0.30999999999999994,... amazing.,2,6,The chocolate cake was ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,2,6,The chocolate cake was ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0,... terrible.,3,1,The blueberry lavender scone was ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0.89,... bad.,3,1,The blueberry lavender scone was ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0,... good.,3,1,The blueberry lavender scone was ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0,... amazing.,3,1,The blueberry lavender scone was ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0.10999999999999988,,3,1,The blueberry lavender scone was ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0,... terrible.,4,5,The apple pie was ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0,... bad.,4,5,The apple pie was ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0.29000000000000004,... good.,4,5,The apple pie was ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0.71,... amazing.,4,5,The apple pie was ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,4,5,The apple pie was ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0.16999999999999993,... terrible.,5,3,The cherry pie was ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0.02000000000000013,... bad.,5,3,The cherry pie was ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0.46,... good.,5,3,The cherry pie was ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0.35,... amazing.,5,3,The cherry pie was ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,5,3,The cherry pie was ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0,... terrible.,6,5,The cheesecake was ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0,... bad.,6,5,The cheesecake was ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0.6,... good.,6,5,The cheesecake was ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0.4,... amazing.,6,5,The cheesecake was ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,6,5,The cheesecake was ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0.31000000000000016,... terrible.,7,2,The red velvet cake was ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0.6899999999999998,... bad.,7,2,The red velvet cake was ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0,... good.,7,2,The red velvet cake was ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0,... amazing.,7,2,The red velvet cake was ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,7,2,The red velvet cake was ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0,... terrible.,8,4,The pecan pie was ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0,... bad.,8,4,The pecan pie was ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0.83,... good.,8,4,The pecan pie was ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0.16999999999999993,... amazing.,8,4,The pecan pie was ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,8,4,The pecan pie was ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0,... terrible.,9,4,The donuts were ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0,... bad.,9,4,The donuts were ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0.84,... good.,9,4,The donuts were ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0.15999999999999992,... amazing.,9,4,The donuts were ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,9,4,The donuts were ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0,... terrible.,10,3,The croissants were ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0.37,... bad.,10,3,The croissants were ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0.59,... good.,10,3,The croissants were ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0.04000000000000015,... amazing.,10,3,The croissants were ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,10,3,The croissants were ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0.08000000000000007,... terrible.,11,1,The chocolate chip cookies were ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0.92,... bad.,11,1,The chocolate chip cookies were ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0,... good.,11,1,The chocolate chip cookies were ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0,... amazing.,11,1,The chocolate chip cookies were ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,11,1,The chocolate chip cookies were ,other,4.900016666666667,condition 1,enemy,f,4
+trial,0,... terrible.,12,6,The carrot cake was ,terrible,4.900016666666667,condition 1,enemy,f,4
+trial,0,... bad.,12,6,The carrot cake was ,bad,4.900016666666667,condition 1,enemy,f,4
+trial,0.1100000000000001,... good.,12,6,The carrot cake was ,good,4.900016666666667,condition 1,enemy,f,4
+trial,0.89,... amazing.,12,6,The carrot cake was ,amazing,4.900016666666667,condition 1,enemy,f,4
+trial,0,,12,6,The carrot cake was ,other,4.900016666666667,condition 1,enemy,f,4

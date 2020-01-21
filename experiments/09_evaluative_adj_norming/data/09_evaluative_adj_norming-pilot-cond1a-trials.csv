@@ -1,0 +1,391 @@
+version,adjective,condition,trial,rating,Answer.time_in_minutes,trial_type,workerid,text,sentence,Answer.condition,response
+m,terrible,neutral,-1,4,2.5892333333333335,practice,0,,... terrible.,condition 2,0
+m,bad,neutral,-1,4,2.5892333333333335,practice,0,,... bad.,condition 2,0.45000000000000007
+m,okay,neutral,-1,4,2.5892333333333335,practice,0,,... okay.,condition 2,0.2699999999999998
+m,good,neutral,-1,4,2.5892333333333335,practice,0,,... good.,condition 2,0.28
+m,amazing,neutral,-1,4,2.5892333333333335,practice,0,,... amazing.,condition 2,0
+m,other,neutral,-1,4,2.5892333333333335,practice,0,,,condition 2,0
+m,terrible,neutral,1,2,2.5892333333333335,trial,0,The carrot cake was ,... terrible.,condition 2,0.48
+m,bad,neutral,1,2,2.5892333333333335,trial,0,The carrot cake was ,... bad.,condition 2,0.32
+m,okay,neutral,1,2,2.5892333333333335,trial,0,The carrot cake was ,... okay.,condition 2,0
+m,good,neutral,1,2,2.5892333333333335,trial,0,The carrot cake was ,... good.,condition 2,0
+m,amazing,neutral,1,2,2.5892333333333335,trial,0,The carrot cake was ,... amazing.,condition 2,0
+m,other,neutral,1,2,2.5892333333333335,trial,0,The carrot cake was ,,condition 2,0.19999999999999996
+m,terrible,neutral,2,6,2.5892333333333335,trial,0,The apple pie was ,... terrible.,condition 2,0
+m,bad,neutral,2,6,2.5892333333333335,trial,0,The apple pie was ,... bad.,condition 2,0
+m,okay,neutral,2,6,2.5892333333333335,trial,0,The apple pie was ,... okay.,condition 2,0
+m,good,neutral,2,6,2.5892333333333335,trial,0,The apple pie was ,... good.,condition 2,0.050000000000000044
+m,amazing,neutral,2,6,2.5892333333333335,trial,0,The apple pie was ,... amazing.,condition 2,0.95
+m,other,neutral,2,6,2.5892333333333335,trial,0,The apple pie was ,,condition 2,0
+m,terrible,neutral,3,5,2.5892333333333335,trial,0,The bear claw was ,... terrible.,condition 2,0
+m,bad,neutral,3,5,2.5892333333333335,trial,0,The bear claw was ,... bad.,condition 2,0
+m,okay,neutral,3,5,2.5892333333333335,trial,0,The bear claw was ,... okay.,condition 2,0.71
+m,good,neutral,3,5,2.5892333333333335,trial,0,The bear claw was ,... good.,condition 2,0.29
+m,amazing,neutral,3,5,2.5892333333333335,trial,0,The bear claw was ,... amazing.,condition 2,0
+m,other,neutral,3,5,2.5892333333333335,trial,0,The bear claw was ,,condition 2,0
+m,terrible,neutral,4,3,2.5892333333333335,trial,0,The blueberry lavender scone was ,... terrible.,condition 2,0
+m,bad,neutral,4,3,2.5892333333333335,trial,0,The blueberry lavender scone was ,... bad.,condition 2,0.56
+m,okay,neutral,4,3,2.5892333333333335,trial,0,The blueberry lavender scone was ,... okay.,condition 2,0.43999999999999995
+m,good,neutral,4,3,2.5892333333333335,trial,0,The blueberry lavender scone was ,... good.,condition 2,0
+m,amazing,neutral,4,3,2.5892333333333335,trial,0,The blueberry lavender scone was ,... amazing.,condition 2,0
+m,other,neutral,4,3,2.5892333333333335,trial,0,The blueberry lavender scone was ,,condition 2,0
+m,terrible,neutral,5,5,2.5892333333333335,trial,0,The cheesecake was ,... terrible.,condition 2,0
+m,bad,neutral,5,5,2.5892333333333335,trial,0,The cheesecake was ,... bad.,condition 2,0
+m,okay,neutral,5,5,2.5892333333333335,trial,0,The cheesecake was ,... okay.,condition 2,0.7599999999999998
+m,good,neutral,5,5,2.5892333333333335,trial,0,The cheesecake was ,... good.,condition 2,0.2400000000000001
+m,amazing,neutral,5,5,2.5892333333333335,trial,0,The cheesecake was ,... amazing.,condition 2,0
+m,other,neutral,5,5,2.5892333333333335,trial,0,The cheesecake was ,,condition 2,0
+m,terrible,neutral,6,1,2.5892333333333335,trial,0,The croissants were ,... terrible.,condition 2,0.95
+m,bad,neutral,6,1,2.5892333333333335,trial,0,The croissants were ,... bad.,condition 2,0.050000000000000044
+m,okay,neutral,6,1,2.5892333333333335,trial,0,The croissants were ,... okay.,condition 2,0
+m,good,neutral,6,1,2.5892333333333335,trial,0,The croissants were ,... good.,condition 2,0
+m,amazing,neutral,6,1,2.5892333333333335,trial,0,The croissants were ,... amazing.,condition 2,0
+m,other,neutral,6,1,2.5892333333333335,trial,0,The croissants were ,,condition 2,0
+m,terrible,neutral,7,2,2.5892333333333335,trial,0,The chocolate cake was ,... terrible.,condition 2,0.25
+m,bad,neutral,7,2,2.5892333333333335,trial,0,The chocolate cake was ,... bad.,condition 2,0.75
+m,okay,neutral,7,2,2.5892333333333335,trial,0,The chocolate cake was ,... okay.,condition 2,0
+m,good,neutral,7,2,2.5892333333333335,trial,0,The chocolate cake was ,... good.,condition 2,0
+m,amazing,neutral,7,2,2.5892333333333335,trial,0,The chocolate cake was ,... amazing.,condition 2,0
+m,other,neutral,7,2,2.5892333333333335,trial,0,The chocolate cake was ,,condition 2,0
+m,terrible,neutral,8,1,2.5892333333333335,trial,0,The pecan pie was ,... terrible.,condition 2,0.95
+m,bad,neutral,8,1,2.5892333333333335,trial,0,The pecan pie was ,... bad.,condition 2,0.050000000000000044
+m,okay,neutral,8,1,2.5892333333333335,trial,0,The pecan pie was ,... okay.,condition 2,0
+m,good,neutral,8,1,2.5892333333333335,trial,0,The pecan pie was ,... good.,condition 2,0
+m,amazing,neutral,8,1,2.5892333333333335,trial,0,The pecan pie was ,... amazing.,condition 2,0
+m,other,neutral,8,1,2.5892333333333335,trial,0,The pecan pie was ,,condition 2,0
+m,terrible,neutral,9,3,2.5892333333333335,trial,0,The lemon loaf was ,... terrible.,condition 2,0
+m,bad,neutral,9,3,2.5892333333333335,trial,0,The lemon loaf was ,... bad.,condition 2,0
+m,okay,neutral,9,3,2.5892333333333335,trial,0,The lemon loaf was ,... okay.,condition 2,0.84
+m,good,neutral,9,3,2.5892333333333335,trial,0,The lemon loaf was ,... good.,condition 2,0
+m,amazing,neutral,9,3,2.5892333333333335,trial,0,The lemon loaf was ,... amazing.,condition 2,0
+m,other,neutral,9,3,2.5892333333333335,trial,0,The lemon loaf was ,,condition 2,0.16000000000000014
+m,terrible,neutral,10,4,2.5892333333333335,trial,0,The donuts were ,... terrible.,condition 2,0
+m,bad,neutral,10,4,2.5892333333333335,trial,0,The donuts were ,... bad.,condition 2,0.040000000000000036
+m,okay,neutral,10,4,2.5892333333333335,trial,0,The donuts were ,... okay.,condition 2,0.96
+m,good,neutral,10,4,2.5892333333333335,trial,0,The donuts were ,... good.,condition 2,0
+m,amazing,neutral,10,4,2.5892333333333335,trial,0,The donuts were ,... amazing.,condition 2,0
+m,other,neutral,10,4,2.5892333333333335,trial,0,The donuts were ,,condition 2,0
+m,terrible,neutral,11,6,2.5892333333333335,trial,0,The cinnamon rolls were ,... terrible.,condition 2,0
+m,bad,neutral,11,6,2.5892333333333335,trial,0,The cinnamon rolls were ,... bad.,condition 2,0
+m,okay,neutral,11,6,2.5892333333333335,trial,0,The cinnamon rolls were ,... okay.,condition 2,0
+m,good,neutral,11,6,2.5892333333333335,trial,0,The cinnamon rolls were ,... good.,condition 2,0
+m,amazing,neutral,11,6,2.5892333333333335,trial,0,The cinnamon rolls were ,... amazing.,condition 2,0.96
+m,other,neutral,11,6,2.5892333333333335,trial,0,The cinnamon rolls were ,,condition 2,0.040000000000000036
+m,terrible,neutral,12,4,2.5892333333333335,trial,0,The red velvet cake was ,... terrible.,condition 2,0
+m,bad,neutral,12,4,2.5892333333333335,trial,0,The red velvet cake was ,... bad.,condition 2,0
+m,okay,neutral,12,4,2.5892333333333335,trial,0,The red velvet cake was ,... okay.,condition 2,0.38
+m,good,neutral,12,4,2.5892333333333335,trial,0,The red velvet cake was ,... good.,condition 2,0
+m,amazing,neutral,12,4,2.5892333333333335,trial,0,The red velvet cake was ,... amazing.,condition 2,0.62
+m,other,neutral,12,4,2.5892333333333335,trial,0,The red velvet cake was ,,condition 2,0
+f,terrible,neutral,-1,4,4.080933333333333,practice,1,,... terrible.,condition 2,0
+f,bad,neutral,-1,4,4.080933333333333,practice,1,,... bad.,condition 2,0
+f,okay,neutral,-1,4,4.080933333333333,practice,1,,... okay.,condition 2,0.17
+f,good,neutral,-1,4,4.080933333333333,practice,1,,... good.,condition 2,0.54
+f,amazing,neutral,-1,4,4.080933333333333,practice,1,,... amazing.,condition 2,0.2899999999999999
+f,other,neutral,-1,4,4.080933333333333,practice,1,,,condition 2,0
+f,terrible,neutral,1,6,4.080933333333333,trial,1,The chocolate chip cookies were ,... terrible.,condition 2,0
+f,bad,neutral,1,6,4.080933333333333,trial,1,The chocolate chip cookies were ,... bad.,condition 2,0
+f,okay,neutral,1,6,4.080933333333333,trial,1,The chocolate chip cookies were ,... okay.,condition 2,0
+f,good,neutral,1,6,4.080933333333333,trial,1,The chocolate chip cookies were ,... good.,condition 2,0.14
+f,amazing,neutral,1,6,4.080933333333333,trial,1,The chocolate chip cookies were ,... amazing.,condition 2,0.86
+f,other,neutral,1,6,4.080933333333333,trial,1,The chocolate chip cookies were ,,condition 2,0
+f,terrible,neutral,2,5,4.080933333333333,trial,1,The bear claw was ,... terrible.,condition 2,0
+f,bad,neutral,2,5,4.080933333333333,trial,1,The bear claw was ,... bad.,condition 2,0
+f,okay,neutral,2,5,4.080933333333333,trial,1,The bear claw was ,... okay.,condition 2,0
+f,good,neutral,2,5,4.080933333333333,trial,1,The bear claw was ,... good.,condition 2,0.29
+f,amazing,neutral,2,5,4.080933333333333,trial,1,The bear claw was ,... amazing.,condition 2,0.71
+f,other,neutral,2,5,4.080933333333333,trial,1,The bear claw was ,,condition 2,0
+f,terrible,neutral,3,6,4.080933333333333,trial,1,The pecan pie was ,... terrible.,condition 2,0
+f,bad,neutral,3,6,4.080933333333333,trial,1,The pecan pie was ,... bad.,condition 2,0
+f,okay,neutral,3,6,4.080933333333333,trial,1,The pecan pie was ,... okay.,condition 2,0
+f,good,neutral,3,6,4.080933333333333,trial,1,The pecan pie was ,... good.,condition 2,0.11999999999999988
+f,amazing,neutral,3,6,4.080933333333333,trial,1,The pecan pie was ,... amazing.,condition 2,0.88
+f,other,neutral,3,6,4.080933333333333,trial,1,The pecan pie was ,,condition 2,0
+f,terrible,neutral,4,2,4.080933333333333,trial,1,The lemon loaf was ,... terrible.,condition 2,0.27
+f,bad,neutral,4,2,4.080933333333333,trial,1,The lemon loaf was ,... bad.,condition 2,0.44999999999999984
+f,okay,neutral,4,2,4.080933333333333,trial,1,The lemon loaf was ,... okay.,condition 2,0.28000000000000014
+f,good,neutral,4,2,4.080933333333333,trial,1,The lemon loaf was ,... good.,condition 2,0
+f,amazing,neutral,4,2,4.080933333333333,trial,1,The lemon loaf was ,... amazing.,condition 2,0
+f,other,neutral,4,2,4.080933333333333,trial,1,The lemon loaf was ,,condition 2,0
+f,terrible,neutral,5,4,4.080933333333333,trial,1,The cinnamon rolls were ,... terrible.,condition 2,0
+f,bad,neutral,5,4,4.080933333333333,trial,1,The cinnamon rolls were ,... bad.,condition 2,0
+f,okay,neutral,5,4,4.080933333333333,trial,1,The cinnamon rolls were ,... okay.,condition 2,0.13
+f,good,neutral,5,4,4.080933333333333,trial,1,The cinnamon rolls were ,... good.,condition 2,0.84
+f,amazing,neutral,5,4,4.080933333333333,trial,1,The cinnamon rolls were ,... amazing.,condition 2,0.030000000000000138
+f,other,neutral,5,4,4.080933333333333,trial,1,The cinnamon rolls were ,,condition 2,0
+f,terrible,neutral,6,1,4.080933333333333,trial,1,The carrot cake was ,... terrible.,condition 2,0.82
+f,bad,neutral,6,1,4.080933333333333,trial,1,The carrot cake was ,... bad.,condition 2,0.18000000000000016
+f,okay,neutral,6,1,4.080933333333333,trial,1,The carrot cake was ,... okay.,condition 2,0
+f,good,neutral,6,1,4.080933333333333,trial,1,The carrot cake was ,... good.,condition 2,0
+f,amazing,neutral,6,1,4.080933333333333,trial,1,The carrot cake was ,... amazing.,condition 2,0
+f,other,neutral,6,1,4.080933333333333,trial,1,The carrot cake was ,,condition 2,0
+f,terrible,neutral,7,3,4.080933333333333,trial,1,The apple pie was ,... terrible.,condition 2,0
+f,bad,neutral,7,3,4.080933333333333,trial,1,The apple pie was ,... bad.,condition 2,0.15000000000000013
+f,okay,neutral,7,3,4.080933333333333,trial,1,The apple pie was ,... okay.,condition 2,0.57
+f,good,neutral,7,3,4.080933333333333,trial,1,The apple pie was ,... good.,condition 2,0.28
+f,amazing,neutral,7,3,4.080933333333333,trial,1,The apple pie was ,... amazing.,condition 2,0
+f,other,neutral,7,3,4.080933333333333,trial,1,The apple pie was ,,condition 2,0
+f,terrible,neutral,8,3,4.080933333333333,trial,1,The cherry pie was ,... terrible.,condition 2,0
+f,bad,neutral,8,3,4.080933333333333,trial,1,The cherry pie was ,... bad.,condition 2,0.3
+f,okay,neutral,8,3,4.080933333333333,trial,1,The cherry pie was ,... okay.,condition 2,0.55
+f,good,neutral,8,3,4.080933333333333,trial,1,The cherry pie was ,... good.,condition 2,0.15
+f,amazing,neutral,8,3,4.080933333333333,trial,1,The cherry pie was ,... amazing.,condition 2,0
+f,other,neutral,8,3,4.080933333333333,trial,1,The cherry pie was ,,condition 2,0
+f,terrible,neutral,9,5,4.080933333333333,trial,1,The red velvet cake was ,... terrible.,condition 2,0
+f,bad,neutral,9,5,4.080933333333333,trial,1,The red velvet cake was ,... bad.,condition 2,0
+f,okay,neutral,9,5,4.080933333333333,trial,1,The red velvet cake was ,... okay.,condition 2,0
+f,good,neutral,9,5,4.080933333333333,trial,1,The red velvet cake was ,... good.,condition 2,0.4
+f,amazing,neutral,9,5,4.080933333333333,trial,1,The red velvet cake was ,... amazing.,condition 2,0.6000000000000001
+f,other,neutral,9,5,4.080933333333333,trial,1,The red velvet cake was ,,condition 2,0
+f,terrible,neutral,10,2,4.080933333333333,trial,1,The cheesecake was ,... terrible.,condition 2,0.32
+f,bad,neutral,10,2,4.080933333333333,trial,1,The cheesecake was ,... bad.,condition 2,0.5200000000000001
+f,okay,neutral,10,2,4.080933333333333,trial,1,The cheesecake was ,... okay.,condition 2,0.15999999999999992
+f,good,neutral,10,2,4.080933333333333,trial,1,The cheesecake was ,... good.,condition 2,0
+f,amazing,neutral,10,2,4.080933333333333,trial,1,The cheesecake was ,... amazing.,condition 2,0
+f,other,neutral,10,2,4.080933333333333,trial,1,The cheesecake was ,,condition 2,0
+f,terrible,neutral,11,4,4.080933333333333,trial,1,The croissants were ,... terrible.,condition 2,0
+f,bad,neutral,11,4,4.080933333333333,trial,1,The croissants were ,... bad.,condition 2,0
+f,okay,neutral,11,4,4.080933333333333,trial,1,The croissants were ,... okay.,condition 2,0.019999999999999907
+f,good,neutral,11,4,4.080933333333333,trial,1,The croissants were ,... good.,condition 2,0.7300000000000001
+f,amazing,neutral,11,4,4.080933333333333,trial,1,The croissants were ,... amazing.,condition 2,0.2499999999999999
+f,other,neutral,11,4,4.080933333333333,trial,1,The croissants were ,,condition 2,0
+f,terrible,neutral,12,1,4.080933333333333,trial,1,The chocolate cake was ,... terrible.,condition 2,0.6299999999999999
+f,bad,neutral,12,1,4.080933333333333,trial,1,The chocolate cake was ,... bad.,condition 2,0.3700000000000001
+f,okay,neutral,12,1,4.080933333333333,trial,1,The chocolate cake was ,... okay.,condition 2,0
+f,good,neutral,12,1,4.080933333333333,trial,1,The chocolate cake was ,... good.,condition 2,0
+f,amazing,neutral,12,1,4.080933333333333,trial,1,The chocolate cake was ,... amazing.,condition 2,0
+f,other,neutral,12,1,4.080933333333333,trial,1,The chocolate cake was ,,condition 2,0
+f,terrible,neutral,-1,4,2.581183333333333,practice,2,,... terrible.,condition 2,0
+f,bad,neutral,-1,4,2.581183333333333,practice,2,,... bad.,condition 2,0
+f,okay,neutral,-1,4,2.581183333333333,practice,2,,... okay.,condition 2,0
+f,good,neutral,-1,4,2.581183333333333,practice,2,,... good.,condition 2,0.22999999999999998
+f,amazing,neutral,-1,4,2.581183333333333,practice,2,,... amazing.,condition 2,0.77
+f,other,neutral,-1,4,2.581183333333333,practice,2,,,condition 2,0
+f,terrible,neutral,1,6,2.581183333333333,trial,2,The bear claw was ,... terrible.,condition 2,0
+f,bad,neutral,1,6,2.581183333333333,trial,2,The bear claw was ,... bad.,condition 2,0
+f,okay,neutral,1,6,2.581183333333333,trial,2,The bear claw was ,... okay.,condition 2,0
+f,good,neutral,1,6,2.581183333333333,trial,2,The bear claw was ,... good.,condition 2,0
+f,amazing,neutral,1,6,2.581183333333333,trial,2,The bear claw was ,... amazing.,condition 2,1
+f,other,neutral,1,6,2.581183333333333,trial,2,The bear claw was ,,condition 2,0
+f,terrible,neutral,2,3,2.581183333333333,trial,2,The carrot cake was ,... terrible.,condition 2,0
+f,bad,neutral,2,3,2.581183333333333,trial,2,The carrot cake was ,... bad.,condition 2,0
+f,okay,neutral,2,3,2.581183333333333,trial,2,The carrot cake was ,... okay.,condition 2,0.58
+f,good,neutral,2,3,2.581183333333333,trial,2,The carrot cake was ,... good.,condition 2,0.42000000000000015
+f,amazing,neutral,2,3,2.581183333333333,trial,2,The carrot cake was ,... amazing.,condition 2,0
+f,other,neutral,2,3,2.581183333333333,trial,2,The carrot cake was ,,condition 2,0
+f,terrible,neutral,3,5,2.581183333333333,trial,2,The cherry pie was ,... terrible.,condition 2,0
+f,bad,neutral,3,5,2.581183333333333,trial,2,The cherry pie was ,... bad.,condition 2,0
+f,okay,neutral,3,5,2.581183333333333,trial,2,The cherry pie was ,... okay.,condition 2,0
+f,good,neutral,3,5,2.581183333333333,trial,2,The cherry pie was ,... good.,condition 2,0.4
+f,amazing,neutral,3,5,2.581183333333333,trial,2,The cherry pie was ,... amazing.,condition 2,0.6
+f,other,neutral,3,5,2.581183333333333,trial,2,The cherry pie was ,,condition 2,0
+f,terrible,neutral,4,1,2.581183333333333,trial,2,The cheesecake was ,... terrible.,condition 2,0.51
+f,bad,neutral,4,1,2.581183333333333,trial,2,The cheesecake was ,... bad.,condition 2,0.49
+f,okay,neutral,4,1,2.581183333333333,trial,2,The cheesecake was ,... okay.,condition 2,0
+f,good,neutral,4,1,2.581183333333333,trial,2,The cheesecake was ,... good.,condition 2,0
+f,amazing,neutral,4,1,2.581183333333333,trial,2,The cheesecake was ,... amazing.,condition 2,0
+f,other,neutral,4,1,2.581183333333333,trial,2,The cheesecake was ,,condition 2,0
+f,terrible,neutral,5,3,2.581183333333333,trial,2,The cinnamon rolls were ,... terrible.,condition 2,0
+f,bad,neutral,5,3,2.581183333333333,trial,2,The cinnamon rolls were ,... bad.,condition 2,0
+f,okay,neutral,5,3,2.581183333333333,trial,2,The cinnamon rolls were ,... okay.,condition 2,0.48
+f,good,neutral,5,3,2.581183333333333,trial,2,The cinnamon rolls were ,... good.,condition 2,0.5200000000000001
+f,amazing,neutral,5,3,2.581183333333333,trial,2,The cinnamon rolls were ,... amazing.,condition 2,0
+f,other,neutral,5,3,2.581183333333333,trial,2,The cinnamon rolls were ,,condition 2,0
+f,terrible,neutral,6,4,2.581183333333333,trial,2,The pecan pie was ,... terrible.,condition 2,0
+f,bad,neutral,6,4,2.581183333333333,trial,2,The pecan pie was ,... bad.,condition 2,0
+f,okay,neutral,6,4,2.581183333333333,trial,2,The pecan pie was ,... okay.,condition 2,0.05
+f,good,neutral,6,4,2.581183333333333,trial,2,The pecan pie was ,... good.,condition 2,0.46
+f,amazing,neutral,6,4,2.581183333333333,trial,2,The pecan pie was ,... amazing.,condition 2,0.4899999999999999
+f,other,neutral,6,4,2.581183333333333,trial,2,The pecan pie was ,,condition 2,0
+f,terrible,neutral,7,1,2.581183333333333,trial,2,The red velvet cake was ,... terrible.,condition 2,0.31
+f,bad,neutral,7,1,2.581183333333333,trial,2,The red velvet cake was ,... bad.,condition 2,0.69
+f,okay,neutral,7,1,2.581183333333333,trial,2,The red velvet cake was ,... okay.,condition 2,0
+f,good,neutral,7,1,2.581183333333333,trial,2,The red velvet cake was ,... good.,condition 2,0
+f,amazing,neutral,7,1,2.581183333333333,trial,2,The red velvet cake was ,... amazing.,condition 2,0
+f,other,neutral,7,1,2.581183333333333,trial,2,The red velvet cake was ,,condition 2,0
+f,terrible,neutral,8,6,2.581183333333333,trial,2,The croissants were ,... terrible.,condition 2,0
+f,bad,neutral,8,6,2.581183333333333,trial,2,The croissants were ,... bad.,condition 2,0
+f,okay,neutral,8,6,2.581183333333333,trial,2,The croissants were ,... okay.,condition 2,0
+f,good,neutral,8,6,2.581183333333333,trial,2,The croissants were ,... good.,condition 2,0.24
+f,amazing,neutral,8,6,2.581183333333333,trial,2,The croissants were ,... amazing.,condition 2,0.76
+f,other,neutral,8,6,2.581183333333333,trial,2,The croissants were ,,condition 2,0
+f,terrible,neutral,9,2,2.581183333333333,trial,2,The donuts were ,... terrible.,condition 2,0
+f,bad,neutral,9,2,2.581183333333333,trial,2,The donuts were ,... bad.,condition 2,0.4
+f,okay,neutral,9,2,2.581183333333333,trial,2,The donuts were ,... okay.,condition 2,0.6000000000000001
+f,good,neutral,9,2,2.581183333333333,trial,2,The donuts were ,... good.,condition 2,0
+f,amazing,neutral,9,2,2.581183333333333,trial,2,The donuts were ,... amazing.,condition 2,0
+f,other,neutral,9,2,2.581183333333333,trial,2,The donuts were ,,condition 2,0
+f,terrible,neutral,10,5,2.581183333333333,trial,2,The lemon loaf was ,... terrible.,condition 2,0
+f,bad,neutral,10,5,2.581183333333333,trial,2,The lemon loaf was ,... bad.,condition 2,0
+f,okay,neutral,10,5,2.581183333333333,trial,2,The lemon loaf was ,... okay.,condition 2,0
+f,good,neutral,10,5,2.581183333333333,trial,2,The lemon loaf was ,... good.,condition 2,0.43
+f,amazing,neutral,10,5,2.581183333333333,trial,2,The lemon loaf was ,... amazing.,condition 2,0.57
+f,other,neutral,10,5,2.581183333333333,trial,2,The lemon loaf was ,,condition 2,0
+f,terrible,neutral,11,4,2.581183333333333,trial,2,The blueberry lavender scone was ,... terrible.,condition 2,0
+f,bad,neutral,11,4,2.581183333333333,trial,2,The blueberry lavender scone was ,... bad.,condition 2,0
+f,okay,neutral,11,4,2.581183333333333,trial,2,The blueberry lavender scone was ,... okay.,condition 2,0
+f,good,neutral,11,4,2.581183333333333,trial,2,The blueberry lavender scone was ,... good.,condition 2,0.68
+f,amazing,neutral,11,4,2.581183333333333,trial,2,The blueberry lavender scone was ,... amazing.,condition 2,0.31999999999999995
+f,other,neutral,11,4,2.581183333333333,trial,2,The blueberry lavender scone was ,,condition 2,0
+f,terrible,neutral,12,2,2.581183333333333,trial,2,The apple pie was ,... terrible.,condition 2,0
+f,bad,neutral,12,2,2.581183333333333,trial,2,The apple pie was ,... bad.,condition 2,0.4
+f,okay,neutral,12,2,2.581183333333333,trial,2,The apple pie was ,... okay.,condition 2,0.6
+f,good,neutral,12,2,2.581183333333333,trial,2,The apple pie was ,... good.,condition 2,0
+f,amazing,neutral,12,2,2.581183333333333,trial,2,The apple pie was ,... amazing.,condition 2,0
+f,other,neutral,12,2,2.581183333333333,trial,2,The apple pie was ,,condition 2,0
+m,terrible,neutral,-1,4,5.3452166666666665,practice,3,,... terrible.,condition 2,0
+m,bad,neutral,-1,4,5.3452166666666665,practice,3,,... bad.,condition 2,0
+m,okay,neutral,-1,4,5.3452166666666665,practice,3,,... okay.,condition 2,0
+m,good,neutral,-1,4,5.3452166666666665,practice,3,,... good.,condition 2,0.86
+m,amazing,neutral,-1,4,5.3452166666666665,practice,3,,... amazing.,condition 2,0.1399999999999999
+m,other,neutral,-1,4,5.3452166666666665,practice,3,,,condition 2,0
+m,terrible,neutral,1,5,5.3452166666666665,trial,3,The blueberry lavender scone was ,... terrible.,condition 2,0
+m,bad,neutral,1,5,5.3452166666666665,trial,3,The blueberry lavender scone was ,... bad.,condition 2,0
+m,okay,neutral,1,5,5.3452166666666665,trial,3,The blueberry lavender scone was ,... okay.,condition 2,0
+m,good,neutral,1,5,5.3452166666666665,trial,3,The blueberry lavender scone was ,... good.,condition 2,0.18000000000000005
+m,amazing,neutral,1,5,5.3452166666666665,trial,3,The blueberry lavender scone was ,... amazing.,condition 2,0.82
+m,other,neutral,1,5,5.3452166666666665,trial,3,The blueberry lavender scone was ,,condition 2,0
+m,terrible,neutral,2,3,5.3452166666666665,trial,3,The bear claw was ,... terrible.,condition 2,0
+m,bad,neutral,2,3,5.3452166666666665,trial,3,The bear claw was ,... bad.,condition 2,0.17000000000000015
+m,okay,neutral,2,3,5.3452166666666665,trial,3,The bear claw was ,... okay.,condition 2,0.69
+m,good,neutral,2,3,5.3452166666666665,trial,3,The bear claw was ,... good.,condition 2,0.14
+m,amazing,neutral,2,3,5.3452166666666665,trial,3,The bear claw was ,... amazing.,condition 2,0
+m,other,neutral,2,3,5.3452166666666665,trial,3,The bear claw was ,,condition 2,0
+m,terrible,neutral,3,4,5.3452166666666665,trial,3,The red velvet cake was ,... terrible.,condition 2,0
+m,bad,neutral,3,4,5.3452166666666665,trial,3,The red velvet cake was ,... bad.,condition 2,0
+m,okay,neutral,3,4,5.3452166666666665,trial,3,The red velvet cake was ,... okay.,condition 2,0.18
+m,good,neutral,3,4,5.3452166666666665,trial,3,The red velvet cake was ,... good.,condition 2,0.79
+m,amazing,neutral,3,4,5.3452166666666665,trial,3,The red velvet cake was ,... amazing.,condition 2,0.030000000000000027
+m,other,neutral,3,4,5.3452166666666665,trial,3,The red velvet cake was ,,condition 2,0
+m,terrible,neutral,4,3,5.3452166666666665,trial,3,The carrot cake was ,... terrible.,condition 2,0.06999999999999995
+m,bad,neutral,4,3,5.3452166666666665,trial,3,The carrot cake was ,... bad.,condition 2,0.19
+m,okay,neutral,4,3,5.3452166666666665,trial,3,The carrot cake was ,... okay.,condition 2,0.74
+m,good,neutral,4,3,5.3452166666666665,trial,3,The carrot cake was ,... good.,condition 2,0
+m,amazing,neutral,4,3,5.3452166666666665,trial,3,The carrot cake was ,... amazing.,condition 2,0
+m,other,neutral,4,3,5.3452166666666665,trial,3,The carrot cake was ,,condition 2,0
+m,terrible,neutral,5,6,5.3452166666666665,trial,3,The chocolate chip cookies were ,... terrible.,condition 2,0
+m,bad,neutral,5,6,5.3452166666666665,trial,3,The chocolate chip cookies were ,... bad.,condition 2,0
+m,okay,neutral,5,6,5.3452166666666665,trial,3,The chocolate chip cookies were ,... okay.,condition 2,0
+m,good,neutral,5,6,5.3452166666666665,trial,3,The chocolate chip cookies were ,... good.,condition 2,0.05999999999999994
+m,amazing,neutral,5,6,5.3452166666666665,trial,3,The chocolate chip cookies were ,... amazing.,condition 2,0.94
+m,other,neutral,5,6,5.3452166666666665,trial,3,The chocolate chip cookies were ,,condition 2,0
+m,terrible,neutral,6,5,5.3452166666666665,trial,3,The apple pie was ,... terrible.,condition 2,0
+m,bad,neutral,6,5,5.3452166666666665,trial,3,The apple pie was ,... bad.,condition 2,0
+m,okay,neutral,6,5,5.3452166666666665,trial,3,The apple pie was ,... okay.,condition 2,0
+m,good,neutral,6,5,5.3452166666666665,trial,3,The apple pie was ,... good.,condition 2,0.21999999999999986
+m,amazing,neutral,6,5,5.3452166666666665,trial,3,The apple pie was ,... amazing.,condition 2,0.78
+m,other,neutral,6,5,5.3452166666666665,trial,3,The apple pie was ,,condition 2,0
+m,terrible,neutral,7,2,5.3452166666666665,trial,3,The cheesecake was ,... terrible.,condition 2,0.32
+m,bad,neutral,7,2,5.3452166666666665,trial,3,The cheesecake was ,... bad.,condition 2,0.56
+m,okay,neutral,7,2,5.3452166666666665,trial,3,The cheesecake was ,... okay.,condition 2,0.12
+m,good,neutral,7,2,5.3452166666666665,trial,3,The cheesecake was ,... good.,condition 2,0
+m,amazing,neutral,7,2,5.3452166666666665,trial,3,The cheesecake was ,... amazing.,condition 2,0
+m,other,neutral,7,2,5.3452166666666665,trial,3,The cheesecake was ,,condition 2,0
+m,terrible,neutral,8,4,5.3452166666666665,trial,3,The pecan pie was ,... terrible.,condition 2,0
+m,bad,neutral,8,4,5.3452166666666665,trial,3,The pecan pie was ,... bad.,condition 2,0
+m,okay,neutral,8,4,5.3452166666666665,trial,3,The pecan pie was ,... okay.,condition 2,0.21999999999999997
+m,good,neutral,8,4,5.3452166666666665,trial,3,The pecan pie was ,... good.,condition 2,0.67
+m,amazing,neutral,8,4,5.3452166666666665,trial,3,The pecan pie was ,... amazing.,condition 2,0.11
+m,other,neutral,8,4,5.3452166666666665,trial,3,The pecan pie was ,,condition 2,0
+m,terrible,neutral,9,1,5.3452166666666665,trial,3,The cinnamon rolls were ,... terrible.,condition 2,0.84
+m,bad,neutral,9,1,5.3452166666666665,trial,3,The cinnamon rolls were ,... bad.,condition 2,0.16000000000000014
+m,okay,neutral,9,1,5.3452166666666665,trial,3,The cinnamon rolls were ,... okay.,condition 2,0
+m,good,neutral,9,1,5.3452166666666665,trial,3,The cinnamon rolls were ,... good.,condition 2,0
+m,amazing,neutral,9,1,5.3452166666666665,trial,3,The cinnamon rolls were ,... amazing.,condition 2,0
+m,other,neutral,9,1,5.3452166666666665,trial,3,The cinnamon rolls were ,,condition 2,0
+m,terrible,neutral,10,6,5.3452166666666665,trial,3,The croissants were ,... terrible.,condition 2,0
+m,bad,neutral,10,6,5.3452166666666665,trial,3,The croissants were ,... bad.,condition 2,0
+m,okay,neutral,10,6,5.3452166666666665,trial,3,The croissants were ,... okay.,condition 2,0
+m,good,neutral,10,6,5.3452166666666665,trial,3,The croissants were ,... good.,condition 2,0.06999999999999995
+m,amazing,neutral,10,6,5.3452166666666665,trial,3,The croissants were ,... amazing.,condition 2,0.93
+m,other,neutral,10,6,5.3452166666666665,trial,3,The croissants were ,,condition 2,0
+m,terrible,neutral,11,2,5.3452166666666665,trial,3,The chocolate cake was ,... terrible.,condition 2,0.36
+m,bad,neutral,11,2,5.3452166666666665,trial,3,The chocolate cake was ,... bad.,condition 2,0.5499999999999999
+m,okay,neutral,11,2,5.3452166666666665,trial,3,The chocolate cake was ,... okay.,condition 2,0.09
+m,good,neutral,11,2,5.3452166666666665,trial,3,The chocolate cake was ,... good.,condition 2,0
+m,amazing,neutral,11,2,5.3452166666666665,trial,3,The chocolate cake was ,... amazing.,condition 2,0
+m,other,neutral,11,2,5.3452166666666665,trial,3,The chocolate cake was ,,condition 2,0
+m,terrible,neutral,12,1,5.3452166666666665,trial,3,The donuts were ,... terrible.,condition 2,0.87
+m,bad,neutral,12,1,5.3452166666666665,trial,3,The donuts were ,... bad.,condition 2,0.13000000000000012
+m,okay,neutral,12,1,5.3452166666666665,trial,3,The donuts were ,... okay.,condition 2,0
+m,good,neutral,12,1,5.3452166666666665,trial,3,The donuts were ,... good.,condition 2,0
+m,amazing,neutral,12,1,5.3452166666666665,trial,3,The donuts were ,... amazing.,condition 2,0
+m,other,neutral,12,1,5.3452166666666665,trial,3,The donuts were ,,condition 2,0
+m,terrible,neutral,-1,4,4.85915,practice,4,,... terrible.,condition 2,0
+m,bad,neutral,-1,4,4.85915,practice,4,,... bad.,condition 2,0
+m,okay,neutral,-1,4,4.85915,practice,4,,... okay.,condition 2,0.45
+m,good,neutral,-1,4,4.85915,practice,4,,... good.,condition 2,0.55
+m,amazing,neutral,-1,4,4.85915,practice,4,,... amazing.,condition 2,0
+m,other,neutral,-1,4,4.85915,practice,4,,,condition 2,0
+m,terrible,neutral,1,5,4.85915,trial,4,The cheesecake was ,... terrible.,condition 2,0
+m,bad,neutral,1,5,4.85915,trial,4,The cheesecake was ,... bad.,condition 2,0
+m,okay,neutral,1,5,4.85915,trial,4,The cheesecake was ,... okay.,condition 2,0.29
+m,good,neutral,1,5,4.85915,trial,4,The cheesecake was ,... good.,condition 2,0.43
+m,amazing,neutral,1,5,4.85915,trial,4,The cheesecake was ,... amazing.,condition 2,0.2799999999999999
+m,other,neutral,1,5,4.85915,trial,4,The cheesecake was ,,condition 2,0
+m,terrible,neutral,2,1,4.85915,trial,4,The donuts were ,... terrible.,condition 2,0.73
+m,bad,neutral,2,1,4.85915,trial,4,The donuts were ,... bad.,condition 2,0.27
+m,okay,neutral,2,1,4.85915,trial,4,The donuts were ,... okay.,condition 2,0
+m,good,neutral,2,1,4.85915,trial,4,The donuts were ,... good.,condition 2,0
+m,amazing,neutral,2,1,4.85915,trial,4,The donuts were ,... amazing.,condition 2,0
+m,other,neutral,2,1,4.85915,trial,4,The donuts were ,,condition 2,0
+m,terrible,neutral,3,5,4.85915,trial,4,The cherry pie was ,... terrible.,condition 2,0
+m,bad,neutral,3,5,4.85915,trial,4,The cherry pie was ,... bad.,condition 2,0
+m,okay,neutral,3,5,4.85915,trial,4,The cherry pie was ,... okay.,condition 2,0.21
+m,good,neutral,3,5,4.85915,trial,4,The cherry pie was ,... good.,condition 2,0.39
+m,amazing,neutral,3,5,4.85915,trial,4,The cherry pie was ,... amazing.,condition 2,0.3999999999999999
+m,other,neutral,3,5,4.85915,trial,4,The cherry pie was ,,condition 2,2.220446049250313e-16
+m,terrible,neutral,4,6,4.85915,trial,4,The bear claw was ,... terrible.,condition 2,0
+m,bad,neutral,4,6,4.85915,trial,4,The bear claw was ,... bad.,condition 2,0
+m,okay,neutral,4,6,4.85915,trial,4,The bear claw was ,... okay.,condition 2,0.1
+m,good,neutral,4,6,4.85915,trial,4,The bear claw was ,... good.,condition 2,0.12
+m,amazing,neutral,4,6,4.85915,trial,4,The bear claw was ,... amazing.,condition 2,0.78
+m,other,neutral,4,6,4.85915,trial,4,The bear claw was ,,condition 2,0
+m,terrible,neutral,5,2,4.85915,trial,4,The blueberry lavender scone was ,... terrible.,condition 2,0.61
+m,bad,neutral,5,2,4.85915,trial,4,The blueberry lavender scone was ,... bad.,condition 2,0.3900000000000001
+m,okay,neutral,5,2,4.85915,trial,4,The blueberry lavender scone was ,... okay.,condition 2,0
+m,good,neutral,5,2,4.85915,trial,4,The blueberry lavender scone was ,... good.,condition 2,1.1102230246251565e-16
+m,amazing,neutral,5,2,4.85915,trial,4,The blueberry lavender scone was ,... amazing.,condition 2,0
+m,other,neutral,5,2,4.85915,trial,4,The blueberry lavender scone was ,,condition 2,0
+m,terrible,neutral,6,2,4.85915,trial,4,The pecan pie was ,... terrible.,condition 2,0.2
+m,bad,neutral,6,2,4.85915,trial,4,The pecan pie was ,... bad.,condition 2,0.44000000000000017
+m,okay,neutral,6,2,4.85915,trial,4,The pecan pie was ,... okay.,condition 2,0.3599999999999999
+m,good,neutral,6,2,4.85915,trial,4,The pecan pie was ,... good.,condition 2,0
+m,amazing,neutral,6,2,4.85915,trial,4,The pecan pie was ,... amazing.,condition 2,0
+m,other,neutral,6,2,4.85915,trial,4,The pecan pie was ,,condition 2,0
+m,terrible,neutral,7,4,4.85915,trial,4,The carrot cake was ,... terrible.,condition 2,0
+m,bad,neutral,7,4,4.85915,trial,4,The carrot cake was ,... bad.,condition 2,0
+m,okay,neutral,7,4,4.85915,trial,4,The carrot cake was ,... okay.,condition 2,0.29000000000000015
+m,good,neutral,7,4,4.85915,trial,4,The carrot cake was ,... good.,condition 2,0.36
+m,amazing,neutral,7,4,4.85915,trial,4,The carrot cake was ,... amazing.,condition 2,0.34999999999999987
+m,other,neutral,7,4,4.85915,trial,4,The carrot cake was ,,condition 2,0
+m,terrible,neutral,8,3,4.85915,trial,4,The chocolate cake was ,... terrible.,condition 2,0
+m,bad,neutral,8,3,4.85915,trial,4,The chocolate cake was ,... bad.,condition 2,0.05999999999999994
+m,okay,neutral,8,3,4.85915,trial,4,The chocolate cake was ,... okay.,condition 2,0.46
+m,good,neutral,8,3,4.85915,trial,4,The chocolate cake was ,... good.,condition 2,0.48
+m,amazing,neutral,8,3,4.85915,trial,4,The chocolate cake was ,... amazing.,condition 2,0
+m,other,neutral,8,3,4.85915,trial,4,The chocolate cake was ,,condition 2,0
+m,terrible,neutral,9,3,4.85915,trial,4,The croissants were ,... terrible.,condition 2,0
+m,bad,neutral,9,3,4.85915,trial,4,The croissants were ,... bad.,condition 2,0.45
+m,okay,neutral,9,3,4.85915,trial,4,The croissants were ,... okay.,condition 2,0.44999999999999996
+m,good,neutral,9,3,4.85915,trial,4,The croissants were ,... good.,condition 2,0.10000000000000009
+m,amazing,neutral,9,3,4.85915,trial,4,The croissants were ,... amazing.,condition 2,0
+m,other,neutral,9,3,4.85915,trial,4,The croissants were ,,condition 2,0
+m,terrible,neutral,10,1,4.85915,trial,4,The red velvet cake was ,... terrible.,condition 2,0.7
+m,bad,neutral,10,1,4.85915,trial,4,The red velvet cake was ,... bad.,condition 2,0.30000000000000004
+m,okay,neutral,10,1,4.85915,trial,4,The red velvet cake was ,... okay.,condition 2,0
+m,good,neutral,10,1,4.85915,trial,4,The red velvet cake was ,... good.,condition 2,0
+m,amazing,neutral,10,1,4.85915,trial,4,The red velvet cake was ,... amazing.,condition 2,0
+m,other,neutral,10,1,4.85915,trial,4,The red velvet cake was ,,condition 2,1.1102230246251565e-16
+m,terrible,neutral,11,4,4.85915,trial,4,The chocolate chip cookies were ,... terrible.,condition 2,0
+m,bad,neutral,11,4,4.85915,trial,4,The chocolate chip cookies were ,... bad.,condition 2,0
+m,okay,neutral,11,4,4.85915,trial,4,The chocolate chip cookies were ,... okay.,condition 2,0.41
+m,good,neutral,11,4,4.85915,trial,4,The chocolate chip cookies were ,... good.,condition 2,0.5900000000000001
+m,amazing,neutral,11,4,4.85915,trial,4,The chocolate chip cookies were ,... amazing.,condition 2,1.1102230246251565e-16
+m,other,neutral,11,4,4.85915,trial,4,The chocolate chip cookies were ,,condition 2,0
+m,terrible,neutral,12,6,4.85915,trial,4,The cinnamon rolls were ,... terrible.,condition 2,0
+m,bad,neutral,12,6,4.85915,trial,4,The cinnamon rolls were ,... bad.,condition 2,0
+m,okay,neutral,12,6,4.85915,trial,4,The cinnamon rolls were ,... okay.,condition 2,0
+m,good,neutral,12,6,4.85915,trial,4,The cinnamon rolls were ,... good.,condition 2,0.30000000000000004
+m,amazing,neutral,12,6,4.85915,trial,4,The cinnamon rolls were ,... amazing.,condition 2,0.7
+m,other,neutral,12,6,4.85915,trial,4,The cinnamon rolls were ,,condition 2,0

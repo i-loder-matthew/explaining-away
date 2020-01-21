@@ -1,0 +1,102 @@
+---
+title: "Analysis of norming experiment"
+author: "Sebastian Schuster"
+date: "1/20/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+theme_set(theme_bw())
+library(DescTools)
+library(splines)
+
+
+auc_method = function(rating, response_m) {
+  d = data.frame(rating = rating, response_m = response_m)
+  model = lm(formula = response_m ~ ns(rating, df = 4), data = d)
+  
+  pred = data.frame(100:600)
+  pred$rating = (100:600)/100
+  pred$response = predict(model, pred)
+  
+  auc = AUC(x = pred$rating, y=pred$response)
+  return(auc)
+}
+
+```
+
+```{r load_data, fig.width=10, echo=FALSE}
+
+d.neutral = read.csv("../data/09_evaluative_adj_norming-cond1-trials.csv")
+d.friend = read.csv("../data/09_evaluative_adj_norming-cond2-trials.csv")
+d.enemy = read.csv("../data/09_evaluative_adj_norming-cond3-trials.csv")
+
+d = rbind(d.neutral, d.friend, d.enemy)
+
+d = d %>% filter(trial_type == "trial")
+
+d.avg = d %>% 
+  group_by(rating, adjective, condition) %>% 
+  dplyr::summarize(mu = mean(response), ci.lower = ci.low(response), ci.upper=ci.high(response))
+
+
+
+d.avg %>% ggplot(aes(x=rating, col=adjective, y=mu)) + geom_line() + geom_point() + geom_errorbar(aes(ymin=mu-ci.lower, ymax=ci.upper+mu)) + xlim(1,6) + facet_wrap(~condition)
+
+d.avg %>% ggplot(aes(x=rating, fill=adjective, y=mu))  + xlim(1,6) + facet_wrap(~condition) + geom_area()
+
+d.avg %>% ggplot(aes(x=rating, col=condition, y=mu)) + geom_line() + geom_point() + geom_errorbar(aes(ymin=mu-ci.lower, ymax=ci.upper+mu)) + xlim(1,6) + facet_wrap(~adjective)
+
+d.aucs = d %>% 
+  group_by(rating, adjective, condition, workerid) %>% 
+  dplyr::summarize(response_m = mean(response)) %>% 
+  group_by(adjective, condition, workerid) %>% 
+  dplyr::summarize(auc = auc_method(rating, response_m)) %>%
+  mutate(adjective_grpd = stringr::str_replace(adjective, "terrible", "bad")) %>%
+  mutate(adjective_grpd =  stringr::str_replace(adjective_grpd, "amazing", "good")) %>%
+  group_by(adjective_grpd, condition, workerid) %>% 
+  dplyr::summarize(auc = sum(auc))
+
+d.bad = d.aucs %>% filter(adjective_grpd == "bad") %>% dplyr::rename(auc.bad = auc)
+d.good = d.aucs %>% filter(adjective_grpd == "good") %>%  dplyr::rename(auc.good = auc)
+
+d.auc.comb = merge(d.bad, d.good, by=c("workerid", "condition")) %>% mutate(auc.diff = auc.good - auc.bad)
+
+d.auc.comb %>% group_by(condition) %>% 
+  dplyr::summarize(auc.diff_m = mean(auc.diff), 
+                   ci.lower = ci.low(auc.diff), 
+                   ci.upper=ci.high(auc.diff)) %>% 
+  ggplot(aes(y = auc.diff_m, col=condition, x=0)) + geom_point(size=5) + 
+  geom_errorbar(aes(ymin=auc.diff_m-ci.lower, ymax=auc.diff_m+ci.upper)) + xlim(-2,2) + ylab("AUC (good + amazing) - AUC (bad + terrible)")
+
+
+```
+
+
+Per-participant plots
+
+
+```{r per_participant, fig.width=10, fig.height=30, echo=FALSE}
+
+d.part = d %>% 
+  group_by(rating, adjective, condition, workerid) %>% 
+  dplyr::summarize(mu = mean(response))
+
+d.part %>% ggplot(aes(x=rating, col=adjective, y=mu)) + geom_line() + geom_point() +  xlim(1,6) + facet_wrap(~condition + workerid, ncol=5) +
+  theme(legend.position = "bottom")
+
+
+```
+
+Statistical test
+
+```{r t_test, echo=FALSE}
+
+d.friends.diffs = d.auc.comb %>% filter(condition == "friends") %>% .$auc.diff
+d.enemy.diffs = d.auc.comb %>% filter(condition == "enemy") %>% .$auc.diff
+
+t.test(d.friends.diffs, d.enemy.diffs, var.equal = TRUE)
+
+```
+
