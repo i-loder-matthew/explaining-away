@@ -21,7 +21,7 @@ var COMPLETIONS = [
 var COMPLETIONS_WITH_OKAY = [
     ["terrible", "... terrible."],
     ["bad", "... bad."],
-    ["okay", "... okay"],
+    ["okay", "... okay."],
     ["good", "... good."],
     ["amazing", "... amazing."],
 ];
