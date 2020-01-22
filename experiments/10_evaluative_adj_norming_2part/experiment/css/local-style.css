@@ -1,0 +1,73 @@
+.slider {
+  /* default is width 400 and margin 10 */
+	width: 400;
+	margin: 10px;
+}
+
+.err {
+    color: red;
+}
+
+.button {
+  padding: 10px 40px 10px 40px;
+  margin: 5px;
+  border: 1px solid black;
+  font-size: 14pt;
+  font-weight: bold;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+#i0 {
+	height: 800px;
+}
+
+.slide {
+    height: 700px;
+}
+
+.input {
+    border: 1px solid #999;
+    border-bottom: 2px solid #000;
+    font-size: 1em;
+    width: 150px;
+    padding: 5px;
+}
+
+.stars {
+    margin: 0 100px 0 60px;
+}
+
+#rating-stuff, #practice-rating, #trial-rating {
+    background-image: url(../stim/thought_bubble.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+div.responses {
+  overflow:hidden;
+  width: 380px;
+  margin: 10px auto;
+}
+
+div.responses span {
+  float: left;
+  display: block;
+  padding: 10px;
+  margin: 5px 10px;
+  background: #ddd;
+  border: 2px solid #fff;
+  font-weight: bold;
+  font-size: 0.9em;
+  border-radius: 10px;
+}
+
+div.responses span:hover {
+  background: #8fc8db;
+  cursor: pointer;
+  
+}
+
+div.responses span.active {
+  background: #0288b5;  
+}
