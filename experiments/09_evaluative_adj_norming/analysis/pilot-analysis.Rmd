@@ -58,6 +58,8 @@ d.aucs = d %>%
   group_by(adjective_grpd, condition, workerid) %>% 
   dplyr::summarize(auc = sum(auc))
 
+
+
 d.bad = d.aucs %>% filter(adjective_grpd == "bad") %>% dplyr::rename(auc.bad = auc)
 d.good = d.aucs %>% filter(adjective_grpd == "good") %>%  dplyr::rename(auc.good = auc)
 
@@ -71,6 +73,20 @@ d.auc.comb %>% group_by(condition) %>%
   geom_errorbar(aes(ymin=auc.diff_m-ci.lower, ymax=auc.diff_m+ci.upper)) + xlim(-2,2) + ylab("AUC (good + amazing) - AUC (bad + terrible)")
 
 
+
+d.norm = d %>% 
+  group_by(rating, adjective, condition, workerid) %>% 
+  dplyr::summarize(response_m = mean(response)) %>% 
+  group_by(adjective, condition, workerid) %>% 
+  dplyr::mutate(response_norm = response_m / sum(response_m)) %>%
+  dplyr::mutate(rating_weighted = response_norm * rating) %>%
+  group_by(adjective, condition, workerid) %>% 
+  dplyr::summarize(expected_rating = sum(rating_weighted))
+
+d.norm %>% 
+  group_by(adjective, condition) %>%
+  dplyr::summarize(mu = mean(expected_rating), ci.lower = ci.low(expected_rating), ci.upper=ci.high(expected_rating)) %>%
+  ggplot(aes(x=adjective, y=mu, col=condition)) + geom_point() + geom_errorbar(aes(ymin=mu-ci.lower, ymax=mu+ci.upper))
 
 ```
 ```{r per_part, fig.width=10, fig.height=10}
@@ -129,6 +145,27 @@ d.auc.comb %>% group_by(condition) %>%
   geom_errorbar(aes(ymin=auc.diff_m-ci.lower, ymax=auc.diff_m+ci.upper)) + xlim(-2,2) + ylab("AUC (good + amazing) - AUC (bad + terrible)")
 
 
+d.norm = d %>% 
+  group_by(rating, adjective, condition, workerid) %>% 
+  dplyr::summarize(response_m = mean(response)) %>% 
+  group_by(adjective, condition, workerid) %>% 
+  dplyr::mutate(response_norm = response_m / (sum(response_m) + 0.001)) %>%
+  dplyr::mutate(rating_weighted = response_norm * (rating -1 )) %>%
+  group_by(adjective, condition, workerid) %>% 
+  dplyr::summarize(expected_rating = sum(rating_weighted))
+
+d.norm %>% 
+  group_by(adjective, condition) %>%
+  dplyr::summarize(mu = mean(expected_rating), ci.lower = ci.low(expected_rating), ci.upper=ci.high(expected_rating)) %>%
+  ggplot(aes(x=adjective, y=mu, col=condition)) + geom_point() + geom_errorbar(aes(ymin=mu-ci.lower, ymax=mu+ci.upper))
+
+expressions = c("terrible", "bad", "good", "okay", "amazing")
+
+for (expr in expressions) {
+     vals.friend = d.norm %>% filter(adjective == expr) %>% filter(condition == "friends") %>% .$expected_rating
+     vals.enemy = d.norm %>% filter(adjective == expr) %>% filter(condition == "enemy") %>% .$expected_rating
+     print(t.test(vals.friend, vals.enemy, var.equal = TRUE))
+}
 
 ```
 
@@ -157,6 +194,26 @@ sd.enemy = sd(d.auc.comb %>% filter(condition == "enemy") %>%  .$auc.diff)
 eff_size = m.friend - m.enemy
 eff_size= eff_size/sd.friend
 
-power.t.test(n=30, delta=eff_size, sd=1, sig.level = 0.05, type="two.sample", alternative="two.sided")
+power.t.test(n=40, delta=eff_size, sd=1, sig.level = 0.05, type="two.sample", alternative="two.sided")
+
+
+# power analysis for expression comparison
+
+vals.friend = d.norm %>% filter(adjective == "amazing") %>% filter(condition == "friends") %>% .$expected_rating
+vals.enemy = d.norm %>% filter(adjective == "amazing") %>% filter(condition == "enemy") %>% .$expected_rating
+
+m.friend = mean(vals.friend)
+m.enemy = mean(vals.enemy)
+
+sd.friend = sd(vals.friend)
+sd.enemy = sd(vals.enemy)
+
+eff_size = m.friend - m.enemy
+eff_size= eff_size/sd.friend
+
+power.t.test(n=40, delta=eff_size, sd=1, sig.level = 0.01, type="two.sample", alternative="two.sided")
+
+
+
 
 ```

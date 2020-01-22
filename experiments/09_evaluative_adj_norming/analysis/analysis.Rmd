@@ -70,11 +70,26 @@ d.auc.comb %>% group_by(condition) %>%
   ggplot(aes(y = auc.diff_m, col=condition, x=0)) + geom_point(size=5) + 
   geom_errorbar(aes(ymin=auc.diff_m-ci.lower, ymax=auc.diff_m+ci.upper)) + xlim(-2,2) + ylab("AUC (good + amazing) - AUC (bad + terrible)")
 
+d.norm = d %>% 
+  group_by(rating, adjective, condition, workerid) %>% 
+  dplyr::summarize(response_m = mean(response)) %>% 
+  group_by(adjective, condition, workerid) %>% 
+  dplyr::mutate(response_norm = response_m / (sum(response_m) + 0.001)) %>%
+  dplyr::mutate(rating_weighted = response_norm * (rating -1 )) %>%
+  group_by(adjective, condition, workerid) %>% 
+  dplyr::summarize(expected_rating = sum(rating_weighted))
+
+d.norm %>% 
+  group_by(adjective, condition) %>%
+  dplyr::summarize(mu = mean(expected_rating), ci.lower = ci.low(expected_rating), ci.upper=ci.high(expected_rating)) %>%
+  ggplot(aes(x=adjective, y=mu, col=condition)) + geom_point() + geom_errorbar(aes(ymin=mu-ci.lower, ymax=mu+ci.upper))
+
+
 
 ```
 
 
-Per-participant plots
+### Per-participant plots
 
 
 ```{r per_participant, fig.width=10, fig.height=30, echo=FALSE}
@@ -89,7 +104,7 @@ d.part %>% ggplot(aes(x=rating, col=adjective, y=mu)) + geom_line() + geom_point
 
 ```
 
-Statistical test
+### Statistical tests (AUC difference)
 
 ```{r t_test, echo=FALSE}
 
@@ -97,6 +112,23 @@ d.friends.diffs = d.auc.comb %>% filter(condition == "friends") %>% .$auc.diff
 d.enemy.diffs = d.auc.comb %>% filter(condition == "enemy") %>% .$auc.diff
 
 t.test(d.friends.diffs, d.enemy.diffs, var.equal = TRUE)
+
+```
+
+### Statistical tests (difference in expected rating)
+
+
+```{r t_tests2, echo=FALSE}
+
+
+expressions = c("terrible", "bad", "good", "okay", "amazing")
+
+for (expr in expressions) {
+     print(expr)
+     vals.friend = d.norm %>% filter(adjective == expr) %>% filter(condition == "friends") %>% .$expected_rating
+     vals.enemy = d.norm %>% filter(adjective == expr) %>% filter(condition == "enemy") %>% .$expected_rating
+     print(t.test(vals.friend, vals.enemy, var.equal = TRUE))
+}
 
 ```
 
