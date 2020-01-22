@@ -25,7 +25,7 @@ var N_COMPLETIONS = Object.keys(COMPLETIONS).length;
 
 var trial_counter = 0;
 
-
+var display_part_2 = false;
 
 function build_trials() {
   var trials = [];
@@ -175,10 +175,125 @@ function make_slides(f) {
   slides.instructions_2 = slide({
     name: "instructions_2",
     start: function() {
+      if (!display_part_2) {
+        exp.go();
+        return;
+      }
+      $("#instructions-part1-2").show();
+      $("#instructions-part2-2").hide();
+      this.step = 1;
     },
     button: function() {
-      exp.go();
+      if (this.step == 1) {
+        $("#instructions-part1-2").hide();
+        $("#instructions-part2-2").show();
+        this.step = 2;
+        var stim = exp.data_part_1.shift();
+        this.stim = stim;
+        
+        $("#practice-speaker-image-2").attr("src", "./stim/eval-adj-person-" + SPEAKER + ".png");
+        
+        var slider_table_html = "";
+        for (var i = 0; i < stim["selected_adjectives"].length; i++) {
+          slider_table_html += '<tr>\
+            <td><strong><span class="display_condition">' + COMPLETIONS[stim["selected_adjectives"][i]] +  '</span></strong></td>\
+            <td>\
+                <div style="width:290px; padding: 3px 15px; margin: 0 auto; overflow: hidden;"><span id="practice_slider_'+ i +'" style="display:block; width:200px; float:left; margin: 0 20px;"></span><input type="text" style="width: 30px; float: left; text-align: center" id="practice_slider_' + i + '_val" value="0" disabled="disabled"></div>\
+            </td>\
+        </tr>';
+        }
+      
+        $("#practice-slider-table").html(slider_table_html);
+      
+        var callback = function () {
+      
+          var total = 0;
+          for (var i = 0; i < stim["selected_adjectives"].length; i++) {
+            total += $("#practice_slider_" + i).slider("option", "value");
+          }
+        
+          if (total > 1.0) {
+            var other_total = total - $(this).slider("option", "value");
+            $(this).slider("option", "value", 1 - other_total);
+          }
+      
+          var perc = Math.round($(this).slider("option", "value") * 100);
+          $("#" + $(this).attr("id") + "_val").val(perc);
+      
+        };
+      
+        for (var i = 0; i < stim["selected_adjectives"].length; i++) {
+          utils.make_slider("#practice_slider_" + i, callback);
+        }
+      } else if (this.step == 2) {
+        
+        $(".err").hide();
+      
+        var total = 0;
+        for (var i = 0; i < this.stim["selected_adjectives"].length; i++) {
+          total += $("#practice_slider_" + i).slider("option", "value");
+        }
+
+  			if (total < 0.99) {
+  	      $(".err").show();
+        } else {
+          this.log_responses();
+          exp.go();
+        }
+        
+      }
+    },
+    
+    log_responses: function() {
+    
+      var rated_adjectives = {}
+    
+      if (this.stim["selected_adjectives"].length == 1) {
+        var adj = this.stim["selected_adjectives"][0];
+        rated_adjectives[adj] = true;
+        exp.data_trials.push({
+            "trial_type": this.stim.trial_type, 
+            "trial" : this.stim.trial,
+            "adjective": adj,
+            "response": 1.0,
+            "rating": this.stim["rating"],
+            "condition" : this.stim["condition"],
+            "version" : this.stim["version"],
+            "text" : this.stim["text"]
+        });
+      } else {
+        for (var i = 0; i < this.stim["selected_adjectives"].length; i++) {
+          var adj = this.stim["selected_adjectives"][i];
+          rated_adjectives[adj] = true;
+          exp.data_trials.push({
+              "trial_type": this.stim.trial_type, 
+              "trial" : this.stim.trial,
+              "adjective": adj,
+              "response": $("#practice_slider_" + (i)).slider("option", "value"),
+              "rating": this.stim["rating"],
+              "condition" : this.stim["condition"],
+              "version" : this.stim["version"],
+              "text" : this.stim["text"]
+          });
+        }
+      }
+    
+      for (adj in COMPLETIONS) {
+        if (rated_adjectives[adj] === true) continue;
+        rated_adjectives[adj] = true;
+        exp.data_trials.push({
+            "trial_type": this.stim.trial_type, 
+            "trial" : this.stim.trial,
+            "adjective": adj,
+            "response": 0,
+            "rating": this.stim["rating"],
+            "condition" : this.stim["condition"],
+            "version" : this.stim["version"],
+            "text" : this.stim["text"]
+        });
+      }
     }
+    
   });
 
   slides.trial = slide({
@@ -220,6 +335,9 @@ function make_slides(f) {
   },
   
   log_responses: function(responses) {
+    if (responses.length > 1) {
+      display_part_2 = true;
+    }
     trial_counter++;
     exp.data_part_1.push({
         "trial_type": "trial", 
