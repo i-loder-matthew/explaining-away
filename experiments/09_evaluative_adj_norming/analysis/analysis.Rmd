@@ -2,7 +2,9 @@
 title: "Analysis of norming experiment"
 author: "Sebastian Schuster"
 date: "1/20/2020"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -28,18 +30,43 @@ auc_method = function(rating, response_m) {
 
 ```{r load_data, fig.width=10, echo=FALSE}
 
-d.neutral = read.csv("../data/09_evaluative_adj_norming-cond1-trials.csv")
-d.friend = read.csv("../data/09_evaluative_adj_norming-cond2-trials.csv")
-d.enemy = read.csv("../data/09_evaluative_adj_norming-cond3-trials.csv")
+d.neutral = read.csv("../data/09_evaluative_adj_norming-pilot-cond1-trials.csv")
+d.friend = read.csv("../data/09_evaluative_adj_norming-pilot-cond2-trials.csv")
+d.friend$workerid = d.friend$workerid + max(d.neutral$workerid) + 1
+d.enemy = read.csv("../data/09_evaluative_adj_norming-pilot-cond3-trials.csv")
+d.enemy$workerid = d.enemy$workerid + max(d.friend$workerid) + 1
 
 d = rbind(d.neutral, d.friend, d.enemy)
 
 d = d %>% filter(trial_type == "trial")
 
+
+
+d.indiv = d %>%
+  group_by(rating, workerid, adjective, condition) %>% 
+  dplyr::summarize(mu = mean(response)) %>%ungroup()
+
+d.amazing.6 = d.indiv %>% filter(rating == 6) %>% filter(adjective == "amazing") %>% select(mu, workerid, condition)  %>% dplyr::rename(amazing6_response = mu) 
+d.terrible.1 = d.indiv %>% filter(rating == 1) %>% filter(adjective == "terrible") %>% select(mu, workerid, condition) %>% dplyr::rename(terrible1_response = mu) 
+d.amazing.1 = d.indiv %>% filter(rating == 1) %>% filter(adjective == "amazing") %>% select(mu, workerid, condition) %>% dplyr::rename(amazing1_response = mu) 
+d.terrible.6 = d.indiv %>% filter(rating == 1) %>% filter(adjective == "terrible") %>% select(mu, workerid, condition) %>% dplyr::rename(terrible6_response = mu) 
+
+
+
+exclude.workers = merge(d.amazing.6, d.terrible.1, by=c("workerid", "condition")) %>% 
+  merge(d.terrible.6, by=c("workerid", "condition")) %>%
+  merge(d.amazing.1, by=c("workerid", "condition")) %>%
+  filter(amazing6_response < .4 | amazing1_response > .15) %>% 
+  filter(terrible1_response < .4 | terrible6_response > .15) %>% 
+  .$workerid
+
+d.excluded = d %>% filter((workerid %in% exclude.workers))
+
+d = d %>% filter(!(workerid %in% exclude.workers))
+
 d.avg = d %>% 
   group_by(rating, adjective, condition) %>% 
   dplyr::summarize(mu = mean(response), ci.lower = ci.low(response), ci.upper=ci.high(response))
-
 
 
 d.avg %>% ggplot(aes(x=rating, col=adjective, y=mu)) + geom_line() + geom_point() + geom_errorbar(aes(ymin=mu-ci.lower, ymax=ci.upper+mu)) + xlim(1,6) + facet_wrap(~condition)
@@ -101,6 +128,18 @@ d.part = d %>%
 d.part %>% ggplot(aes(x=rating, col=adjective, y=mu)) + geom_line() + geom_point() +  xlim(1,6) + facet_wrap(~condition + workerid, ncol=5) +
   theme(legend.position = "bottom")
 
+```
+
+## Per-participant plots for excluded participants
+
+```{r per_participant_excluded, fig.width=10, fig.height=15, echo=FALSE}
+
+d.part.excluded = d.excluded %>% 
+  group_by(rating, adjective, condition, workerid) %>% 
+  dplyr::summarize(mu = mean(response))
+
+d.part.excluded %>% ggplot(aes(x=rating, col=adjective, y=mu)) + geom_line() + geom_point() +  xlim(1,6) + facet_wrap(~condition + workerid, ncol=5) +
+  theme(legend.position = "bottom")
 
 ```
 
