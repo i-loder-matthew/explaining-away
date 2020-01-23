@@ -6,7 +6,7 @@
     <!--JS-->
 
     <script type="text/javascript">
-      var CONDITION = "enemy";
+      var CONDITION = "friends";
       var INCLUDE_OKAY = true; 
     </script>
 
@@ -122,7 +122,247 @@ Otherwise, modified to whatever is required for you given your affiliation.
     <p>In what follows, you will see the user of an online review website, along with several of <span class="placeholder">{{her}}</span> reviews for items at a local bakery.</p>
   </div>
   <div id="instructions-part2">
-    <p> Here is the reviewer, Taylor: <span class="placeholder">{{she}}</span> is the owner of a rival bakery, and is not afraid to be critical in <span class="placeholder">{{her}}</span> reviews.</p>
+    <p> Here is the reviewer, Taylor: <span class="placeholder">{{she}}</span> is good friends with the owner of the bakery, and wants to be polite in <span class="placeholder">{{her}}</span> reviews.</p>
+
+  </div>
+  <div id="instructions-part3">
+    <p>For each bakery item, you will see how much Taylor liked it in the form of 1 - 6 stars as well as <span class="placeholder">{{her}}</span> review. </p>
+    <p>Due to a technical error, the end of the review was not saved and is missing. It is your job to guess what Taylor wanted to say, taking into account how much <span class="placeholder">{{she}}</span> liked it as well as <span class="placeholder">{{her}}</span> connection to the bakery. 
+  </div>
+  <table>
+    <tr>
+      <td id="rating-stuff">
+        <img src="./stim/4_stars.png" class="stars"  width="250" height="100">
+        <h2>The Boston Creme was ______ </h2>
+      </td>
+      <td>
+        <img src="./stim/eval-adj-person-f.png" id="instructions-speaker" class="image" width="187" height="200">
+      </td>
+    </tr>
+  </table>
+
+  <button onclick="_s.button()" class="button">Continue</button>
+</div>
+
+<div class="slide" id="practice">
+    <p> Try it out! Consider what Taylor thinks of <span class="placeholder">{{her}}</span> friend's bakery item and indicate how you think <span class="placeholder">{{her}}</span> review might end by choosing one or several of the adjectives below. If you think it is likely that the review ends with a different word, you can also select the <em>something else</em> option.
+      <table>
+        <tr>
+          <td id="practice-rating">
+            <img src="./stim/4_stars.png" class="stars"  width="250" height="100">
+            <form id="adj-practice-form" onsubmit="_s.button();return false;">
+              <h2> The Boston creme was ______ </h2>
+            </form>
+          </td>
+          <td>
+            <img src="./stim/eval-adj-person-f.png" id="practice-speaker" class="image" width="187" height="200">
+          </td>
+        </tr>
+      </table>
+      <p>Which of these words are likely endings of Taylor's review? Select all that you think are possible.</p>
+      <p class="err"> Please select at least one of the options!</p>
+      <div class="responses" id="practice-responses">
+        <span data-adjective="terrible">... terrible</span>
+        <span data-adjective="bad">... bad</span>
+        <span data-adjective="okay">... okay</span>
+        <span data-adjective="good">... good</span>
+        <span data-adjective="amazing">... amazing</span>
+        <span data-adjective="other"><em>something else</em></span>
+      </div>
+     
+      
+  <button onclick="_s.button()" class="button">Continue</button>
+</div>
+
+<div class="slide" id="separator">
+  <h2>Great! Let's begin.</h2>
+  <button onclick="_s.button()" class="button">Continue</button>
+</div>
+
+<div class="slide" id="trial">
+  <p> Consider what Taylor thinks of <span class="placeholder">{{her}}</span> friend's bakery item.</p>
+
+  <table>
+    <tr>
+      <td id="trial-rating">
+        <img src="./stim/0_stars.png" class="stars" id="rating-image" width="250" height="100">
+        <form id="adj-response-form" onsubmit="_s.button(); return false;">
+          <h2 id="rating-text">{{}}</h2>
+        </form>
+      </td>
+      <td>
+        <img src="./stim/eval-adj-person-f.png" id="speaker-image" class="image" width="187" height="200">
+      </td>
+    </tr>
+  </table>
+  <p>Which of these words are likely endings of Taylor's review? Select all that you think are possible.</p>
+      <p class="err"> Please select at least one of the options!</p>
+      <div class="responses" id="responses">
+        <span data-adjective="terrible">... terrible</span>
+        <span data-adjective="bad">... bad</span>
+        <span data-adjective="okay">... okay</span>
+        <span data-adjective="good">... good</span>
+        <span data-adjective="amazing">... amazing</span>
+        <span data-adjective="other"><em>something else</em></span>
+      </div>
+  <button onclick="_s.button()" class="button">Continue</button>
+</div>
+
+<div class="slide" id="instructions_2">
+  <h3>Instructions (Part 2)</h3>
+  
+  <div id="instructions-part1-2">
+    <p>In the second part of the experiment, you will see your responses again. For each response, please indicate how likely you think it is that the word is the ending of Taylor's review.</p>
+  </div>
+  <div id="instructions-part2-2">
+    <p>Try it out! Adjust the sliders and distribute 100 points across the responses. The sliders will automatically snap back if you try to assign more than 100 points. </p>
+    <table>
+      <tr>
+        <td>
+          <img src="./stim/4_stars.png" class="stars" width="250" height="100">
+            <h2>The Boston creme was ______</h2>
+        </td>
+        <td>
+          <img src="./stim/eval-adj-person-f.png" id="practice-speaker-image-2" class="image" width="187" height="200">
+        </td>
+      </tr>
+    </table>
+    <p>How likely do you think it is that Taylor's review ends with each of the following words?</p>
+    <p class="err"> Please make sure that the ratings sum to 100!</p>
+    <table id="practice-slider-table">
+      
+    </table> 
+
+  </div>
+  <button onclick="_s.button()" class="button">Continue</button>
+</div>
+
+<div class="slide" id="trial_2">
+  <p> Consider what Taylor thinks of <span class="placeholder">{{her}}</span> friend's bakery item and complete the review by adjusting the sliders.</p>
+
+  <table>
+    <tr>
+      <td id="trial-rating">
+        <img src="./stim/0_stars.png" class="stars" id="rating-image-2" width="250" height="100">
+        <form id="adj-response-form" onsubmit="_s.button(); return false;">
+          <h2 id="rating-text-2">{{}}</h2>
+        </form>
+      </td>
+      <td>
+        <img src="./stim/eval-adj-person-f.png" id="speaker-image-2" class="image" width="187" height="200">
+      </td>
+    </tr>
+  </table>
+  <p>How likely do you think it is that Taylor's review ends with each of the following words?</p>
+  <p class="err"> Please make sure that the ratings sum to 100!</p>
+  <table id="slider-table">
+      
+      
+  </table>
+  <button onclick="_s.button()" class="button">Continue</button>
+</div>
+
+  <div class="slide"  id="subj_info">
+    <div class="long_form">
+      <div class="subj_info_title">Additional information</div>
+      <p class="info">Answering these questions is optional, but will help us understand your answers.</p>
+      <p>Did you read the instructions and do you think you did the HIT correctly?</p>
+      <label><input type="radio"  name="assess" value="No"/>No</label>
+      <label><input type="radio"  name="assess" value="Yes"/>Yes</label>
+      <label><input type="radio"  name="assess" value="Confused"/>I was confused</label>
+
+      <p>Were there any problems or bugs in the experiment?</p>
+      <textarea id="problems" rows="2" cols="50"></textarea>
+
+      <p>What do you think is a fair price for the work you did?</p>
+      <textarea id="fairprice" rows="1" cols="10"></textarea>
+
+      <p>Gender:
+        <select id="gender">
+          <label><option value=""/></label>
+          <label><option value="Male"/>Male</label>
+          <label><option value="Female"/>Female</label>
+          <label><option value="Other"/>Other</label>
+        </select>
+      </p>
+
+      <p>Age: <input type="text" id="age"/></p>
+
+      <p>Level Of Education:
+        <select id="education">
+          <label><option value="-1"/></label>
+          <label><option value="0"/>Some High School</label>
+          <label><option value="1"/>Graduated High School</label>
+          <label><option value="2"/>Some College</label>
+          <label><option value="3"/>Graduated College</label>
+          <label><option value="4"/>Hold a higher degree</label>
+        </select>
+      </p>
+
+      <p>Native Language: <input type="text" id="language"/></p>
+      <label>(the language(s) spoken at home when you were a child)</label>
+
+      <p>Did you enjoy the hit?</p>
+      <select id="enjoyment">
+        <label><option value="-1"></option></label>
+        <label><option value="0">Worse than the Average HIT</option></label>
+        <label><option value="1" >An Average HIT</option></label>
+        <label><option value="2">Better than average HIT</option></label>
+      </select>
+
+      <p>We would be interested in any comments you have about this experiment. Please type them here:</p>
+      <textarea id="comments" rows="3" cols="50"></textarea>
+      <br/>
+      <button onclick="_s.submit()">Submit</button>
+    </div>
+  </div>
+
+  <div id="thanks" class="slide js" >
+    <p  class="big">Thanks for your time!</p>
+  </div>
+
+  <div class="progress">
+    <span>Progress:</span>
+    <div class="bar-wrapper">
+      <div class="bar" width="0%">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+<div class="slide" id="auth">
+    <p>
+        &nbsp;
+    </p>
+    <br>
+    <p id="check-story">{{story}}</p>
+    <br>
+    <form action="#" onsubmit="_s.button();return false;">
+    <p><span id="check-question">{{question}}</span><br>
+        <input type="text" id="check-input" style="border: 1px solid black; width: 200px; font-size: 1em;">
+    </p>
+    </form>
+    <p class="err" id="check-error">Your answer is incorrect. Please try again.</p>
+    <p class="err" id="check-error-final">
+        Your answer is again incorrect and you won't be able to take this experiment. <br> 
+        Please return this HIT to avoid any impact on your acceptance rating. We apologize for any inconvenience caused.
+    </p>
+    
+    <p><input type="button" onclick="_s.button()" class="button" id="check-button" value="Continue"></p>
+    
+</div>
+
+<div class="slide" id="instructions">
+  <h3>Instructions</h3>
+
+  <div id="instructions-part1">
+    <p>In what follows, you will see the user of an online review website, along with several of <span class="placeholder">{{her}}</span> reviews for items at a local bakery.</p>
+  </div>
+  <div id="instructions-part2">
+    <p> Here is the reviewer, Taylor: <span class="placeholder">{{she}}</span> is good friends with the owner of the bakery, and wants to be polite in <span class="placeholder">{{her}}</span> reviews.</p>
 
   </div>
   <div id="instructions-part3">
@@ -145,7 +385,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
 </div>
 
 <div class="slide" id="practice">
-    <p> Try it out! Consider what Taylor thinks of <span class="placeholder">{{her}}</span> rival's bakery item and complete <span class="placeholder">{{her}}</span> review by using the sliders to distribute 100 points across the five endings. If you think none of the five endings are likely, you can indicate this by assigning a lot of points to the <em>something else</em> option. The sliders will automatically snap back if you try to assign more than 100 points.
+    <p> Try it out! Consider what Taylor thinks of <span class="placeholder">{{her}}</span> friend's bakery item and complete <span class="placeholder">{{her}}</span> review by using the sliders to distribute 100 points across the five endings. If you think none of the five endings are likely, you can indicate this by assigning a lot of points to the <em>something else</em> option. The sliders will automatically snap back if you try to assign more than 100 points.
       <table>
         <tr>
           <td id="practice-rating">
@@ -210,7 +450,7 @@ Otherwise, modified to whatever is required for you given your affiliation.
 </div>
 
 <div class="slide" id="trial">
-  <p> Consider what Taylor thinks of <span class="placeholder">{{her}}</span> rival's bakery item and complete the review by adjusting the sliders.</p>
+  <p> Consider what Taylor thinks of <span class="placeholder">{{her}}</span> friend's bakery item and complete the review by adjusting the sliders.</p>
 
   <table>
     <tr>
