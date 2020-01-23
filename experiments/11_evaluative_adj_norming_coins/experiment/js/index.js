@@ -113,6 +113,9 @@ function tallyCoins() {
   $("#available-coins").attr("src", "./stim/coins_" + (MAX_COINS-total) + ".png");
 };
 
+var get_rating = function(i) {
+  return parseInt($("#coins-" + i).attr("src").split("coins_")[1].replace(".png", ""));
+}
 
 
 function make_slides(f) {
@@ -217,7 +220,7 @@ function make_slides(f) {
           "trial" : trial_counter,
           "sentence": COMPLETIONS[i][1],
           "adjective": COMPLETIONS[i][0],
-          "response": $("#slider_" + (i+1)).slider("option", "value"),
+          "response": get_rating(i+1),
           "rating": this.stim["ratings"],
           "condition" : this.stim["cond"],
           "version" : this.stim["speaker"],
@@ -229,7 +232,7 @@ function make_slides(f) {
         "trial" : trial_counter,
         "sentence": "",
         "adjective": "other",
-        "response": $("#slider_" + (N_COMPLETIONS + 1)).slider("option", "value"),
+        "response": get_rating(N_COMPLETIONS+1),
         "rating": this.stim["ratings"],
         "condition" : this.stim["cond"],
         "version" : this.stim["speaker"],
