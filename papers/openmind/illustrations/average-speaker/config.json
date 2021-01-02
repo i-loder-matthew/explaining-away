@@ -1,0 +1,52 @@
+{
+  "utterances": [
+    {
+      "form": "bare",
+      "has_theta": true,
+      "has_cost": true,
+      "alpha_init": 3,
+      "beta_init": 0.7,
+      "cost_init": 0
+    },
+    {
+      "form": "might",
+      "has_theta": true,
+      "has_cost": true,
+      "alpha_init": 1,
+      "beta_init": 5,
+      "cost_init": 0
+    },
+    {
+      "form": "probably",
+      "has_theta": true,
+      "has_cost": true,
+      "alpha_init": 3,
+      "beta_init": 2,
+      "cost_init": 0
+    },
+    {
+      "form": "bare_not",
+      "has_theta": true,
+      "has_cost": true,
+      "is_neg": true,
+      "alpha_init": 0.7,
+      "beta_init": 3,
+      "cost_init": 0
+    }
+  ],
+  "noise_strength_init": 0,
+  "theta_marginalization": "speaker",
+  "condition_encoding": "cost",
+  "rat_alpha_init": 5.0,
+  "utt_other_prob_init": 0,
+  "proposal_widths": {
+    "theta": 0.005,
+    "cost": 0.005,
+    "rat_alpha": 0.005,
+    "utt_other_prob": 0.005,
+    "noise_strength": 0.005
+  },
+  "hdi_estimation_samples": 1
+}
+
+

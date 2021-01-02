@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: explaining_away.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: explaining_away.bib
+apacite.bst [2012/02/25 v6.01 APA bibliography style]
+You've used 29 entries,
+            6735 wiz_defined-function locations,
+            1445 strings with 15464 characters,
+and the built_in function-call counts, 56544 in all, are:
+= -- 7166
+> -- 444
+< -- 2688
++ -- 2838
+- -- 58
+* -- 3633
+:= -- 10354
+add.period$ -- 124
+call.type$ -- 29
+change.case$ -- 497
+chr.to.int$ -- 0
+cite$ -- 58
+duplicate$ -- 1434
+empty$ -- 2172
+format.name$ -- 729
+if$ -- 10744
+int.to.chr$ -- 0
+int.to.str$ -- 58
+missing$ -- 0
+newline$ -- 747
+num.names$ -- 236
+pop$ -- 872
+preamble$ -- 1
+purify$ -- 116
+quote$ -- 0
+skip$ -- 3745
+stack$ -- 0
+substring$ -- 3152
+swap$ -- 835
+text.length$ -- 70
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 2576
+warning$ -- 0
+while$ -- 245
+width$ -- 0
+write$ -- 922
